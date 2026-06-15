@@ -1,5 +1,7 @@
 # Super_Profesor
 
+🚀 **En desarrollo creativo** - Este repositorio es un lienzo en evolución constante, donde la innovación educativa toma forma.
+
 Super_Profesor es un entorno educativo hiperpersonalizado e impulsado por una arquitectura multi-agente que adapta el aprendizaje a los ritmos y estilos del estudiante.
 
 ## Arquitectura

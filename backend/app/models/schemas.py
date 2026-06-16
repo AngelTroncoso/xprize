@@ -86,7 +86,10 @@ class CodeReview(BaseModel):
 
 # --- General Chat Schemas ---
 class ChatInput(BaseModel):
-    message: str = Field(..., description="El mensaje o código del estudiante")
-    session_id: str = Field(..., description="ID de la sesión de chat")
+    student_id: str = Field(..., description="ID del estudiante")
+    curso: Optional[str] = Field(None, description="Curso del estudiante (ej. 3ro Basico)")
+    asignatura: Optional[str] = Field(None, description="Asignatura solicitada (ej. Matematica)")
+    message: str = Field(..., description="El mensaje o duda del estudiante")
+    session_id: Optional[str] = Field(None, description="ID de la sesión de chat")
     student_interest: Optional[str] = Field(None, description="Interés/Hobby para analogías (ej. fútbol, música, videojuegos)")
     current_topic: Optional[str] = Field(None, description="Tema en estudio actualmente")

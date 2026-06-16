@@ -1,0 +1,37 @@
+{
+  "curso": "3ro Basico",
+  "asignatura": "Lenguaje",
+  "eje_tematico": "Comprensión y Comunicación",
+  "objetivos_aprendizaje": [
+    {
+      "id_oa": "OA_L01",
+      "descripcion": "Comprender ideas centrales y detalles explícitos en textos narrativos y expositivos adecuados a su edad.",
+      "indicadores_evaluacion": [
+        "Identifica la idea principal de un párrafo.",
+        "Responde preguntas literales sobre el texto.",
+        "Localiza información explícita en el texto."
+      ],
+      "conceptos_clave": ["comprension lectora", "idea principal", "detalles explicitos"]
+    },
+    {
+      "id_oa": "OA_L02",
+      "descripcion": "Producir textos escritos breves con coherencia y uso básico de ortografía y puntuación para comunicar ideas.",
+      "indicadores_evaluacion": [
+        "Organiza oraciones en párrafos simples.",
+        "Usa signos de puntuación básicos correctamente.",
+        "Aplica reglas ortográficas elementales en palabras comunes."
+      ],
+      "conceptos_clave": ["produccion escrita", "ortografia", "puntuacion", "cohesion textual"]
+    },
+    {
+      "id_oa": "OA_L03",
+      "descripcion": "Participar en situaciones de comunicación oral, expresando ideas y escuchando a otros con respeto y comprensión.",
+      "indicadores_evaluacion": [
+        "Expresa ideas de manera clara y ordenada.",
+        "Escucha activamente y responde preguntas sobre lo escuchado.",
+        "Usa vocabulario adecuado al contexto."
+      ],
+      "conceptos_clave": ["expresion oral", "escucha activa", "vocabulario"]
+    }
+  ]
+}

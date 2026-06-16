@@ -1,10 +1,17 @@
+import os
+from typing import Optional
+
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
-from app.models.schemas import ChatInput
-from app.agents.orchestrator import MasterOrchestrator
+
+from app.agents.pedagogic_agent import PedagogicAgent
+from app.agents.validator_agent import ValidatorAgent
 from app.models.database import db
+from app.models.schemas import ChatInput
+from app.services.curriculum_manager import CurriculumManager
 from app.services.dynamic_loader import DynamicLoader
 from app.routers import governance, curriculum
+from app.api.analytics import router as analytics_router
 
 app = FastAPI(
     title="Super_Profesor API",
@@ -12,24 +19,32 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Habilitar CORS para conectar con el frontend de Next.js
+frontend_origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+if os.getenv("FRONTEND_URL"):
+    frontend_origins.append(os.getenv("FRONTEND_URL"))
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # En producción cambiar por la URL del frontend en Vercel
+    allow_origins=frontend_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Incluir routers
 app.include_router(governance.router)
 app.include_router(curriculum.router)
+app.include_router(analytics_router)
 
-orchestrator = MasterOrchestrator()
+curriculum_manager = CurriculumManager()
+validator_agent = ValidatorAgent(curriculum_manager)
+pedagogic_agent = PedagogicAgent()
 
 @app.on_event("startup")
 def startup_event():
-    """Al iniciar la aplicación, carga en caliente todas las herramientas aprobadas de la DB."""
+    """Carga en caliente las herramientas aprobadas desde Supabase en el arranque."""
     loaded_count = DynamicLoader.load_all_active_tools()
     print(f"[Startup] Carga en caliente finalizada. {loaded_count} herramientas dinámicas activas.")
 
@@ -43,23 +58,71 @@ def health_check():
     return {
         "status": "healthy",
         "supabase_connection": supabase_status,
-        "dynamic_tools_loaded": len(DynamicLoader._loaded_tools)
+        "dynamic_tools_loaded": len(DynamicLoader._loaded_tools),
     }
 
-@app.post("/api/chat")
-async def chat_interaction(chat_input: ChatInput):
+def _save_student_progress(supabase_client, payload) -> Optional[dict]:
+    progress_payload = {
+        "student_id": payload.student_id,
+        "curso": payload.curriculum_unit.curso,
+        "asignatura": payload.curriculum_unit.asignatura,
+        "id_oa": payload.target_oa.id_oa,
+        "nivel_logro": payload.student_progress.mastery_level,
+        "evaluation_history": payload.student_progress.evaluation_history,
+        "aligned_resources": payload.student_progress.aligned_resources,
+    }
+
     try:
-        result = orchestrator.process_student_input(chat_input)
-        
-        # Opcional: Guardar en base de datos si Supabase está configurado
+        response = supabase_client.table("student_oa_progress").upsert(
+            progress_payload,
+            on_conflict="student_id,id_oa",
+        ).execute()
+        return getattr(response, "data", None)
+    except Exception:
+        return None
+
+@app.post("/api/chat")
+async def chat_interaction(chat_request: ChatInput):
+    if not chat_request.curso or not chat_request.asignatura:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail="Debe especificar curso y asignatura en la petición.",
+        )
+
+    try:
+        payload = await validator_agent.analyze_student_input(
+            student_id=chat_request.student_id,
+            student_message=chat_request.message,
+            curso=chat_request.curso,
+            asignatura=chat_request.asignatura,
+        )
+
+        response_text = await pedagogic_agent.generate_lesson(payload, chat_request.message)
+
+        saved_progress = None
         supabase_client = db.get_client()
         if supabase_client:
-            # Registrar el mensaje en la tabla chat_messages
-            pass
-            
-        return result
+            saved_progress = _save_student_progress(supabase_client, payload)
+
+        return {
+            "agent": "PedagogicAgent",
+            "student_id": chat_request.student_id,
+            "oa_metadata": {
+                "id_oa": payload.target_oa.id_oa,
+                "descripcion": payload.target_oa.descripcion,
+                "conceptos_clave": payload.target_oa.conceptos_clave,
+                "indicadores_evaluacion": payload.target_oa.indicadores_evaluacion,
+                "curso": payload.curriculum_unit.curso,
+                "asignatura": payload.curriculum_unit.asignatura,
+            },
+            "pedagogic_response": response_text,
+            "progress_record": payload.student_progress.model_dump(),
+            "saved_progress": saved_progress,
+        }
+    except ValueError as ve:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(ve))
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(e)
+            detail=str(e),
         )

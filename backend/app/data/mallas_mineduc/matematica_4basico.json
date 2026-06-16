@@ -1,0 +1,37 @@
+{
+  "curso": "4to Basico",
+  "asignatura": "Matematica",
+  "eje_tematico": "Operaciones, Fracciones y Geometría",
+  "objetivos_aprendizaje": [
+    {
+      "id_oa": "OA_M01",
+      "descripcion": "Comprender y generar fracciones equivalentes y representar fracciones en la recta numérica.",
+      "indicadores_evaluacion": [
+        "Identifica fracciones equivalentes mediante representación concreta.",
+        "Representa fracciones en la recta numérica.",
+        "Simplifica fracciones simples cuando corresponde."
+      ],
+      "conceptos_clave": ["fracciones", "fracciones equivalentes", "recta numerica"]
+    },
+    {
+      "id_oa": "OA_M02",
+      "descripcion": "Resolver multiplicaciones de dos dígitos por uno y situaciones de sentido multiplicativo más complejas.",
+      "indicadores_evaluacion": [
+        "Realiza multiplicaciones de dos dígitos por uno con procedimientos eficientes.",
+        "Resuelve problemas que requieren interpretación multiplicativa.",
+        "Aplica estrategias de descomposición para multiplicar."
+      ],
+      "conceptos_clave": ["multiplicacion", "multiplicacion de dos digitos", "descomposicion"]
+    },
+    {
+      "id_oa": "OA_M03",
+      "descripcion": "Reconocer y describir propiedades básicas de figuras geométricas planas y calcular perímetro de formas simples.",
+      "indicadores_evaluacion": [
+        "Clasifica figuras según número de lados y vértices.",
+        "Calcula perímetro de rectángulos y polígonos regulares sencillos.",
+        "Describe simetrías y relaciones espaciales básicas."
+      ],
+      "conceptos_clave": ["geometria", "figuras geometricas", "perimetro", "simetria"]
+    }
+  ]
+}

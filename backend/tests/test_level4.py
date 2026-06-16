@@ -75,3 +75,12 @@ def test_curriculum_manager_mock():
     manager.update_source_priority("texto_escolar_5.md", 0.9)
     assert manager._source_priority_index["texto_escolar_5.md"] == 0.97
 
+def test_resource_resolver():
+    from app.services.external_resources import ResourceResolver
+    resource = ResourceResolver.select_resource("Matemáticas", needs_interactive=True)
+    assert resource["name"] == "PhET Interactive Simulations"
+    
+    payload = ResourceResolver.simulate_payload("Wikipedia API", "fracciones")
+    assert "wikipedia.org" in payload["url"]
+
+

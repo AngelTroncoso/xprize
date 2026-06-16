@@ -67,3 +67,11 @@ def test_judge_evaluation_mock():
     judge = JudgeAgent()
     # Probar si el formateador del prompt del Juez es correcto
     assert judge.judge_model == "gemini-3.5-flash"
+
+def test_curriculum_manager_mock():
+    from app.services.curriculum_manager import CurriculumManager
+    manager = CurriculumManager()
+    assert manager.model == "gemini-3.5-flash"
+    manager.update_source_priority("texto_escolar_5.md", 0.9)
+    assert manager._source_priority_index["texto_escolar_5.md"] == 0.97
+

@@ -152,6 +152,64 @@ CREATE TABLE chat_messages (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- 15. Registro de agentes y directrices
+CREATE TABLE agent_registry (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  agent_name TEXT NOT NULL UNIQUE,
+  system_instruction TEXT NOT NULL,
+  capabilities TEXT[] DEFAULT '{}',
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 16. Librería de herramientas dinámicas de código
+CREATE TABLE dynamic_tools (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT NOT NULL UNIQUE,
+  description TEXT NOT NULL,
+  code TEXT NOT NULL,
+  author_agent TEXT NOT NULL,
+  version INTEGER DEFAULT 1,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 17. Cola de aprobación de herramientas (HITL Gateway)
+CREATE TABLE tool_approvals (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  tool_name TEXT NOT NULL UNIQUE,
+  description TEXT NOT NULL,
+  code TEXT NOT NULL,
+  status TEXT DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'rejected')),
+  feedback TEXT,
+  reviewed_by UUID REFERENCES profiles(id) ON DELETE SET NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  reviewed_at TIMESTAMPTZ
+);
+
+-- 18. Trazabilidad de Agentes (AgentOps)
+CREATE TABLE agent_traces (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  session_id UUID REFERENCES chat_sessions(id) ON DELETE CASCADE,
+  span_name TEXT NOT NULL,
+  span_kind TEXT NOT NULL CHECK (span_kind IN ('AGENT', 'CHAIN', 'LLM', 'TOOL')),
+  input_data JSONB,
+  output_data JSONB,
+  latency_ms INTEGER,
+  token_prompt INTEGER,
+  token_completion INTEGER,
+  model_name TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 19. Evaluación con LLM-as-a-Judge
+CREATE TABLE judge_evaluations (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  trace_id UUID REFERENCES agent_traces(id) ON DELETE CASCADE,
+  score INTEGER CHECK (score >= 1 AND score <= 5),
+  reasoning TEXT NOT NULL,
+  bias_checked BOOLEAN DEFAULT true,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
 -- Índices de rendimiento
 CREATE INDEX idx_profiles_tenant ON profiles(tenant_id);
 CREATE INDEX idx_courses_tenant ON courses(tenant_id);
@@ -160,6 +218,7 @@ CREATE INDEX idx_progress_student ON user_progress(student_id);
 CREATE INDEX idx_submissions_student ON submissions(student_id);
 CREATE INDEX idx_chat_sessions_student ON chat_sessions(student_id);
 CREATE INDEX idx_chat_messages_session ON chat_messages(session_id, created_at);
+CREATE INDEX idx_traces_session ON agent_traces(session_id, created_at);
 
 -- RLS (Row Level Security)
 ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
@@ -169,3 +228,8 @@ ALTER TABLE user_progress ENABLE ROW LEVEL SECURITY;
 ALTER TABLE submissions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE chat_sessions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE chat_messages ENABLE ROW LEVEL SECURITY;
+ALTER TABLE agent_registry ENABLE ROW LEVEL SECURITY;
+ALTER TABLE dynamic_tools ENABLE ROW LEVEL SECURITY;
+ALTER TABLE tool_approvals ENABLE ROW LEVEL SECURITY;
+ALTER TABLE agent_traces ENABLE ROW LEVEL SECURITY;
+ALTER TABLE judge_evaluations ENABLE ROW LEVEL SECURITY;

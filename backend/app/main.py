@@ -4,7 +4,7 @@ from app.models.schemas import ChatInput
 from app.agents.orchestrator import MasterOrchestrator
 from app.models.database import db
 from app.services.dynamic_loader import DynamicLoader
-from app.routers import governance
+from app.routers import governance, curriculum
 
 app = FastAPI(
     title="Super_Profesor API",
@@ -23,6 +23,7 @@ app.add_middleware(
 
 # Incluir routers
 app.include_router(governance.router)
+app.include_router(curriculum.router)
 
 orchestrator = MasterOrchestrator()
 

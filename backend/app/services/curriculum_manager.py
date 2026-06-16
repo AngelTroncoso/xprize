@@ -27,6 +27,78 @@ class CurriculumManager:
         self.client = genai.Client(api_key=api_key)
         self.model = "gemini-3.5-flash"
         self._source_priority_index: Dict[str, float] = {}
+        
+        # Cargar y indexar currículo oficial
+        self.curriculum_data = self._load_curriculum()
+        self._oa_index: Dict[str, Dict[str, Any]] = self._build_oa_index()
+
+    def _load_curriculum(self) -> List[Dict[str, Any]]:
+        """Carga el JSON curricular oficial de MINEDUC desde el almacenamiento local."""
+        curriculum_path = os.path.join(
+            os.path.dirname(__file__),
+            "../models/curriculum_data.json"
+        )
+        if os.path.exists(curriculum_path):
+            with open(curriculum_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        return []
+
+    def _build_oa_index(self) -> Dict[str, Dict[str, Any]]:
+        """
+        Construye un índice rápido de búsqueda para todos los OA.
+        Estructura: { "OA_01": {curso, asignatura, eje_tematico, ...datos_oa} }
+        """
+        index = {}
+        for unit in self.curriculum_data:
+            for oa in unit.get("objetivos_aprendizaje", []):
+                oa_id = oa.get("id_oa")
+                if oa_id:
+                    index[oa_id] = {
+                        "curso": unit.get("curso"),
+                        "asignatura": unit.get("asignatura"),
+                        "eje_tematico": unit.get("eje_tematico"),
+                        **oa  # Spread: id_oa, descripcion, indicadores_evaluacion, conceptos_clave
+                    }
+        return index
+
+    def get_oa_by_id(self, oa_id: str) -> Optional[Dict[str, Any]]:
+        """Retrieves complete OA data by ID. Returns None if not found."""
+        return self._oa_index.get(oa_id)
+
+    def get_evaluation_indicators(self, oa_id: str) -> List[str]:
+        """
+        Devuelve los indicadores de evaluación específicos de un OA.
+        Estos son los ÚNICOS criterios válidos para evaluar dominio.
+        """
+        oa = self.get_oa_by_id(oa_id)
+        if oa:
+            return oa.get("indicadores_evaluacion", [])
+        return []
+
+    def get_key_concepts(self, oa_id: str) -> List[str]:
+        """Devuelve los conceptos clave que el alumno debe dominar para este OA."""
+        oa = self.get_oa_by_id(oa_id)
+        if oa:
+            return oa.get("conceptos_clave", [])
+        return []
+
+    def search_oa_by_course_and_subject(self, curso: str, asignatura: str) -> List[Dict[str, Any]]:
+        """Busca todos los OA de un curso y asignatura específicos."""
+        results = []
+        for oa_id, oa_data in self._oa_index.items():
+            if oa_data.get("curso") == curso and oa_data.get("asignatura") == asignatura:
+                results.append(oa_data)
+        return results
+
+    def search_oa_by_concept(self, concept: str) -> List[str]:
+        """Busca todos los OA que incluyan un concepto clave específico (búsqueda fuzzy)."""
+        concept_lower = concept.lower()
+        results = []
+        for oa_id, oa_data in self._oa_index.items():
+            conceptos = [c.lower() for c in oa_data.get("conceptos_clave", [])]
+            if any(concept_lower in c or c in concept_lower for c in conceptos):
+                results.append(oa_id)
+        return results
 
     def cross_validate_sources(self, official_oa_json: Dict[str, Any], complementary_md_text: str) -> CrossValidationResult:
         """

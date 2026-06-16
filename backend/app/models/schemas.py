@@ -1,5 +1,29 @@
 from pydantic import BaseModel, Field
-from typing import List, Literal, Optional
+from typing import List, Literal, Optional, Dict, Any
+
+# --- Esquemas Curriculares (MINEDUC Chile) ---
+class ObjetivoAprendizaje(BaseModel):
+    id_oa: str = Field(..., description="Identificador único del Objetivo de Aprendizaje (ej. OA_01)")
+    descripcion: str = Field(..., description="Descripción oficial del OA")
+    indicadores_evaluacion: List[str] = Field(default=[], description="Criterios específicos de evaluación")
+    conceptos_clave: List[str] = Field(..., description="Conceptos fundamentales a dominar")
+
+class CurriculumUnit(BaseModel):
+    curso: str = Field(..., description="Grado/curso (ej. 3ro Basico)")
+    asignatura: str = Field(..., description="Nombre de la asignatura")
+    eje_tematico: str = Field(..., description="Eje temático principal")
+    objetivos_aprendizaje: List[ObjetivoAprendizaje] = Field(..., description="Lista de OA del eje")
+
+class OAProgressRecord(BaseModel):
+    student_id: str = Field(..., description="ID del estudiante")
+    id_oa: str = Field(..., description="ID del Objetivo de Aprendizaje")
+    mastery_level: Literal["not_started", "in_progress", "partial", "mastered"] = Field(
+        default="not_started", 
+        description="Nivel de dominio del OA"
+    )
+    last_evaluation_date: Optional[str] = Field(None, description="Fecha de última evaluación")
+    evaluation_history: List[Dict[str, Any]] = Field(default=[], description="Historial de evaluaciones")
+    aligned_resources: List[str] = Field(default=[], description="IDs de recursos recomendados")
 
 # --- Agente Evaluador Schemas ---
 class SkillEvaluation(BaseModel):

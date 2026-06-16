@@ -25,6 +25,16 @@ class OAProgressRecord(BaseModel):
     evaluation_history: List[Dict[str, Any]] = Field(default=[], description="Historial de evaluaciones")
     aligned_resources: List[str] = Field(default=[], description="IDs de recursos recomendados")
 
+# --- Payload entre Agentes: Validador → Pedagógico ---
+class ValidatorToPedagoguePayload(BaseModel):
+    student_id: str = Field(..., description="ID del estudiante")
+    timestamp: Optional[str] = Field(None, description="Timestamp de la evaluación / interacción")
+    curriculum_unit: CurriculumUnit = Field(..., description="Unidad curricular completa asociada al OA")
+    target_oa: ObjetivoAprendizaje = Field(..., description="El OA objetivo que fue evaluado")
+    student_progress: OAProgressRecord = Field(..., description="Registro de progreso actual para este OA")
+    evidence: Optional[List[str]] = Field(default=[], description="Evidencias textuales o referencias a entregas del alumno")
+    validation_notes: Optional[str] = Field(None, description="Notas interpretativas del Agente Validador para el Pedagogo")
+
 # --- Agente Evaluador Schemas ---
 class SkillEvaluation(BaseModel):
     topic: str = Field(..., description="El tema específico evaluado")

@@ -1,0 +1,18 @@
+{
+  "curso": "3ro Basico",
+  "asignatura": "Matematica",
+  "eje_tematico": "Numeros y Operaciones",
+  "objetivos_aprendizaje": [
+    {"id_oa": "OA_01", "descripcion": "Contar números del 0 al 1000...", "indicadores_evaluacion": [], "conceptos_clave": ["conteo", "numeros naturales", "series numericas"]},
+    {"id_oa": "OA_02", "descripcion": "Leer números hasta 1000...", "indicadores_evaluacion": [], "conceptos_clave": ["lectura de numeros", "sistema de numeracion", "representacion"]},
+    {"id_oa": "OA_03", "descripcion": "Comparar y ordenar números...", "indicadores_evaluacion": [], "conceptos_clave": ["comparacion", "orden", "tabla posicional"]},
+    {"id_oa": "OA_04", "descripcion": "Describir y aplicar estrategias de cálculo mental...", "indicadores_evaluacion": ["Usan la descomposición de números.", "Completan sumas hasta la decena más cercana.", "Usan la estrategia del doble para calcular.", "Suman en vez de restar cuando es más sencillo.", "Aplican la propiedad asociativa en las operaciones."], "conceptos_clave": ["calculo mental", "adicion", "sustraccion"]},
+    {"id_oa": "OA_05", "descripcion": "Identificar y describir las unidades, decenas y centenas...", "indicadores_evaluacion": [], "conceptos_clave": ["valor posicional", "unidades", "decenas"]},
+    {"id_oa": "OA_06", "descripcion": "Demostrar que comprenden la adición y la sustracción...", "indicadores_evaluacion": ["Usan estrategias personales con y sin material concreto.", "Crean y resuelven problemas de adición y sustracción.", "Aplican algoritmos con y sin reserva en sumas y restas."], "conceptos_clave": ["adicion", "sustraccion", "algoritmos"]},
+    {"id_oa": "OA_07", "descripcion": "Demostrar que comprenden la relación entre la adición y la sustracción...", "indicadores_evaluacion": [], "conceptos_clave": ["adicion", "sustraccion", "familia de operaciones"]},
+    {"id_oa": "OA_08", "descripcion": "Demostrar que comprenden las tablas de multiplicar hasta 10...", "indicadores_evaluacion": ["Usan representaciones concretas y pictóricas.", "Expresan la multiplicación como suma de sumandos iguales.", "Usan la distributividad para construir las tablas.", "Aplican los resultados de las tablas de multiplicación hasta 10x10 sin cálculo.", "Resuelven problemas que involucren las tablas de multiplicar."], "conceptos_clave": ["multiplicacion", "tablas de multiplicar", "sumas repetidas"]},
+    {"id_oa": "OA_09", "descripcion": "Demostrar que comprenden la división...", "indicadores_evaluacion": ["Representan y explican la división como repartición y agrupación en partes iguales.", "Crean y resuelven problemas que incluyan repartición y agrupación.", "Expresan la división como sustracción repetida.", "Describen y aplican la relación inversa entre división y multiplicación.", "Aplican los resultados de las tablas de multiplicación en la división."], "conceptos_clave": ["division", "reparticion", "multiplicacion inversa"]},
+    {"id_oa": "OA_10", "descripcion": "Resolver problemas rutinarios...", "indicadores_evaluacion": [], "conceptos_clave": ["resolucion de problemas", "dinero", "operaciones aritmeticas"]},
+    {"id_oa": "OA_11", "descripcion": "Demostrar que comprenden las fracciones de uso común.", "indicadores_evaluacion": ["Explican que una fracción representa la parte de un todo de manera concreta y simbólica.", "Describen situaciones que involucran fracciones y comparan fracciones con igual denominador."], "conceptos_clave": ["fracciones", "parte de un todo", "comparacion de fracciones"]}
+  ]
+}

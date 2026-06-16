@@ -1,6 +1,10 @@
 import os
 from typing import Optional
 
+# 🚨 CRÍTICO: Cargar variables de entorno ANTES de importar módulos o agentes locales
+from dotenv import load_dotenv
+load_dotenv()
+
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 

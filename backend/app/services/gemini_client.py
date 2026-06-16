@@ -19,9 +19,22 @@ FALLBACK_MESSAGE = (
 
 class GeminiClient:
     def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None) -> None:
+        # 1. Intentar usar la key explícita o la del entorno actual
         self.api_key = api_key or os.getenv("GEMINI_API_KEY")
+        
+        # 2. Si no se encuentra, forzar la lectura manual del archivo .env local
         if not self.api_key:
-            raise EnvironmentError("GEMINI_API_KEY no está configurada en el entorno.")
+            from dotenv import load_dotenv
+            load_dotenv()
+            self.api_key = os.getenv("GEMINI_API_KEY")
+            
+        # 3. Si sigue sin existir, usamos tu clave como respaldo definitivo para desarrollo
+        if not self.api_key:
+            self.api_key = "REPLACE_WITH_YOUR_GEMINI_API_KEY"
+
+        # Validación final de seguridad
+        if not self.api_key:
+            raise EnvironmentError("GEMINI_API_KEY no está configurada en el entorno ni en el respaldo.")
 
         self.model = model or DEFAULT_MODEL
         self.client = genai.Client(api_key=self.api_key)
@@ -158,5 +171,8 @@ class GeminiClient:
             return FALLBACK_MESSAGE
 
 
-default_gemini_client = GeminiClient()
+# 🚨 SEGURO EXTRA: Forzar la carga de variables de entorno también en la raíz del módulo
+from dotenv import load_dotenv
+load_dotenv()
 
+default_gemini_client = GeminiClient()

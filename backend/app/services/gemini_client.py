@@ -1,4 +1,5 @@
 import asyncio
+import base64
 import logging
 import os
 from typing import Any, Dict, List, Optional
@@ -87,6 +88,73 @@ class GeminiClient:
 
         except Exception as error:
             logger.exception("Error generando respuesta con Gemini: %s", error)
+            return FALLBACK_MESSAGE
+
+    async def analyze_canvas_image(
+        self,
+        canvas_b64_data: str,
+        system_prompt: str,
+        user_message: str,
+        temperature: float = DEFAULT_TEMPERATURE,
+        model: Optional[str] = None,
+    ) -> str:
+        """
+        Analiza una imagen de canvas usando la API multimodal de Gemini.
+
+        Args:
+            canvas_b64_data: Datos de imagen en Base64 (con o sin DataURL)
+            system_prompt: Prompt del sistema para el contexto pedagógico
+            user_message: Pregunta o contexto del usuario
+            temperature: Control de creatividad
+            model: Modelo a usar (por defecto el del cliente)
+
+        Returns:
+            Análisis visual en texto
+        """
+        chosen_model = model or self.model
+
+        try:
+            # Limpiar Base64 si incluye DataURL
+            if "," in canvas_b64_data:
+                canvas_b64_data = canvas_b64_data.split(",", 1)[1]
+
+            # Decodificar para validar que es imagen válida
+            image_bytes = base64.b64decode(canvas_b64_data)
+
+            # Crear contenido multimodal para Google GenAI SDK
+            def call_api() -> Any:
+                return self.client.models.generate_content(
+                    model=chosen_model,
+                    contents=[
+                        f"SYSTEM: {system_prompt}",
+                        f"USER: {user_message}",
+                        types.Part.from_data(data=image_bytes, mime_type="image/png"),
+                        "Analiza esta imagen y proporciona tu feedback pedagógico.",
+                    ],
+                    config=types.GenerateContentConfig(
+                        temperature=temperature,
+                        response_mime_type="text",
+                    ),
+                )
+
+            response = await asyncio.to_thread(call_api)
+
+            if hasattr(response, "text") and response.text:
+                return str(response.text)
+
+            if hasattr(response, "content") and response.content:
+                return str(response.content)
+
+            candidates = getattr(response, "candidates", None)
+            if isinstance(candidates, list) and candidates:
+                first = candidates[0]
+                if hasattr(first, "content"):
+                    return str(first.content)
+
+            return str(response)
+
+        except Exception as error:
+            logger.exception("Error analizando imagen con Gemini: %s", error)
             return FALLBACK_MESSAGE
 
 

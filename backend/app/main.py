@@ -7,9 +7,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.agents.pedagogic_agent import PedagogicAgent
 from app.agents.validator_agent import ValidatorAgent
 from app.models.database import db
-from app.models.schemas import ChatInput
+from app.models.schemas import ChatInput, CanvasInput
 from app.services.curriculum_manager import CurriculumManager
 from app.services.dynamic_loader import DynamicLoader
+from app.services.tts_service import TTSService
+from app.services.gemini_client import default_gemini_client
 from app.routers import governance, curriculum
 from app.api.analytics import router as analytics_router
 
@@ -19,16 +21,10 @@ app = FastAPI(
     version="1.0.0"
 )
 
-frontend_origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-]
-if os.getenv("FRONTEND_URL"):
-    frontend_origins.append(os.getenv("FRONTEND_URL"))
-
+# Configuración extendida de CORS para permitir la conexión fluida con Lovable y entornos locales
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=frontend_origins,
+    allow_origins=["*"],  # Habilitado para desarrollo ágil y conexión directa con Lovable Cloud
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -41,6 +37,7 @@ app.include_router(analytics_router)
 curriculum_manager = CurriculumManager()
 validator_agent = ValidatorAgent(curriculum_manager)
 pedagogic_agent = PedagogicAgent()
+tts_service = TTSService(language="es", lang_region="es-mx")
 
 @app.on_event("startup")
 def startup_event():
@@ -60,6 +57,21 @@ def health_check():
         "supabase_connection": supabase_status,
         "dynamic_tools_loaded": len(DynamicLoader._loaded_tools),
     }
+
+def _generate_audio_response(text: str) -> tuple:
+    """
+    Genera respuesta de audio desde el texto pedagógico.
+    Si falla, retorna (None, None) sin romper el flujo.
+    """
+    try:
+        audio_b64, mime_type = tts_service.text_to_speech(text)
+        return audio_b64, mime_type
+    except Exception as e:
+        import logging
+        logger = logging.getLogger(__name__)
+        logger.error(f"Error generando TTS: {str(e)}")
+        return None, None
+
 
 def _save_student_progress(supabase_client, payload) -> Optional[dict]:
     progress_payload = {
@@ -99,6 +111,12 @@ async def chat_interaction(chat_request: ChatInput):
 
         response_text = await pedagogic_agent.generate_lesson(payload, chat_request.message)
 
+        # Generar TTS si está habilitado
+        audio_b64 = None
+        audio_mime_type = None
+        if chat_request.enable_audio:
+            audio_b64, audio_mime_type = _generate_audio_response(response_text)
+
         saved_progress = None
         supabase_client = db.get_client()
         if supabase_client:
@@ -116,12 +134,207 @@ async def chat_interaction(chat_request: ChatInput):
                 "asignatura": payload.curriculum_unit.asignatura,
             },
             "pedagogic_response": response_text,
+            "audio_response_b64": audio_b64,
+            "audio_mime_type": audio_mime_type,
             "progress_record": payload.student_progress.model_dump(),
             "saved_progress": saved_progress,
         }
     except ValueError as ve:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(ve))
     except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=str(e),
+        )
+
+
+def _build_canvas_system_prompt(
+    curso: str,
+    asignatura: str,
+    id_oa: Optional[str] = None,
+    oa_metadata: Optional[dict] = None,
+) -> str:
+    """
+    Construye prompt del sistema para análisis de canvas pedagógico.
+    """
+    oa_context = ""
+    if id_oa and oa_metadata:
+        concepts = ", ".join(oa_metadata.get("conceptos_clave", []))
+        oa_context = f"\nOA objetivo: {id_oa}\nConceptos clave: {concepts}"
+
+    return f"""
+Actúa como el Super_Profesor evaluando el cuaderno o pizarra de un alumno de {curso} en {asignatura}.
+
+Tu rol es:
+1. Analizar VISUALMENTE el dibujo o escritura del niño en la imagen.
+2. Detectar qué conceptos están demostrando comprensión (ej. palitos para contar, figuras geométricas, operaciones).
+3. Evaluar el nivel de dominio: emerging (inicial), developing (en desarrollo), proficient (competente), advanced (avanzado).
+4. Proporcionar retroalimentación constructiva, empática y motivadora.
+5. Asignar una puntuación 0-1 de avance en el aprendizaje.{oa_context}
+
+Responde estructuradamente con: 
+- Análisis visual (qué observas)
+- Nivel de comprensión detectado
+- Feedback pedagógico positivo
+- Sugerencias específicas de mejora
+""".strip()
+
+
+def _parse_comprehension_level(text: str) -> str:
+    """
+    Infiere el nivel de comprensión desde el análisis textual.
+    """
+    text_lower = text.lower()
+    if "avanzado" in text_lower or "muy bien" in text_lower or "excelente" in text_lower:
+        return "advanced"
+    elif "competente" in text_lower or "correcto" in text_lower or "bien" in text_lower:
+        return "proficient"
+    elif "desarrollo" in text_lower or "intenta" in text_lower:
+        return "developing"
+    else:
+        return "emerging"
+
+
+def _extract_mastery_score(text: str) -> float:
+    """
+    Extrae una puntuación de avance del análisis (0-1).
+    Busca palabras clave o números en el texto.
+    """
+    text_lower = text.lower()
+    if "avanzado" in text_lower or "excelente" in text_lower:
+        return 0.9
+    elif "competente" in text_lower or "bien" in text_lower:
+        return 0.7
+    elif "desarrollo" in text_lower or "en progreso" in text_lower:
+        return 0.5
+    else:
+        return 0.3
+
+
+async def _save_canvas_progress(
+    supabase_client,
+    student_id: str,
+    curso: str,
+    asignatura: str,
+    id_oa: Optional[str],
+    comprehension_level: str,
+    mastery_advancement: float,
+) -> Optional[dict]:
+    """
+    Guarda el progreso del análisis de canvas en Supabase.
+    """
+    if not id_oa:
+        return None
+
+    try:
+        mastery_map = {
+            "emerging": "not_started",
+            "developing": "in_progress",
+            "proficient": "partial",
+            "advanced": "mastered",
+        }
+        new_level = mastery_map.get(comprehension_level, "in_progress")
+
+        progress_payload = {
+            "student_id": student_id,
+            "curso": curso,
+            "asignatura": asignatura,
+            "id_oa": id_oa,
+            "nivel_logro": new_level,
+            "evaluation_history": [
+                {
+                    "evaluation_type": "canvas_visual_analysis",
+                    "timestamp": None,
+                    "score": mastery_advancement,
+                }
+            ],
+            "aligned_resources": [],
+        }
+
+        response = supabase_client.table("student_oa_progress").upsert(
+            progress_payload,
+            on_conflict="student_id,id_oa",
+        ).execute()
+        return getattr(response, "data", None)
+    except Exception as e:
+        import logging
+        logger = logging.getLogger(__name__)
+        logger.error(f"Error guardando progreso de canvas: {str(e)}")
+        return None
+
+
+@app.post("/api/canvas/analyze")
+async def analyze_canvas(canvas_request: CanvasInput):
+    """
+    Endpoint para análisis visual de dibujos/escritura del alumno en la pizarra.
+    Utiliza Gemini multimodal para interpretar el canvas y generar feedback pedagógico.
+    """
+    try:
+        # Recuperar metadatos del OA si se proporciona id_oa
+        oa_metadata = None
+        if canvas_request.id_oa:
+            oa_metadata = curriculum_manager.get_oa_by_id(canvas_request.id_oa)
+
+        # Construir prompts
+        system_prompt = _build_canvas_system_prompt(
+            canvas_request.curso,
+            canvas_request.asignatura,
+            canvas_request.id_oa,
+            oa_metadata,
+        )
+
+        user_context = f"El alumno ha dibujado lo siguiente. {canvas_request.prompt_adicional or ''}"
+
+        # Analizar imagen con Gemini
+        visual_analysis = await default_gemini_client.analyze_canvas_image(
+            canvas_b64_data=canvas_request.canvas_data,
+            system_prompt=system_prompt,
+            user_message=user_context,
+            temperature=0.4,
+        )
+
+        # Inferir nivel de comprensión y puntuación
+        comprehension_level = _parse_comprehension_level(visual_analysis)
+        mastery_advancement = _extract_mastery_score(visual_analysis)
+
+        # Generar audio si está habilitado
+        audio_b64 = None
+        audio_mime_type = None
+        if canvas_request.enable_audio:
+            audio_b64, audio_mime_type = _generate_audio_response(visual_analysis)
+
+        # Guardar progreso en Supabase
+        saved_progress = None
+        supabase_client = db.get_client()
+        if supabase_client and canvas_request.id_oa:
+            saved_progress = await _save_canvas_progress(
+                supabase_client,
+                canvas_request.student_id,
+                canvas_request.curso,
+                canvas_request.asignatura,
+                canvas_request.id_oa,
+                comprehension_level,
+                mastery_advancement,
+            )
+
+        return {
+            "agent": "CanvasVisualAnalyzer",
+            "student_id": canvas_request.student_id,
+            "id_oa": canvas_request.id_oa,
+            "oa_metadata": oa_metadata,
+            "visual_analysis": visual_analysis,
+            "pedagogic_feedback": visual_analysis,
+            "audio_feedback_b64": audio_b64,
+            "audio_mime_type": audio_mime_type,
+            "comprehension_level": comprehension_level,
+            "mastery_advancement": mastery_advancement,
+            "saved_progress": saved_progress,
+        }
+
+    except Exception as e:
+        import logging
+        logger = logging.getLogger(__name__)
+        logger.exception(f"Error en análisis de canvas: {str(e)}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=str(e),

@@ -55,8 +55,15 @@ No inventes nuevos conceptos ni desvíes el enfoque. Debes sugerir un recurso ex
 Utiliza el archivo de recursos externos como anclaje rígido a continuación:
 {external_resources}
 
+INSTRUCCIONES CRÍTICAS PARA SALIDA DE AUDIO:
+- Responde en español latino natural, sin asteriscos, guiones largos ni caracteres especiales innecesarios.
+- Los primeros dos párrafos deben ser claros y pronunciables: evita Markdown complejo en las primeras líneas.
+- Estructura: Introducción amigable → Ejemplo → Actividad → Recomendación de recurso.
+- Usa frases cortas y naturales, como si hablaras con un niño de 8-9 años.
+- No incluyas códigos de programación, símbolos matemáticos complejos, ni abreviaturas raras en el audio.
+
 El resultado debe ser una mini-lección para el estudiante, con:
-1. Explicación breve y amigable.
+1. Explicación breve y amigable (primeros párrafos claros para audio).
 2. Ejemplo interactivo.
 3. Actividad práctica sugerida.
 4. Recomendación explícita de un recurso externo (Khan Academy, GeoGebra o PhET) que refuerce los conceptos.

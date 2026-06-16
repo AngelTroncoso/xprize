@@ -93,3 +93,39 @@ class ChatInput(BaseModel):
     session_id: Optional[str] = Field(None, description="ID de la sesión de chat")
     student_interest: Optional[str] = Field(None, description="Interés/Hobby para analogías (ej. fútbol, música, videojuegos)")
     current_topic: Optional[str] = Field(None, description="Tema en estudio actualmente")
+    enable_audio: bool = Field(default=True, description="Si es True, genera audio TTS de la respuesta")
+
+class ChatResponse(BaseModel):
+    agent: str = Field(..., description="Agente que generó la respuesta")
+    student_id: str = Field(..., description="ID del estudiante")
+    oa_metadata: Dict[str, Any] = Field(..., description="Metadatos del Objetivo de Aprendizaje")
+    pedagogic_response: str = Field(..., description="Respuesta textual del agente pedagógico")
+    audio_response_b64: Optional[str] = Field(None, description="Respuesta en audio codificada en Base64 (si enable_audio=True)")
+    audio_mime_type: Optional[str] = Field(None, description="Tipo MIME del audio (ej. audio/mpeg)")
+    progress_record: Dict[str, Any] = Field(..., description="Registro de progreso del estudiante")
+    saved_progress: Optional[Dict[str, Any]] = Field(None, description="Resultado de persistencia en Supabase")
+
+# --- Canvas Interactivo (Pizarra Compartida) ---
+class CanvasInput(BaseModel):
+    student_id: str = Field(..., description="ID del estudiante")
+    curso: str = Field(..., description="Curso del estudiante (ej. 3ro Basico)")
+    asignatura: str = Field(..., description="Asignatura (ej. Matematica)")
+    id_oa: Optional[str] = Field(None, description="ID del OA objetivo (ej. OA_01)")
+    canvas_data: str = Field(..., description="Imagen del trazo en formato Base64/DataURL")
+    prompt_adicional: Optional[str] = Field(None, description="Texto o nota adicional del alumno junto al dibujo")
+    enable_audio: bool = Field(default=True, description="Si es True, genera feedback en audio")
+
+class CanvasResponse(BaseModel):
+    agent: str = Field(..., description="Agente que generó el feedback")
+    student_id: str = Field(..., description="ID del estudiante")
+    id_oa: Optional[str] = Field(None, description="OA analizado")
+    oa_metadata: Optional[Dict[str, Any]] = Field(None, description="Metadatos del OA si está disponible")
+    visual_analysis: str = Field(..., description="Análisis visual del dibujo del alumno")
+    pedagogic_feedback: str = Field(..., description="Retroalimentación pedagógica estructurada")
+    audio_feedback_b64: Optional[str] = Field(None, description="Feedback en audio codificado en Base64")
+    audio_mime_type: Optional[str] = Field(None, description="Tipo MIME del audio")
+    comprehension_level: Literal["emerging", "developing", "proficient", "advanced"] = Field(
+        ..., description="Nivel de comprensión detectado del alumno"
+    )
+    mastery_advancement: float = Field(..., description="Puntuación 0-1 de avance en dominio del OA")
+    saved_progress: Optional[Dict[str, Any]] = Field(None, description="Registro guardado en Supabase")

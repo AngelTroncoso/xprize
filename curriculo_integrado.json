@@ -1,0 +1,692 @@
+[
+  {
+    "curso": "1° Básico",
+    "proyectos_integrados": [
+      {
+        "id_proyecto": "1B_PROY_01",
+        "nombre_proyecto": "La Feria de los Números y las Letras",
+        "descripcion": "Los estudiantes organizan una feria escolar donde deben contar y clasificar objetos (OA_01, OA_02 Matemática), registrar asistentes y recursos en tablas (OA_08 Matemática), y crear carteles informativos con oraciones completas y ortografía básica (OA_05, OA_06, OA_07 Lenguaje). Producto final: stand de feria con datos numéricos y textos descriptivos.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_01",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Contar números del 0 al 100, de 1 en 1, de 2 en 2, de 5 en 5 y de 10 en 10, hacia adelante y hacia atrás, empezando por cualquier número dado."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_02",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Leer, escribir y representar números del 0 al 100 usando objetos concretos, imágenes, recta numérica y tablas de 100, identificando el valor posicional de decenas y unidades."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_08",
+            "eje": "Datos y Probabilidades",
+            "descripcion_oa": "Recolectar y registrar datos para responder preguntas estadísticas sobre el entorno, usando tablas de conteo y pictogramas, e interpretar la información obtenida."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_05",
+            "eje": "Escritura",
+            "descripcion_oa": "Escribir con letra clara, usando el trazo correcto de letras mayúsculas y minúsculas, dejando espacio entre palabras y escribiendo de izquierda a derecha."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_06",
+            "eje": "Escritura",
+            "descripcion_oa": "Escribir oraciones completas sobre temas de su interés, usando mayúscula al inicio y punto final, e incorporando vocabulario aprendido en clases."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_07",
+            "eje": "Escritura",
+            "descripcion_oa": "Escribir con letra legible aplicando convenciones ortográficas básicas: mayúscula inicial, punto final y escritura correcta de palabras de uso frecuente del nivel."
+          }
+        ]
+      },
+      {
+        "id_proyecto": "1B_PROY_02",
+        "nombre_proyecto": "Figuras y Cuentos: Construyendo Nuestro Barrio Ideal",
+        "descripcion": "Los estudiantes diseñan una maqueta de su barrio soñado usando figuras y cuerpos geométricos (OA_06 Matemática), miden y comparan espacios (OA_07 Matemática), y escriben cuentos colaborativos describiendo su barrio (OA_03, OA_04, OA_08 Lenguaje). Producto final: maqueta del barrio con etiquetas descriptivas y cuento ilustrado.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_06",
+            "eje": "Geometría",
+            "descripcion_oa": "Identificar y describir figuras geométricas (cuadrado, rectángulo, triángulo y círculo) y cuerpos geométricos (cubo, esfera, cilindro y cono) en el entorno, nombrando sus características básicas."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_07",
+            "eje": "Medición",
+            "descripcion_oa": "Comparar y ordenar objetos según su longitud, masa y capacidad usando unidades de medida no estandarizadas, estimando y verificando mediciones."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_03",
+            "eje": "Lectura",
+            "descripcion_oa": "Leer de manera autónoma textos literarios y no literarios breves, aplicando las correspondencias letra-sonido para decodificar y comprender su sentido global."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_04",
+            "eje": "Lectura",
+            "descripcion_oa": "Comprender textos aplicando estrategias de comprensión lectora: predecir, preguntar, visualizar y sintetizar, respondiendo preguntas literales e inferenciales simples."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_08",
+            "eje": "Comunicación Oral",
+            "descripcion_oa": "Expresarse de manera clara y coherente usando un vocabulario variado, participando en conversaciones grupales, respetando turnos y narrando experiencias personales con inicio, desarrollo y final."
+          }
+        ]
+      },
+      {
+        "id_proyecto": "1B_PROY_03",
+        "nombre_proyecto": "La Tienda Mágica: Sumamos y Contamos Historias",
+        "descripcion": "Los estudiantes crean una tienda escolar donde deben sumar y restar precios (OA_04, OA_05 Matemática), comparar cantidades usando símbolos (OA_03 Matemática), y escribir anuncios publicitarios con oraciones completas (OA_01, OA_06 Lenguaje). Producto final: catálogo de productos con precios y textos promocionales.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_03",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Comparar y ordenar números del 0 al 100 usando los símbolos <, > e =, y argumentar el criterio de comparación."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_04",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Demostrar que comprenden la adición y la sustracción con números del 0 al 20, usando objetos concretos, imágenes y símbolos, y resolver problemas simples."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_05",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Demostrar que comprenden la adición y la sustracción con números del 0 al 100, con y sin reagrupación, y usarlas para resolver problemas en contextos concretos."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_01",
+            "eje": "Lectura",
+            "descripcion_oa": "Reconocer que los textos escritos transmiten mensajes, que son escritos por alguien con un propósito, y distinguir entre textos literarios y no literarios."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_02",
+            "eje": "Lectura",
+            "descripcion_oa": "Reconocer que las palabras son unidades de significado separadas por espacios en el texto escrito, y distinguir entre letra, sílaba y palabra."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_06",
+            "eje": "Escritura",
+            "descripcion_oa": "Escribir oraciones completas sobre temas de su interés, usando mayúscula al inicio y punto final, e incorporando vocabulario aprendido en clases."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "proyectos_integrados": [
+      {
+        "id_proyecto": "2B_PROY_01",
+        "nombre_proyecto": "El Gran Censo de la Comunidad Escolar",
+        "descripcion": "Los estudiantes realizan un censo en su comunidad escolar: cuentan estudiantes por curso (OA_01 Matemática), comparan datos con símbolos (OA_02 Matemática), representan la información en tablas y gráficos de barra (OA_09 Matemática), y redactan un informe con los hallazgos usando el proceso de escritura (OA_05, OA_06 Lenguaje). Producto final: informe censal ilustrado con gráficos y texto descriptivo.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_01",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Leer, escribir, contar y representar números del 0 al 1.000, identificando el valor posicional de centenas, decenas y unidades, y usando material base 10."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_02",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Comparar y ordenar números del 0 al 1.000 usando los símbolos <, > e =, y la recta numérica, justificando con el valor posicional."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_09",
+            "eje": "Datos y Probabilidades",
+            "descripcion_oa": "Recolectar y representar datos en tablas de frecuencia y gráficos de barra simples, e interpretar la información obtenida respondiendo preguntas estadísticas."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_05",
+            "eje": "Escritura",
+            "descripcion_oa": "Escribir textos narrativos y descriptivos breves aplicando el proceso de escritura: planificación, escritura de borrador, revisión y edición, incorporando inicio, desarrollo y desenlace."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_06",
+            "eje": "Escritura",
+            "descripcion_oa": "Aplicar convenciones ortográficas del nivel: mayúscula en inicio de oración y nombres propios, punto, coma en enumeraciones, y signos de interrogación y exclamación."
+          }
+        ]
+      },
+      {
+        "id_proyecto": "2B_PROY_02",
+        "nombre_proyecto": "Multiplicando Sabores: El Recetario Saludable",
+        "descripcion": "Los estudiantes crean un recetario saludable para el curso: calculan el doble y la mitad de ingredientes (OA_04, OA_05 Matemática), miden longitudes y capacidades con unidades estandarizadas (OA_07 Matemática), y escriben las recetas siguiendo la estructura de textos instructivos (OA_02, OA_03, OA_07 Lenguaje). Producto final: recetario ilustrado con medidas y textos instruccionales.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_04",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Demostrar que comprenden la multiplicación como adición repetida y en disposición rectangular, con factores del 1 al 10, y memorizar las tablas de multiplicar del 2, 5 y 10."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_05",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Identificar la mitad y el doble de un número y relacionarlos con la división y la multiplicación por 2, resolviendo problemas simples de reparto equitativo."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_07",
+            "eje": "Medición",
+            "descripcion_oa": "Medir la longitud de objetos usando unidades estandarizadas (centímetro y metro), estimando y verificando mediciones, y comprendiendo que 1 metro = 100 centímetros."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_02",
+            "eje": "Lectura",
+            "descripcion_oa": "Comprender textos aplicando estrategias: extraer información explícita, realizar inferencias de causa-efecto, determinar el tema principal y resumir con sus propias palabras."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_03",
+            "eje": "Lectura",
+            "descripcion_oa": "Leer y comprender textos literarios (cuentos, fábulas, poemas, adivinanzas), identificando personajes, trama, ambiente, moraleja y recursos sonoros como la rima."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_07",
+            "eje": "Comunicación Oral",
+            "descripcion_oa": "Comprender y producir textos orales de distintos tipos: narrar, describir, explicar y opinar con fundamento, respetando los turnos de habla y las normas de conversación grupal."
+          }
+        ]
+      },
+      {
+        "id_proyecto": "2B_PROY_03",
+        "nombre_proyecto": "El Reloj Viajero: Midamos el Tiempo y Escribamos Aventuras",
+        "descripcion": "Los estudiantes exploran el concepto del tiempo: leen relojes analógicos y digitales, interpretan calendarios (OA_08 Matemática), construyen líneas de tiempo de sus actividades diarias (OA_03 Matemática), y escriben diarios de aventuras usando conectores temporales (OA_01, OA_04, OA_05 Lenguaje). Producto final: diario de aventuras ilustrado con líneas de tiempo y registros horarios.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_03",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Demostrar que comprenden la adición y la sustracción con números del 0 al 1.000, con y sin reagrupación, y usarlas para resolver problemas cotidianos de una etapa."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_08",
+            "eje": "Medición",
+            "descripcion_oa": "Leer y comunicar el tiempo en horas y minutos usando reloj analógico y digital, y relacionar el calendario con el año, los meses y los días de la semana."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_01",
+            "eje": "Lectura",
+            "descripcion_oa": "Leer en voz alta de manera fluida y expresiva variados textos, con velocidad y precisión lectora adecuada al nivel (mínimo 50-70 palabras por minuto), respetando la puntuación."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_04",
+            "eje": "Lectura",
+            "descripcion_oa": "Ampliar el vocabulario a través de la lectura, usando el contexto para inferir el significado de palabras nuevas, consultando el diccionario y distinguiendo sinónimos y antónimos."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_05",
+            "eje": "Escritura",
+            "descripcion_oa": "Escribir textos narrativos y descriptivos breves aplicando el proceso de escritura: planificación, escritura de borrador, revisión y edición, incorporando inicio, desarrollo y desenlace."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "proyectos_integrados": [
+      {
+        "id_proyecto": "5B_PROY_01",
+        "nombre_proyecto": "Periodistas de Datos: El Informe Anual de Nuestra Comunidad",
+        "descripcion": "Los estudiantes recopilan datos sobre su comunidad (población, áreas verdes, servicios), leen e interpretan la información en diversos gráficos (OA_08 Matemática), calculan áreas de espacios públicos usando fórmulas geométricas (OA_07 Matemática), y redactan un artículo informativo con estructura de reportaje periodístico (OA_04, OA_05, OA_06 Lenguaje). Producto final: periódico escolar con reportajes basados en datos y gráficos.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_07",
+            "eje": "Geometría",
+            "descripcion_oa": "Calcular el área de figuras planas (cuadrado, rectángulo y triángulo) usando fórmulas, y el perímetro de polígonos, distinguiendo entre ambas magnitudes y usando las unidades correctas."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_08",
+            "eje": "Datos y Probabilidades",
+            "descripcion_oa": "Leer e interpretar datos en tablas de frecuencia, gráficos de barra, de línea y circulares, calcular el promedio aritmético e identificar la moda y el rango de un conjunto de datos."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_04",
+            "eje": "Lectura",
+            "descripcion_oa": "Analizar textos no literarios (noticias, reportajes, cartas, artículos informativos) identificando propósito comunicativo, estructura y distinción entre lenguaje objetivo y subjetivo."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_05",
+            "eje": "Escritura",
+            "descripcion_oa": "Escribir textos de manera eficiente aplicando el proceso completo: planificar, redactar con introducción-desarrollo-conclusión, revisar considerando coherencia y cohesión, editar y publicar."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_06",
+            "eje": "Escritura",
+            "descripcion_oa": "Aplicar correctamente las normas ortográficas del nivel: tilde en palabras agudas, graves y esdrújulas; uso de b/v, h, c/s/z; mayúsculas en nombres propios, y manejo autónomo del diccionario."
+          }
+        ]
+      },
+      {
+        "id_proyecto": "5B_PROY_02",
+        "nombre_proyecto": "Chef Científico: Fracciones en la Cocina del Mundo",
+        "descripcion": "Los estudiantes exploran recetas internacionales trabajando con fracciones propias, impropias y números mixtos (OA_02 Matemática), suman y restan fracciones con distinto denominador para ajustar porciones (OA_03 Matemática), y crean un recetario literario donde cada receta va acompañada de una leyenda o mito del país de origen (OA_03, OA_07 Lenguaje). Producto final: recetario intercultural con fracciones y narrativa.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_02",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Demostrar que comprenden las fracciones propias e impropias y los números mixtos, representándolos concreta, pictórica y simbólicamente, e identificando fracciones equivalentes."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_03",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Realizar adición y sustracción de fracciones con distinto denominador, usando el mínimo común múltiplo (MCM) para igualar denominadores y simplificando el resultado."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_03",
+            "eje": "Lectura",
+            "descripcion_oa": "Leer y analizar textos literarios (cuentos, novelas, poemas, leyendas, mitos) identificando narrador, punto de vista, conflicto, tema y recursos literarios: comparación, personificación, hipérbole y metáfora."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_07",
+            "eje": "Escritura",
+            "descripcion_oa": "Escribir textos literarios creativos (cuentos, poemas, cartas) aplicando recursos literarios, siguiendo convenciones del género e incorporando diálogos con raya de diálogo o comillas."
+          }
+        ]
+      },
+      {
+        "id_proyecto": "5B_PROY_03",
+        "nombre_proyecto": "Misión Espacial: Potencias, Ecuaciones y Bitácoras Intergalácticas",
+        "descripcion": "Los estudiantes planifican una misión espacial: calculan distancias usando potencias de base 10 y notación científica (OA_01, OA_05 Matemática), resuelven ecuaciones para determinar combustible y recursos (OA_06 Matemática), y escriben bitácoras de viaje y diálogos de exploración espacial (OA_01, OA_02, OA_08 Lenguaje). Producto final: bitácora de misión espacial con cálculos de navegación y narrativa de exploración.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_01",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Representar y describir números naturales de más de 6 dígitos y menores que 1.000.000.000, y números decimales hasta centésimos, usando el valor posicional y la notación expandida."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_05",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Calcular potencias de base 10 y relacionarlas con el valor posicional del sistema de numeración decimal."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_06",
+            "eje": "Patrones y Álgebra",
+            "descripcion_oa": "Determinar el valor de una incógnita en ecuaciones que involucran las cuatro operaciones con números naturales, verificando la solución por sustitución."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_01",
+            "eje": "Lectura",
+            "descripcion_oa": "Leer de manera fluida textos literarios y no literarios con velocidad, precisión y entonación adecuadas al nivel (mínimo 120 palabras por minuto), respetando los signos de puntuación."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_02",
+            "eje": "Lectura",
+            "descripcion_oa": "Comprender textos aplicando estrategias: distinguir información explícita de implícita, realizar inferencias, sintetizar, distinguir hecho de opinión y evaluar críticamente la información."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_08",
+            "eje": "Comunicación Oral",
+            "descripcion_oa": "Expresarse de manera clara, coherente y organizada en presentaciones orales y debates, usando recursos verbales y no verbales, argumentando con fundamentos y respetando turnos."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "proyectos_integrados": [
+      {
+        "id_proyecto": "6B_PROY_01",
+        "nombre_proyecto": "Finanzas Juveniles: Porcentajes, Ahorro y Debate de Consumo",
+        "descripcion": "Los estudiantes simulan la gestión de un presupuesto escolar: calculan porcentajes, descuentos e IVA (OA_03 Matemática), aplican proporcionalidad directa para planificar gastos (OA_05 Matemática), y redactan cartas de opinión argumentadas sobre consumo responsable y publicidad (OA_04, OA_05 Lenguaje). Producto final: plan financiero personal y carta de opinión publicada en el periódico escolar.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_03",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Demostrar que comprenden los porcentajes y su relación con fracciones y decimales, calculando el porcentaje de una cantidad y aplicándolos en problemas de descuentos, IVA e interés simple."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_05",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Aplicar la razón y la proporción para resolver problemas de proporcionalidad directa mediante regla de tres simple, y representar relaciones proporcionales en tablas y gráficos."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_04",
+            "eje": "Escritura",
+            "descripcion_oa": "Escribir textos argumentativos (cartas de opinión, comentarios, reseñas) con tesis clara, argumentos sustentados en evidencias, conclusión y uso de conectores argumentativos."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_05",
+            "eje": "Escritura",
+            "descripcion_oa": "Aplicar correctamente las normas ortográficas y gramaticales del nivel: acento diacrítico, tiempos verbales (pretérito perfecto, imperfecto y condicional), concordancia de género y número, y uso de la coma."
+          }
+        ]
+      },
+      {
+        "id_proyecto": "6B_PROY_02",
+        "nombre_proyecto": "Arquitectos del Futuro: Volúmenes, Planos y Narrativa Urbana",
+        "descripcion": "Los estudiantes diseñan una ciudad sostenible: calculan volúmenes de edificios y espacios (OA_07 Matemática), trabajan con números enteros para representar altitudes y temperaturas (OA_01, OA_02 Matemática), y escriben relatos futuristas con estructura narrativa compleja y uso de tiempos verbales variados (OA_02, OA_06 Lenguaje). Producto final: maqueta de ciudad sostenible con plano y relato de ciencia ficción.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_01",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Demostrar que comprenden los números enteros (positivos, negativos y cero), representándolos en la recta numérica, comparándolos, y calculando valor absoluto y opuesto."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_02",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Realizar adición, sustracción y multiplicación de números enteros aplicando la regla de signos, y resolver problemas contextualizados con estas operaciones."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_07",
+            "eje": "Geometría",
+            "descripcion_oa": "Calcular el volumen de prismas rectangulares y cubos usando fórmulas, expresarlo en cm³ y m³, y relacionarlo con la capacidad (1 cm³ = 1 mL; 1.000 cm³ = 1 L)."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_02",
+            "eje": "Lectura",
+            "descripcion_oa": "Analizar textos literarios de distintos géneros (cuento, novela, poesía, teatro), interpretando el desarrollo de personajes, el tema central, los valores y los recursos literarios: símil, metáfora, aliteración e hipérbole."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_06",
+            "eje": "Escritura",
+            "descripcion_oa": "Escribir textos creativos (relatos con flashback, poemas con recursos literarios, textos dramáticos con acotaciones y diálogos), revisando y editando con atención al estilo y la coherencia."
+          }
+        ]
+      },
+      {
+        "id_proyecto": "6B_PROY_03",
+        "nombre_proyecto": "El Gran Debate: Estadísticas, Ecuaciones y Argumentación",
+        "descripcion": "Los estudiantes investigan un tema de impacto social usando estadísticas: calculan e interpretan medidas de tendencia central y rango (OA_08 Matemática), resuelven ecuaciones para modelar situaciones (OA_06 Matemática), y participan en debates formales argumentando con evidencias estadísticas (OA_03, OA_07 Lenguaje). Producto final: debate escolar con argumentos respaldados por datos estadísticos y presentación visual.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_06",
+            "eje": "Patrones y Álgebra",
+            "descripcion_oa": "Resolver ecuaciones de primer grado con una incógnita del tipo ax + b = c, usando propiedades de igualdad, verificando la solución por sustitución y planteando ecuaciones desde problemas."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_08",
+            "eje": "Datos y Probabilidades",
+            "descripcion_oa": "Calcular e interpretar medidas de tendencia central (media, moda y mediana) y el rango, y usar estos estadísticos para comparar conjuntos de datos y representarlos en histogramas."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_03",
+            "eje": "Lectura",
+            "descripcion_oa": "Analizar textos no literarios de mediana complejidad (artículos de opinión, reportajes, textos digitales), identificando la tesis, los argumentos, las técnicas persuasivas y evaluando la confiabilidad de las fuentes."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_07",
+            "eje": "Comunicación Oral",
+            "descripcion_oa": "Participar en discusiones y debates argumentados, formulando y defendiendo una posición con argumentos y evidencias, refutando con respeto y distinguiendo entre argumentos válidos y falacias simples."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "proyectos_integrados": [
+      {
+        "id_proyecto": "7B_PROY_01",
+        "nombre_proyecto": "Exploradores del Universo: Potencias, Raíces y Crónicas Cósmicas",
+        "descripcion": "Los estudiantes exploran el sistema solar usando notación científica para distancias y masas planetarias (OA_02 Matemática), calculan raíces cuadradas relacionadas con órbitas y trayectorias (OA_03 Matemática), y redactan crónicas periodísticas sobre el descubrimiento de un nuevo exoplaneta (OA_02, OA_04 Lenguaje). Producto final: revista de divulgación científica con cálculos astronómicos y crónicas de exploración.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_02",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Demostrar que comprenden las potencias de base entera y exponente natural, aplicar sus propiedades (producto, cociente, potencia de potencia) y expresar números en notación científica."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_03",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Calcular raíces cuadradas exactas de cuadrados perfectos y aproximadas de números no cuadrados, relacionándolas con la potencia de exponente 2."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_01",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Demostrar que comprenden las cuatro operaciones con números enteros y racionales, aplicando la jerarquía de operaciones y resolviendo problemas de múltiples etapas."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_02",
+            "eje": "Lectura",
+            "descripcion_oa": "Analizar textos no literarios de mayor complejidad (crónica periodística, informe, discurso, texto digital multimedia), evaluando propósito, recursos retóricos y confiabilidad de fuentes digitales."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_04",
+            "eje": "Escritura",
+            "descripcion_oa": "Escribir textos expositivos y argumentativos (informes, ensayos breves, artículos de opinión) con estructura clara, incorporando citas textuales y paráfrasis de fuentes, conectores discursivos variados y registro formal."
+          }
+        ]
+      },
+      {
+        "id_proyecto": "7B_PROY_02",
+        "nombre_proyecto": "Pitágoras y los Acróbatas: Geometría del Circo y Poesía en Movimiento",
+        "descripcion": "Los estudiantes diseñan un espectáculo circense: aplican el teorema de Pitágoras para calcular alturas y distancias de seguridad en los actos (OA_06 Matemática), calculan áreas circulares de la pista (OA_07 Matemática), y escriben poemas y textos dramáticos inspirados en el mundo del circo (OA_01, OA_05 Lenguaje). Producto final: propuesta de espectáculo circense con memorias de cálculo y creación literaria.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_06",
+            "eje": "Geometría",
+            "descripcion_oa": "Aplicar el teorema de Pitágoras para calcular lados desconocidos en triángulos rectángulos, verificar si un triángulo es rectángulo y resolver problemas de distancias y alturas."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_07",
+            "eje": "Geometría",
+            "descripcion_oa": "Calcular el área y la circunferencia del círculo usando las fórmulas A = πr² y C = 2πr, y resolver problemas que combinan ambas medidas."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_01",
+            "eje": "Lectura",
+            "descripcion_oa": "Leer y analizar obras literarias de tradición oral y escrita (mitos, epopeyas, cuentos clásicos, novelas breves), relacionándolas con su contexto histórico-cultural de producción y comparando versiones de distintas culturas."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_05",
+            "eje": "Escritura",
+            "descripcion_oa": "Aplicar correctamente las normas gramaticales y ortográficas del nivel: oraciones subordinadas sustantivas, adjetivas y adverbiales; modo subjuntivo; participio; uso de la coma en oraciones compuestas; y concordancia verbal."
+          }
+        ]
+      },
+      {
+        "id_proyecto": "7B_PROY_03",
+        "nombre_proyecto": "Probabilidad y Mito: Azar, Decisiones y Narrativa Épica",
+        "descripcion": "Los estudiantes exploran el concepto de probabilidad en juegos de azar y decisiones cotidianas (OA_08 Matemática), modelan situaciones con expresiones algebraicas y ecuaciones (OA_04, OA_05 Matemática), y crean relatos épicos donde los personajes enfrentan decisiones basadas en probabilidades (OA_03, OA_06 Lenguaje). Producto final: libro de cuentos interactivos con diagramas de probabilidad y decisiones narrativas.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_04",
+            "eje": "Patrones y Álgebra",
+            "descripcion_oa": "Demostrar que comprenden las expresiones algebraicas: identificar monomios y polinomios, simplificar términos semejantes, evaluar por sustitución, y sumar y restar polinomios."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_05",
+            "eje": "Patrones y Álgebra",
+            "descripcion_oa": "Resolver ecuaciones de primer grado con una incógnita de la forma ax + b = cx + d, e inecuaciones simples, representando la solución en la recta numérica e interpretándola en contextos."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_08",
+            "eje": "Datos y Probabilidades",
+            "descripcion_oa": "Calcular probabilidades de eventos simples usando la regla de Laplace, distinguir entre probabilidad teórica y experimental, y expresar probabilidades como fracción, decimal y porcentaje."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_03",
+            "eje": "Lectura",
+            "descripcion_oa": "Aplicar estrategias de comprensión profunda: evaluar críticamente ideas de un texto cuestionando supuestos y sesgos, establecer relaciones intertextuales y formular juicios fundados sobre la validez de los argumentos."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_06",
+            "eje": "Comunicación Oral",
+            "descripcion_oa": "Producir textos orales formales (discursos, exposiciones académicas) con estructura de exordio-argumentación-conclusión, usando recursos retóricos con intención persuasiva y adaptando el registro al contexto."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "8° Básico",
+    "proyectos_integrados": [
+      {
+        "id_proyecto": "8B_PROY_01",
+        "nombre_proyecto": "Matemática Financiera y Prensa Crítica: Inversiones, Funciones y Editoriales",
+        "descripcion": "Los estudiantes simulan inversiones en la bolsa: modelan el crecimiento de capital usando funciones lineales y afines (OA_03 Matemática), resuelven sistemas de ecuaciones para optimizar carteras de inversión (OA_04 Matemática), y redactan editoriales y ensayos críticos sobre economía y sociedad (OA_02, OA_04 Lenguaje). Producto final: portafolio de inversión simulado con análisis funcional y editorial económico.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_03",
+            "eje": "Patrones y Álgebra",
+            "descripcion_oa": "Demostrar que comprenden las funciones lineales (y = mx) y afines (y = mx + b), calculando la pendiente e intercepto, representándolas en tablas y en el plano cartesiano, e interpretando su significado."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_04",
+            "eje": "Patrones y Álgebra",
+            "descripcion_oa": "Resolver sistemas de dos ecuaciones lineales con dos incógnitas mediante los métodos de sustitución, igualación y gráfico, clasificando el sistema y resolviendo problemas de enunciado."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_02",
+            "eje": "Lectura",
+            "descripcion_oa": "Analizar textos no literarios complejos (ensayos, discursos, textos académicos, medios digitales), evaluando la solidez de los argumentos, identificando sesgos y distinguiendo objetividad de subjetividad."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_04",
+            "eje": "Escritura",
+            "descripcion_oa": "Escribir ensayos y textos argumentativos de mayor extensión y complejidad, con tesis, desarrollo de argumentos sustentados en fuentes citadas correctamente, contraargumentos y conclusión bien articulada."
+          }
+        ]
+      },
+      {
+        "id_proyecto": "8B_PROY_02",
+        "nombre_proyecto": "Construyendo el Mundo: Volúmenes, Factorización y Literatura de Viajes",
+        "descripcion": "Los estudiantes diseñan un parque temático: calculan volúmenes de prismas, pirámides, cilindros, conos y esferas (OA_06 Matemática), simplifican expresiones algebraicas y factorizan para optimizar recursos (OA_05 Matemática), y escriben crónicas de viaje con descripciones detalladas y estructura narrativa no lineal (OA_01, OA_06 Lenguaje). Producto final: guía turística del parque temático con cálculos de volumen y crónicas literarias.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_05",
+            "eje": "Patrones y Álgebra",
+            "descripcion_oa": "Operar con expresiones algebraicas: aplicar productos notables (cuadrado de binomio, suma por diferencia), factorizar usando factor común y trinomios de la forma x² + bx + c, y simplificar fracciones algebraicas."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_06",
+            "eje": "Geometría",
+            "descripcion_oa": "Calcular el área lateral, total y el volumen de prismas, pirámides, cilindros, conos y esferas usando las fórmulas correspondientes, y resolver problemas contextualizados."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_01",
+            "eje": "Lectura",
+            "descripcion_oa": "Leer y analizar textos literarios de distintas épocas y géneros (novela, poesía lírica, teatro clásico y contemporáneo), interpretando el contexto histórico-cultural y sus proyecciones a la actualidad."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_06",
+            "eje": "Escritura",
+            "descripcion_oa": "Escribir textos creativos de mayor complejidad (cuentos con estructura no lineal, poemas de vanguardia, monólogos dramáticos) usando recursos literarios con intención estética y estilo personal definido."
+          }
+        ]
+      },
+      {
+        "id_proyecto": "8B_PROY_03",
+        "nombre_proyecto": "Realidades Numéricas y Discursos: Números Reales, Probabilidad y Oratoria",
+        "descripcion": "Los estudiantes investigan fenómenos sociales usando números reales, racionales e irracionales (OA_01 Matemática), aplican probabilidad de eventos compuestos con diagramas de Venn (OA_07 Matemática), y preparan discursos persuasivos y seminarios sobre temas de contingencia (OA_03, OA_07 Lenguaje). Producto final: seminario escolar con presentación de datos probabilísticos y discursos argumentados.",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_01",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Demostrar que comprenden los números reales, distinguiendo entre racionales (decimales finitos y periódicos) e irracionales, y representándolos en la recta numérica."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_02",
+            "eje": "Números y Operaciones",
+            "descripcion_oa": "Aplicar propiedades de las potencias con exponente entero (positivo, negativo y cero) y operar con números expresados en notación científica, convirtiendo entre ambas notaciones."
+          },
+          {
+            "asignatura": "Matemática",
+            "codigo_oa": "OA_07",
+            "eje": "Datos y Probabilidades",
+            "descripcion_oa": "Calcular probabilidades de eventos compuestos (unión e intersección) aplicando el principio de adición P(A ∪ B) = P(A) + P(B) − P(A ∩ B), y usar diagramas de Venn para representar los eventos."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_03",
+            "eje": "Lectura",
+            "descripcion_oa": "Aplicar estrategias de lectura crítica: evaluar la veracidad e intencionalidad de los textos, establecer relaciones intertextuales complejas y formular interpretaciones sustentadas en evidencia textual."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_05",
+            "eje": "Escritura",
+            "descripcion_oa": "Aplicar correctamente las normas gramaticales del nivel: oraciones subordinadas de distintos tipos, voz activa y pasiva, uso del modo indicativo y subjuntivo en contextos complejos, y puntuación avanzada (punto y coma, dos puntos)."
+          },
+          {
+            "asignatura": "Lenguaje y Comunicación",
+            "codigo_oa": "OA_07",
+            "eje": "Comunicación Oral",
+            "descripcion_oa": "Producir y evaluar textos orales formales de mayor complejidad (seminarios, mesas redondas, entrevistas), adaptando el registro, anticipando contraargumentos y evaluando la efectividad comunicativa mediante rúbricas."
+          }
+        ]
+      }
+    ]
+  }
+]

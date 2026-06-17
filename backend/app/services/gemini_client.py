@@ -4,40 +4,39 @@ import logging
 import os
 from typing import Any, Dict, List, Optional
 
+from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+
+load_dotenv()
 
 logger = logging.getLogger(__name__)
 
 DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
 DEFAULT_TEMPERATURE = 0.4
 FALLBACK_MESSAGE = (
-    "Ocurrió un problema al generar la respuesta pedagógica con Gemini. "
+    "Ocurrio un problema al generar la respuesta pedagogica con Gemini. "
     "Intenta nuevamente en unos segundos."
 )
 
 
 class GeminiClient:
     def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None) -> None:
-        # 1. Intentar usar la key explícita o la del entorno actual
         self.api_key = api_key or os.getenv("GEMINI_API_KEY")
-        
-        # 2. Si no se encuentra, forzar la lectura manual del archivo .env local
-        if not self.api_key:
-            from dotenv import load_dotenv
-            load_dotenv()
-            self.api_key = os.getenv("GEMINI_API_KEY")
-            
-        # 3. Si sigue sin existir, usamos tu clave como respaldo definitivo para desarrollo
-        if not self.api_key:
-            self.api_key = "REPLACE_WITH_YOUR_GEMINI_API_KEY"
-
-        # Validación final de seguridad
-        if not self.api_key:
-            raise EnvironmentError("GEMINI_API_KEY no está configurada en el entorno ni en el respaldo.")
-
         self.model = model or DEFAULT_MODEL
+        self.client = genai.Client(api_key=self.api_key) if self._has_api_key() else None
+
+    def _has_api_key(self) -> bool:
+        return bool(self.api_key and not self.api_key.startswith("your-"))
+
+    def _ensure_client(self) -> bool:
+        if self.client:
+            return True
+        if not self._has_api_key():
+            logger.warning("GEMINI_API_KEY no esta configurada; se omite llamada a Gemini.")
+            return False
         self.client = genai.Client(api_key=self.api_key)
+        return True
 
     async def generate_pedagogic_response(
         self,
@@ -47,6 +46,9 @@ class GeminiClient:
         temperature: float = DEFAULT_TEMPERATURE,
         model: Optional[str] = None,
     ) -> str:
+        if not self._ensure_client():
+            return FALLBACK_MESSAGE
+
         chosen_model = model or self.model
         contents: List[str] = [f"SYSTEM: {system_prompt}"]
 
@@ -111,30 +113,17 @@ class GeminiClient:
         temperature: float = DEFAULT_TEMPERATURE,
         model: Optional[str] = None,
     ) -> str:
-        """
-        Analiza una imagen de canvas usando la API multimodal de Gemini.
+        if not self._ensure_client():
+            return FALLBACK_MESSAGE
 
-        Args:
-            canvas_b64_data: Datos de imagen en Base64 (con o sin DataURL)
-            system_prompt: Prompt del sistema para el contexto pedagógico
-            user_message: Pregunta o contexto del usuario
-            temperature: Control de creatividad
-            model: Modelo a usar (por defecto el del cliente)
-
-        Returns:
-            Análisis visual en texto
-        """
         chosen_model = model or self.model
 
         try:
-            # Limpiar Base64 si incluye DataURL
             if "," in canvas_b64_data:
                 canvas_b64_data = canvas_b64_data.split(",", 1)[1]
 
-            # Decodificar para validar que es imagen válida
             image_bytes = base64.b64decode(canvas_b64_data)
 
-            # Crear contenido multimodal para Google GenAI SDK
             def call_api() -> Any:
                 return self.client.models.generate_content(
                     model=chosen_model,
@@ -142,7 +131,7 @@ class GeminiClient:
                         f"SYSTEM: {system_prompt}",
                         f"USER: {user_message}",
                         types.Part.from_data(data=image_bytes, mime_type="image/png"),
-                        "Analiza esta imagen y proporciona tu feedback pedagógico.",
+                        "Analiza esta imagen y proporciona tu feedback pedagogico.",
                     ],
                     config=types.GenerateContentConfig(
                         temperature=temperature,
@@ -170,9 +159,5 @@ class GeminiClient:
             logger.exception("Error analizando imagen con Gemini: %s", error)
             return FALLBACK_MESSAGE
 
-
-# 🚨 SEGURO EXTRA: Forzar la carga de variables de entorno también en la raíz del módulo
-from dotenv import load_dotenv
-load_dotenv()
 
 default_gemini_client = GeminiClient()

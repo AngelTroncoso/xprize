@@ -6,6 +6,7 @@ Alineado con la estructura JSON ingestada en curriculum_data.json
 from fastapi import APIRouter, HTTPException, status, Query
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
+from uuid import UUID
 from app.services.curriculum_manager import CurriculumManager
 from app.models.database import db
 from app.models.schemas import OAProgressRecord
@@ -14,6 +15,16 @@ router = APIRouter(prefix="/api/curriculum", tags=["Currículo MINEDUC"])
 
 # Instanciar el gestor curricular (carga y indexa automáticamente)
 curriculum_manager = CurriculumManager()
+
+
+def _validate_student_uuid(student_id: str) -> str:
+    try:
+        return str(UUID(str(student_id)))
+    except (TypeError, ValueError):
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail="student_id debe ser un UUID válido compatible con Supabase.",
+        )
 
 # ============================================
 # ENDPOINTS DE CONSULTA CURRICULAR
@@ -176,6 +187,7 @@ def get_student_progress(student_id: str):
     }
     ```
     """
+    student_id = _validate_student_uuid(student_id)
     supabase_client = db.get_client()
     
     if not supabase_client:
@@ -206,6 +218,7 @@ def recommend_next_topic(student_id: str):
     2. Si no hay, busca el primer "not_started" con prerequisitos completados
     3. Si todos están dominados, sugiere OA de expansión
     """
+    student_id = _validate_student_uuid(student_id)
     supabase_client = db.get_client()
     
     if not supabase_client:
@@ -221,7 +234,10 @@ def recommend_next_topic(student_id: str):
             "student_id", student_id
         ).execute()
         
-        progress_map = {rec["id_oa"]: rec["mastery_level"] for rec in response.data}
+        progress_map = {
+            rec["id_oa"]: rec.get("nivel_logro", rec.get("mastery_level", "not_started"))
+            for rec in response.data
+        }
         
         # 1. Buscar OA en "partial"
         for oa_id, oa_data in curriculum_manager._oa_index.items():
@@ -272,7 +288,7 @@ def _build_progress_response(student_id: str, progress_records: Dict[str, Any]) 
     
     for oa_id, oa_data in curriculum_manager._oa_index.items():
         rec = progress_records.get(oa_id, {})
-        mastery = rec.get("mastery_level", "not_started")
+        mastery = rec.get("nivel_logro", rec.get("mastery_level", "not_started"))
         
         progress_by_oa[oa_id] = {
             "id_oa": oa_id,

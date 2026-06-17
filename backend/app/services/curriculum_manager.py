@@ -33,7 +33,11 @@ class CurriculumManager:
         self._oa_index: Dict[str, Dict[str, Any]] = self._build_oa_index()
 
     def _load_curriculum(self) -> List[Dict[str, Any]]:
-        """Carga el JSON curricular oficial de MINEDUC desde el almacenamiento local."""
+        """Carga el curriculo oficial de MINEDUC desde Supabase o almacenamiento local."""
+        supabase_curriculum = self._load_curriculum_from_supabase()
+        if supabase_curriculum:
+            return supabase_curriculum
+
         curriculum_path = os.path.join(
             os.path.dirname(__file__),
             "../models/curriculum_data.json"
@@ -42,6 +46,44 @@ class CurriculumManager:
             with open(curriculum_path, 'r', encoding='utf-8') as f:
                 return json.load(f)
         return []
+
+    def _load_curriculum_from_supabase(self) -> List[Dict[str, Any]]:
+        try:
+            from app.models.database import db
+
+            supabase_client = db.get_client()
+            if not supabase_client:
+                return []
+
+            units_response = supabase_client.table("curriculum_units").select("*").execute()
+            objectives_response = supabase_client.table("curriculum_objectives").select("*").execute()
+        except Exception:
+            return []
+
+        units = units_response.data or []
+        objectives = objectives_response.data or []
+        objectives_by_unit: Dict[str, List[Dict[str, Any]]] = {}
+        for objective in objectives:
+            unit_id = objective.get("unit_id")
+            if not unit_id:
+                continue
+            objectives_by_unit.setdefault(unit_id, []).append({
+                "id_oa": objective.get("id_oa"),
+                "descripcion": objective.get("descripcion"),
+                "indicadores_evaluacion": objective.get("indicadores_evaluacion") or [],
+                "conceptos_clave": objective.get("conceptos_clave") or [],
+            })
+
+        curriculum: List[Dict[str, Any]] = []
+        for unit in units:
+            unit_id = unit.get("id")
+            curriculum.append({
+                "curso": unit.get("curso"),
+                "asignatura": unit.get("asignatura"),
+                "eje_tematico": unit.get("eje_tematico"),
+                "objetivos_aprendizaje": objectives_by_unit.get(unit_id, []),
+            })
+        return curriculum
 
     def _build_oa_index(self) -> Dict[str, Dict[str, Any]]:
         """

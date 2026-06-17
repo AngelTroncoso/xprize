@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 from typing import Any, Dict, List
+from uuid import UUID
 
 from fastapi import APIRouter, HTTPException
 
@@ -11,6 +12,16 @@ router = APIRouter(prefix="/api", tags=["Analytics"])
 DATA_DIR = Path(__file__).resolve().parents[1] / "data" / "mallas_mineduc"
 
 
+def _validate_student_uuid(student_id: str) -> str:
+    try:
+        return str(UUID(str(student_id)))
+    except (TypeError, ValueError):
+        raise HTTPException(
+            status_code=422,
+            detail="student_id debe ser un UUID válido compatible con Supabase.",
+        )
+
+
 def _list_malla_files() -> List[Path]:
     if not DATA_DIR.exists() or not DATA_DIR.is_dir():
         return []
@@ -18,6 +29,10 @@ def _list_malla_files() -> List[Path]:
 
 
 def _load_curriculum_units() -> List[Dict[str, Any]]:
+    supabase_units = _load_curriculum_units_from_supabase()
+    if supabase_units:
+        return supabase_units
+
     units: List[Dict[str, Any]] = []
     for file_path in _list_malla_files():
         try:
@@ -32,6 +47,42 @@ def _load_curriculum_units() -> List[Dict[str, Any]]:
             units.append(payload)
 
     return units
+
+
+def _load_curriculum_units_from_supabase() -> List[Dict[str, Any]]:
+    client = db.get_client()
+    if not client:
+        return []
+
+    try:
+        units_response = client.table("curriculum_units").select("*").execute()
+        objectives_response = client.table("curriculum_objectives").select("*").execute()
+    except Exception:
+        return []
+
+    units = units_response.data or []
+    objectives = objectives_response.data or []
+    objectives_by_unit: Dict[str, List[Dict[str, Any]]] = {}
+    for objective in objectives:
+        unit_id = objective.get("unit_id")
+        if not unit_id:
+            continue
+        objectives_by_unit.setdefault(unit_id, []).append({
+            "id_oa": objective.get("id_oa"),
+            "descripcion": objective.get("descripcion", ""),
+            "indicadores_evaluacion": objective.get("indicadores_evaluacion") or [],
+            "conceptos_clave": objective.get("conceptos_clave") or [],
+        })
+
+    return [
+        {
+            "curso": unit.get("curso", "Desconocido"),
+            "asignatura": unit.get("asignatura", "General"),
+            "eje_tematico": unit.get("eje_tematico", "Sin Eje Tematico"),
+            "objetivos_aprendizaje": objectives_by_unit.get(unit.get("id"), []),
+        }
+        for unit in units
+    ]
 
 
 def _fetch_student_progress(student_id: str) -> Dict[str, Dict[str, Any]]:
@@ -79,7 +130,7 @@ def _build_curriculum_tree(
                 continue
 
             record = progress_records.get(oa_id, {})
-            mastery_level = record.get("mastery_level", "not_started")
+            mastery_level = record.get("nivel_logro", record.get("mastery_level", "not_started"))
             last_evaluation_date = record.get("last_evaluation_date")
             evaluation_history = record.get("evaluation_history", [])
 
@@ -111,7 +162,7 @@ def _build_curriculum_tree(
 def _summarize_progress(progress_records: Dict[str, Dict[str, Any]]) -> Dict[str, int]:
     counts = {"mastered": 0, "partial": 0, "in_progress": 0, "not_started": 0}
     for record in progress_records.values():
-        level = record.get("mastery_level", "not_started")
+        level = record.get("nivel_logro", record.get("mastery_level", "not_started"))
         counts[level] = counts.get(level, 0) + 1
     return counts
 
@@ -145,6 +196,7 @@ def _build_progress_response(student_id: str, tree: List[Dict[str, Any]]) -> Dic
 
 @router.get("/students/{student_id}/progress")
 def get_student_progress(student_id: str):
+    student_id = _validate_student_uuid(student_id)
     curriculum_units = _load_curriculum_units()
     if not curriculum_units:
         raise HTTPException(

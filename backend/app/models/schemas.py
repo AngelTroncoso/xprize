@@ -1,5 +1,22 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from typing import List, Literal, Optional, Dict, Any
+from uuid import UUID
+
+
+def _validate_uuid(value: str) -> str:
+    try:
+        return str(UUID(str(value)))
+    except (TypeError, ValueError) as exc:
+        raise ValueError("student_id debe ser un UUID válido compatible con Supabase.") from exc
+
+
+class StudentIdUUIDMixin(BaseModel):
+    student_id: str = Field(..., description="UUID del estudiante")
+
+    @field_validator("student_id")
+    @classmethod
+    def validate_student_id(cls, value: str) -> str:
+        return _validate_uuid(value)
 
 # --- Esquemas Curriculares (MINEDUC Chile) ---
 class ObjetivoAprendizaje(BaseModel):
@@ -14,8 +31,7 @@ class CurriculumUnit(BaseModel):
     eje_tematico: str = Field(..., description="Eje temático principal")
     objetivos_aprendizaje: List[ObjetivoAprendizaje] = Field(..., description="Lista de OA del eje")
 
-class OAProgressRecord(BaseModel):
-    student_id: str = Field(..., description="ID del estudiante")
+class OAProgressRecord(StudentIdUUIDMixin):
     id_oa: str = Field(..., description="ID del Objetivo de Aprendizaje")
     mastery_level: Literal["not_started", "in_progress", "partial", "mastered"] = Field(
         default="not_started", 
@@ -26,8 +42,7 @@ class OAProgressRecord(BaseModel):
     aligned_resources: List[str] = Field(default=[], description="IDs de recursos recomendados")
 
 # --- Payload entre Agentes: Validador → Pedagógico ---
-class ValidatorToPedagoguePayload(BaseModel):
-    student_id: str = Field(..., description="ID del estudiante")
+class ValidatorToPedagoguePayload(StudentIdUUIDMixin):
     timestamp: Optional[str] = Field(None, description="Timestamp de la evaluación / interacción")
     curriculum_unit: CurriculumUnit = Field(..., description="Unidad curricular completa asociada al OA")
     target_oa: ObjetivoAprendizaje = Field(..., description="El OA objetivo que fue evaluado")
@@ -41,8 +56,7 @@ class SkillEvaluation(BaseModel):
     skill_level: Literal["beginner", "intermediate", "advanced"] = Field(..., description="Nivel detectado")
     score: float = Field(..., description="Puntuación (0 a 100)")
 
-class DiagnosticResult(BaseModel):
-    student_id: str = Field(..., description="ID del estudiante")
+class DiagnosticResult(StudentIdUUIDMixin):
     overall_level: Literal["beginner", "intermediate", "advanced"] = Field(..., description="Nivel general estimado")
     strengths: List[str] = Field(..., description="Puntos fuertes identificados")
     weaknesses: List[str] = Field(..., description="Gaps o áreas de oportunidad")
@@ -85,8 +99,7 @@ class CodeReview(BaseModel):
     explanation: str = Field(..., description="Explicación pedagógica constructiva del feedback")
 
 # --- General Chat Schemas ---
-class ChatInput(BaseModel):
-    student_id: str = Field(..., description="ID del estudiante")
+class ChatInput(StudentIdUUIDMixin):
     curso: Optional[str] = Field(None, description="Curso del estudiante (ej. 3ro Basico)")
     asignatura: Optional[str] = Field(None, description="Asignatura solicitada (ej. Matematica)")
     message: str = Field(..., description="El mensaje o duda del estudiante")
@@ -106,8 +119,7 @@ class ChatResponse(BaseModel):
     saved_progress: Optional[Dict[str, Any]] = Field(None, description="Resultado de persistencia en Supabase")
 
 # --- Canvas Interactivo (Pizarra Compartida) ---
-class CanvasInput(BaseModel):
-    student_id: str = Field(..., description="ID del estudiante")
+class CanvasInput(StudentIdUUIDMixin):
     curso: str = Field(..., description="Curso del estudiante (ej. 3ro Basico)")
     asignatura: str = Field(..., description="Asignatura (ej. Matematica)")
     id_oa: Optional[str] = Field(None, description="ID del OA objetivo (ej. OA_01)")

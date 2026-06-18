@@ -1,112 +1,183 @@
-import os
-from google import genai
-from google.genai import types
-from app.models.schemas import ChatInput, DiagnosticResult, LessonPlan, CodeReview
-from typing import Dict, Any
+"""
+MasterOrchestrator — Rutea las peticiones entrantes al agente correcto.
+
+Flujo multi-agente:
+  1. Recibe { student_id, message, curso, asignatura } desde el endpoint.
+  2. Clasifica la intención según el mensaje (keyword-based routing).
+  3. Delega al agente correspondiente (ValidatorAgent, PedagogicAgent, o flujo combinado).
+  4. Retorna respuesta estructurada con agent_used, response_text, y metadatos.
+"""
+import logging
+from typing import Any, Dict, Optional
+
+from app.agents.pedagogic_agent import PedagogicAgent
+from app.agents.validator_agent import ValidatorAgent
+from app.models.schemas import ValidatorToPedagoguePayload
+
+logger = logging.getLogger(__name__)
+
 
 class MasterOrchestrator:
-    def __init__(self):
-        api_key = os.getenv("GEMINI_API_KEY", "dummy-key")
-        self.client = genai.Client(api_key=api_key)
-        self.fast_model = "gemini-1.5-flash"
-        self.reasoning_model = "gemini-1.5-pro"
+    """Orquestador central del flujo multi-agente.
 
-    def _generate_diagnostic(self, responses: str) -> DiagnosticResult:
-        prompt = f"""
-        Actúa como el Agente Evaluador de Super_Profesor. Tu objetivo es analizar el desempeño del estudiante
-        basándote en sus respuestas u opiniones y devolver un diagnóstico estructurado.
-        
-        Respuestas del estudiante:
-        {responses}
-        """
-        response = self.client.models.generate_content(
-            model=self.fast_model,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                response_schema=DiagnosticResult,
-                temperature=0.2
-            )
-        )
-        return response.parsed
+    Input esperado::
+        student_id : str
+        message    : str
+        curso      : str
+        asignatura : str
+        student_interest : str (opcional)
+        current_topic    : str (opcional)
 
-    def _generate_personalized_lesson(self, topic: str, student_interest: str) -> LessonPlan:
-        prompt = f"""
-        Actúa como el Agente Pedagógico de Super_Profesor. Tu objetivo es explicar el tema técnico: "{topic}"
-        de una manera altamente clara, utilizando analogías creativas basadas en el interés del estudiante: "{student_interest}".
-        
-        Asegúrate de estructurar el contenido de la lección usando Markdown.
-        Define objetivos claros y crea ejercicios de práctica rápidos que reten al estudiante.
-        """
-        response = self.client.models.generate_content(
-            model=self.reasoning_model,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                response_schema=LessonPlan,
-                temperature=0.7
-            )
-        )
-        return response.parsed
+    Output::
+        dict con "agent_used", "response_text", "oa_metadata",
+        "progress_record", y opcionalmente "code_review".
+    """
 
-    def _audit_code_or_exercise(self, exercise_description: str, student_submission: str) -> CodeReview:
-        prompt = f"""
-        Actúa como el Agente Validador de Super_Profesor. Revisa minuciosamente la entrega del estudiante.
-        
-        Descripción del Ejercicio:
-        {exercise_description}
-        
-        Entrega del Estudiante:
-        {student_submission}
-        
-        Evalúa la lógica, la sintaxis (si aplica) y si cumple con los requerimientos. Ofrece sugerencias de mejora y código optimizado si es útil.
-        """
-        response = self.client.models.generate_content(
-            model=self.fast_model,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                response_schema=CodeReview,
-                temperature=0.1
-            )
-        )
-        return response.parsed
+    def __init__(
+        self,
+        validator_agent: ValidatorAgent,
+        pedagogic_agent: PedagogicAgent,
+    ) -> None:
+        self.validator = validator_agent
+        self.pedagogue = pedagogic_agent
 
-    def process_student_input(self, data: ChatInput) -> Dict[str, Any]:
-        """
-        Analiza el input y delega al agente correspondiente.
-        En una implementación completa, se puede usar un clasificador (router model)
-        para discernir la intención. Aquí demostramos el ruteo básico.
-        """
-        message = data.message.strip()
-        
-        # 1. Si parece código o el mensaje explícitamente pide revisión, activar Agente Validador
-        if message.startswith("def ") or "class " in message or "```" in message or "validar" in message.lower():
-            # Mock del ejercicio que estaría resolviendo en su plan actual
-            exercise_desc = f"Resolver un ejercicio sobre el tema actual: {data.current_topic or 'Programación básica'}"
-            review: CodeReview = self._audit_code_or_exercise(exercise_desc, message)
-            return {
-                "agent": "Agente Validador",
-                "type": "code_review",
-                "content": review.model_dump()
+    # ──────────────────────────────────────────────
+    #  Ruta principal
+    # ──────────────────────────────────────────────
+
+    async def route(
+        self,
+        student_id: str,
+        message: str,
+        curso: str,
+        asignatura: str,
+        student_interest: Optional[str] = None,
+        current_topic: Optional[str] = None,
+    ) -> Dict[str, Any]:
+        """Clasifica el mensaje y delega al agente adecuado.
+
+        Returns:
+            {
+                "agent_used": str,
+                "response_text": str,
+                "oa_metadata": dict | None,
+                "progress_record": dict | None,
+                "payload": ValidatorToPedagoguePayload | None,
+                "code_review": dict | None,   # sólo si es solicitud de validación
             }
-            
-        # 2. Si el estudiante pide iniciar un tema o aprender algo nuevo, activar Agente Pedagógico
-        elif "explicar" in message.lower() or "aprender" in message.lower() or "tema" in message.lower():
-            topic = data.current_topic or message
-            interest = data.student_interest or "deportes"
-            lesson: LessonPlan = self._generate_personalized_lesson(topic, interest)
-            return {
-                "agent": "Agente Pedagógico",
-                "type": "lesson_plan",
-                "content": lesson.model_dump()
-            }
-            
-        # 3. Por defecto, tratar como una interacción general o un autodiagnóstico
-        else:
-            diagnostic: DiagnosticResult = self._generate_diagnostic(message)
-            return {
-                "agent": "Agente Evaluador",
-                "type": "diagnostic",
-                "content": diagnostic.model_dump()
-            }
+        """
+        msg_lower = message.strip().lower()
+
+        # ── Rama 1: Validación de código / ejercicio ──
+        if (
+            message.strip().startswith("def ")
+            or "class " in message
+            or "```" in message
+            or "validar" in msg_lower
+            or "revisar" in msg_lower
+        ):
+            return await self._route_code_validation(
+                student_id, message, curso, asignatura, current_topic
+            )
+
+        # ── Rama 2: Consulta pedagógica (default) ──
+        #  1. ValidatorAgent → detecta OA
+        #  2. PedagogicAgent → genera lección
+        return await self._route_pedagogic(
+            student_id, message, curso, asignatura
+        )
+
+    # ──────────────────────────────────────────────
+    #  Rama: Validación de código
+    # ──────────────────────────────────────────────
+
+    async def _route_code_validation(
+        self,
+        student_id: str,
+        message: str,
+        curso: str,
+        asignatura: str,
+        current_topic: Optional[str] = None,
+    ) -> Dict[str, Any]:
+        """Evalúa código/ejercicio usando el agente validador
+        (consulta directa a Gemini con structured output)."""
+        exercise_desc = (
+            f"Resolver un ejercicio sobre el tema actual: {current_topic or 'Programación básica'}"
+        )
+
+        # El ValidatorAgent tiene acceso a GeminiClient, pero no expone
+        # un método público de code-review. Usamos el cliente directamente.
+        from app.services.gemini_client import default_gemini_client
+
+        system_prompt = (
+            "Actúa como el Agente Validador de Super_Profesor. Revisa minuciosamente "
+            "la entrega del estudiante. Evalúa la lógica, la sintaxis (si aplica) y si "
+            "cumple con los requerimientos. Ofrece sugerencias de mejora y código "
+            "optimizado si es útil. Devuelve un análisis textual completo."
+        )
+
+        user_message = (
+            f"Descripción del Ejercicio:\n{exercise_desc}\n\n"
+            f"Entrega del Estudiante:\n{message}"
+        )
+
+        response_text = await default_gemini_client.generate_pedagogic_response(
+            system_prompt=system_prompt,
+            user_message=user_message,
+            history=None,
+            temperature=0.1,
+        )
+
+        return {
+            "agent_used": "ValidatorAgent (code review)",
+            "response_text": response_text,
+            "oa_metadata": None,
+            "progress_record": None,
+            "payload": None,
+            "code_review": {
+                "exercise": exercise_desc,
+                "submission": message,
+            },
+        }
+
+    # ──────────────────────────────────────────────
+    #  Rama: Consulta pedagógica (chat estándar)
+    # ──────────────────────────────────────────────
+
+    async def _route_pedagogic(
+        self,
+        student_id: str,
+        message: str,
+        curso: str,
+        asignatura: str,
+    ) -> Dict[str, Any]:
+        """Flujo estándar: Validator → OA detection → PedagogicAgent → lección."""
+        # 1. ValidatorAgent: detecta OA
+        payload = await self.validator.analyze_student_input(
+            student_id=student_id,
+            student_message=message,
+            curso=curso,
+            asignatura=asignatura,
+        )
+
+        # 2. PedagogicAgent: genera lección
+        response_text = await self.pedagogue.generate_lesson(
+            payload=payload,
+            student_message=message,
+        )
+
+        return {
+            "agent_used": "ValidatorAgent → PedagogicAgent",
+            "response_text": response_text,
+            "oa_metadata": {
+                "id_oa": payload.target_oa.id_oa,
+                "descripcion": payload.target_oa.descripcion,
+                "conceptos_clave": payload.target_oa.conceptos_clave,
+                "indicadores_evaluacion": payload.target_oa.indicadores_evaluacion,
+                "curso": payload.curriculum_unit.curso,
+                "asignatura": payload.curriculum_unit.asignatura,
+            },
+            "progress_record": payload.student_progress.model_dump(),
+            "payload": payload,
+            "code_review": None,
+        }

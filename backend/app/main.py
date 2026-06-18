@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.agents.pedagogic_agent import PedagogicAgent
 from app.agents.validator_agent import ValidatorAgent
+from app.agents.orchestrator import MasterOrchestrator
 from app.models.database import db
 from app.models.schemas import ChatInput, CanvasInput
 from app.services.curriculum_manager import CurriculumManager
@@ -42,6 +43,10 @@ curriculum_manager = CurriculumManager()
 validator_agent = ValidatorAgent(curriculum_manager)
 pedagogic_agent = PedagogicAgent()
 tts_service = TTSService(language="es", lang_region="es-mx")
+orchestrator = MasterOrchestrator(
+    validator_agent=validator_agent,
+    pedagogic_agent=pedagogic_agent,
+)
 
 @app.on_event("startup")
 def startup_event():
@@ -106,41 +111,40 @@ async def chat_interaction(chat_request: ChatInput):
         )
 
     try:
-        payload = await validator_agent.analyze_student_input(
+        # 1. Enrutar a través del orchestrator (flujo multi-agente)
+        result = await orchestrator.route(
             student_id=chat_request.student_id,
-            student_message=chat_request.message,
+            message=chat_request.message,
             curso=chat_request.curso,
             asignatura=chat_request.asignatura,
+            student_interest=chat_request.student_interest,
+            current_topic=chat_request.current_topic,
         )
 
-        response_text = await pedagogic_agent.generate_lesson(payload, chat_request.message)
+        response_text = result["response_text"]
 
-        # Generar TTS si está habilitado
+        # 2. Generar TTS si está habilitado
         audio_b64 = None
         audio_mime_type = None
         if chat_request.enable_audio:
             audio_b64, audio_mime_type = _generate_audio_response(response_text)
 
+        # 3. Persistir progreso en Supabase (si hay payload con OA)
         saved_progress = None
+        payload = result.get("payload")
         supabase_client = db.get_client()
-        if supabase_client:
+        if supabase_client and payload:
             saved_progress = _save_student_progress(supabase_client, payload)
 
         return {
-            "agent": "PedagogicAgent",
+            "agent_used": result["agent_used"],
             "student_id": chat_request.student_id,
-            "oa_metadata": {
-                "id_oa": payload.target_oa.id_oa,
-                "descripcion": payload.target_oa.descripcion,
-                "conceptos_clave": payload.target_oa.conceptos_clave,
-                "indicadores_evaluacion": payload.target_oa.indicadores_evaluacion,
-                "curso": payload.curriculum_unit.curso,
-                "asignatura": payload.curriculum_unit.asignatura,
-            },
-            "pedagogic_response": response_text,
+            "response_text": response_text,
+            "oa_metadata": result["oa_metadata"],
             "audio_response_b64": audio_b64,
             "audio_mime_type": audio_mime_type,
-            "progress_record": payload.student_progress.model_dump(),
+            "progress_record": result["progress_record"],
+            "code_review": result.get("code_review"),
             "saved_progress": saved_progress,
         }
     except ValueError as ve:

@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 
 from app.models.schemas import ValidatorToPedagoguePayload
 from app.services.gemini_client import GeminiClient, default_gemini_client
@@ -85,6 +85,7 @@ Responde como un tutor de 3° básico y usa lenguaje claro, afectuoso, con ejemp
         self,
         payload: ValidatorToPedagoguePayload,
         student_message: str,
+        history: Optional[List[Dict[str, str]]] = None,
     ) -> str:
         external_resources = self._read_external_resources()
         system_prompt = self._build_system_prompt(payload, external_resources, student_message)
@@ -93,6 +94,6 @@ Responde como un tutor de 3° básico y usa lenguaje claro, afectuoso, con ejemp
         return await self.gemini_client.generate_pedagogic_response(
             system_prompt=system_prompt,
             user_message=user_message,
-            history=None,
+            history=history,
             temperature=0.4,
         )

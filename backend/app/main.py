@@ -1,11 +1,13 @@
 import os
-from typing import Optional
+from datetime import datetime
+from typing import Optional, List, Dict
 
 # 🚨 CRÍTICO: Cargar variables de entorno ANTES de importar módulos o agentes locales
 from dotenv import load_dotenv
 load_dotenv()
 
 from fastapi import FastAPI, HTTPException, status
+from fastapi import Depends
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.agents.pedagogic_agent import PedagogicAgent
@@ -14,6 +16,7 @@ from app.agents.orchestrator import MasterOrchestrator
 from app.models.database import db
 from app.models.schemas import ChatInput, CanvasInput
 from app.services.curriculum_manager import CurriculumManager
+from app.auth.dependencies import get_current_user
 from app.services.dynamic_loader import DynamicLoader
 from app.services.tts_service import TTSService
 from app.services.gemini_client import default_gemini_client
@@ -103,40 +106,87 @@ def _save_student_progress(supabase_client, payload) -> Optional[dict]:
         return None
 
 @app.post("/api/chat")
-async def chat_interaction(chat_request: ChatInput):
+async def chat_interaction(chat_request: ChatInput, current_user_id: str = Depends(get_current_user)):
     if not chat_request.curso or not chat_request.asignatura:
         raise HTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
             detail="Debe especificar curso y asignatura en la petición.",
         )
 
+    supabase_client = db.get_client()
+    if not supabase_client:
+        raise HTTPException(status_code=500, detail="Supabase no configurado")
+
+    # Asegura que el student_id en la petición coincida con el user_id autenticado
+    if chat_request.student_id != current_user_id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN, detail="No tienes permiso para acceder a sesiones de chat de otros estudiantes"
+        )
+
     try:
-        # 1. Enrutar a través del orchestrator (flujo multi-agente)
+        # 1. Recuperar o crear sesión de chat
+        session_id = getattr(chat_request, "session_id", None)
+        if not session_id:
+            session_res = supabase_client.table("chat_sessions").insert({
+                "student_id": chat_request.student_id,
+                "started_at": datetime.utcnow().isoformat(),
+                "metadata": {"curso": chat_request.curso, "asignatura": chat_request.asignatura}
+            }).execute()
+            session_id = session_res.data[0]["id"]
+
+        # 2. Recuperar historial de la sesión (últimos 6 mensajes)
+        history_res = supabase_client.table("chat_messages") \
+            .select("role, content") \
+            .eq("session_id", session_id) \
+            .order("timestamp", desc=True) \
+            .limit(6) \
+            .execute()
+        history = history_res.data[::-1] if history_res.data else []
+
+        # 3. Registrar mensaje del usuario
+        supabase_client.table("chat_messages").insert({
+            "session_id": session_id,
+            "role": "user",
+            "content": chat_request.message,
+            "timestamp": datetime.utcnow().isoformat()
+        }).execute()
+
+        # 4. Enrutar a través del orchestrator (flujo multi-agente)
         result = await orchestrator.route(
             student_id=chat_request.student_id,
             message=chat_request.message,
             curso=chat_request.curso,
             asignatura=chat_request.asignatura,
+            history=history,
             student_interest=chat_request.student_interest,
             current_topic=chat_request.current_topic,
         )
 
         response_text = result["response_text"]
 
-        # 2. Generar TTS si está habilitado
+        # 5. Registrar respuesta del asistente
+        supabase_client.table("chat_messages").insert({
+            "session_id": session_id,
+            "role": "assistant",
+            "content": response_text,
+            "agent_used": result["agent_used"],
+            "timestamp": datetime.utcnow().isoformat()
+        }).execute()
+
+        # 6. Generar TTS si está habilitado
         audio_b64 = None
         audio_mime_type = None
         if chat_request.enable_audio:
             audio_b64, audio_mime_type = _generate_audio_response(response_text)
 
-        # 3. Persistir progreso en Supabase (si hay payload con OA)
+        # 7. Persistir progreso en Supabase (si hay payload con OA)
         saved_progress = None
         payload = result.get("payload")
-        supabase_client = db.get_client()
-        if supabase_client and payload:
+        if payload:
             saved_progress = _save_student_progress(supabase_client, payload)
 
         return {
+            "session_id": session_id,
             "agent_used": result["agent_used"],
             "student_id": chat_request.student_id,
             "response_text": response_text,
@@ -154,6 +204,44 @@ async def chat_interaction(chat_request: ChatInput):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=str(e),
         )
+
+
+@app.get("/api/chat/sessions/{student_id}")
+async def get_student_sessions(student_id: str, current_user_id: str = Depends(get_current_user)):
+    """
+    Retorna las últimas 10 sesiones del estudiante con su primer mensaje.
+    """
+    supabase_client = db.get_client()
+    if not supabase_client:
+        raise HTTPException(status_code=500, detail="Supabase not configured")
+
+    # Asegura que el student_id en la ruta coincida con el user_id autenticado
+    if student_id != current_user_id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN, detail="No tienes permiso para acceder a sesiones de chat de otros estudiantes"
+        )
+    try:
+        res = supabase_client.table("chat_sessions") \
+            .select("*, chat_messages(content, timestamp)") \
+            .eq("student_id", student_id) \
+            .order("started_at", desc=True) \
+            .limit(10) \
+            .execute()
+
+        sessions = []
+        for s in res.data:
+            # Ordenar mensajes para encontrar el primero
+            messages = sorted(s.get("chat_messages", []), key=lambda x: x["timestamp"])
+            first_msg = messages[0]["content"] if messages else None
+            sessions.append({
+                "session_id": s["id"],
+                "started_at": s["started_at"],
+                "metadata": s["metadata"],
+                "first_message": first_msg
+            })
+        return sessions
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 def _build_canvas_system_prompt(

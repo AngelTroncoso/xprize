@@ -8,7 +8,7 @@ Flujo multi-agente:
   4. Retorna respuesta estructurada con agent_used, response_text, y metadatos.
 """
 import logging
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, List
 
 from app.agents.pedagogic_agent import PedagogicAgent
 from app.agents.validator_agent import ValidatorAgent
@@ -25,6 +25,7 @@ class MasterOrchestrator:
         message    : str
         curso      : str
         asignatura : str
+        history    : list (opcional)
         student_interest : str (opcional)
         current_topic    : str (opcional)
 
@@ -51,6 +52,7 @@ class MasterOrchestrator:
         message: str,
         curso: str,
         asignatura: str,
+        history: Optional[List[Dict[str, str]]] = None,
         student_interest: Optional[str] = None,
         current_topic: Optional[str] = None,
     ) -> Dict[str, Any]:
@@ -84,7 +86,7 @@ class MasterOrchestrator:
         #  1. ValidatorAgent → detecta OA
         #  2. PedagogicAgent → genera lección
         return await self._route_pedagogic(
-            student_id, message, curso, asignatura
+            student_id, message, curso, asignatura, history
         )
 
     # ──────────────────────────────────────────────
@@ -150,6 +152,7 @@ class MasterOrchestrator:
         message: str,
         curso: str,
         asignatura: str,
+        history: Optional[List[Dict[str, str]]] = None,
     ) -> Dict[str, Any]:
         """Flujo estándar: Validator → OA detection → PedagogicAgent → lección."""
         # 1. ValidatorAgent: detecta OA
@@ -164,6 +167,7 @@ class MasterOrchestrator:
         response_text = await self.pedagogue.generate_lesson(
             payload=payload,
             student_message=message,
+            history=history,
         )
 
         return {

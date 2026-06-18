@@ -17,9 +17,9 @@ export default function Home() {
           <a href="#architecture" className="hover:text-white transition-colors">Arquitectura</a>
           <a href="#next" className="hover:text-white transition-colors">Próximos Pasos</a>
         </nav>
-        <button className="glass-panel px-5 py-2.5 rounded-full text-sm font-semibold hover:border-indigo-500/50 transition-all">
+        <a href="/login" className="glass-panel px-5 py-2.5 rounded-full text-sm font-semibold hover:border-indigo-500/50 transition-all inline-block">
           Iniciar Sesión
-        </button>
+        </a>
       </header>
 
       {/* Hero Section */}

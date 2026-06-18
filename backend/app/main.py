@@ -20,7 +20,7 @@ from app.auth.dependencies import get_current_user
 from app.services.dynamic_loader import DynamicLoader
 from app.services.tts_service import TTSService
 from app.services.gemini_client import default_gemini_client
-from app.routers import governance, curriculum
+from app.routers import governance, curriculum, tts
 from app.api.analytics import router as analytics_router
 
 app = FastAPI(
@@ -41,6 +41,7 @@ app.add_middleware(
 app.include_router(governance.router)
 app.include_router(curriculum.router)
 app.include_router(analytics_router)
+app.include_router(tts.router)
 
 curriculum_manager = CurriculumManager()
 validator_agent = ValidatorAgent(curriculum_manager)

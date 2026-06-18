@@ -1,7 +1,13 @@
+"""
+Seed script for curriculum tables in Supabase.
+Reads the flat malla_curricular_produccion.json (87 OA records)
+and upserts into curriculum_units and curriculum_objectives tables.
+"""
 import json
 import os
+import sys
 from pathlib import Path
-from typing import Any, Dict, Iterable, List
+from typing import Any, Dict, List
 
 from dotenv import load_dotenv
 from supabase import create_client
@@ -11,30 +17,15 @@ BACKEND_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BACKEND_DIR / "app" / "data" / "mallas_mineduc"
 
 
-def _load_payloads() -> Iterable[tuple[Path, Dict[str, Any]]]:
-    for file_path in sorted(DATA_DIR.glob("*.json")):
-        with file_path.open("r", encoding="utf-8") as handle:
-            payload = json.load(handle)
+def _load_flat_records() -> List[Dict[str, Any]]:
+    """Loads the flat OA records from malla_curricular_produccion.json"""
+    file_path = DATA_DIR / "malla_curricular_produccion.json"
+    if not file_path.exists():
+        print(f"❌ File not found: {file_path}")
+        sys.exit(1)
 
-        if isinstance(payload, list):
-            for item in payload:
-                if isinstance(item, dict):
-                    yield file_path, item
-        elif isinstance(payload, dict):
-            yield file_path, payload
-
-
-def _required_text(payload: Dict[str, Any], key: str) -> str:
-    value = payload.get(key)
-    if not isinstance(value, str) or not value.strip():
-        raise ValueError(f"Campo requerido ausente o invalido: {key}")
-    return value.strip()
-
-
-def _as_text_list(value: Any) -> List[str]:
-    if not isinstance(value, list):
-        return []
-    return [str(item) for item in value if str(item).strip()]
+    with file_path.open("r", encoding="utf-8") as f:
+        return json.load(f)
 
 
 def main() -> None:
@@ -43,23 +34,53 @@ def main() -> None:
     url = os.getenv("SUPABASE_URL")
     key = os.getenv("SUPABASE_KEY")
     if not url or not key:
-        raise RuntimeError("SUPABASE_URL y SUPABASE_KEY deben estar configuradas en backend/.env")
+        raise RuntimeError("SUPABASE_URL and SUPABASE_KEY must be set in backend/.env")
 
     client = create_client(url, key)
+    records = _load_flat_records()
+    print(f"📄 Loaded {len(records)} flat OA records from malla_curricular_produccion.json")
+
+    # Organize records by (curso, asignatura, eje) -> [records]
+    from collections import OrderedDict
+
+    units_map: Dict[str, Dict[str, Any]] = OrderedDict()
+
+    for rec in records:
+        curso = rec.get("curso", "")
+        asignatura = rec.get("asignatura", "")
+        eje = rec.get("eje", "")
+        key = f"{curso}|{asignatura}|{eje}"
+
+        if key not in units_map:
+            units_map[key] = {
+                "curso": curso,
+                "asignatura": asignatura,
+                "eje_tematico": eje,
+                "source_file": "malla_curricular_produccion.json",
+                "objetivos": [],
+            }
+
+        units_map[key]["objetivos"].append({
+            "codigo_oa": rec.get("codigo_oa", ""),
+            "descripcion_oa": rec.get("descripcion_oa", ""),
+        })
+
     units_count = 0
     objectives_count = 0
 
-    for file_path, unit in _load_payloads():
-        curso = _required_text(unit, "curso")
-        asignatura = _required_text(unit, "asignatura")
-        eje_tematico = _required_text(unit, "eje_tematico")
+    for key, unit in units_map.items():
+        curso = unit["curso"]
+        asignatura = unit["asignatura"]
+        eje = unit["eje_tematico"]
 
+        # Insert / upsert curriculum unit
         unit_payload = {
             "curso": curso,
             "asignatura": asignatura,
-            "eje_tematico": eje_tematico,
-            "source_file": file_path.name,
+            "eje_tematico": eje,
+            "source_file": unit["source_file"],
         }
+
         unit_response = client.table("curriculum_units").upsert(
             unit_payload,
             on_conflict="curso,asignatura,eje_tematico",
@@ -71,33 +92,24 @@ def main() -> None:
         else:
             lookup = client.table("curriculum_units").select("id").eq(
                 "curso", curso
-            ).eq("asignatura", asignatura).eq("eje_tematico", eje_tematico).single().execute()
+            ).eq("asignatura", asignatura).eq("eje_tematico", eje).single().execute()
             unit_id = lookup.data["id"]
 
         units_count += 1
 
-        objectives = unit.get("objetivos_aprendizaje", [])
-        if not isinstance(objectives, list):
-            continue
-
+        # Insert objectives for this unit
         rows = []
-        for oa in objectives:
-            if not isinstance(oa, dict):
-                continue
+        for obj in unit["objetivos"]:
             rows.append({
                 "unit_id": unit_id,
                 "curso": curso,
                 "asignatura": asignatura,
-                "eje_tematico": eje_tematico,
-                "id_oa": _required_text(oa, "id_oa"),
-                "descripcion": _required_text(oa, "descripcion"),
-                "indicadores_evaluacion": _as_text_list(oa.get("indicadores_evaluacion")),
-                "conceptos_clave": _as_text_list(oa.get("conceptos_clave")),
-                "metadata": {
-                    key: value
-                    for key, value in oa.items()
-                    if key not in {"id_oa", "descripcion", "indicadores_evaluacion", "conceptos_clave"}
-                },
+                "eje_tematico": eje,
+                "id_oa": obj["codigo_oa"],
+                "descripcion": obj["descripcion_oa"],
+                "indicadores_evaluacion": [],
+                "conceptos_clave": [],
+                "metadata": {},
             })
 
         if rows:
@@ -107,7 +119,13 @@ def main() -> None:
             ).execute()
             objectives_count += len(rows)
 
-    print(f"Curriculum sincronizado: {units_count} unidades, {objectives_count} objetivos.")
+        print(f"  ✅ Unit '{curso} | {asignatura} | {eje}': {len(rows)} objectives upserted")
+
+    print(f"\n{'='*60}")
+    print(f"📊 Curriculum sync complete:")
+    print(f"   Units: {units_count}")
+    print(f"   Objectives: {objectives_count}")
+    print(f"{'='*60}")
 
 
 if __name__ == "__main__":

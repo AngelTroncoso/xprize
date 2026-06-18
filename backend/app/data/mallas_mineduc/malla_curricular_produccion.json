@@ -1,0 +1,611 @@
+[
+  {
+    "curso": "1° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Reconocer que los textos escritos transmiten mensajes, que son escritos por alguien con un propósito, y distinguir entre textos literarios y no literarios."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Reconocer que las palabras son unidades de significado separadas por espacios en el texto escrito, y distinguir entre letra, sílaba y palabra."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Leer de manera autónoma textos literarios y no literarios breves, aplicando las correspondencias letra-sonido para decodificar y comprender su sentido global."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_04",
+    "descripcion_oa": "Comprender textos aplicando estrategias de comprensión lectora: predecir, preguntar, visualizar y sintetizar, respondiendo preguntas literales e inferenciales simples."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_05",
+    "descripcion_oa": "Escribir con letra clara, usando el trazo correcto de letras mayúsculas y minúsculas, dejando espacio entre palabras y escribiendo de izquierda a derecha."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_06",
+    "descripcion_oa": "Escribir oraciones completas sobre temas de su interés, usando mayúscula al inicio y punto final, e incorporando vocabulario aprendido en clases."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_07",
+    "descripcion_oa": "Escribir con letra legible aplicando convenciones ortográficas básicas: mayúscula inicial, punto final y escritura correcta de palabras de uso frecuente del nivel."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Comunicación Oral",
+    "codigo_oa": "OA_08",
+    "descripcion_oa": "Expresarse de manera clara y coherente usando un vocabulario variado, participando en conversaciones grupales, respetando turnos y narrando experiencias personales con inicio, desarrollo y final."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Contar números del 0 al 100, de 1 en 1, de 2 en 2, de 5 en 5 y de 10 en 10, hacia adelante y hacia atrás, empezando por cualquier número dado."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Leer, escribir y representar números del 0 al 100 usando objetos concretos, imágenes, recta numérica y tablas de 100, identificando el valor posicional de decenas y unidades."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Comparar y ordenar números del 0 al 100 usando los símbolos <, > e =, y argumentar el criterio de comparación."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_04",
+    "descripcion_oa": "Demostrar que comprenden la adición y la sustracción con números del 0 al 20, usando objetos concretos, imágenes y símbolos, y resolver problemas simples."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_05",
+    "descripcion_oa": "Demostrar que comprenden la adición y la sustracción con números del 0 al 100, con y sin reagrupación, y usarlas para resolver problemas en contextos concretos."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Matemática",
+    "eje": "Geometría",
+    "codigo_oa": "OA_06",
+    "descripcion_oa": "Identificar y describir figuras geométricas (cuadrado, rectángulo, triángulo y círculo) y cuerpos geométricos (cubo, esfera, cilindro y cono) en el entorno, nombrando sus características básicas."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Matemática",
+    "eje": "Medición",
+    "codigo_oa": "OA_07",
+    "descripcion_oa": "Comparar y ordenar objetos según su longitud, masa y capacidad usando unidades de medida no estandarizadas, estimando y verificando mediciones."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Matemática",
+    "eje": "Datos y Probabilidades",
+    "codigo_oa": "OA_08",
+    "descripcion_oa": "Recolectar y registrar datos para responder preguntas estadísticas sobre el entorno, usando tablas de conteo y pictogramas, e interpretar la información obtenida."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Leer en voz alta de manera fluida y expresiva variados textos, con velocidad y precisión lectora adecuada al nivel (mínimo 50-70 palabras por minuto), respetando la puntuación."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Comprender textos aplicando estrategias: extraer información explícita, realizar inferencias de causa-efecto, determinar el tema principal y resumir con sus propias palabras."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Leer y comprender textos literarios (cuentos, fábulas, poemas, adivinanzas), identificando personajes, trama, ambiente, moraleja y recursos sonoros como la rima."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_04",
+    "descripcion_oa": "Ampliar el vocabulario a través de la lectura, usando el contexto para inferir el significado de palabras nuevas, consultando el diccionario y distinguiendo sinónimos y antónimos."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_05",
+    "descripcion_oa": "Escribir textos narrativos y descriptivos breves aplicando el proceso de escritura: planificación, escritura de borrador, revisión y edición, incorporando inicio, desarrollo y desenlace."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_06",
+    "descripcion_oa": "Aplicar convenciones ortográficas del nivel: mayúscula en inicio de oración y nombres propios, punto, coma en enumeraciones, y signos de interrogación y exclamación."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Comunicación Oral",
+    "codigo_oa": "OA_07",
+    "descripcion_oa": "Comprender y producir textos orales de distintos tipos: narrar, describir, explicar y opinar con fundamento, respetando los turnos de habla y las normas de conversación grupal."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Leer, escribir, contar y representar números del 0 al 1.000, identificando el valor posicional de centenas, decenas y unidades, y usando material base 10."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Comparar y ordenar números del 0 al 1.000 usando los símbolos <, > e =, y la recta numérica, justificando con el valor posicional."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Demostrar que comprenden la adición y la sustracción con números del 0 al 1.000, con y sin reagrupación, y usarlas para resolver problemas cotidianos de una etapa."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_04",
+    "descripcion_oa": "Demostrar que comprenden la multiplicación como adición repetida y en disposición rectangular, con factores del 1 al 10, y memorizar las tablas de multiplicar del 2, 5 y 10."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_05",
+    "descripcion_oa": "Identificar la mitad y el doble de un número y relacionarlos con la división y la multiplicación por 2, resolviendo problemas simples de reparto equitativo."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Matemática",
+    "eje": "Medición",
+    "codigo_oa": "OA_07",
+    "descripcion_oa": "Medir la longitud de objetos usando unidades estandarizadas (centímetro y metro), estimando y verificando mediciones, y comprendiendo que 1 metro = 100 centímetros."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Matemática",
+    "eje": "Medición",
+    "codigo_oa": "OA_08",
+    "descripcion_oa": "Leer y comunicar el tiempo en horas y minutos usando reloj analógico y digital, y relacionar el calendario con el año, los meses y los días de la semana."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Matemática",
+    "eje": "Datos y Probabilidades",
+    "codigo_oa": "OA_09",
+    "descripcion_oa": "Recolectar y representar datos en tablas de frecuencia y gráficos de barra simples, e interpretar la información obtenida respondiendo preguntas estadísticas."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Leer de manera fluida textos literarios y no literarios con velocidad, precisión y entonación adecuadas al nivel (mínimo 120 palabras por minuto), respetando los signos de puntuación."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Comprender textos aplicando estrategias: distinguir información explícita de implícita, realizar inferencias, sintetizar, distinguir hecho de opinión y evaluar críticamente la información."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Leer y analizar textos literarios (cuentos, novelas, poemas, leyendas, mitos) identificando narrador, punto de vista, conflicto, tema y recursos literarios: comparación, personificación, hipérbole y metáfora."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_04",
+    "descripcion_oa": "Analizar textos no literarios (noticias, reportajes, cartas, artículos informativos) identificando propósito comunicativo, estructura y distinción entre lenguaje objetivo y subjetivo."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_05",
+    "descripcion_oa": "Escribir textos de manera eficiente aplicando el proceso completo: planificar, redactar con introducción-desarrollo-conclusión, revisar considerando coherencia y cohesión, editar y publicar."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_06",
+    "descripcion_oa": "Aplicar correctamente las normas ortográficas del nivel: tilde en palabras agudas, graves y esdrújulas; uso de b/v, h, c/s/z; mayúsculas en nombres propios, y manejo autónomo del diccionario."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_07",
+    "descripcion_oa": "Escribir textos literarios creativos (cuentos, poemas, cartas) aplicando recursos literarios, siguiendo convenciones del género e incorporando diálogos con raya de diálogo o comillas."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Comunicación Oral",
+    "codigo_oa": "OA_08",
+    "descripcion_oa": "Expresarse de manera clara, coherente y organizada en presentaciones orales y debates, usando recursos verbales y no verbales, argumentando con fundamentos y respetando turnos."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Representar y describir números naturales de más de 6 dígitos y menores que 1.000.000.000, y números decimales hasta centésimos, usando el valor posicional y la notación expandida."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Demostrar que comprenden las fracciones propias e impropias y los números mixtos, representándolos concreta, pictórica y simbólicamente, e identificando fracciones equivalentes."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Realizar adición y sustracción de fracciones con distinto denominador, usando el mínimo común múltiplo (MCM) para igualar denominadores y simplificando el resultado."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_05",
+    "descripcion_oa": "Calcular potencias de base 10 y relacionarlas con el valor posicional del sistema de numeración decimal."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Matemática",
+    "eje": "Patrones y Álgebra",
+    "codigo_oa": "OA_06",
+    "descripcion_oa": "Determinar el valor de una incógnita en ecuaciones que involucran las cuatro operaciones con números naturales, verificando la solución por sustitución."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Matemática",
+    "eje": "Geometría",
+    "codigo_oa": "OA_07",
+    "descripcion_oa": "Calcular el área de figuras planas (cuadrado, rectángulo y triángulo) usando fórmulas, y el perímetro de polígonos, distinguiendo entre ambas magnitudes y usando las unidades correctas."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Matemática",
+    "eje": "Datos y Probabilidades",
+    "codigo_oa": "OA_08",
+    "descripcion_oa": "Leer e interpretar datos en tablas de frecuencia, gráficos de barra, de línea y circulares, calcular el promedio aritmético e identificar la moda y el rango de un conjunto de datos."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Analizar textos literarios de distintos géneros (cuento, novela, poesía, teatro), interpretando el desarrollo de personajes, el tema central, los valores y los recursos literarios: símil, metáfora, aliteración e hipérbole."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Analizar textos no literarios de mediana complejidad (artículos de opinión, reportajes, textos digitales), identificando la tesis, los argumentos, las técnicas persuasivas y evaluando la confiabilidad de las fuentes."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_04",
+    "descripcion_oa": "Escribir textos argumentativos (cartas de opinión, comentarios, reseñas) con tesis clara, argumentos sustentados en evidencias, conclusión y uso de conectores argumentativos."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_05",
+    "descripcion_oa": "Aplicar correctamente las normas ortográficas y gramaticales del nivel: acento diacrítico, tiempos verbales (pretérito perfecto, imperfecto y condicional), concordancia de género y número, y uso de la coma."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_06",
+    "descripcion_oa": "Escribir textos creativos (relatos con flashback, poemas con recursos literarios, textos dramáticos con acotaciones y diálogos), revisando y editando con atención al estilo y la coherencia."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Comunicación Oral",
+    "codigo_oa": "OA_07",
+    "descripcion_oa": "Participar en discusiones y debates argumentados, formulando y defendiendo una posición con argumentos y evidencias, refutando con respeto y distinguiendo entre argumentos válidos y falacias simples."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Demostrar que comprenden los números enteros (positivos, negativos y cero), representándolos en la recta numérica, comparándolos, y calculando valor absoluto y opuesto."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Realizar adición, sustracción y multiplicación de números enteros aplicando la regla de signos, y resolver problemas contextualizados con estas operaciones."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Demostrar que comprenden los porcentajes y su relación con fracciones y decimales, calculando el porcentaje de una cantidad y aplicándolos en problemas de descuentos, IVA e interés simple."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_05",
+    "descripcion_oa": "Aplicar la razón y la proporción para resolver problemas de proporcionalidad directa mediante regla de tres simple, y representar relaciones proporcionales en tablas y gráficos."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Matemática",
+    "eje": "Patrones y Álgebra",
+    "codigo_oa": "OA_06",
+    "descripcion_oa": "Resolver ecuaciones de primer grado con una incógnita del tipo ax + b = c, usando propiedades de igualdad, verificando la solución por sustitución y planteando ecuaciones desde problemas."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Matemática",
+    "eje": "Geometría",
+    "codigo_oa": "OA_07",
+    "descripcion_oa": "Calcular el volumen de prismas rectangulares y cubos usando fórmulas, expresarlo en cm³ y m³, y relacionarlo con la capacidad (1 cm³ = 1 mL; 1.000 cm³ = 1 L)."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Matemática",
+    "eje": "Datos y Probabilidades",
+    "codigo_oa": "OA_08",
+    "descripcion_oa": "Calcular e interpretar medidas de tendencia central (media, moda y mediana) y el rango, y usar estos estadísticos para comparar conjuntos de datos y representarlos en histogramas."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Leer y analizar obras literarias de tradición oral y escrita (mitos, epopeyas, cuentos clásicos, novelas breves), relacionándolas con su contexto histórico-cultural de producción y comparando versiones de distintas culturas."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Analizar textos no literarios de mayor complejidad (crónica periodística, informe, discurso, texto digital multimedia), evaluando propósito, recursos retóricos y confiabilidad de fuentes digitales."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Aplicar estrategias de comprensión profunda: evaluar críticamente ideas de un texto cuestionando supuestos y sesgos, establecer relaciones intertextuales y formular juicios fundados sobre la validez de los argumentos."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_04",
+    "descripcion_oa": "Escribir textos expositivos y argumentativos (informes, ensayos breves, artículos de opinión) con estructura clara, incorporando citas textuales y paráfrasis de fuentes, conectores discursivos variados y registro formal."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_05",
+    "descripcion_oa": "Aplicar correctamente las normas gramaticales y ortográficas del nivel: oraciones subordinadas sustantivas, adjetivas y adverbiales; modo subjuntivo; participio; uso de la coma en oraciones compuestas; y concordancia verbal."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Comunicación Oral",
+    "codigo_oa": "OA_06",
+    "descripcion_oa": "Producir textos orales formales (discursos, exposiciones académicas) con estructura de exordio-argumentación-conclusión, usando recursos retóricos con intención persuasiva y adaptando el registro al contexto."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Demostrar que comprenden las cuatro operaciones con números enteros y racionales, aplicando la jerarquía de operaciones y resolviendo problemas de múltiples etapas."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Demostrar que comprenden las potencias de base entera y exponente natural, aplicar sus propiedades (producto, cociente, potencia de potencia) y expresar números en notación científica."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Calcular raíces cuadradas exactas de cuadrados perfectos y aproximadas de números no cuadrados, relacionándolas con la potencia de exponente 2."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Matemática",
+    "eje": "Patrones y Álgebra",
+    "codigo_oa": "OA_04",
+    "descripcion_oa": "Demostrar que comprenden las expresiones algebraicas: identificar monomios y polinomios, simplificar términos semejantes, evaluar por sustitución, y sumar y restar polinomios."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Matemática",
+    "eje": "Patrones y Álgebra",
+    "codigo_oa": "OA_05",
+    "descripcion_oa": "Resolver ecuaciones de primer grado con una incógnita de la forma ax + b = cx + d, e inecuaciones simples, representando la solución en la recta numérica e interpretándola en contextos."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Matemática",
+    "eje": "Geometría",
+    "codigo_oa": "OA_06",
+    "descripcion_oa": "Aplicar el teorema de Pitágoras para calcular lados desconocidos en triángulos rectángulos, verificar si un triángulo es rectángulo y resolver problemas de distancias y alturas."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Matemática",
+    "eje": "Geometría",
+    "codigo_oa": "OA_07",
+    "descripcion_oa": "Calcular el área y la circunferencia del círculo usando las fórmulas A = πr² y C = 2πr, y resolver problemas que combinan ambas medidas."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Matemática",
+    "eje": "Datos y Probabilidades",
+    "codigo_oa": "OA_08",
+    "descripcion_oa": "Calcular probabilidades de eventos simples usando la regla de Laplace, distinguir entre probabilidad teórica y experimental, y expresar probabilidades como fracción, decimal y porcentaje."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Leer y analizar textos literarios de distintas épocas y géneros (novela, poesía lírica, teatro clásico y contemporáneo), interpretando el contexto histórico-cultural y sus proyecciones a la actualidad."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Analizar textos no literarios complejos (ensayos, discursos, textos académicos, medios digitales), evaluando la solidez de los argumentos, identificando sesgos y distinguiendo objetividad de subjetividad."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Aplicar estrategias de lectura crítica: evaluar la veracidad e intencionalidad de los textos, establecer relaciones intertextuales complejas y formular interpretaciones sustentadas en evidencia textual."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_04",
+    "descripcion_oa": "Escribir ensayos y textos argumentativos de mayor extensión y complejidad, con tesis, desarrollo de argumentos sustentados en fuentes citadas correctamente, contraargumentos y conclusión bien articulada."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_05",
+    "descripcion_oa": "Aplicar correctamente las normas gramaticales del nivel: oraciones subordinadas de distintos tipos, voz activa y pasiva, uso del modo indicativo y subjuntivo en contextos complejos, y puntuación avanzada (punto y coma, dos puntos)."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Escritura",
+    "codigo_oa": "OA_06",
+    "descripcion_oa": "Escribir textos creativos de mayor complejidad (cuentos con estructura no lineal, poemas de vanguardia, monólogos dramáticos) usando recursos literarios con intención estética y estilo personal definido."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Comunicación Oral",
+    "codigo_oa": "OA_07",
+    "descripcion_oa": "Producir y evaluar textos orales formales de mayor complejidad (seminarios, mesas redondas, entrevistas), adaptando el registro, anticipando contraargumentos y evaluando la efectividad comunicativa mediante rúbricas."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Demostrar que comprenden los números reales, distinguiendo entre racionales (decimales finitos y periódicos) e irracionales, y representándolos en la recta numérica."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Aplicar propiedades de las potencias con exponente entero (positivo, negativo y cero) y operar con números expresados en notación científica, convirtiendo entre ambas notaciones."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Matemática",
+    "eje": "Patrones y Álgebra",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Demostrar que comprenden las funciones lineales (y = mx) y afines (y = mx + b), calculando la pendiente e intercepto, representándolas en tablas y en el plano cartesiano, e interpretando su significado."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Matemática",
+    "eje": "Patrones y Álgebra",
+    "codigo_oa": "OA_04",
+    "descripcion_oa": "Resolver sistemas de dos ecuaciones lineales con dos incógnitas mediante los métodos de sustitución, igualación y gráfico, clasificando el sistema y resolviendo problemas de enunciado."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Matemática",
+    "eje": "Patrones y Álgebra",
+    "codigo_oa": "OA_05",
+    "descripcion_oa": "Operar con expresiones algebraicas: aplicar productos notables (cuadrado de binomio, suma por diferencia), factorizar usando factor común y trinomios de la forma x² + bx + c, y simplificar fracciones algebraicas."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Matemática",
+    "eje": "Geometría",
+    "codigo_oa": "OA_06",
+    "descripcion_oa": "Calcular el área lateral, total y el volumen de prismas, pirámides, cilindros, conos y esferas usando las fórmulas correspondientes, y resolver problemas contextualizados."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Matemática",
+    "eje": "Datos y Probabilidades",
+    "codigo_oa": "OA_07",
+    "descripcion_oa": "Calcular probabilidades de eventos compuestos (unión e intersección) aplicando el principio de adición P(A ∪ B) = P(A) + P(B) − P(A ∩ B), y usar diagramas de Venn para representar los eventos."
+  }
+]

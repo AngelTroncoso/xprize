@@ -34,10 +34,23 @@ class CurriculumManager:
 
     def _load_curriculum(self) -> List[Dict[str, Any]]:
         """Carga el curriculo oficial de MINEDUC desde Supabase o almacenamiento local."""
+        # 1. Intentar desde Supabase
         supabase_curriculum = self._load_curriculum_from_supabase()
         if supabase_curriculum:
             return supabase_curriculum
 
+        # 2. Fallback: archivo JSON plano (malla_curricular_produccion.json) con 87 OA
+        flat_path = os.path.join(
+            os.path.dirname(__file__),
+            "../data/mallas_mineduc/malla_curricular_produccion.json"
+        )
+        if os.path.exists(flat_path):
+            with open(flat_path, 'r', encoding='utf-8') as f:
+                flat_records = json.load(f)
+            # Convertir formato plano a estructura de unidades
+            return self._convert_flat_to_units(flat_records)
+
+        # 3. Fallback: archivo JSON legacy (con objetivos_aprendizaje)
         curriculum_path = os.path.join(
             os.path.dirname(__file__),
             "../models/curriculum_data.json"
@@ -45,7 +58,38 @@ class CurriculumManager:
         if os.path.exists(curriculum_path):
             with open(curriculum_path, 'r', encoding='utf-8') as f:
                 return json.load(f)
+
         return []
+
+    @staticmethod
+    def _convert_flat_to_units(flat_records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """Convierte un listado plano (curso, asignatura, eje, codigo_oa, descripcion_oa)
+        a la estructura de unidades esperada por _build_oa_index."""
+        from collections import OrderedDict
+        units_map: Dict[str, Dict[str, Any]] = OrderedDict()
+
+        for rec in flat_records:
+            curso = rec.get("curso", "")
+            asignatura = rec.get("asignatura", "")
+            eje = rec.get("eje", "")
+            key = f"{curso}|{asignatura}|{eje}"
+
+            if key not in units_map:
+                units_map[key] = {
+                    "curso": curso,
+                    "asignatura": asignatura,
+                    "eje_tematico": eje,
+                    "objetivos_aprendizaje": [],
+                }
+
+            units_map[key]["objetivos_aprendizaje"].append({
+                "id_oa": rec.get("codigo_oa", ""),
+                "descripcion": rec.get("descripcion_oa", ""),
+                "indicadores_evaluacion": [],
+                "conceptos_clave": [],
+            })
+
+        return list(units_map.values())
 
     def _load_curriculum_from_supabase(self) -> List[Dict[str, Any]]:
         try:
@@ -126,9 +170,14 @@ class CurriculumManager:
 
     def search_oa_by_course_and_subject(self, curso: str, asignatura: str) -> List[Dict[str, Any]]:
         """Busca todos los OA de un curso y asignatura específicos."""
+        import unicodedata
+        curso_norm = unicodedata.normalize("NFC", curso)
+        asig_norm = unicodedata.normalize("NFC", asignatura)
         results = []
         for oa_id, oa_data in self._oa_index.items():
-            if oa_data.get("curso") == curso and oa_data.get("asignatura") == asignatura:
+            stored_curso = unicodedata.normalize("NFC", oa_data.get("curso", ""))
+            stored_asig = unicodedata.normalize("NFC", oa_data.get("asignatura", ""))
+            if stored_curso == curso_norm and stored_asig == asig_norm:
                 results.append(oa_data)
         return results
 

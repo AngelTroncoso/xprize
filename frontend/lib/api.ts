@@ -16,11 +16,13 @@ export async function getAuthHeaders(): Promise<Record<string, string>> {
 
 export async function fetchApi<T>(
   endpoint: string,
-  options: RequestInit = {}
+  options: RequestInit = {},
+  { credentials = "include" }: { credentials?: RequestCredentials } = {}
 ): Promise<T> {
   const headers = await getAuthHeaders();
   const res = await fetch(`${API_BASE}${endpoint}`, {
     ...options,
+    credentials,
     headers: { ...headers, ...options.headers },
   });
 

@@ -28,9 +28,13 @@ class CurriculumManager:
         self.model = "gemini-3.5-flash"
         self._source_priority_index: Dict[str, float] = {}
         
-        # Cargar y indexar currículo oficial
+        # Cargar e indexar currículo oficial
         self.curriculum_data = self._load_curriculum()
         self._oa_index: Dict[str, Dict[str, Any]] = self._build_oa_index()
+
+        self.use_local_fallback = os.getenv("USE_LOCAL_FALLBACK", "").strip().lower() in ("1", "true", "yes")
+        # DEBUG: confirmar carga real
+        print(f"[CurriculumManager] units={len(self.curriculum_data)} index={len(self._oa_index)} keys={list(self._oa_index.keys())[:10]}")
 
     def _load_curriculum(self) -> List[Dict[str, Any]]:
         """Carga el curriculo oficial de MINEDUC desde Supabase o almacenamiento local."""
@@ -47,8 +51,11 @@ class CurriculumManager:
         if os.path.exists(flat_path):
             with open(flat_path, 'r', encoding='utf-8') as f:
                 flat_records = json.load(f)
-            # Convertir formato plano a estructura de unidades
-            return self._convert_flat_to_units(flat_records)
+            # Validar formato: lista de registros planos con curso/asignatura/codigo_oa
+            if flat_records and isinstance(flat_records[0], dict) and "codigo_oa" in flat_records[0]:
+                print("[CurriculumManager] Cargando malla CURSA desde malla_curricular_produccion.json...")
+                return self._convert_flat_to_units(flat_records)
+            # Si no es formato plano, usar legacy
 
         # 3. Fallback: archivo JSON legacy (con objetivos_aprendizaje)
         curriculum_path = os.path.join(
@@ -92,6 +99,9 @@ class CurriculumManager:
         return list(units_map.values())
 
     def _load_curriculum_from_supabase(self) -> List[Dict[str, Any]]:
+        if self.use_local_fallback:
+            return []
+
         try:
             from app.models.database import db
 
@@ -104,8 +114,8 @@ class CurriculumManager:
         except Exception:
             return []
 
-        units = units_response.data or []
-        objectives = objectives_response.data or []
+        units = getattr(units_response, "data", []) or []
+        objectives = getattr(objectives_response, "data", []) or []
         objectives_by_unit: Dict[str, List[Dict[str, Any]]] = {}
         for objective in objectives:
             unit_id = objective.get("unit_id")
@@ -132,19 +142,22 @@ class CurriculumManager:
     def _build_oa_index(self) -> Dict[str, Dict[str, Any]]:
         """
         Construye un índice rápido de búsqueda para todos los OA.
-        Estructura: { "OA_01": {curso, asignatura, eje_tematico, ...datos_oa} }
+        Usa clave compuesta ``"{id_oa}|{curso}|{asignatura}"`` para soportar
+        códigos de OA repetidos entre cursos/asignaturas (ej. OA_01 en 1° y 5° básico).
         """
         index = {}
         for unit in self.curriculum_data:
             for oa in unit.get("objetivos_aprendizaje", []):
                 oa_id = oa.get("id_oa")
-                if oa_id:
-                    index[oa_id] = {
-                        "curso": unit.get("curso"),
-                        "asignatura": unit.get("asignatura"),
-                        "eje_tematico": unit.get("eje_tematico"),
-                        **oa  # Spread: id_oa, descripcion, indicadores_evaluacion, conceptos_clave
-                    }
+                if not oa_id:
+                    continue
+                key = f"{oa_id}|{unit.get('curso','')}|{unit.get('asignatura','')}"
+                index[key] = {
+                    "curso": unit.get("curso"),
+                    "asignatura": unit.get("asignatura"),
+                    "eje_tematico": unit.get("eje_tematico"),
+                    **oa
+                }
         return index
 
     def get_oa_by_id(self, oa_id: str) -> Optional[Dict[str, Any]]:

@@ -13,7 +13,10 @@ import {
   MessageSquare,
   Volume2,
   StopCircle,
+  Ruler,
 } from "lucide-react";
+
+import PizarraModal from "@/app/dashboard/pizarra/PizarraModal";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
@@ -241,6 +244,31 @@ export default function ChatPageContent() {
     setMessages([]);
   };
 
+  const [showCanvas, setShowCanvas] = useState(false);
+
+  const handleCanvasFeedback = useCallback(
+    (msg: {
+      content: string;
+      agent_used?: string;
+      oa_metadata?: Record<string, unknown>;
+      role: "assistant";
+    }) => {
+      const id = `canvas-${Date.now()}`;
+      setMessages((prev) => [
+        ...prev,
+        {
+          id,
+          role: "assistant",
+          content: `[Pizarra] ${msg.content}`,
+          agent_used: msg.agent_used,
+          oa_metadata: msg.oa_metadata,
+        },
+      ]);
+      setShowCanvas(false);
+    },
+    []
+  );
+
   return (
     <div className="flex h-[calc(100vh-4rem)] gap-4">
       {/* Sessions sidebar */}
@@ -377,6 +405,15 @@ export default function ChatPageContent() {
                 Detener
               </button>
             )}
+
+            <button
+              onClick={() => setShowCanvas(true)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 hover:text-white hover:border-indigo-500/50 transition-all"
+              title="Abrir pizarra"
+            >
+              <Ruler className="w-4 h-4" />
+              Abrir Pizarra
+            </button>
           </div>
         </div>
 
@@ -538,6 +575,16 @@ export default function ChatPageContent() {
           </p>
         </div>
       </div>
+
+      {showCanvas && (
+        <PizarraModal
+          studentId={studentId}
+          curso={curso}
+          asignatura={asignatura}
+          onClose={() => setShowCanvas(false)}
+          onFeedback={handleCanvasFeedback}
+        />
+      )}
     </div>
   );
 }

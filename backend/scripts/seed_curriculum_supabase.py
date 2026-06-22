@@ -32,9 +32,10 @@ def main() -> None:
     load_dotenv(BACKEND_DIR / ".env")
 
     url = os.getenv("SUPABASE_URL")
-    key = os.getenv("SUPABASE_KEY")
+    # Use SUPABASE_SECRET_KEY if available (service_role privileges bypasses RLS), else fallback to SUPABASE_KEY
+    key = os.getenv("SUPABASE_SECRET_KEY") or os.getenv("SUPABASE_KEY")
     if not url or not key:
-        raise RuntimeError("SUPABASE_URL and SUPABASE_KEY must be set in backend/.env")
+        raise RuntimeError("SUPABASE_URL and SUPABASE_SECRET_KEY (or SUPABASE_KEY) must be set in backend/.env")
 
     client = create_client(url, key)
     records = _load_flat_records()
@@ -100,17 +101,20 @@ def main() -> None:
         # Insert objectives for this unit
         rows = []
         for obj in unit["objetivos"]:
-            rows.append({
+            source_record = next((r for r in records if r.get("codigo_oa") == obj["codigo_oa"] and r.get("asignatura") == asignatura), {})
+            row_payload = {
                 "unit_id": unit_id,
                 "curso": curso,
                 "asignatura": asignatura,
                 "eje_tematico": eje,
                 "id_oa": obj["codigo_oa"],
                 "descripcion": obj["descripcion_oa"],
-                "indicadores_evaluacion": [],
-                "conceptos_clave": [],
+                "indicadores_evaluacion": source_record.get("indicadores_evaluacion", []),
+                "conceptos_clave": source_record.get("conceptos_clave", []),
                 "metadata": {},
-            })
+            }
+            # clave_compuesta se agregará después de aplicar la migración 004
+            rows.append(row_payload)
 
         if rows:
             client.table("curriculum_objectives").upsert(

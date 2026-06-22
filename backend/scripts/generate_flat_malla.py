@@ -9,6 +9,7 @@ from pathlib import Path
 CURRICULO_PATH = Path(__file__).resolve().parents[2] / "curriculo_integrado.json"
 OUTPUT_PATH = Path(__file__).resolve().parents[1] / "app" / "data" / "mallas_mineduc" / "malla_curricular_produccion.json"
 
+
 def main():
     with open(CURRICULO_PATH, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -33,7 +34,9 @@ def main():
                         "asignatura": asignatura,
                         "eje": obj.get("eje", ""),
                         "codigo_oa": codigo_oa,
-                        "descripcion_oa": obj.get("descripcion_oa", "")
+                        "descripcion_oa": obj.get("descripcion_oa", ""),
+                        "conceptos_clave": obj.get("conceptos_clave", []),
+                        "indicadores_evaluacion": obj.get("indicadores_evaluacion", []),
                     })
 
     records.sort(key=lambda r: (r["curso"], r["asignatura"], r["codigo_oa"]))
@@ -43,6 +46,7 @@ def main():
 
     print(f"✅ Archivo generado: {OUTPUT_PATH}")
     print(f"📊 Total registros OA únicos: {len(records)}")
+
 
 if __name__ == "__main__":
     main()

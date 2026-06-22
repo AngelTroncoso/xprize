@@ -1,0 +1,588 @@
+{
+  "asignaturas": {
+    "Ciencias Naturales": {
+      "cursos": {
+        "1° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "CN_1B_U1",
+              "nombre_unidad": "Seres vivos: características, higiene y alimentación",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Reconocer y observar, con apoyo de instrumentos, la diversidad de los seres vivos.",
+                  "eje": "Ciencias de la Vida",
+                  "conceptos_clave": ["seres vivos", "animales", "plantas", "características", "ciclo de vida"],
+                  "indicadores_evaluacion": [
+                    "Identifican características de seres vivos.",
+                    "Clasifican seres vivos según características.",
+                    "Distinguen diferencias entre animales y plantas."
+                  ]
+                },
+                {
+                  "id_oa": "OA_02",
+                  "descripcion": "Reconocer y practicar hábitos de higiene personal y de los alimentos para prevenir enfermedades.",
+                  "eje": "Ciencias de la Vida",
+                  "conceptos_clave": ["higiene", "salud", "prevención", "enfermedades", "hábitos"],
+                  "indicadores_evaluacion": [
+                    "Describen la importancia del lavado de manos y dientes.",
+                    "Identifican situaciones de higiene.",
+                    "Relacionan aseo con prevención de enfermedades."
+                  ]
+                },
+                {
+                  "id_oa": "OA_03",
+                  "descripcion": "Reconocer la importancia de mantener una alimentación saludable.",
+                  "eje": "Ciencias de la Vida",
+                  "conceptos_clave": ["alimentación saludable", "nutrientes", "frutas", "verduras", "bienestar"],
+                  "indicadores_evaluacion": [
+                    "Identifican alimentos saludables.",
+                    "Explican importancia de frutas y verduras.",
+                    "Proponen comidas equilibradas."
+                  ]
+                }
+              ]
+            },
+            {
+              "id_unidad": "CN_1B_U2",
+              "nombre_unidad": "Características de los seres vivos del entorno",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_04",
+                  "descripcion": "Observar y describir características de animales vertebrados e invertebrados.",
+                  "eje": "Ciencias de la Vida",
+                  "conceptos_clave": ["vertebrados", "invertebrados", "alimentación", "desplazamiento", "cobertura corporal"],
+                  "indicadores_evaluacion": [
+                    "Describen animales del entorno.",
+                    "Clasifican por cobertura corporal.",
+                    "Distinguen por desplazamiento."
+                  ]
+                },
+                {
+                  "id_oa": "OA_05",
+                  "descripcion": "Observar y describir características de las plantas.",
+                  "eje": "Ciencias de la Vida",
+                  "conceptos_clave": ["plantas", "raíz", "tallo", "hojas", "flores", "frutos"],
+                  "indicadores_evaluacion": [
+                    "Identifican partes de la planta.",
+                    "Describen función de cada parte.",
+                    "Reconocen importancia de las plantas."
+                  ]
+                }
+              ]
+            },
+            {
+              "id_unidad": "CN_1B_U3",
+              "nombre_unidad": "Propiedades de los materiales y objetos cotidianos",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_06",
+                  "descripcion": "Explorar y describir materiales clasificándolos por sus propiedades.",
+                  "eje": "Física y Química",
+                  "conceptos_clave": ["materiales", "propiedades", "flexible", "rígido", "permeable", "impermeable"],
+                  "indicadores_evaluacion": [
+                    "Identifican materiales cotidianos.",
+                    "Clasifican por propiedades.",
+                    "Relacionan propiedades con utilidad."
+                  ]
+                },
+                {
+                  "id_oa": "OA_07",
+                  "descripcion": "Diseñar y construir objetos tecnológicos simples.",
+                  "eje": "Física y Química",
+                  "conceptos_clave": ["tecnología", "diseño", "construcción", "materiales", "herramientas"],
+                  "indicadores_evaluacion": [
+                    "Diseñan objetos simples.",
+                    "Seleccionan materiales apropiados.",
+                    "Evalúan desempeño."
+                  ]
+                }
+              ]
+            },
+            {
+              "id_unidad": "CN_1B_U4",
+              "nombre_unidad": "El Sol, el ciclo diario y las estaciones del año",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_08",
+                  "descripcion": "Observar y describir efectos del Sol en la Tierra: luz, calor, ciclo diario y estaciones.",
+                  "eje": "Ciencias de la Tierra y el Universo",
+                  "conceptos_clave": ["Sol", "luz", "calor", "día", "noche", "estaciones del año"],
+                  "indicadores_evaluacion": [
+                    "Describen ciclo día/noche.",
+                    "Identifican las estaciones.",
+                    "Relacionan cambios con seres vivos."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "2° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "CN_2B_U1",
+              "nombre_unidad": "Cuerpo humano: órganos internos y hábitos saludables",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Identificar y describir ubicación de principales órganos internos.",
+                  "eje": "Ciencias de la Vida",
+                  "conceptos_clave": ["órganos internos", "corazón", "pulmones", "estómago", "esqueleto"],
+                  "indicadores_evaluacion": [
+                    "Ubican órganos en esquema.",
+                    "Describen función básica.",
+                    "Reconocen importancia del esqueleto."
+                  ]
+                },
+                {
+                  "id_oa": "OA_02",
+                  "descripcion": "Reconocer y practicar hábitos de vida saludable.",
+                  "eje": "Ciencias de la Vida",
+                  "conceptos_clave": ["hábitos saludables", "actividad física", "alimentación", "sueño", "bienestar"],
+                  "indicadores_evaluacion": [
+                    "Identifican hábitos saludables.",
+                    "Describen beneficios de actividad física.",
+                    "Relacionan alimentación con salud."
+                  ]
+                }
+              ]
+            },
+            {
+              "id_unidad": "CN_2B_U2",
+              "nombre_unidad": "Animales: diversidad, hábitats y ciclos de vida",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_03",
+                  "descripcion": "Observar, describir y clasificar invertebrados.",
+                  "eje": "Ciencias de la Vida",
+                  "conceptos_clave": ["invertebrados", "insectos", "arácnidos", "crustáceos", "hábitat"],
+                  "indicadores_evaluacion": [
+                    "Identifican características.",
+                    "Clasifican invertebrados.",
+                    "Ubican en hábitats."
+                  ]
+                },
+                {
+                  "id_oa": "OA_04",
+                  "descripcion": "Describir el ciclo de vida de animales vertebrados e invertebrados.",
+                  "eje": "Ciencias de la Vida",
+                  "conceptos_clave": ["ciclo de vida", "nacimiento", "crecimiento", "reproducción", "metamorfosis"],
+                  "indicadores_evaluacion": [
+                    "Describen etapas del ciclo.",
+                    "Reconocen metamorfosis.",
+                    "Comparan ciclos de vida."
+                  ]
+                },
+                {
+                  "id_oa": "OA_05",
+                  "descripcion": "Identificar animales nativos de Chile en peligro de extinción.",
+                  "eje": "Ciencias de la Vida",
+                  "conceptos_clave": ["extinción", "fauna nativa", "conservación", "biodiversidad", "Chile"],
+                  "indicadores_evaluacion": [
+                    "Nombran animales en peligro.",
+                    "Identifican causas de desaparición.",
+                    "Proponen acciones de conservación."
+                  ]
+                }
+              ]
+            },
+            {
+              "id_unidad": "CN_2B_U3",
+              "nombre_unidad": "El agua: características, estados y cuidado",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_06",
+                  "descripcion": "Explorar y describir características generales del agua y sus tres estados.",
+                  "eje": "Física y Química",
+                  "conceptos_clave": ["agua", "estados de la materia", "sólido", "líquido", "gaseoso"],
+                  "indicadores_evaluacion": [
+                    "Describen características físicas del agua.",
+                    "Identifican los tres estados.",
+                    "Reconocen importancia del ahorro."
+                  ]
+                },
+                {
+                  "id_oa": "OA_07",
+                  "descripcion": "Reconocer el impacto de actividades humanas en el ambiente.",
+                  "eje": "Ciencias de la Vida",
+                  "conceptos_clave": ["impacto ambiental", "contaminación", "reciclaje", "medioambiente", "cuidado"],
+                  "indicadores_evaluacion": [
+                    "Identifican actividades que afectan el ambiente.",
+                    "Proponen medidas de cuidado.",
+                    "Reconocen importancia del reciclaje."
+                  ]
+                }
+              ]
+            },
+            {
+              "id_unidad": "CN_2B_U4",
+              "nombre_unidad": "Clima, tiempo atmosférico y estaciones del año",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_08",
+                  "descripcion": "Observar y registrar el tiempo atmosférico relacionándolo con las estaciones.",
+                  "eje": "Ciencias de la Tierra y el Universo",
+                  "conceptos_clave": ["tiempo atmosférico", "temperatura", "precipitaciones", "viento", "clima"],
+                  "indicadores_evaluacion": [
+                    "Registran datos del tiempo.",
+                    "Relacionan con estaciones.",
+                    "Describen efectos en seres vivos."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "3° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "CN_3B_U1",
+              "nombre_unidad": "Luz y sonido: propiedades y efectos",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Explorar y describir la luz como fuente de energía.",
+                  "eje": "Física y Química",
+                  "conceptos_clave": ["luz", "fuentes luminosas", "reflexión", "sombras", "energía"],
+                  "indicadores_evaluacion": ["Distinguen fuentes de luz", "Experimentan con sombras", "Describen importancia de la luz"]
+                }
+              ]
+            }
+          ]
+        },
+        "4° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "CN_4B_U1",
+              "nombre_unidad": "La materia: estados, propiedades y medición",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Explorar y describir el concepto de materia y sus estados.",
+                  "eje": "Física y Química",
+                  "conceptos_clave": ["materia", "estados de la materia", "masa", "volumen", "temperatura"],
+                  "indicadores_evaluacion": ["Definen materia", "Miden magnitudes", "Identifican propiedades"]
+                }
+              ]
+            }
+          ]
+        },
+        "5° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "CN_5B_U1",
+              "nombre_unidad": "El agua: distribución, propiedades y estados",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Investigar y describir la distribución del agua en la Tierra.",
+                  "eje": "Ciencias de la Tierra y el Universo",
+                  "conceptos_clave": ["agua", "ciclo hidrológico", "océanos", "glaciares", "distribución del agua"],
+                  "indicadores_evaluacion": ["Describen distribución del agua", "Explican ciclo del agua", "Identifican propiedades del agua"]
+                }
+              ]
+            }
+          ]
+        },
+        "6° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "CN_6B_U1",
+              "nombre_unidad": "La Tierra: capas, suelo y fotosíntesis",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Describir las capas de la Tierra y tipos de suelo.",
+                  "eje": "Ciencias de la Tierra y el Universo",
+                  "conceptos_clave": ["capas de la Tierra", "tipos de suelo", "edafología", "corteza", "manto"],
+                  "indicadores_evaluacion": ["Describen capas de la Tierra", "Comparan tipos de suelo", "Explican relación seres vivos-suelo"]
+                }
+              ]
+            }
+          ]
+        },
+        "7° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "CN_7B_U1",
+              "nombre_unidad": "Eje Química: Comportamiento de los gases",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Comprender y describir el comportamiento de los gases.",
+                  "eje": "Física y Química",
+                  "conceptos_clave": ["gases", "Ley de Boyle", "Ley de Charles", "presión", "temperatura", "volumen"],
+                  "indicadores_evaluacion": ["Explican comportamiento de gases", "Aplican leyes de gases", "Resuelven problemas"]
+                }
+              ]
+            }
+          ]
+        },
+        "8° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "CN_8B_U1",
+              "nombre_unidad": "Eje Biología: Nutrición y salud",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Explicar el funcionamiento de sistemas digestivo, circulatorio, respiratorio y excretor.",
+                  "eje": "Ciencias de la Vida",
+                  "conceptos_clave": ["homeostasis", "sistema digestivo", "sistema circulatorio", "sistema respiratorio", "sistema excretor"],
+                  "indicadores_evaluacion": ["Describen digestión", "Explican circulación", "Relacionan sistemas con homeostasis"]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Historia, Geografía y Ciencias Sociales": {
+      "cursos": {
+        "1° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "HGS_1B_U1",
+              "nombre_unidad": "Mi historia personal, mi familia y mis grupos de pertenencia",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Describir su historia personal y la de su familia.",
+                  "eje": "Historia",
+                  "conceptos_clave": ["familia", "historia personal", "roles familiares", "cambios en el tiempo", "árbol genealógico"],
+                  "indicadores_evaluacion": ["Narran historia personal", "Identifican roles familiares", "Reconocen cambios en el tiempo"]
+                },
+                {
+                  "id_oa": "OA_02",
+                  "descripcion": "Reconocer y valorar los grupos a los que pertenece.",
+                  "eje": "Formación Ciudadana",
+                  "conceptos_clave": ["grupos de pertenencia", "normas", "convivencia", "comunidad", "respeto"],
+                  "indicadores_evaluacion": ["Identifican grupos de pertenencia", "Describen normas", "Valoran convivencia"]
+                }
+              ]
+            },
+            {
+              "id_unidad": "HGS_1B_U2",
+              "nombre_unidad": "El entorno geográfico: mi escuela, barrio y localidad",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_03",
+                  "descripcion": "Describir y representar el espacio geográfico cercano.",
+                  "eje": "Geografía",
+                  "conceptos_clave": ["espacio geográfico", "plano", "orientación", "barrio", "localidad"],
+                  "indicadores_evaluacion": ["Ubican elementos", "Elaboran planos", "Describen localidad"]
+                },
+                {
+                  "id_oa": "OA_04",
+                  "descripcion": "Reconocer características naturales y culturales del entorno.",
+                  "eje": "Geografía",
+                  "conceptos_clave": ["paisaje", "características naturales", "características culturales", "relieve", "costumbres"],
+                  "indicadores_evaluacion": ["Identifican elementos naturales y culturales", "Describen paisaje", "Valoran entorno"]
+                }
+              ]
+            },
+            {
+              "id_unidad": "HGS_1B_U3",
+              "nombre_unidad": "El tiempo: pasado, presente, futuro y calendarios",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_05",
+                  "descripcion": "Establecer relaciones de tiempo entre hechos y situaciones cotidianas.",
+                  "eje": "Historia",
+                  "conceptos_clave": ["tiempo", "pasado", "presente", "futuro", "calendario"],
+                  "indicadores_evaluacion": ["Usan vocabulario temporal", "Leen calendario", "Ordenan eventos"]
+                }
+              ]
+            },
+            {
+              "id_unidad": "HGS_1B_U4",
+              "nombre_unidad": "Derechos, responsabilidades y participación",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_06",
+                  "descripcion": "Reconocer que todas las personas tienen derechos y responsabilidades.",
+                  "eje": "Formación Ciudadana",
+                  "conceptos_clave": ["derechos del niño", "responsabilidades", "igualdad", "participación", "democracia"],
+                  "indicadores_evaluacion": ["Nombran derechos", "Identifican responsabilidades", "Relacionan derechos con deberes"]
+                }
+              ]
+            }
+          ]
+        },
+        "2° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "HGS_2B_U1",
+              "nombre_unidad": "Historia de la localidad y tradiciones culturales",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Describir la historia de la localidad y sus tradiciones.",
+                  "eje": "Historia",
+                  "conceptos_clave": ["historia local", "tradiciones", "patrimonio cultural", "comunidad", "identidad"],
+                  "indicadores_evaluacion": ["Narran historia local", "Describen tradiciones", "Valoran patrimonio"]
+                },
+                {
+                  "id_oa": "OA_02",
+                  "descripcion": "Reconocer la diversidad cultural de Chile.",
+                  "eje": "Historia",
+                  "conceptos_clave": ["pueblos originarios", "diversidad cultural", "identidad chilena", "Mapuche", "Aymara"],
+                  "indicadores_evaluacion": ["Identifican pueblos originarios", "Reconocen aportes", "Valoran diversidad"]
+                }
+              ]
+            },
+            {
+              "id_unidad": "HGS_2B_U2",
+              "nombre_unidad": "El espacio geográfico de Chile: paisajes y zonas",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_03",
+                  "descripcion": "Describir características geográficas de Chile.",
+                  "eje": "Geografía",
+                  "conceptos_clave": ["relieve", "clima", "vegetación", "paisajes de Chile", "recursos naturales"],
+                  "indicadores_evaluacion": ["Identifican unidades de relieve", "Describen diversidad climática", "Reconocen recursos naturales"]
+                },
+                {
+                  "id_oa": "OA_04",
+                  "descripcion": "Leer e interpretar mapas simples de Chile.",
+                  "eje": "Geografía",
+                  "conceptos_clave": ["mapa", "puntos cardinales", "zonas de Chile", "leyenda del mapa", "escala"],
+                  "indicadores_evaluacion": ["Ubican Chile en mapas", "Identifican zonas", "Usan rosa de los vientos"]
+                }
+              ]
+            },
+            {
+              "id_unidad": "HGS_2B_U3",
+              "nombre_unidad": "Actividades económicas y trabajo",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_05",
+                  "descripcion": "Reconocer la importancia del trabajo y las actividades económicas.",
+                  "eje": "Historia",
+                  "conceptos_clave": ["trabajo", "actividades económicas", "sector primario", "sector secundario", "sector terciario"],
+                  "indicadores_evaluacion": ["Clasifican actividades económicas", "Valoran el trabajo", "Reconocen aportes a la comunidad"]
+                }
+              ]
+            },
+            {
+              "id_unidad": "HGS_2B_U4",
+              "nombre_unidad": "Convivencia democrática y participación ciudadana",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_06",
+                  "descripcion": "Reconocer normas que regulan la convivencia y formas de participación.",
+                  "eje": "Formación Ciudadana",
+                  "conceptos_clave": ["normas", "convivencia", "participación ciudadana", "democracia", "bien común"],
+                  "indicadores_evaluacion": ["Identifican normas", "Describen participación", "Valoran democracia"]
+                }
+              ]
+            }
+          ]
+        },
+        "3° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "HGS_3B_U1",
+              "nombre_unidad": "Chile: ubicación, territorio e identidad nacional",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Describir la ubicación de Chile en el continente y el mundo.",
+                  "eje": "Geografía",
+                  "conceptos_clave": ["Chile", "límites", "regiones", "símbolos patrios", "territorio nacional"],
+                  "indicadores_evaluacion": ["Ubican Chile en mapas", "Identifican límites", "Reconocen símbolos patrios"]
+                }
+              ]
+            }
+          ]
+        },
+        "4° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "HGS_4B_U1",
+              "nombre_unidad": "Civilizaciones de la Antigüedad: Mesopotamia y Egipto",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Describir características de las primeras civilizaciones.",
+                  "eje": "Historia",
+                  "conceptos_clave": ["Mesopotamia", "Egipto", "escritura cuneiforme", "jeroglíficos", "civilización"],
+                  "indicadores_evaluacion": ["Identifican características", "Reconocen aportes", "Ubican en mapa"]
+                }
+              ]
+            }
+          ]
+        },
+        "5° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "HGS_5B_U1",
+              "nombre_unidad": "El mundo medieval: Europa feudal y el Islam",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Describir características del feudalismo medieval.",
+                  "eje": "Historia",
+                  "conceptos_clave": ["feudalismo", "Edad Media", "señor feudal", "vasallo", "Iglesia medieval"],
+                  "indicadores_evaluacion": ["Describen sociedad feudal", "Reconocen papel de la Iglesia", "Identifican vida cotidiana"]
+                }
+              ]
+            }
+          ]
+        },
+        "6° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "HGS_6B_U1",
+              "nombre_unidad": "La Ilustración, las Revoluciones y el mundo moderno",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Describir las ideas de la Ilustración y su influencia en las revoluciones.",
+                  "eje": "Historia",
+                  "conceptos_clave": ["Ilustración", "Revolución Francesa", "Revolución Americana", "derechos humanos", "Constitución"],
+                  "indicadores_evaluacion": ["Describen ideas ilustradas", "Identifican causas de revoluciones", "Reconocen impacto en derechos humanos"]
+                }
+              ]
+            }
+          ]
+        },
+        "7° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "HGS_7B_U1",
+              "nombre_unidad": "El mundo antiguo: civilizaciones fluviales y el Mediterráneo",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Analizar y comparar las civilizaciones fluviales de la Antigüedad.",
+                  "eje": "Historia",
+                  "conceptos_clave": ["civilizaciones fluviales", "Mesopotamia", "Egipto", "India", "China antigua"],
+                  "indicadores_evaluacion": ["Comparan civilizaciones", "Identifican aportes", "Ubican en mapas históricos"]
+                }
+              ]
+            }
+          ]
+        },
+        "8° Básico": {
+          "unidades": [
+            {
+              "id_unidad": "HGS_8B_U1",
+              "nombre_unidad": "La era de las revoluciones: Ilustración, Revolución Francesa e Industrial",
+              "objetivos_aprendizaje": [
+                {
+                  "id_oa": "OA_01",
+                  "descripcion": "Analizar las ideas de la Ilustración y su impacto en las revoluciones.",
+                  "eje": "Historia",
+                  "conceptos_clave": ["Ilustración", "Revolución Francesa", "soberanía popular", "Montesquieu", "Locke"],
+                  "indicadores_evaluacion": ["Analizan ideas ilustradas", "Identifican principios", "Evalúan impacto"]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

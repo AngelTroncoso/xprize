@@ -124,6 +124,644 @@
             "descripcion_oa": "Escribir oraciones completas sobre temas de su interés, usando mayúscula al inicio y punto final, e incorporando vocabulario aprendido en clases."
           }
         ]
+      },
+      {
+        "id_proyecto": "CN_1B_U1",
+        "nombre_proyecto": "Seres vivos: características, higiene y alimentación",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_01",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Reconocer y observar, con apoyo de instrumentos, la diversidad de los seres vivos (animales, plantas, hongos y algas) en términos de sus características (tipos de alimentación, cobertura, desplazamiento, ciclos de vida y reproducción).",
+            "conceptos_clave": [
+              "seres vivos",
+              "animales",
+              "plantas",
+              "características",
+              "ciclo de vida"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican características de seres vivos observados directamente o a través de imágenes.",
+              "Clasifican seres vivos según características como tipo de alimentación o cobertura corporal.",
+              "Distinguen diferencias entre animales y plantas."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_02",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Reconocer y practicar hábitos de higiene personal (lavado de manos, dientes, aseo corporal) y de los alimentos para prevenir enfermedades.",
+            "conceptos_clave": [
+              "higiene",
+              "salud",
+              "prevención",
+              "enfermedades",
+              "hábitos"
+            ],
+            "indicadores_evaluacion": [
+              "Describen la importancia del lavado de manos y dientes.",
+              "Identifican situaciones cotidianas donde aplicar hábitos de higiene.",
+              "Relacionan el aseo personal con la prevención de enfermedades."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_03",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Reconocer y comunicar la importancia de mantener una alimentación saludable, incluyendo la variedad de alimentos y el consumo de frutas y verduras.",
+            "conceptos_clave": [
+              "alimentación saludable",
+              "nutrientes",
+              "frutas",
+              "verduras",
+              "bienestar"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican alimentos saludables y no saludables.",
+              "Explican la importancia de comer frutas y verduras.",
+              "Proponen ejemplos de comidas equilibradas."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "CN_1B_U2",
+        "nombre_proyecto": "Características de los seres vivos del entorno",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_04",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Observar y describir las características de los animales (vertebrados e invertebrados) presentes en el entorno local, considerando tipo de alimentación, desplazamiento y cobertura corporal.",
+            "conceptos_clave": [
+              "vertebrados",
+              "invertebrados",
+              "alimentación",
+              "desplazamiento",
+              "cobertura corporal"
+            ],
+            "indicadores_evaluacion": [
+              "Observan y describen animales presentes en su entorno.",
+              "Clasifican animales según su cobertura corporal (plumas, pelos, escamas).",
+              "Distinguen animales según su tipo de desplazamiento."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_05",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Observar y describir las características de las plantas del entorno (raíz, tallo, hojas, flores y frutos), reconociendo su importancia para los seres vivos.",
+            "conceptos_clave": [
+              "plantas",
+              "raíz",
+              "tallo",
+              "hojas",
+              "flores",
+              "frutos"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican y nombran las partes de una planta.",
+              "Describen la función de cada parte de la planta.",
+              "Reconocen la importancia de las plantas para los animales y el ser humano."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "CN_1B_U3",
+        "nombre_proyecto": "Propiedades de los materiales y objetos cotidianos",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_06",
+            "eje": "Física y Química",
+            "descripcion_oa": "Explorar y describir los diferentes tipos de materiales en diversos objetos, clasificándolos según sus propiedades (flexible/rígido, permeable/impermeable, opaco/transparente) e identificando su uso en la vida cotidiana.",
+            "conceptos_clave": [
+              "materiales",
+              "propiedades",
+              "flexible",
+              "rígido",
+              "permeable",
+              "impermeable"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican materiales de objetos cotidianos (madera, metal, tela, plástico).",
+              "Clasifican materiales según sus propiedades observables.",
+              "Relacionan propiedades de materiales con su utilidad en la vida cotidiana."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_07",
+            "eje": "Física y Química",
+            "descripcion_oa": "Diseñar y construir objetos tecnológicos simples con diversos materiales del entorno, considerando sus propiedades y uso.",
+            "conceptos_clave": [
+              "tecnología",
+              "diseño",
+              "construcción",
+              "materiales",
+              "herramientas"
+            ],
+            "indicadores_evaluacion": [
+              "Diseñan objetos simples usando materiales del entorno.",
+              "Seleccionan materiales apropiados según la propiedad requerida.",
+              "Evalúan el desempeño de los objetos construidos."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "CN_1B_U4",
+        "nombre_proyecto": "El Sol, el ciclo diario y las estaciones del año",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_08",
+            "eje": "Ciencias de la Tierra y el Universo",
+            "descripcion_oa": "Observar y describir los efectos del Sol en la vida en la Tierra: luz, calor, ciclo diario (día y noche) y las estaciones del año, relacionándolos con los cambios en los seres vivos y el ambiente.",
+            "conceptos_clave": [
+              "Sol",
+              "luz",
+              "calor",
+              "día",
+              "noche",
+              "estaciones del año"
+            ],
+            "indicadores_evaluacion": [
+              "Describen el ciclo del día y la noche y su relación con el Sol.",
+              "Identifican las cuatro estaciones y sus características climáticas.",
+              "Relacionan los cambios estacionales con cambios en animales y plantas."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_1B_U1",
+        "nombre_proyecto": "Mi historia personal, mi familia y mis grupos de pertenencia",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_01",
+            "eje": "Historia",
+            "descripcion_oa": "Describir su historia personal y la de su familia, reconociendo a los integrantes de la familia, los roles que desempeñan y los cambios que han ocurrido a lo largo del tiempo.",
+            "conceptos_clave": [
+              "familia",
+              "historia personal",
+              "roles familiares",
+              "cambios en el tiempo",
+              "árbol genealógico"
+            ],
+            "indicadores_evaluacion": [
+              "Narran aspectos de su historia personal y familiar.",
+              "Identifican los integrantes de la familia y sus roles.",
+              "Reconocen cambios en la familia a lo largo del tiempo."
+            ]
+          },
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_02",
+            "eje": "Formación Ciudadana",
+            "descripcion_oa": "Reconocer y valorar los grupos a los que pertenece (familia, curso, escuela y comunidad), identificando las normas que los regulan y la importancia de la convivencia pacífica.",
+            "conceptos_clave": [
+              "grupos de pertenencia",
+              "normas",
+              "convivencia",
+              "comunidad",
+              "respeto"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican los grupos a los que pertenecen y sus características.",
+              "Describen las normas que regulan la vida en familia y en la escuela.",
+              "Valoran la convivencia pacífica y el respeto mutuo."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_1B_U2",
+        "nombre_proyecto": "El entorno geográfico: mi escuela, barrio y localidad",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_03",
+            "eje": "Geografía",
+            "descripcion_oa": "Describir y representar el espacio geográfico cercano (sala de clases, escuela, barrio y localidad), utilizando planos simples y nociones básicas de orientación espacial (arriba/abajo, cerca/lejos, izquierda/derecha).",
+            "conceptos_clave": [
+              "espacio geográfico",
+              "plano",
+              "orientación",
+              "barrio",
+              "localidad"
+            ],
+            "indicadores_evaluacion": [
+              "Ubican elementos del entorno usando nociones espaciales básicas.",
+              "Elaboran planos simples de la sala de clases y la escuela.",
+              "Describen características del barrio y la localidad donde viven."
+            ]
+          },
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_04",
+            "eje": "Geografía",
+            "descripcion_oa": "Reconocer las características naturales y culturales del entorno local (relieve, ríos, vegetación, construcciones, costumbres) y su importancia para la comunidad.",
+            "conceptos_clave": [
+              "paisaje",
+              "características naturales",
+              "características culturales",
+              "relieve",
+              "costumbres"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican elementos naturales y culturales del entorno local.",
+              "Describen el paisaje de su localidad.",
+              "Valoran las características de su entorno como parte de su identidad."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_1B_U3",
+        "nombre_proyecto": "El tiempo: pasado, presente, futuro y calendarios",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_05",
+            "eje": "Historia",
+            "descripcion_oa": "Establecer relaciones de tiempo entre hechos y situaciones de su vida cotidiana, usando conceptos temporales básicos (antes, después, ayer, hoy, mañana, semanas, meses) y el calendario.",
+            "conceptos_clave": [
+              "tiempo",
+              "pasado",
+              "presente",
+              "futuro",
+              "calendario"
+            ],
+            "indicadores_evaluacion": [
+              "Usan vocabulario temporal básico en la descripción de eventos.",
+              "Leen y usan el calendario para ubicar fechas significativas.",
+              "Ordenan eventos de su vida cotidiana en secuencia temporal."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_1B_U4",
+        "nombre_proyecto": "Derechos, responsabilidades y participación",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_06",
+            "eje": "Formación Ciudadana",
+            "descripcion_oa": "Reconocer que todas las personas tienen derechos y responsabilidades, identificando los derechos del niño y las responsabilidades que les corresponden en la familia y la escuela.",
+            "conceptos_clave": [
+              "derechos del niño",
+              "responsabilidades",
+              "igualdad",
+              "participación",
+              "democracia"
+            ],
+            "indicadores_evaluacion": [
+              "Nombran los derechos fundamentales de los niños.",
+              "Identifican responsabilidades que tienen en la familia y la escuela.",
+              "Relacionan el ejercicio de derechos con el cumplimiento de responsabilidades."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "CN_1B_U1",
+        "nombre_proyecto": "Seres vivos: características, higiene y alimentación",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_01",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Reconocer y observar, con apoyo de instrumentos, la diversidad de los seres vivos.",
+            "conceptos_clave": [
+              "seres vivos",
+              "animales",
+              "plantas",
+              "características",
+              "ciclo de vida"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican características de seres vivos.",
+              "Clasifican seres vivos según características.",
+              "Distinguen diferencias entre animales y plantas."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_02",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Reconocer y practicar hábitos de higiene personal y de los alimentos para prevenir enfermedades.",
+            "conceptos_clave": [
+              "higiene",
+              "salud",
+              "prevención",
+              "enfermedades",
+              "hábitos"
+            ],
+            "indicadores_evaluacion": [
+              "Describen la importancia del lavado de manos y dientes.",
+              "Identifican situaciones de higiene.",
+              "Relacionan aseo con prevención de enfermedades."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_03",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Reconocer la importancia de mantener una alimentación saludable.",
+            "conceptos_clave": [
+              "alimentación saludable",
+              "nutrientes",
+              "frutas",
+              "verduras",
+              "bienestar"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican alimentos saludables.",
+              "Explican importancia de frutas y verduras.",
+              "Proponen comidas equilibradas."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "CN_1B_U2",
+        "nombre_proyecto": "Características de los seres vivos del entorno",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_04",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Observar y describir características de animales vertebrados e invertebrados.",
+            "conceptos_clave": [
+              "vertebrados",
+              "invertebrados",
+              "alimentación",
+              "desplazamiento",
+              "cobertura corporal"
+            ],
+            "indicadores_evaluacion": [
+              "Describen animales del entorno.",
+              "Clasifican por cobertura corporal.",
+              "Distinguen por desplazamiento."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_05",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Observar y describir características de las plantas.",
+            "conceptos_clave": [
+              "plantas",
+              "raíz",
+              "tallo",
+              "hojas",
+              "flores",
+              "frutos"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican partes de la planta.",
+              "Describen función de cada parte.",
+              "Reconocen importancia de las plantas."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "CN_1B_U3",
+        "nombre_proyecto": "Propiedades de los materiales y objetos cotidianos",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_06",
+            "eje": "Física y Química",
+            "descripcion_oa": "Explorar y describir materiales clasificándolos por sus propiedades.",
+            "conceptos_clave": [
+              "materiales",
+              "propiedades",
+              "flexible",
+              "rígido",
+              "permeable",
+              "impermeable"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican materiales cotidianos.",
+              "Clasifican por propiedades.",
+              "Relacionan propiedades con utilidad."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_07",
+            "eje": "Física y Química",
+            "descripcion_oa": "Diseñar y construir objetos tecnológicos simples.",
+            "conceptos_clave": [
+              "tecnología",
+              "diseño",
+              "construcción",
+              "materiales",
+              "herramientas"
+            ],
+            "indicadores_evaluacion": [
+              "Diseñan objetos simples.",
+              "Seleccionan materiales apropiados.",
+              "Evalúan desempeño."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "CN_1B_U4",
+        "nombre_proyecto": "El Sol, el ciclo diario y las estaciones del año",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_08",
+            "eje": "Ciencias de la Tierra y el Universo",
+            "descripcion_oa": "Observar y describir efectos del Sol en la Tierra: luz, calor, ciclo diario y estaciones.",
+            "conceptos_clave": [
+              "Sol",
+              "luz",
+              "calor",
+              "día",
+              "noche",
+              "estaciones del año"
+            ],
+            "indicadores_evaluacion": [
+              "Describen ciclo día/noche.",
+              "Identifican las estaciones.",
+              "Relacionan cambios con seres vivos."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_1B_U1",
+        "nombre_proyecto": "Mi historia personal, mi familia y mis grupos de pertenencia",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_01",
+            "eje": "Historia",
+            "descripcion_oa": "Describir su historia personal y la de su familia.",
+            "conceptos_clave": [
+              "familia",
+              "historia personal",
+              "roles familiares",
+              "cambios en el tiempo",
+              "árbol genealógico"
+            ],
+            "indicadores_evaluacion": [
+              "Narran historia personal",
+              "Identifican roles familiares",
+              "Reconocen cambios en el tiempo"
+            ]
+          },
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_02",
+            "eje": "Formación Ciudadana",
+            "descripcion_oa": "Reconocer y valorar los grupos a los que pertenece.",
+            "conceptos_clave": [
+              "grupos de pertenencia",
+              "normas",
+              "convivencia",
+              "comunidad",
+              "respeto"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican grupos de pertenencia",
+              "Describen normas",
+              "Valoran convivencia"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_1B_U2",
+        "nombre_proyecto": "El entorno geográfico: mi escuela, barrio y localidad",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_03",
+            "eje": "Geografía",
+            "descripcion_oa": "Describir y representar el espacio geográfico cercano.",
+            "conceptos_clave": [
+              "espacio geográfico",
+              "plano",
+              "orientación",
+              "barrio",
+              "localidad"
+            ],
+            "indicadores_evaluacion": [
+              "Ubican elementos",
+              "Elaboran planos",
+              "Describen localidad"
+            ]
+          },
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_04",
+            "eje": "Geografía",
+            "descripcion_oa": "Reconocer características naturales y culturales del entorno.",
+            "conceptos_clave": [
+              "paisaje",
+              "características naturales",
+              "características culturales",
+              "relieve",
+              "costumbres"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican elementos naturales y culturales",
+              "Describen paisaje",
+              "Valoran entorno"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_1B_U3",
+        "nombre_proyecto": "El tiempo: pasado, presente, futuro y calendarios",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_05",
+            "eje": "Historia",
+            "descripcion_oa": "Establecer relaciones de tiempo entre hechos y situaciones cotidianas.",
+            "conceptos_clave": [
+              "tiempo",
+              "pasado",
+              "presente",
+              "futuro",
+              "calendario"
+            ],
+            "indicadores_evaluacion": [
+              "Usan vocabulario temporal",
+              "Leen calendario",
+              "Ordenan eventos"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_1B_U4",
+        "nombre_proyecto": "Derechos, responsabilidades y participación",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_06",
+            "eje": "Formación Ciudadana",
+            "descripcion_oa": "Reconocer que todas las personas tienen derechos y responsabilidades.",
+            "conceptos_clave": [
+              "derechos del niño",
+              "responsabilidades",
+              "igualdad",
+              "participación",
+              "democracia"
+            ],
+            "indicadores_evaluacion": [
+              "Nombran derechos",
+              "Identifican responsabilidades",
+              "Relacionan derechos con deberes"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
       }
     ]
   },
@@ -246,6 +884,498 @@
             "descripcion_oa": "Escribir textos narrativos y descriptivos breves aplicando el proceso de escritura: planificación, escritura de borrador, revisión y edición, incorporando inicio, desarrollo y desenlace."
           }
         ]
+      },
+      {
+        "id_proyecto": "CN_2B_U1",
+        "nombre_proyecto": "Cuerpo humano: órganos internos y hábitos saludables",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_01",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Identificar y describir la ubicación de los principales órganos internos del cuerpo humano (corazón, pulmones, estómago, intestinos y esqueleto), reconociendo su función básica.",
+            "conceptos_clave": [
+              "órganos internos",
+              "corazón",
+              "pulmones",
+              "estómago",
+              "esqueleto"
+            ],
+            "indicadores_evaluacion": [
+              "Ubican en un esquema los principales órganos internos del cuerpo humano.",
+              "Describen la función básica de cada órgano.",
+              "Reconocen la importancia del esqueleto para el movimiento y protección."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_02",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Reconocer y practicar hábitos de vida saludable (actividad física, alimentación equilibrada, sueño y descanso adecuados) y sus beneficios para el bienestar.",
+            "conceptos_clave": [
+              "hábitos saludables",
+              "actividad física",
+              "alimentación",
+              "sueño",
+              "bienestar"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican hábitos saludables en situaciones cotidianas.",
+              "Describen los beneficios de la actividad física para el cuerpo.",
+              "Relacionan alimentación equilibrada con salud y bienestar."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "CN_2B_U2",
+        "nombre_proyecto": "Animales: diversidad, hábitats y ciclos de vida",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_03",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Observar, describir y clasificar invertebrados (insectos, arácnidos, crustáceos y moluscos) identificando sus características y hábitats.",
+            "conceptos_clave": [
+              "invertebrados",
+              "insectos",
+              "arácnidos",
+              "crustáceos",
+              "hábitat"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican y describen características de insectos, arácnidos y crustáceos.",
+              "Clasifican invertebrados según sus características.",
+              "Ubican invertebrados en sus hábitats correspondientes."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_04",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Describir el ciclo de vida de animales vertebrados e invertebrados, reconociendo etapas como nacimiento, crecimiento, reproducción y muerte.",
+            "conceptos_clave": [
+              "ciclo de vida",
+              "nacimiento",
+              "crecimiento",
+              "reproducción",
+              "metamorfosis"
+            ],
+            "indicadores_evaluacion": [
+              "Describen las etapas del ciclo de vida de distintos animales.",
+              "Reconocen la metamorfosis como un tipo de desarrollo animal.",
+              "Comparan ciclos de vida de animales vertebrados e invertebrados."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_05",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Identificar animales nativos de Chile en peligro de extinción, reconociendo las causas y consecuencias de su desaparición y la importancia de su conservación.",
+            "conceptos_clave": [
+              "extinción",
+              "fauna nativa",
+              "conservación",
+              "biodiversidad",
+              "Chile"
+            ],
+            "indicadores_evaluacion": [
+              "Nombran y describen animales nativos de Chile en peligro de extinción.",
+              "Identifican causas que amenazan la supervivencia de los animales.",
+              "Proponen acciones para proteger la fauna nativa."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "CN_2B_U3",
+        "nombre_proyecto": "El agua: características, estados y cuidado",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_06",
+            "eje": "Física y Química",
+            "descripcion_oa": "Explorar y describir las características generales del agua (inodora, incolora, insípida), sus tres estados (sólido, líquido y gaseoso) y la importancia de su uso responsable.",
+            "conceptos_clave": [
+              "agua",
+              "estados de la materia",
+              "sólido",
+              "líquido",
+              "gaseoso"
+            ],
+            "indicadores_evaluacion": [
+              "Describen las características físicas del agua pura.",
+              "Identifican los tres estados del agua con ejemplos cotidianos.",
+              "Reconocen la importancia del ahorro de agua."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_07",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Reconocer el impacto de las actividades humanas en el ambiente y proponer medidas para cuidarlo.",
+            "conceptos_clave": [
+              "impacto ambiental",
+              "contaminación",
+              "reciclaje",
+              "medioambiente",
+              "cuidado"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican actividades humanas que afectan el medioambiente.",
+              "Proponen acciones para reducir el impacto ambiental.",
+              "Reconocen la importancia del reciclaje y reutilización."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "CN_2B_U4",
+        "nombre_proyecto": "Clima, tiempo atmosférico y estaciones del año",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_08",
+            "eje": "Ciencias de la Tierra y el Universo",
+            "descripcion_oa": "Observar y registrar el tiempo atmosférico (temperatura, precipitaciones, viento, nubosidad) relacionándolo con las estaciones del año y sus efectos sobre los seres vivos.",
+            "conceptos_clave": [
+              "tiempo atmosférico",
+              "temperatura",
+              "precipitaciones",
+              "viento",
+              "clima"
+            ],
+            "indicadores_evaluacion": [
+              "Registran datos del tiempo atmosférico usando tablas sencillas.",
+              "Relacionan el tiempo atmosférico con las estaciones del año.",
+              "Describen cómo el clima afecta a los seres vivos."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "CN_2B_U1",
+        "nombre_proyecto": "Cuerpo humano: órganos internos y hábitos saludables",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_01",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Identificar y describir ubicación de principales órganos internos.",
+            "conceptos_clave": [
+              "órganos internos",
+              "corazón",
+              "pulmones",
+              "estómago",
+              "esqueleto"
+            ],
+            "indicadores_evaluacion": [
+              "Ubican órganos en esquema.",
+              "Describen función básica.",
+              "Reconocen importancia del esqueleto."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_02",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Reconocer y practicar hábitos de vida saludable.",
+            "conceptos_clave": [
+              "hábitos saludables",
+              "actividad física",
+              "alimentación",
+              "sueño",
+              "bienestar"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican hábitos saludables.",
+              "Describen beneficios de actividad física.",
+              "Relacionan alimentación con salud."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "CN_2B_U2",
+        "nombre_proyecto": "Animales: diversidad, hábitats y ciclos de vida",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_03",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Observar, describir y clasificar invertebrados.",
+            "conceptos_clave": [
+              "invertebrados",
+              "insectos",
+              "arácnidos",
+              "crustáceos",
+              "hábitat"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican características.",
+              "Clasifican invertebrados.",
+              "Ubican en hábitats."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_04",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Describir el ciclo de vida de animales vertebrados e invertebrados.",
+            "conceptos_clave": [
+              "ciclo de vida",
+              "nacimiento",
+              "crecimiento",
+              "reproducción",
+              "metamorfosis"
+            ],
+            "indicadores_evaluacion": [
+              "Describen etapas del ciclo.",
+              "Reconocen metamorfosis.",
+              "Comparan ciclos de vida."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_05",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Identificar animales nativos de Chile en peligro de extinción.",
+            "conceptos_clave": [
+              "extinción",
+              "fauna nativa",
+              "conservación",
+              "biodiversidad",
+              "Chile"
+            ],
+            "indicadores_evaluacion": [
+              "Nombran animales en peligro.",
+              "Identifican causas de desaparición.",
+              "Proponen acciones de conservación."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "CN_2B_U3",
+        "nombre_proyecto": "El agua: características, estados y cuidado",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_06",
+            "eje": "Física y Química",
+            "descripcion_oa": "Explorar y describir características generales del agua y sus tres estados.",
+            "conceptos_clave": [
+              "agua",
+              "estados de la materia",
+              "sólido",
+              "líquido",
+              "gaseoso"
+            ],
+            "indicadores_evaluacion": [
+              "Describen características físicas del agua.",
+              "Identifican los tres estados.",
+              "Reconocen importancia del ahorro."
+            ]
+          },
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_07",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Reconocer el impacto de actividades humanas en el ambiente.",
+            "conceptos_clave": [
+              "impacto ambiental",
+              "contaminación",
+              "reciclaje",
+              "medioambiente",
+              "cuidado"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican actividades que afectan el ambiente.",
+              "Proponen medidas de cuidado.",
+              "Reconocen importancia del reciclaje."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "CN_2B_U4",
+        "nombre_proyecto": "Clima, tiempo atmosférico y estaciones del año",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_08",
+            "eje": "Ciencias de la Tierra y el Universo",
+            "descripcion_oa": "Observar y registrar el tiempo atmosférico relacionándolo con las estaciones.",
+            "conceptos_clave": [
+              "tiempo atmosférico",
+              "temperatura",
+              "precipitaciones",
+              "viento",
+              "clima"
+            ],
+            "indicadores_evaluacion": [
+              "Registran datos del tiempo.",
+              "Relacionan con estaciones.",
+              "Describen efectos en seres vivos."
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_2B_U1",
+        "nombre_proyecto": "Historia de la localidad y tradiciones culturales",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_01",
+            "eje": "Historia",
+            "descripcion_oa": "Describir la historia de la localidad y sus tradiciones.",
+            "conceptos_clave": [
+              "historia local",
+              "tradiciones",
+              "patrimonio cultural",
+              "comunidad",
+              "identidad"
+            ],
+            "indicadores_evaluacion": [
+              "Narran historia local",
+              "Describen tradiciones",
+              "Valoran patrimonio"
+            ]
+          },
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_02",
+            "eje": "Historia",
+            "descripcion_oa": "Reconocer la diversidad cultural de Chile.",
+            "conceptos_clave": [
+              "pueblos originarios",
+              "diversidad cultural",
+              "identidad chilena",
+              "Mapuche",
+              "Aymara"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican pueblos originarios",
+              "Reconocen aportes",
+              "Valoran diversidad"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_2B_U2",
+        "nombre_proyecto": "El espacio geográfico de Chile: paisajes y zonas",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_03",
+            "eje": "Geografía",
+            "descripcion_oa": "Describir características geográficas de Chile.",
+            "conceptos_clave": [
+              "relieve",
+              "clima",
+              "vegetación",
+              "paisajes de Chile",
+              "recursos naturales"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican unidades de relieve",
+              "Describen diversidad climática",
+              "Reconocen recursos naturales"
+            ]
+          },
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_04",
+            "eje": "Geografía",
+            "descripcion_oa": "Leer e interpretar mapas simples de Chile.",
+            "conceptos_clave": [
+              "mapa",
+              "puntos cardinales",
+              "zonas de Chile",
+              "leyenda del mapa",
+              "escala"
+            ],
+            "indicadores_evaluacion": [
+              "Ubican Chile en mapas",
+              "Identifican zonas",
+              "Usan rosa de los vientos"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_2B_U3",
+        "nombre_proyecto": "Actividades económicas y trabajo",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_05",
+            "eje": "Historia",
+            "descripcion_oa": "Reconocer la importancia del trabajo y las actividades económicas.",
+            "conceptos_clave": [
+              "trabajo",
+              "actividades económicas",
+              "sector primario",
+              "sector secundario",
+              "sector terciario"
+            ],
+            "indicadores_evaluacion": [
+              "Clasifican actividades económicas",
+              "Valoran el trabajo",
+              "Reconocen aportes a la comunidad"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_2B_U4",
+        "nombre_proyecto": "Convivencia democrática y participación ciudadana",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_06",
+            "eje": "Formación Ciudadana",
+            "descripcion_oa": "Reconocer normas que regulan la convivencia y formas de participación.",
+            "conceptos_clave": [
+              "normas",
+              "convivencia",
+              "participación ciudadana",
+              "democracia",
+              "bien común"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican normas",
+              "Describen participación",
+              "Valoran democracia"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
       }
     ]
   },
@@ -362,6 +1492,58 @@
             "descripcion_oa": "Expresarse de manera clara, coherente y organizada en presentaciones orales y debates, usando recursos verbales y no verbales, argumentando con fundamentos y respetando turnos."
           }
         ]
+      },
+      {
+        "id_proyecto": "CN_5B_U1",
+        "nombre_proyecto": "El agua: distribución, propiedades y estados",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Tierra y el Universo",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_01",
+            "eje": "Ciencias de la Tierra y el Universo",
+            "descripcion_oa": "Investigar y describir la distribución del agua en la Tierra.",
+            "conceptos_clave": [
+              "agua",
+              "ciclo hidrológico",
+              "océanos",
+              "glaciares",
+              "distribución del agua"
+            ],
+            "indicadores_evaluacion": [
+              "Describen distribución del agua",
+              "Explican ciclo del agua",
+              "Identifican propiedades del agua"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_5B_U1",
+        "nombre_proyecto": "El mundo medieval: Europa feudal y el Islam",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_01",
+            "eje": "Historia",
+            "descripcion_oa": "Describir características del feudalismo medieval.",
+            "conceptos_clave": [
+              "feudalismo",
+              "Edad Media",
+              "señor feudal",
+              "vasallo",
+              "Iglesia medieval"
+            ],
+            "indicadores_evaluacion": [
+              "Describen sociedad feudal",
+              "Reconocen papel de la Iglesia",
+              "Identifican vida cotidiana"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
       }
     ]
   },
@@ -466,6 +1648,58 @@
             "descripcion_oa": "Participar en discusiones y debates argumentados, formulando y defendiendo una posición con argumentos y evidencias, refutando con respeto y distinguiendo entre argumentos válidos y falacias simples."
           }
         ]
+      },
+      {
+        "id_proyecto": "CN_6B_U1",
+        "nombre_proyecto": "La Tierra: capas, suelo y fotosíntesis",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Tierra y el Universo",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_01",
+            "eje": "Ciencias de la Tierra y el Universo",
+            "descripcion_oa": "Describir las capas de la Tierra y tipos de suelo.",
+            "conceptos_clave": [
+              "capas de la Tierra",
+              "tipos de suelo",
+              "edafología",
+              "corteza",
+              "manto"
+            ],
+            "indicadores_evaluacion": [
+              "Describen capas de la Tierra",
+              "Comparan tipos de suelo",
+              "Explican relación seres vivos-suelo"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_6B_U1",
+        "nombre_proyecto": "La Ilustración, las Revoluciones y el mundo moderno",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_01",
+            "eje": "Historia",
+            "descripcion_oa": "Describir las ideas de la Ilustración y su influencia en las revoluciones.",
+            "conceptos_clave": [
+              "Ilustración",
+              "Revolución Francesa",
+              "Revolución Americana",
+              "derechos humanos",
+              "Constitución"
+            ],
+            "indicadores_evaluacion": [
+              "Describen ideas ilustradas",
+              "Identifican causas de revoluciones",
+              "Reconocen impacto en derechos humanos"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
       }
     ]
   },
@@ -576,6 +1810,59 @@
             "descripcion_oa": "Producir textos orales formales (discursos, exposiciones académicas) con estructura de exordio-argumentación-conclusión, usando recursos retóricos con intención persuasiva y adaptando el registro al contexto."
           }
         ]
+      },
+      {
+        "id_proyecto": "CN_7B_U1",
+        "nombre_proyecto": "Eje Química: Comportamiento de los gases",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Física y Química",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_01",
+            "eje": "Física y Química",
+            "descripcion_oa": "Comprender y describir el comportamiento de los gases.",
+            "conceptos_clave": [
+              "gases",
+              "Ley de Boyle",
+              "Ley de Charles",
+              "presión",
+              "temperatura",
+              "volumen"
+            ],
+            "indicadores_evaluacion": [
+              "Explican comportamiento de gases",
+              "Aplican leyes de gases",
+              "Resuelven problemas"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_7B_U1",
+        "nombre_proyecto": "El mundo antiguo: civilizaciones fluviales y el Mediterráneo",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_01",
+            "eje": "Historia",
+            "descripcion_oa": "Analizar y comparar las civilizaciones fluviales de la Antigüedad.",
+            "conceptos_clave": [
+              "civilizaciones fluviales",
+              "Mesopotamia",
+              "Egipto",
+              "India",
+              "China antigua"
+            ],
+            "indicadores_evaluacion": [
+              "Comparan civilizaciones",
+              "Identifican aportes",
+              "Ubican en mapas históricos"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
       }
     ]
   },
@@ -686,6 +1973,172 @@
             "descripcion_oa": "Producir y evaluar textos orales formales de mayor complejidad (seminarios, mesas redondas, entrevistas), adaptando el registro, anticipando contraargumentos y evaluando la efectividad comunicativa mediante rúbricas."
           }
         ]
+      },
+      {
+        "id_proyecto": "CN_8B_U1",
+        "nombre_proyecto": "Eje Biología: Nutrición y salud",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Ciencias de la Vida",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_01",
+            "eje": "Ciencias de la Vida",
+            "descripcion_oa": "Explicar el funcionamiento de sistemas digestivo, circulatorio, respiratorio y excretor.",
+            "conceptos_clave": [
+              "homeostasis",
+              "sistema digestivo",
+              "sistema circulatorio",
+              "sistema respiratorio",
+              "sistema excretor"
+            ],
+            "indicadores_evaluacion": [
+              "Describen digestión",
+              "Explican circulación",
+              "Relacionan sistemas con homeostasis"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_8B_U1",
+        "nombre_proyecto": "La era de las revoluciones: Ilustración, Revolución Francesa e Industrial",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_01",
+            "eje": "Historia",
+            "descripcion_oa": "Analizar las ideas de la Ilustración y su impacto en las revoluciones.",
+            "conceptos_clave": [
+              "Ilustración",
+              "Revolución Francesa",
+              "soberanía popular",
+              "Montesquieu",
+              "Locke"
+            ],
+            "indicadores_evaluacion": [
+              "Analizan ideas ilustradas",
+              "Identifican principios",
+              "Evalúan impacto"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      }
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "proyectos_integrados": [
+      {
+        "id_proyecto": "CN_3B_U1",
+        "nombre_proyecto": "Luz y sonido: propiedades y efectos",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Física y Química",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_01",
+            "eje": "Física y Química",
+            "descripcion_oa": "Explorar y describir la luz como fuente de energía.",
+            "conceptos_clave": [
+              "luz",
+              "fuentes luminosas",
+              "reflexión",
+              "sombras",
+              "energía"
+            ],
+            "indicadores_evaluacion": [
+              "Distinguen fuentes de luz",
+              "Experimentan con sombras",
+              "Describen importancia de la luz"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_3B_U1",
+        "nombre_proyecto": "Chile: ubicación, territorio e identidad nacional",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Geografía",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_01",
+            "eje": "Geografía",
+            "descripcion_oa": "Describir la ubicación de Chile en el continente y el mundo.",
+            "conceptos_clave": [
+              "Chile",
+              "límites",
+              "regiones",
+              "símbolos patrios",
+              "territorio nacional"
+            ],
+            "indicadores_evaluacion": [
+              "Ubican Chile en mapas",
+              "Identifican límites",
+              "Reconocen símbolos patrios"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      }
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "proyectos_integrados": [
+      {
+        "id_proyecto": "CN_4B_U1",
+        "nombre_proyecto": "La materia: estados, propiedades y medición",
+        "descripcion": "Unidad curricular MINEDUC — Ciencias Naturales. Eje: Física y Química",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Ciencias Naturales",
+            "codigo_oa": "OA_01",
+            "eje": "Física y Química",
+            "descripcion_oa": "Explorar y describir el concepto de materia y sus estados.",
+            "conceptos_clave": [
+              "materia",
+              "estados de la materia",
+              "masa",
+              "volumen",
+              "temperatura"
+            ],
+            "indicadores_evaluacion": [
+              "Definen materia",
+              "Miden magnitudes",
+              "Identifican propiedades"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
+      },
+      {
+        "id_proyecto": "HGS_4B_U1",
+        "nombre_proyecto": "Civilizaciones de la Antigüedad: Mesopotamia y Egipto",
+        "descripcion": "Unidad curricular MINEDUC — Historia, Geografía y Ciencias Sociales. Eje: Historia",
+        "objetivos_articulados": [
+          {
+            "asignatura": "Historia, Geografía y Ciencias Sociales",
+            "codigo_oa": "OA_01",
+            "eje": "Historia",
+            "descripcion_oa": "Describir características de las primeras civilizaciones.",
+            "conceptos_clave": [
+              "Mesopotamia",
+              "Egipto",
+              "escritura cuneiforme",
+              "jeroglíficos",
+              "civilización"
+            ],
+            "indicadores_evaluacion": [
+              "Identifican características",
+              "Reconocen aportes",
+              "Ubican en mapa"
+            ]
+          }
+        ],
+        "_source": "nuevas_materias.json"
       }
     ]
   }

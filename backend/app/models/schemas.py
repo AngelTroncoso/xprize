@@ -109,13 +109,15 @@ class ChatInput(StudentIdUUIDMixin):
     enable_audio: bool = Field(default=True, description="Si es True, genera audio TTS de la respuesta")
 
 class ChatResponse(BaseModel):
-    agent: str = Field(..., description="Agente que generó la respuesta")
+    agent: str = Field(..., alias="agent_used", description="Agente que generó la respuesta")
     student_id: str = Field(..., description="ID del estudiante")
+    session_id: Optional[str] = Field(None, description="ID de la sesión de chat")
+    response_text: str = Field(..., alias="response_text", description="Respuesta textual del agente pedagógico")
     oa_metadata: Dict[str, Any] = Field(..., description="Metadatos del Objetivo de Aprendizaje")
-    pedagogic_response: str = Field(..., description="Respuesta textual del agente pedagógico")
     audio_response_b64: Optional[str] = Field(None, description="Respuesta en audio codificada en Base64 (si enable_audio=True)")
     audio_mime_type: Optional[str] = Field(None, description="Tipo MIME del audio (ej. audio/mpeg)")
     progress_record: Dict[str, Any] = Field(..., description="Registro de progreso del estudiante")
+    code_review: Optional[Dict[str, Any]] = Field(None, description="Resultado de revisión de código si aplica")
     saved_progress: Optional[Dict[str, Any]] = Field(None, description="Resultado de persistencia en Supabase")
 
 # --- Canvas Interactivo (Pizarra Compartida) ---

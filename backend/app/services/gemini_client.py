@@ -1,5 +1,6 @@
 import asyncio
 import base64
+import binascii
 import logging
 import os
 from typing import Any, Dict, List, Optional
@@ -55,7 +56,7 @@ class GeminiClient:
         if history:
             for turn in history:
                 role = turn.get("role", "user").upper()
-                text = turn.get("text", "")
+                text = turn.get("text") or turn.get("content", "")
                 contents.append(f"{role}: {text}")
 
         contents.append(f"USER: {user_message}")
@@ -122,7 +123,10 @@ class GeminiClient:
             if "," in canvas_b64_data:
                 canvas_b64_data = canvas_b64_data.split(",", 1)[1]
 
-            image_bytes = base64.b64decode(canvas_b64_data)
+            try:
+                image_bytes = base64.b64decode(canvas_b64_data)
+            except binascii.Error:
+                raise ValueError("Estructura de imagen Canvas inválida")
 
             def call_api() -> Any:
                 return self.client.models.generate_content(
@@ -155,6 +159,8 @@ class GeminiClient:
 
             return str(response)
 
+        except ValueError:
+            raise
         except Exception as error:
             logger.exception("Error analizando imagen con Gemini: %s", error)
             return FALLBACK_MESSAGE

@@ -160,9 +160,51 @@ class CurriculumManager:
                 }
         return index
 
-    def get_oa_by_id(self, oa_id: str) -> Optional[Dict[str, Any]]:
-        """Retrieves complete OA data by ID. Returns None if not found."""
-        return self._oa_index.get(oa_id)
+    def get_oa_by_id(
+        self,
+        oa_id: str,
+        curso: Optional[str] = None,
+        asignatura: Optional[str] = None,
+    ) -> Optional[Dict[str, Any]]:
+        """
+        Retrieves complete OA data by ID.
+
+        Flexible con búsquedas:
+        - Si ``oa_id`` contiene ``|`` (clave compuesta tipo ``"OA_01|5° Básico|Matemáticas"``),
+          se busca directamente en el índice.
+        - Si ``oa_id`` es un ID simple (ej. ``"OA_01"``), se busca de forma eficiente
+          y se retorna la primera coincidencia. Opcionalmente se pueden pasar
+          ``curso`` y ``asignatura`` para desambiguar cuando existan duplicados.
+
+        Returns ``None`` si no se encuentra ninguna coincidencia.
+        """
+        # Búsqueda directa por clave compuesta (más rápida)
+        if "|" in oa_id:
+            return self._oa_index.get(oa_id)
+
+        # Búsqueda por ID simple: iterar sobre el índice
+        # (el tamaño del índice es reducido, del orden de ~87 OAs)
+        oa_id_lower = oa_id.strip().lower()
+        matches: List[Dict[str, Any]] = []
+
+        for key, value in self._oa_index.items():
+            # Extraer el id_oa del inicio de la clave compuesta
+            stored_oa_id = key.split("|", 1)[0]
+            if stored_oa_id.strip().lower() != oa_id_lower:
+                continue
+
+            # Si hay filtros de curso/asignatura, usarlos para desambiguar
+            if curso is not None:
+                if value.get("curso", "").strip().lower() != curso.strip().lower():
+                    continue
+            if asignatura is not None:
+                if value.get("asignatura", "").strip().lower() != asignatura.strip().lower():
+                    continue
+
+            matches.append(value)
+
+        # Retornar la primera coincidencia; si no hay, None
+        return matches[0] if matches else None
 
     def get_evaluation_indicators(self, oa_id: str) -> List[str]:
         """

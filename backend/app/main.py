@@ -1,6 +1,10 @@
 import os
+import logging
 from datetime import datetime
 from typing import Optional, List, Dict
+
+# Configuración de logging estructurado
+logger = logging.getLogger(__name__)
 
 # 🚨 CRÍTICO: Cargar variables de entorno ANTES de importar módulos o agentes locales
 from dotenv import load_dotenv
@@ -88,9 +92,7 @@ def _generate_audio_response(text: str) -> tuple:
         audio_b64, mime_type = tts_service.text_to_speech(text)
         return audio_b64, mime_type
     except Exception as e:
-        import logging
-        logger = logging.getLogger(__name__)
-        logger.error(f"Error generando TTS: {str(e)}")
+        logger.error(f"Error generando TTS: {str(e)}", exc_info=True)
         return None, None
 
 
@@ -111,7 +113,8 @@ def _save_student_progress(supabase_client, payload) -> Optional[dict]:
             on_conflict="student_id,id_oa",
         ).execute()
         return getattr(response, "data", None)
-    except Exception:
+    except Exception as e:
+        logger.warning(f"No se pudo guardar progreso del estudiante {payload.student_id}: {str(e)}", exc_info=True)
         return None
 
 @app.post("/api/chat")
@@ -139,8 +142,12 @@ async def chat_interaction(chat_request: ChatInput):
                         "metadata": {"curso": chat_request.curso, "asignatura": chat_request.asignatura}
                     }).execute()
                     session_id = session_res.data[0]["id"]
-                except Exception:
-                    pass  # Tabla no existe, modo sin persistencia
+                except Exception as e:
+                    logger.warning(
+                        f"No se pudo crear sesión de chat para student_id={chat_request.student_id}: {str(e)}. "
+                        "Continuando en modo sin persistencia.",
+                        exc_info=True
+                    )
 
             if session_id:
                 try:
@@ -150,11 +157,28 @@ async def chat_interaction(chat_request: ChatInput):
                         .order("timestamp", desc=True) \
                         .limit(6) \
                         .execute()
-                    history = history_res.data[::-1] if history_res.data else []
-                except Exception:
-                    pass
-    except Exception:
-        pass
+                    if history_res.data:
+                        history = []
+                        for turn in history_res.data[::-1]:
+                            normalized = {
+                                "role": turn.get("role", "user"),
+                                "text": turn.get("content", ""),
+                            }
+                            history.append(normalized)
+                    else:
+                        history = []
+                except Exception as e:
+                    logger.warning(
+                        f"No se pudo recuperar historial de chat para session_id={session_id}: {str(e)}. "
+                        "Continuando sin historial.",
+                        exc_info=True
+                    )
+    except Exception as e:
+        logger.warning(
+            f"Error general al inicializar contexto de chat para student_id={chat_request.student_id}: {str(e)}. "
+            "Continuando en modo degradado.",
+            exc_info=True
+        )
 
     try:
         # 1. Enrutar a través del orchestrator (flujo multi-agente)
@@ -181,8 +205,11 @@ async def chat_interaction(chat_request: ChatInput):
         if supabase_client and payload:
             try:
                 saved_progress = _save_student_progress(supabase_client, payload)
-            except Exception:
-                pass
+            except Exception as e:
+                logger.warning(
+                    f"Error al guardar progreso en _save_student_progress: {str(e)}",
+                    exc_info=True
+                )
 
         return {
             "session_id": session_id,
@@ -347,9 +374,7 @@ async def _save_canvas_progress(
         ).execute()
         return getattr(response, "data", None)
     except Exception as e:
-        import logging
-        logger = logging.getLogger(__name__)
-        logger.error(f"Error guardando progreso de canvas: {str(e)}")
+        logger.error(f"Error guardando progreso de canvas: {str(e)}", exc_info=True)
         return None
 
 
@@ -422,8 +447,6 @@ async def analyze_canvas(canvas_request: CanvasInput):
         }
 
     except Exception as e:
-        import logging
-        logger = logging.getLogger(__name__)
         logger.exception(f"Error en análisis de canvas: {str(e)}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,

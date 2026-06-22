@@ -39,10 +39,12 @@ class ValidatorAgent:
         candidate_oas = self._filter_oas_by_course_subject(curso, asignatura)
         candidates: List[str] = []
 
-        explicit_match = re.findall(r"\b(oa_[0-9]{1,3})\b", normalized)
-        for oa_id in explicit_match:
-            if oa_id.upper() in candidate_oas:
-                candidates.append(oa_id.upper())
+        # Detectar referencias explícitas a OAs con regex insensible a mayúsculas/minúsculas
+        explicit_matches = re.findall(r"\b(OA_[0-9]{1,3})\b", normalized, re.IGNORECASE)
+        for oa_id in explicit_matches:
+            normalized_oa = oa_id.upper()
+            if normalized_oa in candidate_oas:
+                candidates.append(normalized_oa)
 
         query_tokens = set(re.findall(r"\w+", normalized))
         scoring: Dict[str, int] = {}

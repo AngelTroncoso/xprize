@@ -1,1549 +1,1750 @@
 [
   {
     "curso": "1° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Vida",
+    "asignatura": "Artes Visuales",
+    "eje": "Crear y Expresar",
     "codigo_oa": "OA_01",
-    "descripcion_oa": "Reconocer y observar, con apoyo de instrumentos, la diversidad de los seres vivos (animales, plantas, hongos y algas) en términos de sus características (tipos de alimentación, cobertura, desplazamiento, ciclos de vida y reproducción).",
+    "descripcion_oa": "Crear libremente obras visuales bidimensionales usando elementos del lenguaje visual (punto, línea, color, forma) con materiales variados y herramientas digitales de dibujo básico, expresando emociones e ideas personales.",
     "conceptos_clave": [
-      "seres vivos",
-      "animales",
-      "plantas",
-      "características",
-      "ciclo de vida"
+      "punto",
+      "línea",
+      "forma",
+      "color primario",
+      "textura visual"
     ],
     "indicadores_evaluacion": [
-      "Identifican características de seres vivos observados directamente o a través de imágenes.",
-      "Clasifican seres vivos según características como tipo de alimentación o cobertura corporal.",
-      "Distinguen diferencias entre animales y plantas."
+      "Crea una composición usando al menos 3 elementos del lenguaje visual de forma intencional.",
+      "Explica verbalmente qué emoción o idea quiso comunicar con su obra.",
+      "Experimenta con al menos una herramienta digital de dibujo para crear una imagen."
     ]
   },
   {
     "curso": "1° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Vida",
+    "asignatura": "Artes Visuales",
+    "eje": "Apreciar y Reflexionar",
     "codigo_oa": "OA_02",
-    "descripcion_oa": "Reconocer y practicar hábitos de higiene personal (lavado de manos, dientes, aseo corporal) y de los alimentos para prevenir enfermedades.",
+    "descripcion_oa": "Observar y describir obras de arte de diferentes épocas y culturas, identificando elementos visuales básicos y expresando una opinión personal sobre lo que ven, con apoyo de recursos digitales interactivos.",
     "conceptos_clave": [
-      "higiene",
-      "salud",
-      "prevención",
-      "enfermedades",
-      "hábitos"
+      "observación artística",
+      "descripción visual",
+      "diversidad cultural en el arte",
+      "opinión personal",
+      "vocabulario artístico básico"
     ],
     "indicadores_evaluacion": [
-      "Describen la importancia del lavado de manos y dientes.",
-      "Identifican situaciones cotidianas donde aplicar hábitos de higiene.",
-      "Relacionan el aseo personal con la prevención de enfermedades."
+      "Describe al menos 2 elementos visuales (colores, formas, líneas) que identifica en una obra de arte.",
+      "Expresa una opinión personal sobre una obra usando frases como 'Me gusta porque...' o 'Esto me hace sentir...'",
+      "Reconoce que el arte se produce en diferentes culturas y épocas a partir de ejemplos visuales digitales."
     ]
   },
   {
     "curso": "1° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Vida",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Reconocer y comunicar la importancia de mantener una alimentación saludable, incluyendo la variedad de alimentos y el consumo de frutas y verduras.",
-    "conceptos_clave": [
-      "alimentación saludable",
-      "nutrientes",
-      "frutas",
-      "verduras",
-      "bienestar"
-    ],
-    "indicadores_evaluacion": [
-      "Identifican alimentos saludables y no saludables.",
-      "Explican la importancia de comer frutas y verduras.",
-      "Proponen ejemplos de comidas equilibradas."
-    ]
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Vida",
-    "codigo_oa": "OA_04",
-    "descripcion_oa": "Observar y describir las características de los animales (vertebrados e invertebrados) presentes en el entorno local, considerando tipo de alimentación, desplazamiento y cobertura corporal.",
-    "conceptos_clave": [
-      "vertebrados",
-      "invertebrados",
-      "alimentación",
-      "desplazamiento",
-      "cobertura corporal"
-    ],
-    "indicadores_evaluacion": [
-      "Observan y describen animales presentes en su entorno.",
-      "Clasifican animales según su cobertura corporal (plumas, pelos, escamas).",
-      "Distinguen animales según su tipo de desplazamiento."
-    ]
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Vida",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Observar y describir las características de las plantas del entorno (raíz, tallo, hojas, flores y frutos), reconociendo su importancia para los seres vivos.",
-    "conceptos_clave": [
-      "plantas",
-      "raíz",
-      "tallo",
-      "hojas",
-      "flores",
-      "frutos"
-    ],
-    "indicadores_evaluacion": [
-      "Identifican y nombran las partes de una planta.",
-      "Describen la función de cada parte de la planta.",
-      "Reconocen la importancia de las plantas para los animales y el ser humano."
-    ]
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Física y Química",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Explorar y describir los diferentes tipos de materiales en diversos objetos, clasificándolos según sus propiedades (flexible/rígido, permeable/impermeable, opaco/transparente) e identificando su uso en la vida cotidiana.",
-    "conceptos_clave": [
-      "materiales",
-      "propiedades",
-      "flexible",
-      "rígido",
-      "permeable",
-      "impermeable"
-    ],
-    "indicadores_evaluacion": [
-      "Identifican materiales de objetos cotidianos (madera, metal, tela, plástico).",
-      "Clasifican materiales según sus propiedades observables.",
-      "Relacionan propiedades de materiales con su utilidad en la vida cotidiana."
-    ]
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Física y Química",
-    "codigo_oa": "OA_07",
-    "descripcion_oa": "Diseñar y construir objetos tecnológicos simples con diversos materiales del entorno, considerando sus propiedades y uso.",
-    "conceptos_clave": [
-      "tecnología",
-      "diseño",
-      "construcción",
-      "materiales",
-      "herramientas"
-    ],
-    "indicadores_evaluacion": [
-      "Diseñan objetos simples usando materiales del entorno.",
-      "Seleccionan materiales apropiados según la propiedad requerida.",
-      "Evalúan el desempeño de los objetos construidos."
-    ]
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Tierra y el Universo",
-    "codigo_oa": "OA_08",
-    "descripcion_oa": "Observar y describir los efectos del Sol en la vida en la Tierra: luz, calor, ciclo diario (día y noche) y las estaciones del año, relacionándolos con los cambios en los seres vivos y el ambiente.",
-    "conceptos_clave": [
-      "Sol",
-      "luz",
-      "calor",
-      "día",
-      "noche",
-      "estaciones del año"
-    ],
-    "indicadores_evaluacion": [
-      "Describen el ciclo del día y la noche y su relación con el Sol.",
-      "Identifican las cuatro estaciones y sus características climáticas.",
-      "Relacionan los cambios estacionales con cambios en animales y plantas."
-    ]
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Historia",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Habilidades Motrices",
     "codigo_oa": "OA_01",
-    "descripcion_oa": "Describir su historia personal y la de su familia, reconociendo a los integrantes de la familia, los roles que desempeñan y los cambios que han ocurrido a lo largo del tiempo.",
+    "descripcion_oa": "Demostrar habilidades motrices básicas (correr, saltar, lanzar, rodar) en juegos y actividades lúdicas, reconociendo las partes del cuerpo que intervienen y experimentando placer por el movimiento.",
     "conceptos_clave": [
-      "familia",
-      "historia personal",
-      "roles familiares",
-      "cambios en el tiempo",
-      "árbol genealógico"
+      "habilidades motrices básicas",
+      "coordinación",
+      "lateralidad",
+      "esquema corporal",
+      "juego motor"
     ],
     "indicadores_evaluacion": [
-      "Narran aspectos de su historia personal y familiar.",
-      "Identifican los integrantes de la familia y sus roles.",
-      "Reconocen cambios en la familia a lo largo del tiempo."
+      "Ejecuta con control básico al menos 4 habilidades motrices en contextos de juego.",
+      "Identifica y nombra las partes del cuerpo que usa en cada movimiento.",
+      "Participa con entusiasmo y respeto en juegos motores grupales."
     ]
   },
   {
     "curso": "1° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Formación Ciudadana",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Vida Activa y Saludable",
     "codigo_oa": "OA_02",
-    "descripcion_oa": "Reconocer y valorar los grupos a los que pertenece (familia, curso, escuela y comunidad), identificando las normas que los regulan y la importancia de la convivencia pacífica.",
+    "descripcion_oa": "Reconocer la importancia de la actividad física para la salud y el bienestar, identificando señales corporales básicas (cansancio, frecuencia cardíaca, sudoración) como indicadores de esfuerzo físico.",
     "conceptos_clave": [
-      "grupos de pertenencia",
-      "normas",
-      "convivencia",
-      "comunidad",
-      "respeto"
+      "salud física",
+      "esfuerzo físico",
+      "señales corporales",
+      "descanso",
+      "hidratación"
     ],
     "indicadores_evaluacion": [
-      "Identifican los grupos a los que pertenecen y sus características.",
-      "Describen las normas que regulan la vida en familia y en la escuela.",
-      "Valoran la convivencia pacífica y el respeto mutuo."
+      "Identifica al menos 3 señales corporales que indican que ha realizado esfuerzo físico.",
+      "Explica por qué es importante hidratarse y descansar después de hacer ejercicio.",
+      "Distingue entre actividades activas y sedentarias y nombra ejemplos de ambas."
     ]
   },
   {
     "curso": "1° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Geografía",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Describir y representar el espacio geográfico cercano (sala de clases, escuela, barrio y localidad), utilizando planos simples y nociones básicas de orientación espacial (arriba/abajo, cerca/lejos, izquierda/derecha).",
-    "conceptos_clave": [
-      "espacio geográfico",
-      "plano",
-      "orientación",
-      "barrio",
-      "localidad"
-    ],
-    "indicadores_evaluacion": [
-      "Ubican elementos del entorno usando nociones espaciales básicas.",
-      "Elaboran planos simples de la sala de clases y la escuela.",
-      "Describen características del barrio y la localidad donde viven."
-    ]
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Geografía",
-    "codigo_oa": "OA_04",
-    "descripcion_oa": "Reconocer las características naturales y culturales del entorno local (relieve, ríos, vegetación, construcciones, costumbres) y su importancia para la comunidad.",
-    "conceptos_clave": [
-      "paisaje",
-      "características naturales",
-      "características culturales",
-      "relieve",
-      "costumbres"
-    ],
-    "indicadores_evaluacion": [
-      "Identifican elementos naturales y culturales del entorno local.",
-      "Describen el paisaje de su localidad.",
-      "Valoran las características de su entorno como parte de su identidad."
-    ]
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Historia",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Establecer relaciones de tiempo entre hechos y situaciones de su vida cotidiana, usando conceptos temporales básicos (antes, después, ayer, hoy, mañana, semanas, meses) y el calendario.",
-    "conceptos_clave": [
-      "tiempo",
-      "pasado",
-      "presente",
-      "futuro",
-      "calendario"
-    ],
-    "indicadores_evaluacion": [
-      "Usan vocabulario temporal básico en la descripción de eventos.",
-      "Leen y usan el calendario para ubicar fechas significativas.",
-      "Ordenan eventos de su vida cotidiana en secuencia temporal."
-    ]
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Formación Ciudadana",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Reconocer que todas las personas tienen derechos y responsabilidades, identificando los derechos del niño y las responsabilidades que les corresponden en la familia y la escuela.",
-    "conceptos_clave": [
-      "derechos del niño",
-      "responsabilidades",
-      "igualdad",
-      "participación",
-      "democracia"
-    ],
-    "indicadores_evaluacion": [
-      "Nombran los derechos fundamentales de los niños.",
-      "Identifican responsabilidades que tienen en la familia y la escuela.",
-      "Relacionan el ejercicio de derechos con el cumplimiento de responsabilidades."
-    ]
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Comprensión Oral",
     "codigo_oa": "OA_01",
-    "descripcion_oa": "Reconocer que los textos escritos transmiten mensajes, que son escritos por alguien con un propósito, y distinguir entre textos literarios y no literarios.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
+    "descripcion_oa": "Comprender y usar saludos, despedidas y expresiones básicas de cortesía en inglés en situaciones cotidianas simples, apoyándose en recursos visuales, canciones y juegos interactivos digitales.",
+    "conceptos_clave": [
+      "greetings",
+      "farewells",
+      "classroom language",
+      "números 1-10",
+      "colores básicos"
+    ],
+    "indicadores_evaluacion": [
+      "Responde correctamente a saludos y preguntas simples como 'What is your name?' con apoyo visual.",
+      "Identifica y repite saludos y despedidas en contextos de juego digital o canciones.",
+      "Reconoce al menos 5 colores y los números del 1 al 10 en inglés cuando se presentan con imágenes."
+    ]
   },
   {
     "curso": "1° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Producción Oral",
     "codigo_oa": "OA_02",
-    "descripcion_oa": "Reconocer que las palabras son unidades de significado separadas por espacios en el texto escrito, y distinguir entre letra, sílaba y palabra.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Leer de manera autónoma textos literarios y no literarios breves, aplicando las correspondencias letra-sonido para decodificar y comprender su sentido global.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
-    "codigo_oa": "OA_04",
-    "descripcion_oa": "Comprender textos aplicando estrategias de comprensión lectora: predecir, preguntar, visualizar y sintetizar, respondiendo preguntas literales e inferenciales simples.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Escribir con letra clara, usando el trazo correcto de letras mayúsculas y minúsculas, dejando espacio entre palabras y escribiendo de izquierda a derecha.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Escribir oraciones completas sobre temas de su interés, usando mayúscula al inicio y punto final, e incorporando vocabulario aprendido en clases.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_07",
-    "descripcion_oa": "Escribir con letra legible aplicando convenciones ortográficas básicas: mayúscula inicial, punto final y escritura correcta de palabras de uso frecuente del nivel.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Comunicación Oral",
-    "codigo_oa": "OA_08",
-    "descripcion_oa": "Expresarse de manera clara y coherente usando un vocabulario variado, participando en conversaciones grupales, respetando turnos y narrando experiencias personales con inicio, desarrollo y final.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Contar números del 0 al 100, de 1 en 1, de 2 en 2, de 5 en 5 y de 10 en 10, hacia adelante y hacia atrás, empezando por cualquier número dado.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_02",
-    "descripcion_oa": "Leer, escribir y representar números del 0 al 100 usando objetos concretos, imágenes, recta numérica y tablas de 100, identificando el valor posicional de decenas y unidades.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Comparar y ordenar números del 0 al 100 usando los símbolos <, > e =, y argumentar el criterio de comparación.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_04",
-    "descripcion_oa": "Demostrar que comprenden la adición y la sustracción con números del 0 al 20, usando objetos concretos, imágenes y símbolos, y resolver problemas simples.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Demostrar que comprenden la adición y la sustracción con números del 0 al 100, con y sin reagrupación, y usarlas para resolver problemas en contextos concretos.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Matemática",
-    "eje": "Geometría",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Identificar y describir figuras geométricas (cuadrado, rectángulo, triángulo y círculo) y cuerpos geométricos (cubo, esfera, cilindro y cono) en el entorno, nombrando sus características básicas.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Matemática",
-    "eje": "Medición",
-    "codigo_oa": "OA_07",
-    "descripcion_oa": "Comparar y ordenar objetos según su longitud, masa y capacidad usando unidades de medida no estandarizadas, estimando y verificando mediciones.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "1° Básico",
-    "asignatura": "Matemática",
-    "eje": "Datos y Probabilidades",
-    "codigo_oa": "OA_08",
-    "descripcion_oa": "Recolectar y registrar datos para responder preguntas estadísticas sobre el entorno, usando tablas de conteo y pictogramas, e interpretar la información obtenida.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Vida",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Identificar y describir la ubicación de los principales órganos internos del cuerpo humano (corazón, pulmones, estómago, intestinos y esqueleto), reconociendo su función básica.",
+    "descripcion_oa": "Producir oralmente palabras y frases cortas en inglés relacionadas con su entorno inmediato (familia, animales, objetos de clase), utilizando pronunciación comprensible con apoyo de avatares digitales y feedback de IA.",
     "conceptos_clave": [
-      "órganos internos",
-      "corazón",
-      "pulmones",
-      "estómago",
-      "esqueleto"
+      "vocabulary",
+      "family members",
+      "classroom objects",
+      "animals",
+      "pronunciation"
     ],
     "indicadores_evaluacion": [
-      "Ubican en un esquema los principales órganos internos del cuerpo humano.",
-      "Describen la función básica de cada órgano.",
-      "Reconocen la importancia del esqueleto para el movimiento y protección."
+      "Nombra en inglés al menos 5 objetos del aula cuando se le muestran imágenes.",
+      "Presenta oralmente a miembros de su familia usando 'This is my...' con apoyo de láminas o avatar.",
+      "Participa en canciones y rimas simples en inglés reproduciendo palabras clave con pronunciación aproximada."
+    ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Conciencia Digital Lingüística",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Identificar palabras en inglés presentes en interfaces digitales y videojuegos educativos comunes (play, start, pause, next, yes, no), comprendiendo su función comunicativa en contexto.",
+    "conceptos_clave": [
+      "digital interface vocabulary",
+      "game commands",
+      "visual context clues",
+      "sight words",
+      "digital literacy"
+    ],
+    "indicadores_evaluacion": [
+      "Reconoce y explica el significado de al menos 6 palabras de uso frecuente en interfaces digitales.",
+      "Sigue instrucciones simples en inglés dentro de una aplicación educativa (click, drag, tap, choose).",
+      "Distingue palabras en inglés de palabras en español en un texto mixto con apoyo de contexto visual."
+    ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Religión / Formación Valórica - Católica",
+    "eje": "Dios y la Persona",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Reconocer que cada persona es única y amada por Dios, valorando la diversidad como riqueza y desarrollando una actitud de respeto y cuidado hacia sí mismo y los demás.",
+    "conceptos_clave": [
+      "amor de Dios",
+      "unicidad de la persona",
+      "dignidad humana",
+      "respeto",
+      "autoestima cristiana"
+    ],
+    "indicadores_evaluacion": [
+      "Expresa con sus palabras que Dios lo creó y lo ama de manera única e incondicional.",
+      "Da ejemplos concretos de cómo cuidar y respetar a las personas de su entorno.",
+      "Reconoce y valora sus propias características como expresión de ser único y amado."
+    ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Religión / Formación Valórica - Evangélica",
+    "eje": "Identidad y Fe",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Reconocer que cada persona es creada por Dios a su imagen y semejanza, valorando su identidad, singularidad y el amor incondicional de Dios expresado en Jesucristo.",
+    "conceptos_clave": [
+      "imagen de Dios",
+      "amor incondicional",
+      "identidad cristiana",
+      "Jesús como salvador",
+      "creación"
+    ],
+    "indicadores_evaluacion": [
+      "Expresa que Dios lo creó y lo ama de manera única e incondicional.",
+      "Relaciona el concepto bíblico imagen de Dios con su propia dignidad y valor personal.",
+      "Nombra al menos 2 características especiales suyas como expresión del amor creador de Dios."
+    ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Religión / Formación Valórica - Judía / Formación Ética",
+    "eje": "Identidad y Valores",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Explorar su identidad personal y los valores fundamentales que orientan su vida (respeto, bondad, honestidad, gratitud), conectándolos con el concepto judío de Tikkun Olam (reparar el mundo) como llamado a la responsabilidad ética.",
+    "conceptos_clave": [
+      "identidad personal",
+      "valores éticos",
+      "Tikkun Olam",
+      "Chesed bondad",
+      "gratitud"
+    ],
+    "indicadores_evaluacion": [
+      "Nombra al menos 4 valores que considera importantes y explica por qué los valora.",
+      "Explica el concepto de Tikkun Olam con sus palabras y da un ejemplo de cómo podría reparar el mundo en su entorno.",
+      "Identifica situaciones cotidianas donde practica o puede practicar valores éticos fundamentales."
+    ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Naturaleza de la Tecnología",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Explorar el entorno tecnológico identificando artefactos, herramientas digitales y sistemas tecnológicos presentes en su vida cotidiana, comprendiendo que la tecnología es creada por personas para resolver necesidades humanas.",
+    "conceptos_clave": [
+      "artefacto tecnológico",
+      "tecnología cotidiana",
+      "necesidad humana",
+      "impacto tecnológico",
+      "creadores de tecnología"
+    ],
+    "indicadores_evaluacion": [
+      "Identifica y nombra al menos 6 artefactos tecnológicos presentes en su hogar o escuela.",
+      "Explica para qué necesidad humana fue creado al menos 1 artefacto tecnológico de su entorno.",
+      "Distingue entre objetos tecnológicos y objetos naturales en su entorno cotidiano."
+    ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Pensamiento Algorítmico",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Seguir secuencias de instrucciones paso a paso para completar tareas simples con materiales concretos o en entornos digitales, desarrollando pensamiento algorítmico básico de forma lúdica.",
+    "conceptos_clave": [
+      "secuencia de instrucciones",
+      "algoritmo básico",
+      "paso a paso",
+      "instrucciones precisas",
+      "pensamiento lógico"
+    ],
+    "indicadores_evaluacion": [
+      "Sigue una secuencia de 4 a 6 instrucciones para completar una tarea sin cometer errores de orden.",
+      "Crea una secuencia de instrucciones para enseñar a un compañero a hacer algo simple.",
+      "Identifica el error en una secuencia dada y lo corrige para lograr el resultado esperado."
     ]
   },
   {
     "curso": "2° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Vida",
+    "asignatura": "Artes Visuales",
+    "eje": "Crear y Expresar",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Crear obras visuales explorando la mezcla de colores, las formas geométricas y orgánicas, y la composición del espacio en el plano, usando técnicas tradicionales y herramientas de arte digital básicas.",
+    "conceptos_clave": [
+      "colores secundarios",
+      "mezcla de colores",
+      "formas geométricas y orgánicas",
+      "composición",
+      "espacio pictórico"
+    ],
+    "indicadores_evaluacion": [
+      "Experimenta la mezcla de colores primarios para obtener colores secundarios y los nombra correctamente.",
+      "Crea una composición distinguiendo entre figura y fondo intencionalmente.",
+      "Produce una obra digital usando una herramienta de pintura aplicando colores y formas."
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Artes Visuales",
+    "eje": "Narración Visual",
     "codigo_oa": "OA_02",
-    "descripcion_oa": "Reconocer y practicar hábitos de vida saludable (actividad física, alimentación equilibrada, sueño y descanso adecuados) y sus beneficios para el bienestar.",
+    "descripcion_oa": "Explorar el arte como medio para narrar historias e ideas, creando secuencias visuales simples (historietas, libros de imágenes) que comuniquen un relato con inicio, desarrollo y final.",
+    "conceptos_clave": [
+      "historieta",
+      "secuencia visual",
+      "viñeta",
+      "globos de diálogo",
+      "narración gráfica"
+    ],
+    "indicadores_evaluacion": [
+      "Crea una historieta de 3 viñetas con personajes reconocibles y secuencia narrativa.",
+      "Usa globos de diálogo o cartelas para incluir texto en su narración visual.",
+      "Explica la historia que cuenta su secuencia de imágenes a sus compañeros."
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Juego y Convivencia",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Participar activamente en juegos cooperativos y competitivos simples, demostrando respeto por las reglas, trabajo en equipo y valoración de la participación sobre el resultado.",
+    "conceptos_clave": [
+      "juego cooperativo",
+      "trabajo en equipo",
+      "reglas del juego",
+      "fair play",
+      "inclusión en el juego"
+    ],
+    "indicadores_evaluacion": [
+      "Propone y acepta reglas de juego acordadas colectivamente.",
+      "Demuestra conductas de fair play: anima a compañeros, acepta resultados, ayuda a quien tiene dificultades.",
+      "Participa en al menos un juego cooperativo donde el éxito dependa del trabajo conjunto."
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Hábitos Saludables y Bienestar Digital",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Identificar y practicar hábitos de vida saludable relacionados con la alimentación, el descanso, la higiene y el tiempo de pantalla, comprendiendo su impacto en el bienestar integral.",
     "conceptos_clave": [
       "hábitos saludables",
-      "actividad física",
-      "alimentación",
-      "sueño",
-      "bienestar"
+      "alimentación balanceada",
+      "tiempo de pantalla",
+      "higiene del sueño",
+      "bienestar integral"
     ],
     "indicadores_evaluacion": [
-      "Identifican hábitos saludables en situaciones cotidianas.",
-      "Describen los beneficios de la actividad física para el cuerpo.",
-      "Relacionan alimentación equilibrada con salud y bienestar."
+      "Reconoce al menos 4 hábitos de vida saludable y los relaciona con el bienestar físico y emocional.",
+      "Reflexiona sobre su propio tiempo de pantalla y distingue entre uso recreativo y activo de dispositivos.",
+      "Practica una pausa activa digital de 5 minutos durante una jornada con actividades en pantalla."
     ]
   },
   {
     "curso": "2° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Vida",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Observar, describir y clasificar invertebrados (insectos, arácnidos, crustáceos y moluscos) identificando sus características y hábitats.",
-    "conceptos_clave": [
-      "invertebrados",
-      "insectos",
-      "arácnidos",
-      "crustáceos",
-      "hábitat"
-    ],
-    "indicadores_evaluacion": [
-      "Identifican y describen características de insectos, arácnidos y crustáceos.",
-      "Clasifican invertebrados según sus características.",
-      "Ubican invertebrados en sus hábitats correspondientes."
-    ]
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Vida",
-    "codigo_oa": "OA_04",
-    "descripcion_oa": "Describir el ciclo de vida de animales vertebrados e invertebrados, reconociendo etapas como nacimiento, crecimiento, reproducción y muerte.",
-    "conceptos_clave": [
-      "ciclo de vida",
-      "nacimiento",
-      "crecimiento",
-      "reproducción",
-      "metamorfosis"
-    ],
-    "indicadores_evaluacion": [
-      "Describen las etapas del ciclo de vida de distintos animales.",
-      "Reconocen la metamorfosis como un tipo de desarrollo animal.",
-      "Comparan ciclos de vida de animales vertebrados e invertebrados."
-    ]
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Vida",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Identificar animales nativos de Chile en peligro de extinción, reconociendo las causas y consecuencias de su desaparición y la importancia de su conservación.",
-    "conceptos_clave": [
-      "extinción",
-      "fauna nativa",
-      "conservación",
-      "biodiversidad",
-      "Chile"
-    ],
-    "indicadores_evaluacion": [
-      "Nombran y describen animales nativos de Chile en peligro de extinción.",
-      "Identifican causas que amenazan la supervivencia de los animales.",
-      "Proponen acciones para proteger la fauna nativa."
-    ]
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Física y Química",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Explorar y describir las características generales del agua (inodora, incolora, insípida), sus tres estados (sólido, líquido y gaseoso) y la importancia de su uso responsable.",
-    "conceptos_clave": [
-      "agua",
-      "estados de la materia",
-      "sólido",
-      "líquido",
-      "gaseoso"
-    ],
-    "indicadores_evaluacion": [
-      "Describen las características físicas del agua pura.",
-      "Identifican los tres estados del agua con ejemplos cotidianos.",
-      "Reconocen la importancia del ahorro de agua."
-    ]
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Vida",
-    "codigo_oa": "OA_07",
-    "descripcion_oa": "Reconocer el impacto de las actividades humanas en el ambiente y proponer medidas para cuidarlo.",
-    "conceptos_clave": [
-      "impacto ambiental",
-      "contaminación",
-      "reciclaje",
-      "medioambiente",
-      "cuidado"
-    ],
-    "indicadores_evaluacion": [
-      "Identifican actividades humanas que afectan el medioambiente.",
-      "Proponen acciones para reducir el impacto ambiental.",
-      "Reconocen la importancia del reciclaje y reutilización."
-    ]
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Tierra y el Universo",
-    "codigo_oa": "OA_08",
-    "descripcion_oa": "Observar y registrar el tiempo atmosférico (temperatura, precipitaciones, viento, nubosidad) relacionándolo con las estaciones del año y sus efectos sobre los seres vivos.",
-    "conceptos_clave": [
-      "tiempo atmosférico",
-      "temperatura",
-      "precipitaciones",
-      "viento",
-      "clima"
-    ],
-    "indicadores_evaluacion": [
-      "Registran datos del tiempo atmosférico usando tablas sencillas.",
-      "Relacionan el tiempo atmosférico con las estaciones del año.",
-      "Describen cómo el clima afecta a los seres vivos."
-    ]
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Historia",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Comprensión y Producción Oral",
     "codigo_oa": "OA_01",
-    "descripcion_oa": "Describir la historia de la localidad y sus tradiciones.",
+    "descripcion_oa": "Comprender y usar vocabulario relacionado con el cuerpo humano y rutinas diarias básicas en inglés, participando en interacciones orales simples apoyadas por imágenes y audio.",
     "conceptos_clave": [
-      "historia local",
-      "tradiciones",
-      "patrimonio cultural",
+      "body parts",
+      "daily routines",
+      "action verbs",
+      "telling time básico",
+      "healthy habits"
+    ],
+    "indicadores_evaluacion": [
+      "Identifica y nombra en inglés al menos 8 partes del cuerpo humano en ilustraciones.",
+      "Describe su rutina matutina usando 3 o más verbos de acción en inglés (wake up, eat, go to school).",
+      "Responde preguntas simples sobre hábitos con 'I + verb' cuando se apoya en tarjetas visuales."
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Comprensión Lectora",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Leer con comprensión palabras y oraciones cortas en inglés relacionadas con el cuerpo y las rutinas, usando estrategias de lectura con apoyo visual y auditivo proporcionado por herramientas digitales.",
+    "conceptos_clave": [
+      "phonics básico",
+      "sight words",
+      "picture books",
+      "reading strategies",
+      "word recognition"
+    ],
+    "indicadores_evaluacion": [
+      "Lee en voz alta oraciones de 3 a 5 palabras en inglés con pronunciación comprensible.",
+      "Asocia palabras escritas con imágenes correspondientes en actividades de matching digital.",
+      "Identifica la idea principal de un texto corto (4-5 oraciones) apoyado por ilustraciones."
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Religión / Formación Valórica - Católica",
+    "eje": "Jesucristo y su Mensaje",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Conocer la vida y el mensaje central de Jesucristo como modelo de amor, servicio y perdón, identificando sus enseñanzas en las parábolas y aplicándolas en situaciones cotidianas.",
+    "conceptos_clave": [
+      "Jesucristo",
+      "parábola",
+      "amor al prójimo",
+      "servicio",
+      "perdón"
+    ],
+    "indicadores_evaluacion": [
+      "Relata con sus palabras al menos 2 parábolas de Jesús y explica su mensaje central.",
+      "Identifica situaciones de su vida donde puede aplicar el mensaje de servicio y amor de Jesús.",
+      "Comparte un ejemplo de perdón o reconciliación vivido u observado en su entorno."
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Religión / Formación Valórica - Evangélica",
+    "eje": "La Biblia como Palabra de Dios",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Conocer la Biblia como Palabra de Dios y guía fundamental para la vida cristiana evangélica, familiarizándose con su estructura, relatos centrales y su relevancia cotidiana.",
+    "conceptos_clave": [
+      "Biblia",
+      "inspiración bíblica",
+      "Antiguo y Nuevo Testamento",
+      "relatos bíblicos centrales",
+      "aplicación práctica"
+    ],
+    "indicadores_evaluacion": [
+      "Identifica la Biblia como el libro sagrado del cristianismo evangélico y describe su estructura básica.",
+      "Relata al menos 3 historias bíblicas clave y explica la enseñanza central de cada una.",
+      "Aplica un versículo bíblico aprendido a una situación concreta de su vida cotidiana."
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Religión / Formación Valórica - Judía / Formación Ética",
+    "eje": "Familia, Comunidad y Tradición",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Valorar la familia y la comunidad como espacios de formación ética y transmisión de valores, explorando tradiciones familiares y comunitarias propias y de otras culturas como expresiones de identidad y pertenencia.",
+    "conceptos_clave": [
+      "familia",
       "comunidad",
-      "identidad"
+      "tradición cultural",
+      "pertenencia",
+      "diversidad familiar"
     ],
     "indicadores_evaluacion": [
-      "Narran historia local",
-      "Describen tradiciones",
-      "Valoran patrimonio"
+      "Describe tradiciones familiares propias y explica su significado para su identidad.",
+      "Compara tradiciones de 2 culturas distintas con respeto y curiosidad.",
+      "Reflexiona sobre su pertenencia a una comunidad y el rol que puede jugar en ella."
     ]
   },
   {
     "curso": "2° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Historia",
-    "codigo_oa": "OA_02",
-    "descripcion_oa": "Reconocer la diversidad cultural de Chile.",
+    "asignatura": "Tecnología",
+    "eje": "Programación con Bloques",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Crear programas simples usando lenguaje de programación visual por bloques (Scratch Jr., Code.org), desarrollando proyectos que incluyan secuencias, eventos y bucles básicos para crear animaciones o juegos cortos.",
     "conceptos_clave": [
-      "pueblos originarios",
-      "diversidad cultural",
-      "identidad chilena",
+      "bloque de programación",
+      "Scratch Jr",
+      "secuencia",
+      "evento",
+      "bucle básico"
+    ],
+    "indicadores_evaluacion": [
+      "Crea un programa de al menos 5 bloques que produzca un resultado visual o sonoro esperado.",
+      "Usa al menos un bloque de evento (al hacer click, al presionar tecla) en sus proyectos.",
+      "Corrige errores (debugging) en un programa de bloques identificando qué instrucción produce el resultado incorrecto."
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Uso Responsable de Tecnología",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Reconocer y usar dispositivos digitales básicos (tablet, computador, teclado, mouse) con seguridad y cuidado, practicando normas de higiene digital y postura corporal adecuada.",
+    "conceptos_clave": [
+      "ergonomía digital",
+      "cuidado de dispositivos",
+      "seguridad básica online",
+      "higiene digital",
+      "privacidad básica"
+    ],
+    "indicadores_evaluacion": [
+      "Demuestra uso correcto y cuidadoso de al menos 2 dispositivos digitales.",
+      "Aplica normas de postura y distancia adecuada al usar pantallas.",
+      "Nombra al menos 2 reglas de seguridad básica en internet (no compartir datos personales, avisar a un adulto)."
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Artes Visuales",
+    "eje": "Patrimonio e Identidad Cultural",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Investigar y recrear elementos visuales propios del arte chileno e indígena (Mapuche, Aymara, Rapa Nui), integrando motivos tradicionales en creaciones propias que dialoguen entre lo patrimonial y lo contemporáneo.",
+    "conceptos_clave": [
+      "arte indígena chileno",
+      "motivos visuales",
       "Mapuche",
-      "Aymara"
+      "patrimonio cultural",
+      "reinterpretación artística"
     ],
     "indicadores_evaluacion": [
-      "Identifican pueblos originarios",
-      "Reconocen aportes",
-      "Valoran diversidad"
+      "Identifica y describe elementos visuales característicos de al menos 2 culturas indígenas de Chile.",
+      "Crea una obra que integre un motivo visual patrimonial reinterpretado con su propio estilo.",
+      "Comparte reflexión sobre la relación entre identidad cultural e identidad personal a través de su arte."
     ]
   },
   {
-    "curso": "2° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Geografía",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Describir características geográficas de Chile.",
+    "curso": "3° Básico",
+    "asignatura": "Artes Visuales",
+    "eje": "Diseño Digital Básico",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Usar herramientas digitales de diseño básico (Canva for Education, Google Slides) para crear composiciones visuales que combinen imagen, texto y color con intención comunicativa.",
     "conceptos_clave": [
+      "diseño gráfico básico",
+      "tipografía",
+      "diagramación",
+      "herramientas digitales",
+      "comunicación visual"
+    ],
+    "indicadores_evaluacion": [
+      "Crea un afiche o tarjeta digital usando al menos una herramienta de diseño digital.",
+      "Elige tipografías y colores de manera intencional para comunicar un mensaje.",
+      "Explica las decisiones de diseño tomadas en su composición digital."
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Condición Física",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Desarrollar y mejorar las capacidades físicas básicas (resistencia aeróbica, flexibilidad, fuerza y velocidad) a través de actividades físicas variadas, registrando sus progresos personales de forma reflexiva.",
+    "conceptos_clave": [
+      "resistencia aeróbica",
+      "flexibilidad",
+      "fuerza",
+      "velocidad",
+      "progresión personal"
+    ],
+    "indicadores_evaluacion": [
+      "Ejecuta una actividad de resistencia aeróbica sostenida por al menos 5 minutos.",
+      "Registra sus tiempos o repeticiones en actividades físicas y verifica su progreso en el tiempo.",
+      "Diferencia las 4 capacidades físicas básicas y nombra una actividad que las desarrolle."
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Seguridad y Prevención",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Aplicar estrategias de calentamiento y vuelta a la calma antes y después de la actividad física, comprendiendo su función preventiva y de bienestar corporal.",
+    "conceptos_clave": [
+      "calentamiento",
+      "vuelta a la calma",
+      "prevención de lesiones",
+      "estiramiento",
+      "conciencia corporal"
+    ],
+    "indicadores_evaluacion": [
+      "Dirige o explica una rutina básica de calentamiento de 5 minutos.",
+      "Realiza estiramientos de vuelta a la calma al finalizar actividad física.",
+      "Explica por qué es importante calentar antes de hacer ejercicio intenso."
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Comprensión Lectora y Oral",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Comprender textos orales y escritos simples en inglés sobre la comunidad, los trabajos y los lugares del barrio, demostrando comprensión a través de actividades de respuesta física, dibujo y producción digital.",
+    "conceptos_clave": [
+      "community places",
+      "occupations",
+      "prepositions of place",
+      "present simple",
+      "community helpers"
+    ],
+    "indicadores_evaluacion": [
+      "Identifica en un mapa o ilustración al menos 6 lugares de la comunidad cuando se nombran en inglés.",
+      "Comprende y ejecuta instrucciones de ubicación (next to, in front of, between) en actividades físicas o digitales.",
+      "Lee y comprende un texto informativo breve sobre una profesión respondiendo preguntas de selección múltiple."
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Producción Escrita",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Producir textos escritos cortos y simples en inglés (listas, oraciones, mini-descripciones) sobre su comunidad, usando correctores automáticos y herramientas de escritura asistida por IA como apoyo.",
+    "conceptos_clave": [
+      "sentence structure",
+      "capital letters",
+      "punctuation",
+      "descriptive writing",
+      "writing process"
+    ],
+    "indicadores_evaluacion": [
+      "Escribe oraciones simples en inglés respetando el orden sujeto-verbo-complemento.",
+      "Produce un mini-párrafo de 3 oraciones describiendo su barrio con vocabulario aprendido.",
+      "Usa correctamente mayúsculas al inicio de oraciones y en nombres propios en sus escritos en inglés."
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Religión / Formación Valórica - Católica",
+    "eje": "Iglesia y Comunidad",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Conocer la Iglesia Católica como comunidad de creyentes que sigue a Jesús, identificando sus expresiones de fe (sacramentos, oración, liturgia) y su misión de solidaridad y servicio en el mundo.",
+    "conceptos_clave": [
+      "Iglesia Católica",
+      "sacramentos",
+      "liturgia",
+      "solidaridad",
+      "misión de la Iglesia"
+    ],
+    "indicadores_evaluacion": [
+      "Describe qué es la Iglesia Católica y quiénes la forman.",
+      "Nombra y explica brevemente al menos 3 sacramentos de la Iglesia Católica.",
+      "Identifica acciones concretas de solidaridad realizadas por la Iglesia en Chile o en el mundo."
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Religión / Formación Valórica - Evangélica",
+    "eje": "Jesucristo y la Salvación",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Profundizar en la vida, ministerio, muerte y resurrección de Jesucristo como fundamento de la fe cristiana evangélica, comprendiendo el plan de salvación y su significado personal.",
+    "conceptos_clave": [
+      "ministerio de Jesús",
+      "muerte y resurrección",
+      "salvación",
+      "gracia",
+      "fe personal en Cristo"
+    ],
+    "indicadores_evaluacion": [
+      "Narra los eventos principales de la vida de Jesús desde su nacimiento hasta la resurrección.",
+      "Explica con sus palabras el significado de salvación en la fe cristiana evangélica.",
+      "Reflexiona sobre el significado personal de la fe en Jesucristo para su propia vida."
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Religión / Formación Valórica - Judía / Formación Ética",
+    "eje": "Empatía y Responsabilidad",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Desarrollar empatía y responsabilidad hacia los demás a través del concepto de ética del cuidado, reconociendo que nuestras acciones afectan a otros y que somos responsables del bienestar común.",
+    "conceptos_clave": [
+      "empatía",
+      "ética del cuidado",
+      "responsabilidad moral",
+      "interdependencia",
+      "acción ética"
+    ],
+    "indicadores_evaluacion": [
+      "Define empatía y la distingue de simpatía con ejemplos concretos.",
+      "Identifica situaciones donde sus acciones afectan positiva o negativamente a otros.",
+      "Asume responsabilidad por al menos una acción de cuidado concreta hacia un compañero o persona de su comunidad."
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Programación Creativa",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Diseñar y programar proyectos creativos en Scratch (animaciones, historias interactivas, juegos simples) que integren secuencias, condicionales y bucles, aplicando el proceso de diseño tecnológico (idear, crear, probar, mejorar).",
+    "conceptos_clave": [
+      "Scratch",
+      "condicional si-entonces",
+      "bucle",
+      "sprite",
+      "proceso de diseño iterativo"
+    ],
+    "indicadores_evaluacion": [
+      "Crea un proyecto en Scratch que incluya al menos 1 condicional y 1 bucle con una función clara.",
+      "Aplica el proceso idear-crear-probar-mejorar documentando al menos 2 iteraciones de su proyecto.",
+      "Presenta y explica su proyecto a compañeros describiendo cómo funciona el código."
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Gestión de Información Digital",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Organizar, almacenar y gestionar información digital de forma segura y ordenada, comprendiendo conceptos básicos de archivos, carpetas, formatos y almacenamiento en la nube.",
+    "conceptos_clave": [
+      "archivo digital",
+      "carpeta",
+      "nube",
+      "nombre de archivo descriptivo",
+      "formatos básicos jpg pdf mp3"
+    ],
+    "indicadores_evaluacion": [
+      "Organiza sus archivos digitales en carpetas con nombres descriptivos siguiendo un criterio.",
+      "Distingue entre almacenamiento local y en la nube y explica ventajas de cada uno.",
+      "Guarda y recupera archivos en al menos 2 formatos distintos según el tipo de contenido."
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Artes Visuales",
+    "eje": "Crear en 3D y Sostenibilidad",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Crear obras tridimensionales usando materiales reciclados, arcilla y modelado digital 3D básico, explorando conceptos de volumen, textura y espacio, desarrollando conciencia ecológica a través del arte.",
+    "conceptos_clave": [
+      "escultura",
       "relieve",
-      "clima",
-      "vegetación",
-      "paisajes de Chile",
-      "recursos naturales"
-    ],
-    "indicadores_evaluacion": [
-      "Identifican unidades de relieve",
-      "Describen diversidad climática",
-      "Reconocen recursos naturales"
-    ]
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Geografía",
-    "codigo_oa": "OA_04",
-    "descripcion_oa": "Leer e interpretar mapas simples de Chile.",
-    "conceptos_clave": [
-      "mapa",
-      "puntos cardinales",
-      "zonas de Chile",
-      "leyenda del mapa",
-      "escala"
-    ],
-    "indicadores_evaluacion": [
-      "Ubican Chile en mapas",
-      "Identifican zonas",
-      "Usan rosa de los vientos"
-    ]
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Historia",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Reconocer la importancia del trabajo y las actividades económicas.",
-    "conceptos_clave": [
-      "trabajo",
-      "actividades económicas",
-      "sector primario",
-      "sector secundario",
-      "sector terciario"
-    ],
-    "indicadores_evaluacion": [
-      "Clasifican actividades económicas",
-      "Valoran el trabajo",
-      "Reconocen aportes a la comunidad"
-    ]
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Formación Ciudadana",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Reconocer normas que regulan la convivencia y formas de participación.",
-    "conceptos_clave": [
-      "normas",
-      "convivencia",
-      "participación ciudadana",
-      "democracia",
-      "bien común"
-    ],
-    "indicadores_evaluacion": [
-      "Identifican normas",
-      "Describen participación",
-      "Valoran democracia"
-    ]
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Leer en voz alta de manera fluida y expresiva variados textos, con velocidad y precisión lectora adecuada al nivel (mínimo 50-70 palabras por minuto), respetando la puntuación.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
-    "codigo_oa": "OA_02",
-    "descripcion_oa": "Comprender textos aplicando estrategias: extraer información explícita, realizar inferencias de causa-efecto, determinar el tema principal y resumir con sus propias palabras.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Leer y comprender textos literarios (cuentos, fábulas, poemas, adivinanzas), identificando personajes, trama, ambiente, moraleja y recursos sonoros como la rima.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
-    "codigo_oa": "OA_04",
-    "descripcion_oa": "Ampliar el vocabulario a través de la lectura, usando el contexto para inferir el significado de palabras nuevas, consultando el diccionario y distinguiendo sinónimos y antónimos.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Escribir textos narrativos y descriptivos breves aplicando el proceso de escritura: planificación, escritura de borrador, revisión y edición, incorporando inicio, desarrollo y desenlace.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Aplicar convenciones ortográficas del nivel: mayúscula en inicio de oración y nombres propios, punto, coma en enumeraciones, y signos de interrogación y exclamación.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Comunicación Oral",
-    "codigo_oa": "OA_07",
-    "descripcion_oa": "Comprender y producir textos orales de distintos tipos: narrar, describir, explicar y opinar con fundamento, respetando los turnos de habla y las normas de conversación grupal.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Leer, escribir, contar y representar números del 0 al 1.000, identificando el valor posicional de centenas, decenas y unidades, y usando material base 10.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_02",
-    "descripcion_oa": "Comparar y ordenar números del 0 al 1.000 usando los símbolos <, > e =, y la recta numérica, justificando con el valor posicional.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Demostrar que comprenden la adición y la sustracción con números del 0 al 1.000, con y sin reagrupación, y usarlas para resolver problemas cotidianos de una etapa.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_04",
-    "descripcion_oa": "Demostrar que comprenden la multiplicación como adición repetida y en disposición rectangular, con factores del 1 al 10, y memorizar las tablas de multiplicar del 2, 5 y 10.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Identificar la mitad y el doble de un número y relacionarlos con la división y la multiplicación por 2, resolviendo problemas simples de reparto equitativo.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Matemática",
-    "eje": "Medición",
-    "codigo_oa": "OA_07",
-    "descripcion_oa": "Medir la longitud de objetos usando unidades estandarizadas (centímetro y metro), estimando y verificando mediciones, y comprendiendo que 1 metro = 100 centímetros.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Matemática",
-    "eje": "Medición",
-    "codigo_oa": "OA_08",
-    "descripcion_oa": "Leer y comunicar el tiempo en horas y minutos usando reloj analógico y digital, y relacionar el calendario con el año, los meses y los días de la semana.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "2° Básico",
-    "asignatura": "Matemática",
-    "eje": "Datos y Probabilidades",
-    "codigo_oa": "OA_09",
-    "descripcion_oa": "Recolectar y representar datos en tablas de frecuencia y gráficos de barra simples, e interpretar la información obtenida respondiendo preguntas estadísticas.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "3° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Física y Química",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Explorar y describir la luz como fuente de energía.",
-    "conceptos_clave": [
-      "luz",
-      "fuentes luminosas",
-      "reflexión",
-      "sombras",
-      "energía"
-    ],
-    "indicadores_evaluacion": [
-      "Distinguen fuentes de luz",
-      "Experimentan con sombras",
-      "Describen importancia de la luz"
-    ]
-  },
-  {
-    "curso": "3° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Geografía",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Describir la ubicación de Chile en el continente y el mundo.",
-    "conceptos_clave": [
-      "Chile",
-      "límites",
-      "regiones",
-      "símbolos patrios",
-      "territorio nacional"
-    ],
-    "indicadores_evaluacion": [
-      "Ubican Chile en mapas",
-      "Identifican límites",
-      "Reconocen símbolos patrios"
-    ]
-  },
-  {
-    "curso": "4° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Física y Química",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Explorar y describir el concepto de materia y sus estados.",
-    "conceptos_clave": [
-      "materia",
-      "estados de la materia",
-      "masa",
       "volumen",
-      "temperatura"
+      "textura táctil",
+      "materiales reciclados"
     ],
     "indicadores_evaluacion": [
-      "Definen materia",
-      "Miden magnitudes",
-      "Identifican propiedades"
+      "Construye una escultura sencilla diferenciando plano, relieve y volumen.",
+      "Usa materiales reciclados de manera creativa fundamentando su elección ecológica.",
+      "Explora una herramienta básica de modelado digital 3D (Tinkercad) para diseñar un objeto imaginario."
     ]
   },
   {
     "curso": "4° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Historia",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Describir características de las primeras civilizaciones.",
-    "conceptos_clave": [
-      "Mesopotamia",
-      "Egipto",
-      "escritura cuneiforme",
-      "jeroglíficos",
-      "civilización"
-    ],
-    "indicadores_evaluacion": [
-      "Identifican características",
-      "Reconocen aportes",
-      "Ubican en mapa"
-    ]
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Tierra y el Universo",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Investigar y describir la distribución del agua en la Tierra.",
-    "conceptos_clave": [
-      "agua",
-      "ciclo hidrológico",
-      "océanos",
-      "glaciares",
-      "distribución del agua"
-    ],
-    "indicadores_evaluacion": [
-      "Describen distribución del agua",
-      "Explican ciclo del agua",
-      "Identifican propiedades del agua"
-    ]
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Historia",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Describir características del feudalismo medieval.",
-    "conceptos_clave": [
-      "feudalismo",
-      "Edad Media",
-      "señor feudal",
-      "vasallo",
-      "Iglesia medieval"
-    ],
-    "indicadores_evaluacion": [
-      "Describen sociedad feudal",
-      "Reconocen papel de la Iglesia",
-      "Identifican vida cotidiana"
-    ]
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Leer de manera fluida textos literarios y no literarios con velocidad, precisión y entonación adecuadas al nivel (mínimo 120 palabras por minuto), respetando los signos de puntuación.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
+    "asignatura": "Artes Visuales",
+    "eje": "Apreciación del Arte Contemporáneo",
     "codigo_oa": "OA_02",
-    "descripcion_oa": "Comprender textos aplicando estrategias: distinguir información explícita de implícita, realizar inferencias, sintetizar, distinguir hecho de opinión y evaluar críticamente la información.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Leer y analizar textos literarios (cuentos, novelas, poemas, leyendas, mitos) identificando narrador, punto de vista, conflicto, tema y recursos literarios: comparación, personificación, hipérbole y metáfora.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
-    "codigo_oa": "OA_04",
-    "descripcion_oa": "Analizar textos no literarios (noticias, reportajes, cartas, artículos informativos) identificando propósito comunicativo, estructura y distinción entre lenguaje objetivo y subjetivo.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Escribir textos de manera eficiente aplicando el proceso completo: planificar, redactar con introducción-desarrollo-conclusión, revisar considerando coherencia y cohesión, editar y publicar.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Aplicar correctamente las normas ortográficas del nivel: tilde en palabras agudas, graves y esdrújulas; uso de b/v, h, c/s/z; mayúsculas en nombres propios, y manejo autónomo del diccionario.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_07",
-    "descripcion_oa": "Escribir textos literarios creativos (cuentos, poemas, cartas) aplicando recursos literarios, siguiendo convenciones del género e incorporando diálogos con raya de diálogo o comillas.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Comunicación Oral",
-    "codigo_oa": "OA_08",
-    "descripcion_oa": "Expresarse de manera clara, coherente y organizada en presentaciones orales y debates, usando recursos verbales y no verbales, argumentando con fundamentos y respetando turnos.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Representar y describir números naturales de más de 6 dígitos y menores que 1.000.000.000, y números decimales hasta centésimos, usando el valor posicional y la notación expandida.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_02",
-    "descripcion_oa": "Demostrar que comprenden las fracciones propias e impropias y los números mixtos, representándolos concreta, pictórica y simbólicamente, e identificando fracciones equivalentes.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Realizar adición y sustracción de fracciones con distinto denominador, usando el mínimo común múltiplo (MCM) para igualar denominadores y simplificando el resultado.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Calcular potencias de base 10 y relacionarlas con el valor posicional del sistema de numeración decimal.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Matemática",
-    "eje": "Patrones y Álgebra",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Determinar el valor de una incógnita en ecuaciones que involucran las cuatro operaciones con números naturales, verificando la solución por sustitución.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Matemática",
-    "eje": "Geometría",
-    "codigo_oa": "OA_07",
-    "descripcion_oa": "Calcular el área de figuras planas (cuadrado, rectángulo y triángulo) usando fórmulas, y el perímetro de polígonos, distinguiendo entre ambas magnitudes y usando las unidades correctas.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "5° Básico",
-    "asignatura": "Matemática",
-    "eje": "Datos y Probabilidades",
-    "codigo_oa": "OA_08",
-    "descripcion_oa": "Leer e interpretar datos en tablas de frecuencia, gráficos de barra, de línea y circulares, calcular el promedio aritmético e identificar la moda y el rango de un conjunto de datos.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "6° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Tierra y el Universo",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Describir las capas de la Tierra y tipos de suelo.",
+    "descripcion_oa": "Analizar obras de arte contemporáneo (instalaciones, arte urbano, land art) identificando conceptos, mensajes y contextos, y desarrollar pensamiento crítico sobre el arte como práctica social y cultural.",
     "conceptos_clave": [
-      "capas de la Tierra",
-      "tipos de suelo",
-      "edafología",
-      "corteza",
-      "manto"
+      "arte contemporáneo",
+      "instalación artística",
+      "arte urbano",
+      "land art",
+      "contexto artístico"
     ],
     "indicadores_evaluacion": [
-      "Describen capas de la Tierra",
-      "Comparan tipos de suelo",
-      "Explican relación seres vivos-suelo"
+      "Describe y compara al menos 2 obras de arte contemporáneo con obras de arte tradicional.",
+      "Formula preguntas reflexivas sobre el mensaje o intención de una obra de arte contemporáneo.",
+      "Opina fundamentadamente sobre si considera que una intervención urbana o natural es arte usando argumentos visuales."
     ]
   },
   {
-    "curso": "6° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Historia",
+    "curso": "4° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Deporte y Convivencia",
     "codigo_oa": "OA_01",
-    "descripcion_oa": "Describir las ideas de la Ilustración y su influencia en las revoluciones.",
+    "descripcion_oa": "Practicar habilidades técnicas básicas de al menos 2 deportes o actividades físicas colectivas, aplicando estrategias simples de juego y resolviendo situaciones de conflicto de forma pacífica y constructiva.",
     "conceptos_clave": [
-      "Ilustración",
-      "Revolución Francesa",
-      "Revolución Americana",
+      "deporte colectivo",
+      "habilidades técnicas",
+      "táctica básica",
+      "resolución pacífica de conflictos",
+      "roles en el deporte"
+    ],
+    "indicadores_evaluacion": [
+      "Ejecuta habilidades técnicas básicas (pase, recepción, desplazamiento) de al menos 2 deportes.",
+      "Propone soluciones pacíficas ante situaciones de conflicto o desacuerdo durante la actividad física.",
+      "Asume diferentes roles dentro de un equipo (capitán, árbitro, jugador) con responsabilidad."
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Sedentarismo y Era Digital",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Analizar críticamente los efectos del sedentarismo y el uso excesivo de pantallas en la salud física y mental, diseñando un plan personal semanal de actividad física y pausas activas.",
+    "conceptos_clave": [
+      "sedentarismo",
+      "salud digital",
+      "pausas activas digitales",
+      "plan de actividad física",
+      "bienestar mental"
+    ],
+    "indicadores_evaluacion": [
+      "Explica al menos 3 consecuencias del sedentarismo para la salud física y mental.",
+      "Diseña un plan semanal de actividad física realista que incluya pausas activas durante el uso de pantallas.",
+      "Demuestra una pausa activa digital de 5 minutos que pueda enseñar a compañeros."
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Interculturalidad y Comprensión Global",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Comprender y producir textos orales y escritos cortos en inglés sobre aspectos culturales de Chile y de países anglófonos, desarrollando conciencia intercultural y respeto por la diversidad.",
+    "conceptos_clave": [
+      "Chilean culture",
+      "English-speaking countries",
+      "cultural comparison",
+      "traditions",
+      "geography basics"
+    ],
+    "indicadores_evaluacion": [
+      "Compara aspectos culturales básicos de Chile con los de un país anglófono en inglés usando vocabulario aprendido.",
+      "Presenta oralmente una tradición chilena en inglés usando oraciones simples con apoyo visual.",
+      "Lee un texto informativo sobre una celebración de un país anglófono y extrae 3 datos clave."
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Producción Oral Interactiva",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Participar en interacciones orales simples en inglés sobre preferencias, gustos y experiencias personales, usando el presente simple y estructuras de 'like/dislike', con retroalimentación de herramientas de IA conversacional.",
+    "conceptos_clave": [
+      "expressing opinions",
+      "like/dislike",
+      "present simple questions",
+      "conversational English",
+      "turn-taking"
+    ],
+    "indicadores_evaluacion": [
+      "Responde y formula preguntas sobre gustos personales usando 'Do you like...? Yes, I like / No, I don't like...'",
+      "Mantiene un intercambio oral de al menos 4 turnos conversacionales en inglés con un compañero o agente IA.",
+      "Usa correctamente el presente simple en 3a persona singular (she likes, he plays) en contextos conversacionales."
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Religión / Formación Valórica - Católica",
+    "eje": "La Biblia",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Conocer la estructura y los géneros literarios de la Biblia, comprendiendo su significado como Palabra de Dios para la fe cristiana y su relevancia como texto fundante de la cultura occidental.",
+    "conceptos_clave": [
+      "Biblia",
+      "Antiguo Testamento",
+      "Nuevo Testamento",
+      "géneros literarios bíblicos",
+      "hermenéutica básica"
+    ],
+    "indicadores_evaluacion": [
+      "Distingue las dos partes principales de la Biblia y describe brevemente su contenido.",
+      "Identifica al menos 3 géneros literarios presentes en la Biblia (poesía, historia, profecía).",
+      "Lee y comenta un pasaje bíblico breve identificando su mensaje central para la vida."
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Religión / Formación Valórica - Evangélica",
+    "eje": "El Espíritu Santo",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Comprender el rol del Espíritu Santo en la vida del creyente y la comunidad cristiana, identificando sus dones y frutos como herramientas para el servicio y el testimonio cristiano.",
+    "conceptos_clave": [
+      "Espíritu Santo",
+      "dones del Espíritu",
+      "frutos del Espíritu Gálatas 5",
+      "comunidad cristiana",
+      "testimonio"
+    ],
+    "indicadores_evaluacion": [
+      "Describe el rol del Espíritu Santo según la enseñanza bíblica evangélica.",
+      "Nombra y explica al menos 3 frutos del Espíritu Santo y los ilustra con ejemplos.",
+      "Reflexiona sobre cómo los frutos del Espíritu se pueden vivir en su comunidad escolar."
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Religión / Formación Valórica - Judía / Formación Ética",
+    "eje": "Memoria y Derechos Humanos",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Comprender la importancia de la memoria histórica y el respeto a la dignidad humana a través del estudio de la Shoá (Holocausto) y otros genocidios, extrayendo lecciones éticas universales sobre el peligro del odio y la indiferencia.",
+    "conceptos_clave": [
+      "Shoá Holocausto",
+      "memoria histórica",
+      "dignidad humana",
       "derechos humanos",
-      "Constitución"
+      "indiferencia y responsabilidad"
     ],
     "indicadores_evaluacion": [
-      "Describen ideas ilustradas",
-      "Identifican causas de revoluciones",
-      "Reconocen impacto en derechos humanos"
+      "Describe qué fue la Shoá y su impacto en el pueblo judío y en la humanidad con respeto y profundidad.",
+      "Extrae al menos 3 lecciones éticas universales de la memoria histórica de la Shoá.",
+      "Reflexiona sobre su propia responsabilidad ante la injusticia y el odio en su entorno actual."
     ]
   },
   {
-    "curso": "6° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
-    "codigo_oa": "OA_02",
-    "descripcion_oa": "Analizar textos literarios de distintos géneros (cuento, novela, poesía, teatro), interpretando el desarrollo de personajes, el tema central, los valores y los recursos literarios: símil, metáfora, aliteración e hipérbole.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "6° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Analizar textos no literarios de mediana complejidad (artículos de opinión, reportajes, textos digitales), identificando la tesis, los argumentos, las técnicas persuasivas y evaluando la confiabilidad de las fuentes.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "6° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_04",
-    "descripcion_oa": "Escribir textos argumentativos (cartas de opinión, comentarios, reseñas) con tesis clara, argumentos sustentados en evidencias, conclusión y uso de conectores argumentativos.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "6° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Aplicar correctamente las normas ortográficas y gramaticales del nivel: acento diacrítico, tiempos verbales (pretérito perfecto, imperfecto y condicional), concordancia de género y número, y uso de la coma.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "6° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Escribir textos creativos (relatos con flashback, poemas con recursos literarios, textos dramáticos con acotaciones y diálogos), revisando y editando con atención al estilo y la coherencia.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "6° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Comunicación Oral",
-    "codigo_oa": "OA_07",
-    "descripcion_oa": "Participar en discusiones y debates argumentados, formulando y defendiendo una posición con argumentos y evidencias, refutando con respeto y distinguiendo entre argumentos válidos y falacias simples.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "6° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
+    "curso": "4° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Robótica y Pensamiento Computacional",
     "codigo_oa": "OA_01",
-    "descripcion_oa": "Demostrar que comprenden los números enteros (positivos, negativos y cero), representándolos en la recta numérica, comparándolos, y calculando valor absoluto y opuesto.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "6° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_02",
-    "descripcion_oa": "Realizar adición, sustracción y multiplicación de números enteros aplicando la regla de signos, y resolver problemas contextualizados con estas operaciones.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "6° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Demostrar que comprenden los porcentajes y su relación con fracciones y decimales, calculando el porcentaje de una cantidad y aplicándolos en problemas de descuentos, IVA e interés simple.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "6° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Aplicar la razón y la proporción para resolver problemas de proporcionalidad directa mediante regla de tres simple, y representar relaciones proporcionales en tablas y gráficos.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "6° Básico",
-    "asignatura": "Matemática",
-    "eje": "Patrones y Álgebra",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Resolver ecuaciones de primer grado con una incógnita del tipo ax + b = c, usando propiedades de igualdad, verificando la solución por sustitución y planteando ecuaciones desde problemas.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "6° Básico",
-    "asignatura": "Matemática",
-    "eje": "Geometría",
-    "codigo_oa": "OA_07",
-    "descripcion_oa": "Calcular el volumen de prismas rectangulares y cubos usando fórmulas, expresarlo en cm³ y m³, y relacionarlo con la capacidad (1 cm³ = 1 mL; 1.000 cm³ = 1 L).",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "6° Básico",
-    "asignatura": "Matemática",
-    "eje": "Datos y Probabilidades",
-    "codigo_oa": "OA_08",
-    "descripcion_oa": "Calcular e interpretar medidas de tendencia central (media, moda y mediana) y el rango, y usar estos estadísticos para comparar conjuntos de datos y representarlos en histogramas.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "7° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Física y Química",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Comprender y describir el comportamiento de los gases.",
+    "descripcion_oa": "Construir y programar robots simples o simulaciones robóticas (Lego WeDo, mBot, Micro:bit) aplicando pensamiento computacional (descomposición, patrones, abstracción) para resolver desafíos físicos concretos.",
     "conceptos_clave": [
-      "gases",
-      "Ley de Boyle",
-      "Ley de Charles",
-      "presión",
-      "temperatura",
-      "volumen"
+      "robótica educativa",
+      "Micro:bit",
+      "descomposición de problemas",
+      "reconocimiento de patrones",
+      "abstracción"
     ],
     "indicadores_evaluacion": [
-      "Explican comportamiento de gases",
-      "Aplican leyes de gases",
-      "Resuelven problemas"
+      "Construye y programa un robot simple que complete un desafío físico definido.",
+      "Aplica la descomposición de problemas dividiendo un desafío robótico en pasos menores.",
+      "Identifica patrones en la solución de problemas y los reutiliza para resolver desafíos similares."
     ]
   },
   {
-    "curso": "7° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Historia",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Analizar y comparar las civilizaciones fluviales de la Antigüedad.",
+    "curso": "4° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Impacto Social de la Tecnología",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Comprender el impacto social y ambiental de la tecnología, analizando casos donde la innovación tecnológica ha generado beneficios y también problemas, y proponiendo usos tecnológicos más responsables.",
     "conceptos_clave": [
-      "civilizaciones fluviales",
-      "Mesopotamia",
-      "Egipto",
-      "India",
-      "China antigua"
+      "impacto ambiental digital",
+      "brecha digital",
+      "obsolescencia tecnológica",
+      "basura electrónica",
+      "tecnología responsable"
     ],
     "indicadores_evaluacion": [
-      "Comparan civilizaciones",
-      "Identifican aportes",
-      "Ubican en mapas históricos"
+      "Explica al menos 2 impactos positivos y 2 impactos negativos de una tecnología específica en la sociedad.",
+      "Investiga qué es la basura electrónica y cómo reducirla en su hogar o escuela.",
+      "Propone una acción concreta para hacer un uso más responsable y sostenible de la tecnología."
     ]
   },
   {
-    "curso": "7° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
+    "curso": "5° Básico",
+    "asignatura": "Artes Visuales",
+    "eje": "Fotografía y Lenguaje Visual Digital",
     "codigo_oa": "OA_01",
-    "descripcion_oa": "Leer y analizar obras literarias de tradición oral y escrita (mitos, epopeyas, cuentos clásicos, novelas breves), relacionándolas con su contexto histórico-cultural de producción y comparando versiones de distintas culturas.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "7° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
-    "codigo_oa": "OA_02",
-    "descripcion_oa": "Analizar textos no literarios de mayor complejidad (crónica periodística, informe, discurso, texto digital multimedia), evaluando propósito, recursos retóricos y confiabilidad de fuentes digitales.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "7° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Aplicar estrategias de comprensión profunda: evaluar críticamente ideas de un texto cuestionando supuestos y sesgos, establecer relaciones intertextuales y formular juicios fundados sobre la validez de los argumentos.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "7° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_04",
-    "descripcion_oa": "Escribir textos expositivos y argumentativos (informes, ensayos breves, artículos de opinión) con estructura clara, incorporando citas textuales y paráfrasis de fuentes, conectores discursivos variados y registro formal.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "7° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Aplicar correctamente las normas gramaticales y ortográficas del nivel: oraciones subordinadas sustantivas, adjetivas y adverbiales; modo subjuntivo; participio; uso de la coma en oraciones compuestas; y concordancia verbal.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "7° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Comunicación Oral",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Producir textos orales formales (discursos, exposiciones académicas) con estructura de exordio-argumentación-conclusión, usando recursos retóricos con intención persuasiva y adaptando el registro al contexto.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "7° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Demostrar que comprenden las cuatro operaciones con números enteros y racionales, aplicando la jerarquía de operaciones y resolviendo problemas de múltiples etapas.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "7° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_02",
-    "descripcion_oa": "Demostrar que comprenden las potencias de base entera y exponente natural, aplicar sus propiedades (producto, cociente, potencia de potencia) y expresar números en notación científica.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "7° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Calcular raíces cuadradas exactas de cuadrados perfectos y aproximadas de números no cuadrados, relacionándolas con la potencia de exponente 2.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "7° Básico",
-    "asignatura": "Matemática",
-    "eje": "Patrones y Álgebra",
-    "codigo_oa": "OA_04",
-    "descripcion_oa": "Demostrar que comprenden las expresiones algebraicas: identificar monomios y polinomios, simplificar términos semejantes, evaluar por sustitución, y sumar y restar polinomios.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "7° Básico",
-    "asignatura": "Matemática",
-    "eje": "Patrones y Álgebra",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Resolver ecuaciones de primer grado con una incógnita de la forma ax + b = cx + d, e inecuaciones simples, representando la solución en la recta numérica e interpretándola en contextos.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "7° Básico",
-    "asignatura": "Matemática",
-    "eje": "Geometría",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Aplicar el teorema de Pitágoras para calcular lados desconocidos en triángulos rectángulos, verificar si un triángulo es rectángulo y resolver problemas de distancias y alturas.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "7° Básico",
-    "asignatura": "Matemática",
-    "eje": "Geometría",
-    "codigo_oa": "OA_07",
-    "descripcion_oa": "Calcular el área y la circunferencia del círculo usando las fórmulas A = πr² y C = 2πr, y resolver problemas que combinan ambas medidas.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "7° Básico",
-    "asignatura": "Matemática",
-    "eje": "Datos y Probabilidades",
-    "codigo_oa": "OA_08",
-    "descripcion_oa": "Calcular probabilidades de eventos simples usando la regla de Laplace, distinguir entre probabilidad teórica y experimental, y expresar probabilidades como fracción, decimal y porcentaje.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "8° Básico",
-    "asignatura": "Ciencias Naturales",
-    "eje": "Ciencias de la Vida",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Explicar el funcionamiento de sistemas digestivo, circulatorio, respiratorio y excretor.",
+    "descripcion_oa": "Crear y editar fotografías digitales aplicando principios básicos de composición (regla de tercios, encuadre, luz, ángulo), usando herramientas de edición accesibles para comunicar ideas y emociones.",
     "conceptos_clave": [
-      "homeostasis",
-      "sistema digestivo",
-      "sistema circulatorio",
-      "sistema respiratorio",
-      "sistema excretor"
+      "composición fotográfica",
+      "regla de tercios",
+      "encuadre",
+      "luz natural y artificial",
+      "edición básica"
     ],
     "indicadores_evaluacion": [
-      "Describen digestión",
-      "Explican circulación",
-      "Relacionan sistemas con homeostasis"
+      "Aplica la regla de tercios en al menos 3 fotografías intencionalmente compuestas.",
+      "Edita una fotografía ajustando brillo, contraste y recorte con una herramienta digital.",
+      "Crea una serie fotográfica de 4 imágenes que comuniquen una idea o emoción con coherencia visual."
     ]
   },
   {
-    "curso": "8° Básico",
-    "asignatura": "Historia, Geografía y Ciencias Sociales",
-    "eje": "Historia",
-    "codigo_oa": "OA_01",
-    "descripcion_oa": "Analizar las ideas de la Ilustración y su impacto en las revoluciones.",
+    "curso": "5° Básico",
+    "asignatura": "Artes Visuales",
+    "eje": "Diseño Gráfico y UI Básico",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Explorar herramientas de diseño gráfico digital (Canva, Adobe Express) para crear proyectos visuales comunicativos (afiches, infografías), aplicando principios de jerarquía visual y diseño de interfaz básico (UI).",
     "conceptos_clave": [
-      "Ilustración",
-      "Revolución Francesa",
-      "soberanía popular",
-      "Montesquieu",
-      "Locke"
+      "jerarquía visual",
+      "diseño de interfaz UI",
+      "infografía",
+      "tipografía en diseño",
+      "paleta de colores"
     ],
     "indicadores_evaluacion": [
-      "Analizan ideas ilustradas",
-      "Identifican principios",
-      "Evalúan impacto"
+      "Crea una infografía digital sobre un tema de su elección aplicando jerarquía visual con tamaño y color.",
+      "Diseña un afiche digital considerando la lectura visual del usuario.",
+      "Identifica y nombra al menos 4 principios de diseño usados en interfaces digitales cotidianas."
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Deporte y Tecnología para la Salud",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Demostrar dominio técnico y táctico en la práctica de deportes individuales y colectivos, usando herramientas digitales de seguimiento de actividad física para monitorear su condición y establecer metas de mejora.",
+    "conceptos_clave": [
+      "técnica deportiva",
+      "táctica",
+      "apps de salud",
+      "metas SMART",
+      "monitoreo de actividad"
+    ],
+    "indicadores_evaluacion": [
+      "Aplica correctamente la técnica básica de un deporte individual y uno colectivo.",
+      "Usa una herramienta digital (app de actividad, podómetro) para registrar y analizar sus datos de actividad física.",
+      "Establece una meta de condición física usando criterios SMART."
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Bienestar Mental y Actividad Física",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Comprender la relación bidireccional entre actividad física y salud mental, reconociendo el ejercicio como estrategia de bienestar emocional, manejo del estrés y regulación de emociones.",
+    "conceptos_clave": [
+      "bienestar emocional",
+      "regulación emocional",
+      "endorfinas",
+      "estrés escolar",
+      "mindfulness en movimiento"
+    ],
+    "indicadores_evaluacion": [
+      "Explica la conexión entre ejercicio físico y bienestar mental usando al menos 2 argumentos con base científica simple.",
+      "Practica y describe al menos una actividad de mindfulness en movimiento (yoga, tai chi, caminata consciente).",
+      "Comparte estrategias físicas personales para manejar el estrés o las emociones negativas."
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Comprensión Auditiva",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Escuchar y comprender textos orales auténticos en inglés sobre identidad, vida personal y escolar, identificando información explícita e implícita con apoyo de estrategias de comprensión auditiva digital.",
+    "conceptos_clave": [
+      "identity",
+      "personal information",
+      "school life",
+      "listening strategies",
+      "implied meaning"
+    ],
+    "indicadores_evaluacion": [
+      "Identifica información específica (nombre, edad, gustos, rutinas) en conversaciones y podcasts cortos en inglés.",
+      "Infiere el estado emocional o actitud de hablantes nativos en audios simples.",
+      "Completa fichas o formularios con información extraída de textos orales en inglés."
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Comprensión Lectora",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Leer y comprender textos informativos y narrativos breves en inglés sobre identidad y culturas, usando estrategias de lectura (skimming, scanning) para extraer y organizar información relevante.",
+    "conceptos_clave": [
+      "skimming",
+      "scanning",
+      "main idea",
+      "supporting details",
+      "multicultural identity"
+    ],
+    "indicadores_evaluacion": [
+      "Aplica skimming para identificar el tema general de un texto en menos de 1 minuto.",
+      "Usa scanning para localizar información específica (fechas, nombres, datos) en un texto de hasta 150 palabras.",
+      "Resume la idea principal de un párrafo en inglés en 1 o 2 oraciones propias."
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Producción Oral y Escrita",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Producir textos escritos y orales en inglés sobre el medio ambiente y la sociedad, usando vocabulario temático, oraciones complejas y recursos digitales de corrección y mejora.",
+    "conceptos_clave": [
+      "environment",
+      "sustainability",
+      "social issues",
+      "compound sentences",
+      "cohesion and coherence"
+    ],
+    "indicadores_evaluacion": [
+      "Escribe un texto de al menos 5 oraciones sobre un problema ambiental usando vocabulario específico.",
+      "Presenta oralmente una propuesta de solución a un problema social con estructuras 'We should / We must...'",
+      "Usa correctamente conectores de adición y contraste (also, however, but, although) en producción escrita."
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Religión / Formación Valórica - Católica",
+    "eje": "Moral y Ética Cristiana",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Comprender los principios fundamentales de la moral cristiana (los 10 mandamientos, el mandamiento del amor) y aplicarlos como criterios para la toma de decisiones éticas en situaciones cotidianas complejas.",
+    "conceptos_clave": [
+      "10 mandamientos",
+      "ley del amor",
+      "conciencia moral",
+      "bien común",
+      "toma de decisiones éticas"
+    ],
+    "indicadores_evaluacion": [
+      "Explica el sentido de los 10 mandamientos como orientación para una vida buena en comunidad.",
+      "Aplica el mandamiento del amor como criterio para analizar situaciones morales concretas.",
+      "Fundamenta una decisión ética personal usando principios morales cristianos."
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Religión / Formación Valórica - Evangélica",
+    "eje": "Ética Bíblica",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Aplicar principios éticos bíblicos (integridad, honestidad, justicia, misericordia) en la toma de decisiones cotidianas, distinguiendo entre valores del mundo y valores del Reino de Dios.",
+    "conceptos_clave": [
+      "integridad bíblica",
+      "honestidad",
+      "misericordia",
+      "Reino de Dios",
+      "decisiones éticas"
+    ],
+    "indicadores_evaluacion": [
+      "Identifica dilemas éticos cotidianos y los analiza desde principios bíblicos evangélicos.",
+      "Compara valores dominantes en la cultura actual con valores bíblicos del Reino de Dios.",
+      "Toma y fundamenta decisiones éticas cotidianas usando criterios bíblicos de forma coherente."
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Religión / Formación Valórica - Judía / Formación Ética",
+    "eje": "Ética Digital",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Analizar dilemas éticos que plantea la era digital (privacidad, desinformación, ciberbullying, IA) desde marcos valóricos universales, desarrollando criterios éticos propios para navegar el mundo digital con responsabilidad.",
+    "conceptos_clave": [
+      "dilema ético",
+      "privacidad digital",
+      "desinformación",
+      "ciberbullying",
+      "IA y ética"
+    ],
+    "indicadores_evaluacion": [
+      "Identifica y analiza al menos 2 dilemas éticos concretos del entorno digital.",
+      "Aplica principios éticos universales (daño, honestidad, justicia) para evaluar situaciones digitales.",
+      "Formula una postura ética personal fundamentada sobre el uso de IA en la vida cotidiana."
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Programación Intermedia",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Crear programas en entornos de programación por bloques o texto introductorio (Python Turtle, MakeCode) que usen variables, condicionales y bucles para resolver problemas computacionales de mediana complejidad.",
+    "conceptos_clave": [
+      "variable",
+      "condicional anidado",
+      "bucle for while",
+      "Python básico",
+      "depuración debugging"
+    ],
+    "indicadores_evaluacion": [
+      "Crea un programa que use variables para almacenar y modificar datos durante su ejecución.",
+      "Implementa un condicional con al menos 3 opciones (if/elif/else) en un programa funcional.",
+      "Depura un programa con errores identificando y corrigiendo al menos 2 bugs lógicos."
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Datos y Estadística Computacional",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Recopilar, organizar y analizar datos usando hojas de cálculo y herramientas de visualización, comprendiendo conceptos básicos de estadística descriptiva (promedio, moda, gráficos) en contextos cotidianos.",
+    "conceptos_clave": [
+      "datos",
+      "hoja de cálculo",
+      "promedio estadístico",
+      "gráfico de barras",
+      "toma de decisiones basada en datos"
+    ],
+    "indicadores_evaluacion": [
+      "Ingresa y organiza un conjunto de datos en una hoja de cálculo usando filas, columnas y fórmulas simples.",
+      "Crea al menos 2 tipos de gráficos distintos a partir de un conjunto de datos e interpreta sus conclusiones.",
+      "Usa datos para fundamentar una decisión o propuesta concreta relacionada con su entorno escolar."
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Artes Visuales",
+    "eje": "Arte Digital y Cultura Visual",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Crear obras de arte digital, incluyendo pixel art y animaciones simples (GIFs), usando herramientas digitales especializadas, comprendiendo la historia del arte digital y su relevancia cultural contemporánea.",
+    "conceptos_clave": [
+      "pixel art",
+      "arte digital",
+      "animación frame-by-frame",
+      "GIF animado",
+      "cultura gamer"
+    ],
+    "indicadores_evaluacion": [
+      "Crea un personaje o escena en pixel art usando una herramienta específica (Piskel, Pixilart).",
+      "Produce una animación corta de al menos 4 fotogramas que muestre movimiento.",
+      "Reflexiona sobre el pixel art como forma de arte digital con valor cultural propio."
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Artes Visuales",
+    "eje": "UX y Diseño Centrado en el Usuario",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Comprender y aplicar principios básicos de diseño de experiencia de usuario (UX) al crear prototipos simples de interfaces digitales, desarrollando empatía por las necesidades del usuario como criterio de diseño.",
+    "conceptos_clave": [
+      "UX design",
+      "user experience",
+      "prototipo digital",
+      "wireframe básico",
+      "empatía con el usuario"
+    ],
+    "indicadores_evaluacion": [
+      "Identifica en al menos 2 aplicaciones reales elementos de buena y mala experiencia de usuario.",
+      "Diseña el boceto (wireframe) de una pantalla de app simple considerando al usuario.",
+      "Justifica decisiones de diseño basándose en criterios de usabilidad y claridad visual."
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Imagen Corporal y Salud Digital",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Analizar críticamente los estereotipos de belleza y cuerpo promovidos por redes sociales y medios digitales, desarrollando una imagen corporal positiva y hábitos alimenticios saludables libres de presiones mediáticas.",
+    "conceptos_clave": [
+      "imagen corporal positiva",
+      "estereotipos mediáticos",
+      "redes sociales y salud",
+      "autoestima",
+      "alimentación consciente"
+    ],
+    "indicadores_evaluacion": [
+      "Identifica y cuestiona al menos 3 estereotipos corporales presentes en redes sociales o medios.",
+      "Argumenta por qué la diversidad corporal es un valor a respetar y celebrar.",
+      "Describe hábitos alimenticios saludables diferenciando información nutricional válida de tendencias mediáticas sin base científica."
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Planificación y Autonomía en Actividad Física",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Planificar y ejecutar una rutina de actividad física personalizada de mediana complejidad, integrando componentes de fuerza, resistencia, flexibilidad y coordinación, evaluando progreso con herramientas digitales.",
+    "conceptos_clave": [
+      "planificación de rutinas",
+      "componentes de fitness",
+      "autonomía deportiva",
+      "evaluación de progreso",
+      "aplicaciones fitness"
+    ],
+    "indicadores_evaluacion": [
+      "Diseña una rutina de 20 minutos que incluya al menos 3 componentes de condición física.",
+      "Ejecuta su rutina durante 2 semanas y registra sus resultados en una herramienta digital.",
+      "Evalúa los cambios percibidos en su condición física y bienestar general."
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Comprensión y Vocabulario STEM",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Comprender y usar el inglés en contextos relacionados con ciencia y tecnología, leyendo artículos cortos de divulgación científica y escuchando presentaciones sobre inventos e innovaciones, usando el futuro simple.",
+    "conceptos_clave": [
+      "future simple will/going to",
+      "scientific vocabulary",
+      "inventions",
+      "predictions",
+      "technology impact"
+    ],
+    "indicadores_evaluacion": [
+      "Comprende el contenido principal de un artículo de divulgación científica de hasta 200 palabras en inglés.",
+      "Formula predicciones sobre el futuro usando 'will' y 'going to' con vocabulario tecnológico.",
+      "Presenta oralmente un invento o innovación tecnológica usando al menos 6 términos técnicos en inglés."
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Producción Escrita Estructurada",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Producir textos escritos en inglés de carácter informativo y argumentativo básico sobre temas tecnológicos, organizando ideas en párrafos con introducción, desarrollo y conclusión.",
+    "conceptos_clave": [
+      "paragraph structure",
+      "topic sentence",
+      "supporting sentences",
+      "concluding sentence",
+      "opinion language"
+    ],
+    "indicadores_evaluacion": [
+      "Escribe un párrafo con estructura completa (topic sentence, 3 supporting ideas, conclusion) en inglés.",
+      "Usa vocabulario de opinión (I believe, In my opinion, According to...) apropiadamente en textos escritos.",
+      "Revisa y corrige sus textos usando herramientas digitales de retroalimentación lingüística."
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Religión / Formación Valórica - Católica",
+    "eje": "Fe y Razón",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Explorar las grandes preguntas sobre el origen del universo, la vida y el ser humano desde perspectivas científicas y de fe, desarrollando una postura de diálogo respetuoso y complementariedad entre ciencia y religión.",
+    "conceptos_clave": [
+      "origen del universo",
+      "creación y evolución",
+      "complementariedad fe-ciencia",
+      "Dios creador",
+      "sentido de la existencia"
+    ],
+    "indicadores_evaluacion": [
+      "Distingue las preguntas que responde la ciencia de las que responde la fe ante el origen del universo.",
+      "Argumenta por qué la fe y la ciencia no son necesariamente contradictorias usando ejemplos.",
+      "Formula al menos 3 preguntas de sentido que la ciencia no puede responder y reflexiona sobre posibles respuestas desde la fe."
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Religión / Formación Valórica - Evangélica",
+    "eje": "Fe y Cultura Digital",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Reflexionar sobre los desafíos que plantean la tecnología, las redes sociales y la cultura digital a la fe y la ética cristiana evangélica, desarrollando criterios bíblicos para el uso responsable de la tecnología.",
+    "conceptos_clave": [
+      "fe en era digital",
+      "redes sociales y testimonio cristiano",
+      "uso ético de tecnología",
+      "identidad digital cristiana",
+      "discernimiento"
+    ],
+    "indicadores_evaluacion": [
+      "Identifica al menos 3 desafíos que la era digital plantea al testimonio cristiano.",
+      "Formula principios bíblicos para un uso responsable y ético de las redes sociales.",
+      "Reflexiona sobre cómo mantener una identidad cristiana auténtica en entornos digitales."
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Religión / Formación Valórica - Judía / Formación Ética",
+    "eje": "Pluralismo Religioso",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Explorar las principales tradiciones religiosas y espirituales del mundo (Judaísmo, Cristianismo, Islam, Budismo, Hinduismo, tradiciones indígenas) identificando sus aportes éticos y puntos de encuentro en valores universales.",
+    "conceptos_clave": [
+      "judaísmo",
+      "islam",
+      "budismo",
+      "espiritualidades indígenas",
+      "valores éticos universales"
+    ],
+    "indicadores_evaluacion": [
+      "Describe características principales de al menos 3 tradiciones religiosas o espirituales del mundo.",
+      "Identifica al menos 3 valores éticos compartidos por diferentes tradiciones religiosas.",
+      "Demuestra respeto y apertura hacia la diversidad religiosa y espiritual de su entorno."
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Redes e Internet",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Comprender el funcionamiento básico de redes de computadores e Internet (protocolos, IP, DNS, HTTP), analizando cómo fluye la información digital y qué riesgos de seguridad existen en este entorno.",
+    "conceptos_clave": [
+      "red de computadores",
+      "protocolo IP",
+      "DNS",
+      "HTTP y HTTPS",
+      "paquetes de datos"
+    ],
+    "indicadores_evaluacion": [
+      "Explica con sus palabras cómo viaja información desde un dispositivo hasta otro a través de Internet.",
+      "Diferencia entre HTTP y HTTPS y explica por qué es importante usar conexiones seguras.",
+      "Identifica al menos 3 riesgos de seguridad digital (phishing, malware, contraseñas débiles) y cómo prevenirlos."
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Ciudadanía Digital y Ética",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Desarrollar competencias de ciudadanía digital, comprendiendo el concepto de huella digital, privacidad, derechos y responsabilidades en línea, y aplicando criterios éticos en su comportamiento digital.",
+    "conceptos_clave": [
+      "huella digital",
+      "privacidad online",
+      "ciberbullying",
+      "derechos digitales",
+      "ética online"
+    ],
+    "indicadores_evaluacion": [
+      "Define qué es la huella digital y describe cómo sus acciones en línea la construyen.",
+      "Identifica situaciones de ciberbullying y propone respuestas éticas y de apoyo.",
+      "Aplica al menos 3 criterios éticos al publicar, comentar o compartir contenido en entornos digitales."
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Artes Visuales",
+    "eje": "Arte e Inteligencia Artificial",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Explorar herramientas de inteligencia artificial generativa visual (text-to-image) como medio de creación artística, analizando críticamente el proceso creativo humano-máquina, la autoría y las implicaciones éticas del arte generado por IA.",
+    "conceptos_clave": [
+      "IA generativa",
+      "text-to-image",
+      "prompt visual",
+      "autoría artística",
+      "ética en el arte con IA"
+    ],
+    "indicadores_evaluacion": [
+      "Genera imágenes usando herramientas de IA visual con prompts descriptivos intencionalmente diseñados.",
+      "Compara el proceso creativo humano-máquina y reflexiona sobre quién es el autor de la obra generada.",
+      "Debate sobre al menos 2 implicaciones éticas del uso de IA generativa en el arte."
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Artes Visuales",
+    "eje": "Proyecto Artístico Integrado",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Desarrollar un proyecto artístico personal que integre técnicas visuales tradicionales y herramientas digitales o de IA, comunicando una perspectiva propia y documentando el proceso creativo reflexivamente.",
+    "conceptos_clave": [
+      "proceso creativo",
+      "portafolio artístico",
+      "arte híbrido",
+      "documentación reflexiva",
+      "identidad artística"
+    ],
+    "indicadores_evaluacion": [
+      "Desarrolla y documenta las etapas de un proyecto artístico (boceto, proceso, obra final, reflexión).",
+      "Integra al menos 2 técnicas o medios distintos (tradicional y digital) en una obra cohesionada.",
+      "Presenta su proyecto con una declaración artística oral o escrita que explique sus intenciones y proceso."
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Inclusión y Deporte Adaptado",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Comprender y aplicar principios de deporte adaptado e inclusión en la actividad física, diseñando y liderando actividades que sean accesibles para todas las personas independiente de sus capacidades físicas.",
+    "conceptos_clave": [
+      "deporte adaptado",
+      "inclusión",
+      "accesibilidad",
+      "deportes paralímpicos",
+      "liderazgo deportivo"
+    ],
+    "indicadores_evaluacion": [
+      "Explica qué es el deporte adaptado y nombra al menos 3 ejemplos con sus reglas básicas.",
+      "Diseña y dirige una actividad física inclusiva que adapte las reglas para participantes con diferentes capacidades.",
+      "Reflexiona sobre la experiencia de jugar con reglas adaptadas y su impacto en la comprensión de la inclusión."
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Tecnología y Actividad Física",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Evaluar críticamente el impacto de las nuevas tecnologías (videojuegos activos, realidad virtual, exergames) en la promoción de la actividad física, distinguiendo su potencial y sus limitaciones para la salud.",
+    "conceptos_clave": [
+      "exergames",
+      "realidad virtual y ejercicio",
+      "active gaming",
+      "wearables",
+      "gamificación del ejercicio"
+    ],
+    "indicadores_evaluacion": [
+      "Compara el gasto energético y los beneficios de un exergame frente a una actividad física tradicional equivalente.",
+      "Identifica al menos 2 ventajas y 2 limitaciones del uso de tecnología para la promoción de actividad física.",
+      "Formula una propuesta crítica sobre cómo integrar tecnología de forma saludable en la rutina física diaria."
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Comprensión Crítica de Medios",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Comprender y evaluar críticamente textos mediáticos en inglés (noticias, publicidades, redes sociales), identificando propósito, audiencia y recursos persuasivos del lenguaje.",
+    "conceptos_clave": [
+      "media literacy",
+      "bias",
+      "persuasive language",
+      "fact vs opinion",
+      "digital citizenship"
+    ],
+    "indicadores_evaluacion": [
+      "Distingue entre hecho y opinión en textos noticiosos cortos en inglés.",
+      "Identifica al menos 2 recursos de lenguaje persuasivo (repetición, estadísticas, emociones) en un anuncio en inglés.",
+      "Evalúa la confiabilidad de una fuente digital en inglés usando criterios explícitos (autor, fecha, fuente)."
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Producción Multimodal",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Producir textos orales y escritos en inglés de mediana extensión (reseñas, noticias, posts) sobre temas de interés, usando registro adecuado para la audiencia y el medio digital.",
+    "conceptos_clave": [
+      "register",
+      "audience awareness",
+      "digital writing",
+      "present perfect",
+      "modal verbs"
+    ],
+    "indicadores_evaluacion": [
+      "Escribe una reseña de un producto o contenido digital en inglés diferenciando lenguaje formal e informal.",
+      "Produce un post o noticia corta en inglés (100-150 palabras) adaptado a una audiencia juvenil.",
+      "Usa correctamente el presente perfecto (have/has + past participle) en al menos 3 oraciones de sus textos."
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Religión / Formación Valórica - Católica",
+    "eje": "Doctrina Social de la Iglesia",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Conocer los principios fundamentales de la Doctrina Social de la Iglesia (dignidad, bien común, solidaridad, subsidiariedad) y aplicarlos para analizar problemas sociales actuales de Chile y el mundo.",
+    "conceptos_clave": [
+      "dignidad humana",
+      "bien común",
+      "solidaridad",
+      "subsidiariedad",
+      "justicia social cristiana"
+    ],
+    "indicadores_evaluacion": [
+      "Define y ejemplifica los 4 principios fundamentales de la Doctrina Social de la Iglesia.",
+      "Analiza un problema social chileno actual desde la perspectiva de la Doctrina Social de la Iglesia.",
+      "Propone una acción concreta de justicia social inspirada en los principios de la DSI."
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Religión / Formación Valórica - Evangélica",
+    "eje": "Fe y Justicia Social",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Analizar el compromiso social del Evangelio con los pobres, los marginados y la creación, relacionando pasajes bíblicos proféticos con la realidad social chilena y el llamado a la justicia desde la fe cristiana evangélica.",
+    "conceptos_clave": [
+      "justicia bíblica",
+      "cuidado de la creación",
+      "compromiso social evangélico",
+      "profetas del Antiguo Testamento",
+      "acción social cristiana"
+    ],
+    "indicadores_evaluacion": [
+      "Cita y comenta al menos 2 pasajes bíblicos que llaman a la justicia social.",
+      "Conecta el llamado profético bíblico con problemas sociales actuales de Chile.",
+      "Diseña una acción solidaria concreta inspirada en el Evangelio dirigida a su comunidad."
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Religión / Formación Valórica - Judía / Formación Ética",
+    "eje": "Justicia y Bien Común",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Analizar el concepto de justicia desde perspectivas filosóficas, religiosas y de derechos humanos, aplicando criterios de equidad y bien común para evaluar problemas sociales actuales de Chile y proponer soluciones éticas.",
+    "conceptos_clave": [
+      "justicia distributiva",
+      "equidad vs igualdad",
+      "bien común",
+      "derechos y deberes",
+      "contrato social"
+    ],
+    "indicadores_evaluacion": [
+      "Diferencia entre igualdad y equidad usando ejemplos concretos de la realidad chilena.",
+      "Analiza un problema social actual desde el principio de bien común y justicia.",
+      "Propone una solución a un problema de injusticia social fundamentada en criterios éticos filosóficos y religiosos."
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Conceptos de Inteligencia Artificial",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Comprender qué es la inteligencia artificial, cómo aprenden las máquinas (machine learning básico, datos de entrenamiento, modelos) y qué tipos de IA existen (reconocimiento de imagen, procesamiento del lenguaje, generativa), usando ejemplos concretos de su vida cotidiana.",
+    "conceptos_clave": [
+      "inteligencia artificial",
+      "machine learning",
+      "datos de entrenamiento",
+      "modelo de IA",
+      "IA generativa vs discriminativa"
+    ],
+    "indicadores_evaluacion": [
+      "Explica con sus propias palabras cómo una IA aprende usando el concepto de datos de entrenamiento.",
+      "Clasifica correctamente al menos 5 aplicaciones tecnológicas de su vida como ejemplos de IA o no-IA.",
+      "Describe cómo funciona al menos 1 tipo de IA (reconocimiento facial, recomendador, chatbot) en términos generales."
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Ética en Inteligencia Artificial",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Analizar críticamente implicaciones éticas de la IA (sesgos algorítmicos, privacidad, deepfakes, reemplazo laboral, derechos), desarrollando criterios para un uso responsable y consciente de sistemas de IA.",
+    "conceptos_clave": [
+      "sesgo algorítmico",
+      "deepfake",
+      "privacidad y IA",
+      "transparencia algorítmica",
+      "IA responsable"
+    ],
+    "indicadores_evaluacion": [
+      "Explica qué es un sesgo algorítmico y presenta un ejemplo real de sus consecuencias.",
+      "Analiza un caso de uso de IA identificando al menos 2 implicaciones éticas positivas y 2 negativas.",
+      "Formula principios propios de uso ético de la IA y los aplica en situaciones hipotéticas."
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Ingeniería de Prompts",
+    "codigo_oa": "OA_03",
+    "descripcion_oa": "Diseñar y optimizar prompts para sistemas de IA conversacional y generativa, aplicando principios de ingeniería de prompts (claridad, contexto, ejemplos, restricciones) para obtener resultados específicos y de calidad.",
+    "conceptos_clave": [
+      "prompt",
+      "ingeniería de prompts",
+      "contexto en IA",
+      "iteración de prompts",
+      "IA conversacional"
+    ],
+    "indicadores_evaluacion": [
+      "Diseña un prompt con al menos 3 elementos (rol, tarea, contexto, formato) para obtener un resultado específico de un sistema de IA.",
+      "Itera y mejora un prompt al menos 2 veces comparando los resultados obtenidos.",
+      "Evalúa críticamente la calidad de una respuesta de IA e identifica cómo mejorar el prompt para obtener mejores resultados."
     ]
   },
   {
     "curso": "8° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
+    "asignatura": "Artes Visuales",
+    "eje": "Arte y Transformación Social",
     "codigo_oa": "OA_01",
-    "descripcion_oa": "Leer y analizar textos literarios de distintas épocas y géneros (novela, poesía lírica, teatro clásico y contemporáneo), interpretando el contexto histórico-cultural y sus proyecciones a la actualidad.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
+    "descripcion_oa": "Crear un proyecto artístico de impacto social que use el arte visual (mural digital, campaña gráfica, videoclip artístico) para abordar problemáticas relevantes de su comunidad, desarrollando pensamiento crítico y ciudadanía activa.",
+    "conceptos_clave": [
+      "arte activista",
+      "diseño para el cambio social",
+      "campaña visual",
+      "comunidad",
+      "ciudadanía visual"
+    ],
+    "indicadores_evaluacion": [
+      "Identifica una problemática social o comunitaria relevante y la aborda a través de una obra visual.",
+      "Produce una pieza gráfica (mural digital, afiche, video) con mensaje social claro y lenguaje visual efectivo.",
+      "Presenta y defiende su proyecto artístico-social ante la comunidad escolar fundamentando sus decisiones."
+    ]
   },
   {
     "curso": "8° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
+    "asignatura": "Artes Visuales",
+    "eje": "Historia del Arte Contemporáneo",
     "codigo_oa": "OA_02",
-    "descripcion_oa": "Analizar textos no literarios complejos (ensayos, discursos, textos académicos, medios digitales), evaluando la solidez de los argumentos, identificando sesgos y distinguiendo objetividad de subjetividad.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
+    "descripcion_oa": "Analizar críticamente movimientos artísticos del siglo XX y XXI (Pop Art, Street Art, Arte Feminista, Arte Digital) en sus contextos históricos y sociales, estableciendo conexiones con el presente y su propia práctica artística.",
+    "conceptos_clave": [
+      "movimientos artísticos contemporáneos",
+      "Pop Art",
+      "Street Art",
+      "arte feminista",
+      "contextualización histórica"
+    ],
+    "indicadores_evaluacion": [
+      "Describe las características principales de al menos 2 movimientos artísticos contemporáneos con ejemplos de obras.",
+      "Establece conexiones entre un movimiento artístico y el contexto histórico-social en que surgió.",
+      "Conecta el análisis de un movimiento artístico con su propia práctica y posicionamiento como creador."
+    ]
   },
   {
     "curso": "8° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Lectura",
-    "codigo_oa": "OA_03",
-    "descripcion_oa": "Aplicar estrategias de lectura crítica: evaluar la veracidad e intencionalidad de los textos, establecer relaciones intertextuales complejas y formular interpretaciones sustentadas en evidencia textual.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "8° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_04",
-    "descripcion_oa": "Escribir ensayos y textos argumentativos de mayor extensión y complejidad, con tesis, desarrollo de argumentos sustentados en fuentes citadas correctamente, contraargumentos y conclusión bien articulada.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "8° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Aplicar correctamente las normas gramaticales del nivel: oraciones subordinadas de distintos tipos, voz activa y pasiva, uso del modo indicativo y subjuntivo en contextos complejos, y puntuación avanzada (punto y coma, dos puntos).",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "8° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Escritura",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Escribir textos creativos de mayor complejidad (cuentos con estructura no lineal, poemas de vanguardia, monólogos dramáticos) usando recursos literarios con intención estética y estilo personal definido.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "8° Básico",
-    "asignatura": "Lenguaje y Comunicación",
-    "eje": "Comunicación Oral",
-    "codigo_oa": "OA_07",
-    "descripcion_oa": "Producir y evaluar textos orales formales de mayor complejidad (seminarios, mesas redondas, entrevistas), adaptando el registro, anticipando contraargumentos y evaluando la efectividad comunicativa mediante rúbricas.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
-  },
-  {
-    "curso": "8° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Liderazgo en Salud Comunitaria",
     "codigo_oa": "OA_01",
-    "descripcion_oa": "Demostrar que comprenden los números reales, distinguiendo entre racionales (decimales finitos y periódicos) e irracionales, y representándolos en la recta numérica.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
+    "descripcion_oa": "Diseñar y liderar un proyecto de promoción de vida activa y saludable para la comunidad escolar, integrando conocimientos de salud física, bienestar digital y alimentación consciente, y evaluando su impacto.",
+    "conceptos_clave": [
+      "promoción de salud",
+      "liderazgo escolar",
+      "proyecto comunitario",
+      "evaluación de impacto",
+      "bienestar integral"
+    ],
+    "indicadores_evaluacion": [
+      "Diseña un proyecto de promoción de vida saludable con objetivos claros, actividades y evaluación.",
+      "Lidera al menos una sesión o campaña del proyecto ante la comunidad escolar.",
+      "Evalúa el impacto del proyecto usando encuestas u otras herramientas de recogida de datos."
+    ]
   },
   {
     "curso": "8° Básico",
-    "asignatura": "Matemática",
-    "eje": "Números y Operaciones",
+    "asignatura": "Educación Física y Salud",
+    "eje": "Tendencias Globales en Salud y Ética",
     "codigo_oa": "OA_02",
-    "descripcion_oa": "Aplicar propiedades de las potencias con exponente entero (positivo, negativo y cero) y operar con números expresados en notación científica, convirtiendo entre ambas notaciones.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
+    "descripcion_oa": "Analizar tendencias globales en salud física y digital (wearables, IA en salud, neurociencia del ejercicio) y reflexionar sobre sus implicaciones éticas y de acceso equitativo para diferentes comunidades.",
+    "conceptos_clave": [
+      "IA en salud",
+      "neurociencia del ejercicio",
+      "equidad en salud",
+      "wearables",
+      "ética y acceso a tecnología de salud"
+    ],
+    "indicadores_evaluacion": [
+      "Describe al menos 2 tendencias tecnológicas actuales aplicadas a la salud y el deporte.",
+      "Debate sobre la equidad en el acceso a tecnologías de salud en Chile y el mundo.",
+      "Formula una opinión fundamentada sobre los límites éticos de la tecnología en la optimización del cuerpo humano."
+    ]
   },
   {
     "curso": "8° Básico",
-    "asignatura": "Matemática",
-    "eje": "Patrones y Álgebra",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Comprensión y Análisis Crítico",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Leer, analizar y debatir en inglés sobre desafíos globales actuales (cambio climático, inteligencia artificial, derechos digitales), usando lenguaje académico básico y estructuras argumentativas.",
+    "conceptos_clave": [
+      "global challenges",
+      "argumentation",
+      "academic language",
+      "cause-effect-solution",
+      "conditional sentences type 1 y 2"
+    ],
+    "indicadores_evaluacion": [
+      "Comprende el argumento central y las evidencias de un texto académico breve en inglés sobre un desafío global.",
+      "Construye argumentos a favor y en contra de una postura usando lenguaje de concesión (although, even though, nevertheless).",
+      "Usa condicionales tipo 1 y 2 para formular hipótesis sobre problemas globales en inglés."
+    ]
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Producción Oral y Escrita Avanzada",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Producir textos escritos y orales en inglés de carácter argumentativo y expositivo sobre temas complejos, demostrando manejo de vocabulario académico, cohesión textual y uso de fuentes.",
+    "conceptos_clave": [
+      "essay writing básico",
+      "referencing sources",
+      "academic vocabulary",
+      "cohesion devices",
+      "debate skills"
+    ],
+    "indicadores_evaluacion": [
+      "Escribe un ensayo de 5 párrafos (introducción, 3 cuerpos, conclusión) en inglés sobre un tema argumentativo.",
+      "Cita al menos 2 fuentes en inglés usando frases de atribución (According to..., Research shows that...).",
+      "Participa en un debate en inglés defendiendo una postura con argumentos y rebatiendo la posición contraria."
+    ]
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Idioma Extranjero: Inglés",
+    "eje": "Inglés para Propósitos Específicos",
     "codigo_oa": "OA_03",
-    "descripcion_oa": "Demostrar que comprenden las funciones lineales (y = mx) y afines (y = mx + b), calculando la pendiente e intercepto, representándolas en tablas y en el plano cartesiano, e interpretando su significado.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
+    "descripcion_oa": "Explorar en inglés vocabulario y situaciones relacionadas con el mundo laboral y las trayectorias profesionales, preparándose para contextos de educación superior y trabajo en entornos globales.",
+    "conceptos_clave": [
+      "career vocabulary",
+      "job interview language",
+      "professional email writing",
+      "global work contexts",
+      "future career planning"
+    ],
+    "indicadores_evaluacion": [
+      "Escribe un correo electrónico profesional breve en inglés usando fórmulas de apertura, cuerpo y cierre formales.",
+      "Participa en una simulación de entrevista de trabajo en inglés respondiendo preguntas sobre habilidades y experiencias.",
+      "Elabora un perfil profesional simple en inglés describiendo sus habilidades, intereses y aspiraciones."
+    ]
   },
   {
     "curso": "8° Básico",
-    "asignatura": "Matemática",
-    "eje": "Patrones y Álgebra",
-    "codigo_oa": "OA_04",
-    "descripcion_oa": "Resolver sistemas de dos ecuaciones lineales con dos incógnitas mediante los métodos de sustitución, igualación y gráfico, clasificando el sistema y resolviendo problemas de enunciado.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
+    "asignatura": "Religión / Formación Valórica - Católica",
+    "eje": "Ecumenismo y Diálogo Interreligioso",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Comprender el movimiento ecuménico y el diálogo interreligioso como expresiones del respeto a la diversidad de fe, analizando los puntos de encuentro entre las grandes tradiciones religiosas del mundo en torno a valores éticos universales.",
+    "conceptos_clave": [
+      "ecumenismo",
+      "diálogo interreligioso",
+      "ética global",
+      "religiones mundiales",
+      "valores universales"
+    ],
+    "indicadores_evaluacion": [
+      "Explica qué es el ecumenismo y por qué es importante para la convivencia humana.",
+      "Identifica al menos 3 valores éticos compartidos por las grandes tradiciones religiosas (amor, justicia, compasión).",
+      "Reflexiona sobre el rol de la religión en la construcción de una ética global frente a desafíos mundiales."
+    ]
   },
   {
     "curso": "8° Básico",
-    "asignatura": "Matemática",
-    "eje": "Patrones y Álgebra",
-    "codigo_oa": "OA_05",
-    "descripcion_oa": "Operar con expresiones algebraicas: aplicar productos notables (cuadrado de binomio, suma por diferencia), factorizar usando factor común y trinomios de la forma x² + bx + c, y simplificar fracciones algebraicas.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
+    "asignatura": "Religión / Formación Valórica - Evangélica",
+    "eje": "Vocación y Misión",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Reflexionar sobre el concepto de vocación y misión cristiana, discerniendo el llamado de Dios en la vida personal y explorando cómo integrar la fe con las decisiones de vida, estudio y servicio a los demás.",
+    "conceptos_clave": [
+      "vocación cristiana",
+      "misión",
+      "discernimiento",
+      "talentos y dones",
+      "futuro y fe"
+    ],
+    "indicadores_evaluacion": [
+      "Define vocación y misión desde una perspectiva cristiana evangélica.",
+      "Identifica sus propios dones y talentos como posibles herramientas para el servicio a Dios y los demás.",
+      "Elabora una reflexión personal sobre cómo integrar su fe con sus metas y decisiones de futuro."
+    ]
   },
   {
     "curso": "8° Básico",
-    "asignatura": "Matemática",
-    "eje": "Geometría",
-    "codigo_oa": "OA_06",
-    "descripcion_oa": "Calcular el área lateral, total y el volumen de prismas, pirámides, cilindros, conos y esferas usando las fórmulas correspondientes, y resolver problemas contextualizados.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
+    "asignatura": "Religión / Formación Valórica - Judía / Formación Ética",
+    "eje": "Proyecto de Vida y Sentido",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Integrar los aprendizajes valóricos y éticos del ciclo básico para construir un proyecto ético de vida personal, reflexionando sobre el sentido de la existencia, los valores que orientan sus decisiones y el tipo de ciudadano que quiere ser.",
+    "conceptos_clave": [
+      "proyecto de vida",
+      "sentido de la existencia",
+      "valores personales",
+      "propósito",
+      "ciudadanía ética"
+    ],
+    "indicadores_evaluacion": [
+      "Redacta una declaración personal de valores que refleje su identidad ética.",
+      "Establece al menos 3 metas de vida conectadas con sus valores éticos y su visión del bien común.",
+      "Presenta su proyecto ético de vida ante la comunidad fundamentando sus elecciones con coherencia y reflexión."
+    ]
   },
   {
     "curso": "8° Básico",
-    "asignatura": "Matemática",
-    "eje": "Datos y Probabilidades",
-    "codigo_oa": "OA_07",
-    "descripcion_oa": "Calcular probabilidades de eventos compuestos (unión e intersección) aplicando el principio de adición P(A ∪ B) = P(A) + P(B) − P(A ∩ B), y usar diagramas de Venn para representar los eventos.",
-    "conceptos_clave": [],
-    "indicadores_evaluacion": []
+    "asignatura": "Tecnología",
+    "eje": "Proyecto de Innovación Tecnológica",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "Diseñar y desarrollar un proyecto tecnológico innovador que integre programación, inteligencia artificial o automatización para resolver un problema real de su comunidad, aplicando el proceso de ingeniería de diseño (empatizar, definir, idear, prototipar, testear).",
+    "conceptos_clave": [
+      "design thinking",
+      "prototipo funcional",
+      "innovación social",
+      "ciclo de vida del proyecto",
+      "presentación técnica"
+    ],
+    "indicadores_evaluacion": [
+      "Aplica al menos 4 etapas del proceso de design thinking en el desarrollo de su proyecto tecnológico.",
+      "Desarrolla un prototipo funcional (programa, app básica, bot, automatización) que aborde un problema real.",
+      "Presenta su proyecto con documentación técnica y demostración funcional ante una audiencia real."
+    ]
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Tecnología",
+    "eje": "Tecnología y Futuro",
+    "codigo_oa": "OA_02",
+    "descripcion_oa": "Analizar el panorama tecnológico actual y futuro (computación cuántica, biotecnología, metaverso, IA general) reflexionando sobre el rol de los jóvenes como creadores de tecnología y ciudadanos digitales del futuro.",
+    "conceptos_clave": [
+      "computación cuántica",
+      "biotecnología",
+      "metaverso",
+      "IA general AGI",
+      "futuro del trabajo"
+    ],
+    "indicadores_evaluacion": [
+      "Investiga y expone sobre una tecnología emergente describiendo su funcionamiento y potencial impacto.",
+      "Reflexiona sobre el futuro del trabajo en relación con la automatización e IA y explora qué habilidades serán más valiosas.",
+      "Formula una visión personal de su rol como creador de tecnología en la próxima década."
+    ]
   }
 ]

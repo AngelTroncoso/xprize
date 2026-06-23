@@ -6,7 +6,7 @@ import json
 import os
 from pathlib import Path
 
-CURRICULO_PATH = Path(__file__).resolve().parents[2] / "curriculo_integrado.json"
+CURRICULO_PATH = Path(__file__).resolve().parents[2] / "backend" / "data" / "curriculum_consolidado.json"
 OUTPUT_PATH = Path(__file__).resolve().parents[1] / "app" / "data" / "mallas_mineduc" / "malla_curricular_produccion.json"
 
 
@@ -17,30 +17,53 @@ def main():
     seen = set()
     records = []
 
-    for curso_entry in data:
-        curso = curso_entry.get("curso", "")
-        proyectos = curso_entry.get("proyectos_integrados", [])
+    # Support both legacy list format and new dict with 'asignaturas'
+    if isinstance(data, dict) and "asignaturas" in data:
+        for asignatura_nombre, data_asig in data["asignaturas"].items():
+            cursos = data_asig.get("cursos", {})
+            for curso_nombre, data_curso in cursos.items():
+                for unidad in data_curso.get("unidades", []):
+                    for obj in unidad.get("objetivos_aprendizaje", []):
+                        codigo_oa = obj.get("id_oa", "")
+                        key = (curso_nombre, asignatura_nombre, codigo_oa)
 
-        for proyecto in proyectos:
-            for obj in proyecto.get("objetivos_articulados", []):
-                codigo_oa = obj.get("codigo_oa", "")
-                asignatura = obj.get("asignatura", "")
-                key = (curso, asignatura, codigo_oa)
+                        if key not in seen:
+                            seen.add(key)
+                            records.append({
+                                "curso": curso_nombre,
+                                "asignatura": asignatura_nombre,
+                                "eje": obj.get("eje", ""),
+                                "codigo_oa": codigo_oa,
+                                "descripcion_oa": obj.get("descripcion", ""),
+                                "conceptos_clave": obj.get("conceptos_clave", []),
+                                "indicadores_evaluacion": obj.get("indicadores_evaluacion", []),
+                            })
+    else:
+        for curso_entry in data:
+            curso = curso_entry.get("curso", "")
+            proyectos = curso_entry.get("proyectos_integrados", [])
 
-                if key not in seen:
-                    seen.add(key)
-                    records.append({
-                        "curso": curso,
-                        "asignatura": asignatura,
-                        "eje": obj.get("eje", ""),
-                        "codigo_oa": codigo_oa,
-                        "descripcion_oa": obj.get("descripcion_oa", ""),
-                        "conceptos_clave": obj.get("conceptos_clave", []),
-                        "indicadores_evaluacion": obj.get("indicadores_evaluacion", []),
-                    })
+            for proyecto in proyectos:
+                for obj in proyecto.get("objetivos_articulados", []):
+                    codigo_oa = obj.get("codigo_oa", "")
+                    asignatura = obj.get("asignatura", "")
+                    key = (curso, asignatura, codigo_oa)
+
+                    if key not in seen:
+                        seen.add(key)
+                        records.append({
+                            "curso": curso,
+                            "asignatura": asignatura,
+                            "eje": obj.get("eje", ""),
+                            "codigo_oa": codigo_oa,
+                            "descripcion_oa": obj.get("descripcion_oa", ""),
+                            "conceptos_clave": obj.get("conceptos_clave", []),
+                            "indicadores_evaluacion": obj.get("indicadores_evaluacion", []),
+                        })
 
     records.sort(key=lambda r: (r["curso"], r["asignatura"], r["codigo_oa"]))
 
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(records, f, ensure_ascii=False, indent=2)
 

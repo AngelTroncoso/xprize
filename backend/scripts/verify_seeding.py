@@ -78,7 +78,17 @@ def check_counts(client):
 def check_composite_keys(client):
     print_header("2. VERIFICACIÓN DE CLAVES COMPUESTAS (P0 CORRECTION)")
 
-    expected_subjects = ["Ciencias Naturales", "Historia, Geografía y Ciencias Sociales"]
+    expected_subjects = [
+        "Ciencias Naturales",
+        "Historia, Geografía y Ciencias Sociales",
+        "Idioma Extranjero: Inglés",
+        "Artes Visuales",
+        "Educación Física y Salud",
+        "Tecnología",
+        "Religión / Formación Valórica - Católica",
+        "Religión / Formación Valórica - Evangélica",
+        "Religión / Formación Valórica - Judía / Formación Ética",
+    ]
     results = {}
 
     # Check if clave_compuesta column exists by attempting to select it
@@ -141,7 +151,17 @@ def check_course_coverage(client):
     print_header("3. CHEQUEO DE COBERTURA DE CURSOS")
 
     expected_courses = [f"{i}° Básico" for i in range(1, 9)]
-    new_subjects = ["Ciencias Naturales", "Historia, Geografía y Ciencias Sociales"]
+    new_subjects = [
+        "Ciencias Naturales",
+        "Historia, Geografía y Ciencias Sociales",
+        "Idioma Extranjero: Inglés",
+        "Artes Visuales",
+        "Educación Física y Salud",
+        "Tecnología",
+        "Religión / Formación Valórica - Católica",
+        "Religión / Formación Valórica - Evangélica",
+        "Religión / Formación Valórica - Judía / Formación Ética",
+    ]
     results = {}
 
     for subject in new_subjects:
@@ -212,7 +232,7 @@ def main():
 
     print(f"\n🎓 Cobertura de cursos (1° a 8° Básico):")
     if all_coverage_ok:
-        print(f"   ✅ Cobertura completa en Ciencias Naturales e Historia")
+        print(f"   ✅ Cobertura completa (1° a 8° Básico)")
     else:
         for subj, result in coverage.items():
             if result["missing"]:

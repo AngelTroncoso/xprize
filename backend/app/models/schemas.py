@@ -120,6 +120,24 @@ class ChatResponse(BaseModel):
     code_review: Optional[Dict[str, Any]] = Field(None, description="Resultado de revisión de código si aplica")
     saved_progress: Optional[Dict[str, Any]] = Field(None, description="Resultado de persistencia en Supabase")
 
+# --- Audio Chunk (Tarea 1: Modo Audio en Tiempo Real - REST) ---
+class AudioChunkInput(BaseModel):
+    student_id: str = Field(..., description="UUID del estudiante")
+    session_id: str = Field(..., description="ID de la sesión de chat activa")
+    curso: str = Field(..., description="Curso del estudiante (ej. 3ro Basico)")
+    asignatura: str = Field(..., description="Asignatura (ej. Matematica)")
+    id_oa: str = Field(..., description="ID del OA objetivo (ej. OA_01)")
+    audio_base64: str = Field(..., description="Chunk de audio del micrófono codificado en Base64")
+    chunk_ts: Optional[str] = Field(None, description="Timestamp UTC ISO del chunk para correlación")
+
+
+class AudioChunkResponse(BaseModel):
+    audio_base64: str = Field(..., description="Audio de respuesta generado por IA en Base64")
+    mime_type: str = Field(default="audio/mpeg", description="Tipo MIME del audio de respuesta")
+    session_id: str = Field(..., description="ID de la sesión correlacionada")
+    transcript: str = Field(..., description="Texto transcrito de la respuesta pedagógica")
+
+
 # --- Canvas Interactivo (Pizarra Compartida) ---
 class CanvasInput(StudentIdUUIDMixin):
     curso: str = Field(..., description="Curso del estudiante (ej. 3ro Basico)")

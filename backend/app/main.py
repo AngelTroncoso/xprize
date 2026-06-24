@@ -1,3 +1,5 @@
+import asyncio
+import base64
 import os
 import logging
 from datetime import datetime
@@ -17,12 +19,12 @@ from app.agents.pedagogic_agent import PedagogicAgent
 from app.agents.validator_agent import ValidatorAgent
 from app.agents.orchestrator import MasterOrchestrator
 from app.models.database import db
-from app.models.schemas import ChatInput, CanvasInput
+from app.models.schemas import ChatInput, CanvasInput, AudioChunkInput
 from app.services.curriculum_manager import CurriculumManager
 from app.services.dynamic_loader import DynamicLoader
 from app.services.tts_service import TTSService
 from app.services.gemini_client import default_gemini_client
-from app.routers import governance, curriculum, tts
+from app.routers import governance, curriculum, tts, live_audio
 from app.api.analytics import router as analytics_router
 
 app = FastAPI(
@@ -54,6 +56,7 @@ app.include_router(governance.router)
 app.include_router(curriculum.router)
 app.include_router(analytics_router)
 app.include_router(tts.router)
+app.include_router(live_audio.router)
 
 curriculum_manager = CurriculumManager()
 validator_agent = ValidatorAgent(curriculum_manager)
@@ -229,6 +232,83 @@ async def chat_interaction(chat_request: ChatInput):
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=str(e),
+        )
+
+
+@app.post("/api/audio/process-chunk")
+async def process_audio_chunk(audio_request: AudioChunkInput):
+    """
+    Endpoint REST para procesar ráfagas cortas de audio (chunks en Base64).
+    
+    Recibe el audio del alumno, lo envía a Gemini con el contexto pedagógico
+    del OA (curso, asignatura, id_oa) y retorna el audio de respuesta generado.
+    
+    Este endpoint es la alternativa REST al WebSocket /api/live para cuando
+    se requiere una integración más simple (no streaming bidireccional).
+    """
+    try:
+        # 1. Recuperar contexto pedagógico del OA desde Supabase
+        oa_context = None
+        supabase_client = db.get_client()
+        if supabase_client:
+            try:
+                def _query_oa():
+                    return (
+                        supabase_client.table("curriculum_objectives")
+                        .select("descripcion, conceptos_clave, indicadores_evaluacion")
+                        .eq("curso", audio_request.curso)
+                        .eq("asignatura", audio_request.asignatura)
+                        .eq("id_oa", audio_request.id_oa)
+                        .limit(1)
+                        .maybe_single()
+                        .execute()
+                    )
+                response = await asyncio.to_thread(_query_oa)
+                if response.data:
+                    oa_context = response.data
+            except Exception as e:
+                logger.warning(f"Error consultando OA para audio chunk: {e}")
+
+        # 2. Construir prompt del sistema con contexto MINEDUC
+        conceptos = ", ".join(oa_context.get("conceptos_clave", [])) if oa_context else ""
+        indicadores = ", ".join(oa_context.get("indicadores_evaluacion", [])) if oa_context else ""
+        oa_desc = oa_context.get("descripcion", "") if oa_context else ""
+
+        system_prompt = (
+            f"Actúas como Súper Profesor para un alumno de {audio_request.curso} en Chile. "
+            f"Asignatura: {audio_request.asignatura}. "
+            f"Objetivo de Aprendizaje actual ({audio_request.id_oa}): {oa_desc}. "
+            f"{f'Conceptos clave: {conceptos}.' if conceptos else ''} "
+            f"{f'Indicadores de evaluación: {indicadores}.' if indicadores else ''} "
+            "Mantén un tono sumamente lúdico, empático, usa analogías simples para niños "
+            "y fomenta la curiosidad. Responde directamente en formato de audio optimizado "
+            "para su reproducción instantánea."
+        )
+
+        # 3. Decodificar audio y enviar a Gemini
+        audio_bytes = base64.b64decode(audio_request.audio_base64)
+
+        response_text = await default_gemini_client.generate_pedagogic_response(
+            system_prompt=system_prompt,
+            user_message="[Audio del alumno procesado. Genera una respuesta pedagógica en audio.]",
+            temperature=0.4,
+        )
+
+        # 4. Generar audio de respuesta con TTS
+        audio_b64, mime_type = _generate_audio_response(response_text)
+
+        return {
+            "audio_base64": audio_b64 or "",
+            "mime_type": mime_type or "audio/mpeg",
+            "session_id": audio_request.session_id,
+            "transcript": response_text,
+        }
+
+    except Exception as e:
+        logger.exception(f"Error procesando chunk de audio: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error procesando audio: {str(e)}",
         )
 
 

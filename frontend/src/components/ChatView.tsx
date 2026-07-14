@@ -133,9 +133,9 @@ export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null
   };
 
   return (
-    <div className="grid h-[calc(100vh-220px)] min-h-[560px] grid-cols-1 gap-4 lg:grid-cols-[1fr_1fr]">
+    <div className="flex flex-col lg:grid lg:h-[calc(100vh-220px)] lg:min-h-[560px] lg:grid-cols-[1fr_1fr] gap-4">
       {/* Chat */}
-      <div className={`flex h-full min-h-0 flex-col overflow-hidden rounded-3xl border-2 ${theme.border} bg-white/80 backdrop-blur-xl ${theme.glow}`}>
+      <div className={`flex h-[600px] lg:h-full lg:min-h-0 flex-col overflow-hidden rounded-3xl border-2 ${theme.border} bg-white/80 backdrop-blur-xl ${theme.glow}`}>
         <div className={`flex items-center gap-3 border-b ${theme.border} bg-gradient-to-r ${theme.gradient} px-5 py-3 text-white`}>
           <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white/20 backdrop-blur ring-1 ring-white/40">
             <SubjectIcon className="h-5 w-5" />

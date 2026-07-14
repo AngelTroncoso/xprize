@@ -119,7 +119,7 @@ export function Whiteboard({
   };
 
   return (
-    <div className={`flex h-full flex-col gap-3 rounded-3xl border-2 ${theme.border} bg-white/80 p-4 backdrop-blur-xl ${theme.glow}`}>
+    <div className={`flex h-[500px] lg:h-full flex-col gap-3 rounded-3xl border-2 ${theme.border} bg-white/80 p-4 backdrop-blur-xl ${theme.glow}`}>
       <div className={`flex items-center gap-2 rounded-2xl ${theme.softBg} px-3 py-2`}>
         <div className={`grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br ${theme.gradient} text-white shadow`}>
           <SubjectIcon className="h-4 w-4" />

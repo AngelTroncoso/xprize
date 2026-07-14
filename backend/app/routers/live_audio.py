@@ -13,12 +13,14 @@ import asyncio
 import json
 import logging
 import os
+import base64
 from typing import Any, Dict, Optional
 
 from dotenv import load_dotenv
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect, status
 from google import genai
 from google.genai import types
+import websockets
 
 from app.models.database import db
 
@@ -32,6 +34,9 @@ router = APIRouter(tags=["Live Audio"])
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 GEMINI_LIVE_MODEL = os.getenv("GEMINI_LIVE_MODEL", "gemini-2.0-flash-live-001")
+
+ELEVENLABS_API_KEY = "sk_024b7419d845c3441310c0b794be5036cfdf7400c97059fd"
+ELEVENLABS_VOICE_ID = "7QQzpAyzlKTVrRzQJmTE"
 
 # ─── Constructor de Prompt del Sistema ────────────────────────────────────────
 
@@ -61,9 +66,12 @@ def build_live_system_prompt(
         parts.append(f"Indicadores de evaluación: {indicadores}.")
 
     parts.append(
-        "Mantén un tono sumamente lúdico, empático, usa analogías simples para niños "
-        "y fomenta la curiosidad. Responde en español chileno amigable. "
-        "Genera audio de respuesta inmediato y natural."
+        "Eres el Súper Profesor, la persona más afable, dulce, paciente y buena gente que existe. "
+        "Tu misión principal es MOTIVAR e INSPIRAR al niño. Celebra cada pequeño logro, "
+        "hazle sentir que es increíblemente inteligente y capaz. Usa un tono cálido, humano y muy cercano "
+        "en español chileno amigable (usa modismos suaves si aplica). "
+        "Nunca lo regañes, si se equivoca dile que es una excelente oportunidad para aprender. "
+        "Usa analogías divertidas y mágicas. Mantén tus respuestas conversacionales y breves, para mantener el diálogo vivo."
     )
 
     return " ".join(parts)
@@ -76,17 +84,11 @@ async def fetch_oa_context_from_supabase(
     asignatura: str,
     id_oa: str,
 ) -> Optional[Dict[str, Any]]:
-    """
-    Consulta curriculum_objectives en Supabase para obtener el contexto
-    pedagógico completo del OA. Retorna None si no hay conexión o no existe.
-    """
     supabase_client = db.get_client()
     if not supabase_client:
-        logger.warning("[live_audio] Supabase no configurado. Continuando sin contexto curricular.")
         return None
 
     try:
-        # Ejecutar en un thread para no bloquear el event loop
         def _query():
             return (
                 supabase_client.table("curriculum_objectives")
@@ -100,106 +102,62 @@ async def fetch_oa_context_from_supabase(
             )
 
         response = await asyncio.to_thread(_query)
-
         if response.data:
-            return {
-                "id_oa": response.data.get("id_oa"),
-                "curso": response.data.get("curso"),
-                "asignatura": response.data.get("asignatura"),
-                "descripcion": response.data.get("descripcion"),
-                "conceptos_clave": response.data.get("conceptos_clave", []),
-                "indicadores_evaluacion": response.data.get("indicadores_evaluacion", []),
-            }
-
-        logger.warning(
-            f"[live_audio] OA no encontrado: curso={curso}, asignatura={asignatura}, id_oa={id_oa}"
-        )
+            return response.data
         return None
-
     except Exception as e:
-        logger.error(f"[live_audio] Error consultando OA en Supabase: {e}", exc_info=True)
+        logger.error(f"[live_audio] Error consultando OA en Supabase: {e}")
         return None
+
+# ─── ElevenLabs Audio Receiver ────────────────────────────────────────────────
+async def read_from_elevenlabs(el_ws: websockets.WebSocketClientProtocol, client_ws: WebSocket):
+    """Lee el audio generado por ElevenLabs y lo retransmite al Frontend en chunks MP3."""
+    try:
+        async for message in el_ws:
+            try:
+                data = json.loads(message)
+                if "audio" in data and data["audio"]:
+                    audio_bytes = base64.b64decode(data["audio"])
+                    await client_ws.send_bytes(audio_bytes)
+                if data.get("isFinal"):
+                    break
+            except json.JSONDecodeError:
+                pass
+    except websockets.exceptions.ConnectionClosed:
+        pass
+    except Exception as e:
+        logger.error(f"[live_audio] Error en read_from_elevenlabs: {e}")
 
 
 # ─── WebSocket Endpoint ──────────────────────────────────────────────────────
 
 @router.websocket("/api/live")
 async def live_audio_endpoint(websocket: WebSocket):
-    """
-    WebSocket de baja latencia para el Modo Audio en Tiempo Real.
-
-    Flujo:
-    1. Cliente envía mensaje de inicialización JSON:
-       { "type": "init", "session_id": "...", "student_id": "...",
-         "curso": "...", "asignatura": "...", "id_oa": "..." }
-    2. Backend recupera contexto pedagógico del OA desde Supabase.
-    3. Backend abre sesión Live con Gemini Multimodal Live API.
-    4. Cliente envía chunks binarios de audio (voz del micrófono).
-    5. Backend los reenvía a Gemini Live.
-    6. Gemini responde con streaming de audio → lo retransmite al cliente.
-    7. Cierre: cualquiera de las partes desconecta.
-    """
     await websocket.accept()
     logger.info("[live_audio] Nueva conexión WebSocket aceptada")
 
-    # Variables de sesión
     session_id: Optional[str] = None
     student_id: Optional[str] = None
-    curso: Optional[str] = None
-    asignatura: Optional[str] = None
-    id_oa: Optional[str] = None
-    system_prompt: Optional[str] = None
-
-    # Referencia a la sesión Live de Gemini
     live_session: Any = None
+    
+    # Referencias para ElevenLabs
+    el_ws: Optional[websockets.WebSocketClientProtocol] = None
+    el_task: Optional[asyncio.Task] = None
 
     try:
-        # ── 1. Esperar mensaje de inicialización ──────────────────────────
+        # ── 1. Inicialización ──────────────────────────
         init_data_raw = await websocket.receive_text()
-        try:
-            init_data = json.loads(init_data_raw)
-        except json.JSONDecodeError:
-            await websocket.send_json({
-                "type": "error",
-                "message": "El primer mensaje debe ser un JSON con tipo 'init'"
-            })
-            await websocket.close(code=status.WS_1008_POLICY_VIOLATION)
-            return
-
-        if init_data.get("type") != "init":
-            await websocket.send_json({
-                "type": "error",
-                "message": "El primer mensaje debe ser de tipo 'init'"
-            })
-            await websocket.close(code=status.WS_1008_POLICY_VIOLATION)
-            return
-
+        init_data = json.loads(init_data_raw)
+        
         session_id = init_data.get("session_id")
         student_id = init_data.get("student_id")
         curso = init_data.get("curso")
         asignatura = init_data.get("asignatura")
         id_oa = init_data.get("id_oa")
 
-        if not all([curso, asignatura, id_oa]):
-            await websocket.send_json({
-                "type": "error",
-                "message": "init debe incluir: curso, asignatura, id_oa"
-            })
-            await websocket.close(code=status.WS_1008_POLICY_VIOLATION)
-            return
-
-        logger.info(
-            f"[live_audio] Sesión iniciada: student={student_id}, "
-            f"curso={curso}, asignatura={asignatura}, id_oa={id_oa}"
-        )
-
-        # ── 2. Recuperar contexto pedagógico del OA ───────────────────────
         oa_context = await fetch_oa_context_from_supabase(curso, asignatura, id_oa)
         system_prompt = build_live_system_prompt(curso, asignatura, id_oa, oa_context)
 
-        logger.info(f"[live_audio] Prompt del sistema construido ({len(system_prompt)} chars)")
-
-        # Confirmar inicialización al cliente
         await websocket.send_json({
             "type": "init_ack",
             "session_id": session_id,
@@ -207,78 +165,39 @@ async def live_audio_endpoint(websocket: WebSocket):
             "system_prompt_length": len(system_prompt),
         })
 
-        # ── 3. Abrir sesión Live con Gemini Multimodal Live API ────────────
-        if not GEMINI_API_KEY:
-            logger.error("[live_audio] GEMINI_API_KEY no configurada")
-            await websocket.send_json({
-                "type": "error",
-                "message": "API key de Gemini no configurada en el servidor"
-            })
-            await websocket.close(code=status.WS_1011_INTERNAL_ERROR)
-            return
-
-        try:
-            gemini_client = genai.Client(api_key=GEMINI_API_KEY)
-
-            # Configurar sesión live con el contexto pedagógico como system instruction
-            live_session = await gemini_client.aio.live.connect(
-                model=GEMINI_LIVE_MODEL,
-                config=types.LiveConnectConfig(
-                    response_modalities=["audio"],
-                    system_instruction=types.Part.from_text(system_prompt),
-                    speech_config=types.SpeechConfig(
-                        voice_config=types.VoiceConfig(
-                            prebuilt_voice_config=types.PrebuiltVoiceConfig(
-                                voice_name="Puck"  # Voz alegre y juvenil en español
-                            )
-                        )
-                    ),
-                    audio_transcription_config=types.AudioTranscriptionConfig(
-                        enabled=True,
-                        language_code="es-ES",
-                    ),
+        # ── 2. Abrir sesión Gemini (MODO TEXTO) ────────────
+        gemini_client = genai.Client(api_key=GEMINI_API_KEY)
+        live_session = await gemini_client.aio.live.connect(
+            model=GEMINI_LIVE_MODEL,
+            config=types.LiveConnectConfig(
+                response_modalities=["text"],  # <--- CRÍTICO: Solo texto, usaremos ElevenLabs para el audio
+                system_instruction=types.Part.from_text(system_prompt),
+                audio_transcription_config=types.AudioTranscriptionConfig(
+                    enabled=True,
+                    language_code="es-ES",
                 ),
-            )
-            logger.info("[live_audio] Sesión Live de Gemini establecida")
+            ),
+        )
 
-        except Exception as e:
-            logger.error(f"[live_audio] Error conectando con Gemini Live: {e}", exc_info=True)
-            await websocket.send_json({
-                "type": "error",
-                "message": f"Error conectando con Gemini Live: {str(e)}"
-            })
-            await websocket.close(code=status.WS_1011_INTERNAL_ERROR)
-            return
-
-        # ── 4. Bucle bidireccional de audio ───────────────────────────────
-        # Usamos dos tareas asíncronas concurrentes:
-        #   - task_recv: recibe audio del cliente → lo envía a Gemini
-        #   - task_send: recibe audio de Gemini → lo envía al cliente
+        # ── 3. Bucle bidireccional ───────────────────────────────
 
         async def receive_from_client():
-            """Recibe chunks de audio del cliente y los reenvía a Gemini Live."""
             nonlocal live_session
-
             while True:
                 try:
-                    # Esperar mensaje (binario = audio, texto = control)
                     raw = await websocket.receive()
-
                     if raw["type"] == "websocket.disconnect":
-                        logger.info("[live_audio] Cliente desconectado")
                         break
-
-                    # Mensaje binario = chunk de audio del micrófono
+                    
                     if "bytes" in raw:
-                        audio_bytes = raw["bytes"]
-                        # Enviar a Gemini Live como input de audio
+                        # Enviar PCM del micrófono del niño a Gemini
                         await live_session.send(
                             types.LiveClientContent(
                                 turns=[
                                     types.Content(
                                         role="user",
                                         parts=[types.Part.from_data(
-                                            data=audio_bytes,
+                                            data=raw["bytes"],
                                             mime_type="audio/webm;codecs=opus"
                                         )]
                                     )
@@ -286,86 +205,79 @@ async def live_audio_endpoint(websocket: WebSocket):
                                 turn_complete=True,
                             )
                         )
-                    # Mensaje de texto = control/gestión
                     elif "text" in raw:
-                        try:
-                            msg = json.loads(raw["text"])
-                            if msg.get("type") == "ping":
-                                await websocket.send_json({"type": "pong"})
-                            elif msg.get("type") == "bye":
-                                logger.info("[live_audio] Cliente solicitó cierre ordenado")
-                                break
-                        except json.JSONDecodeError:
-                            pass  # Ignorar textos no-JSON
-
+                        msg = json.loads(raw["text"])
+                        if msg.get("type") == "interrupt":
+                            # Si el frontend interrumpe, deberíamos idealmente parar el tts actual
+                            pass
                 except WebSocketDisconnect:
-                    logger.info("[live_audio] WebSocket desconectado (recv)")
                     break
                 except Exception as e:
-                    logger.error(f"[live_audio] Error en receive_from_client: {e}", exc_info=True)
+                    logger.error(f"[live_audio] Error en receive_from_client: {e}")
                     break
 
         async def send_to_client():
-            """Recibe streaming de audio de Gemini Live y lo retransmite al cliente."""
-            nonlocal live_session
-
+            nonlocal live_session, el_ws, el_task
             try:
                 async for response in live_session.receive():
                     if response is None:
                         continue
 
-                    # Respuesta de audio (Gemini hablando)
-                    if response.data:
-                        # Enviar chunk de audio binario al cliente
-                        await websocket.send_bytes(response.data)
-
-                    # Transcripción de la voz del usuario (si está habilitada)
-                    if response.turn_complete:
-                        await websocket.send_json({
-                            "type": "turn_complete",
-                            "session_id": session_id,
-                        })
-
-                    # Manejar otros tipos de respuesta
+                    # Extraer el texto generado por Gemini
                     if hasattr(response, "server_content") and response.server_content:
                         sc = response.server_content
-                        if hasattr(sc, "interrupted") and sc.interrupted:
-                            await websocket.send_json({
-                                "type": "interrupted",
-                                "session_id": session_id,
-                            })
+                        if sc.model_turn:
+                            for part in sc.model_turn.parts:
+                                if part.text:
+                                    # Streaming text to frontend too for subtitles
+                                    await websocket.send_json({
+                                        "type": "response_text",
+                                        "text": part.text
+                                    })
+                                    
+                                    # Enviar a ElevenLabs
+                                    if el_ws is None:
+                                        # Iniciar nueva conexión WS con ElevenLabs para esta respuesta
+                                        el_url = f"wss://api.elevenlabs.io/v1/text-to-speech/{ELEVENLABS_VOICE_ID}/stream-input?model_id=eleven_multilingual_v2"
+                                        el_ws = await websockets.connect(el_url, extra_headers={"xi-api-key": ELEVENLABS_API_KEY})
+                                        # Inicialización del stream (voz en español)
+                                        await el_ws.send(json.dumps({
+                                            "text": " ",
+                                            "voice_settings": {"stability": 0.5, "similarity_boost": 0.8},
+                                        }))
+                                        # Arrancar receptor de MP3
+                                        el_task = asyncio.create_task(read_from_elevenlabs(el_ws, websocket))
+                                        
+                                        # Notificar al frontend que empezó el audio
+                                        await websocket.send_json({"type": "audio_start"})
+                                    
+                                    # Enviar el chunk de texto real
+                                    await el_ws.send(json.dumps({"text": part.text}))
+
+                    if response.turn_complete:
+                        await websocket.send_json({"type": "turn_complete"})
+                        # Cerrar el turno de ElevenLabs enviando cadena vacía
+                        if el_ws is not None:
+                            await el_ws.send(json.dumps({"text": ""}))
+                            # el task se encargará de cerrarse cuando llegue isFinal
+                            el_ws = None
 
             except Exception as e:
                 logger.error(f"[live_audio] Error en send_to_client: {e}", exc_info=True)
 
-        # ── Ejecutar ambas direcciones concurrentemente ────────────────────
-        await asyncio.gather(
-            receive_from_client(),
-            send_to_client(),
-        )
+        await asyncio.gather(receive_from_client(), send_to_client())
 
     except WebSocketDisconnect:
-        logger.info(f"[live_audio] Cliente desconectado abruptamente: session={session_id}")
-
+        pass
     except Exception as e:
-        logger.error(f"[live_audio] Error general en live_audio_endpoint: {e}", exc_info=True)
-
+        logger.error(f"[live_audio] Error general: {e}", exc_info=True)
     finally:
-        # ── Limpieza ──────────────────────────────────────────────────────
         if live_session:
-            try:
-                await live_session.close()
-                logger.info("[live_audio] Sesión Live de Gemini cerrada")
-            except Exception as e:
-                logger.warning(f"[live_audio] Error cerrando sesión Gemini: {e}")
-
+            await live_session.close()
+        if el_ws:
+            await el_ws.close()
         try:
             if websocket.client_state.name != "DISCONNECTED":
                 await websocket.close()
         except Exception:
             pass
-
-        logger.info(
-            f"[live_audio] Conexión finalizada: student={student_id}, "
-            f"session={session_id}"
-        )

@@ -28,11 +28,12 @@ class CurriculumManager:
         self.model = "gemini-3.5-flash"
         self._source_priority_index: Dict[str, float] = {}
         
+        self.use_local_fallback = os.getenv("USE_LOCAL_FALLBACK", "").strip().lower() in ("1", "true", "yes")
+        
         # Cargar e indexar currículo oficial
         self.curriculum_data = self._load_curriculum()
         self._oa_index: Dict[str, Dict[str, Any]] = self._build_oa_index()
 
-        self.use_local_fallback = os.getenv("USE_LOCAL_FALLBACK", "").strip().lower() in ("1", "true", "yes")
         # DEBUG: confirmar carga real
         print(f"[CurriculumManager] units={len(self.curriculum_data)} index={len(self._oa_index)} keys={list(self._oa_index.keys())[:10]}")
 

@@ -25,7 +25,21 @@ class GeminiClient:
     def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None) -> None:
         self.api_key = api_key or os.getenv("GEMINI_API_KEY")
         self.model = model or DEFAULT_MODEL
-        self.client = genai.Client(api_key=self.api_key) if self._has_api_key() else None
+        self.client = None
+        
+        if self._has_api_key():
+            self.client = genai.Client(api_key=self.api_key)
+        else:
+            # Fallback a Vertex AI usando las credenciales de Google Cloud Run
+            try:
+                self.client = genai.Client(
+                    vertexai=True, 
+                    project="gen-lang-client-0142253597", 
+                    location="us-central1"
+                )
+                logger.info("Cliente Gemini inicializado mediante Vertex AI.")
+            except Exception as e:
+                logger.warning(f"Fallo al inicializar Vertex AI: {e}")
 
     def _has_api_key(self) -> bool:
         return bool(self.api_key and not self.api_key.startswith("your-"))
@@ -33,11 +47,8 @@ class GeminiClient:
     def _ensure_client(self) -> bool:
         if self.client:
             return True
-        if not self._has_api_key():
-            logger.warning("GEMINI_API_KEY no esta configurada; se omite llamada a Gemini.")
-            return False
-        self.client = genai.Client(api_key=self.api_key)
-        return True
+        logger.warning("GEMINI_API_KEY no esta configurada y Vertex AI falló; se omite llamada a Gemini.")
+        return False
 
     async def generate_pedagogic_response(
         self,

@@ -4,14 +4,12 @@ from uuid import UUID
 
 
 def _validate_uuid(value: str) -> str:
-    try:
-        return str(UUID(str(value)))
-    except (TypeError, ValueError) as exc:
-        raise ValueError("student_id debe ser un UUID válido compatible con Supabase.") from exc
-
+    # Retornamos el valor directamente sin forzar que sea un UUID válido.
+    # Esto permite compatibilidad con frontend que envía "1".
+    return str(value)
 
 class StudentIdUUIDMixin(BaseModel):
-    student_id: str = Field(..., description="UUID del estudiante")
+    student_id: str = Field(..., description="UUID o ID del estudiante")
 
     @field_validator("student_id")
     @classmethod

@@ -13,13 +13,7 @@ DATA_DIR = Path(__file__).resolve().parents[1] / "data" / "mallas_mineduc"
 
 
 def _validate_student_uuid(student_id: str) -> str:
-    try:
-        return str(UUID(str(student_id)))
-    except (TypeError, ValueError):
-        raise HTTPException(
-            status_code=422,
-            detail="student_id debe ser un UUID válido compatible con Supabase.",
-        )
+    return str(student_id)
 
 
 def _list_malla_files() -> List[Path]:

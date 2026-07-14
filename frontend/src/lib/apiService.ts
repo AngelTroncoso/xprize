@@ -78,6 +78,9 @@ export function stripDataUrl(dataUrl: string): string {
   return dataUrl.includes(",") ? dataUrl.split(",")[1] : dataUrl;
 }
 
+const BACKEND_URL =
+  (import.meta as any).env?.VITE_BACKEND_URL ?? "http://localhost:8000";
+
 // -------------------- Llamadas (server functions) --------------------
 export async function sendChatMessage(payload: ChatRequest): Promise<ChatResponse> {
   return sendChatMessageFn({ data: payload });

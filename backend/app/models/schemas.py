@@ -105,6 +105,7 @@ class ChatInput(StudentIdUUIDMixin):
     student_interest: Optional[str] = Field(None, description="Interés/Hobby para analogías (ej. fútbol, música, videojuegos)")
     current_topic: Optional[str] = Field(None, description="Tema en estudio actualmente")
     enable_audio: bool = Field(default=True, description="Si es True, genera audio TTS de la respuesta")
+    id_oa: Optional[str] = Field(None, description="ID del OA objetivo explícito (ej. OA_01)")
 
 class ChatResponse(BaseModel):
     agent: str = Field(..., alias="agent_used", description="Agente que generó la respuesta")

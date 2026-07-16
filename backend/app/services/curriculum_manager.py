@@ -44,19 +44,22 @@ class CurriculumManager:
         if supabase_curriculum:
             return supabase_curriculum
 
-        # 2. Fallback: archivo JSON plano (malla_curricular_produccion.json) con 87 OA
-        flat_path = os.path.join(
+        # 2. Fallback: archivo JSON estructurado (malla_curricular_oficial.json)
+        official_path = os.path.join(
             os.path.dirname(__file__),
-            "../data/mallas_mineduc/malla_curricular_produccion.json"
+            "../data/mallas_mineduc/malla_curricular_oficial.json"
         )
-        if os.path.exists(flat_path):
-            with open(flat_path, 'r', encoding='utf-8') as f:
-                flat_records = json.load(f)
-            # Validar formato: lista de registros planos con curso/asignatura/codigo_oa
-            if flat_records and isinstance(flat_records[0], dict) and "codigo_oa" in flat_records[0]:
-                print("[CurriculumManager] Cargando malla CURSA desde malla_curricular_produccion.json...")
-                return self._convert_flat_to_units(flat_records)
-            # Si no es formato plano, usar legacy
+        if os.path.exists(official_path):
+            with open(official_path, 'r', encoding='utf-8') as f:
+                official_records = json.load(f)
+            # Validar formato: lista de unidades estructuradas
+            if official_records and isinstance(official_records[0], dict) and "objetivos_aprendizaje" in official_records[0]:
+                print("[CurriculumManager] Cargando malla OFICIAL desde malla_curricular_oficial.json...")
+                return official_records
+            # Si no, intentar convertir asumiendo que es plano
+            elif official_records and isinstance(official_records[0], dict) and "codigo_oa" in official_records[0]:
+                print("[CurriculumManager] Cargando malla plana desde malla_curricular_oficial.json...")
+                return self._convert_flat_to_units(official_records)
 
         # 3. Fallback: archivo JSON legacy (con objetivos_aprendizaje)
         curriculum_path = os.path.join(

@@ -9,6 +9,7 @@ const ChatInput = z.object({
   curso: z.string(),
   asignatura: z.string(),
   message: z.string().min(1),
+  id_oa: z.string().nullable().optional(),
 });
 
 export const sendChatMessageFn = createServerFn({ method: "POST" })

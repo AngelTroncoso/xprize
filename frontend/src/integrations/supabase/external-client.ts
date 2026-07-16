@@ -144,30 +144,59 @@ export async function fetchCurriculumObjectives(
   return (data ?? []).map(normalizeObjective);
 }
 
-/**
- * Trae unidades + OAs anidados en una sola pasada (JOIN real por unit_id → curriculum_units.id).
- * Usa PostgREST embedded resources para evitar dos round-trips.
- */
 export async function fetchCurriculumCatalog(filters?: {
   curso?: string;
   asignatura?: string;
 }) {
-  const supabase = await getExternalSupabase();
-  let q = supabase
-    .from("curriculum_units")
-    .select(
-      `id, curso, asignatura, eje_tematico,
-       objectives:curriculum_objectives!unit_id(
-         id, unit_id, curso, asignatura, eje_tematico,
-         id_oa, descripcion, indicadores_evaluacion, conceptos_clave, metadata
-       )`,
-    );
-  if (filters?.curso) q = q.eq("curso", filters.curso);
-  q = applySubjectFilter(q, filters?.asignatura);
-  const { data, error } = await q;
-  if (error) throw error;
-  return (data ?? []).map((u: any) => ({
-    ...normalizeUnit(u),
-    objectives: (u.objectives ?? []).map(normalizeObjective),
-  }));
+  const BACKEND_URL =
+    (import.meta as any).env?.VITE_BACKEND_URL ?? "https://superprofesor-backend-253925950091.us-central1.run.app";
+
+  let url = `${BACKEND_URL}/api/curriculum/oas`;
+  if (filters?.curso || filters?.asignatura) {
+    const params = new URLSearchParams();
+    if (filters.curso) params.append("curso", filters.curso);
+    if (filters.asignatura) params.append("asignatura", filters.asignatura);
+    url += `?${params.toString()}`;
+  }
+
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`Error HTTP: ${res.status}`);
+  }
+
+  const data = await res.json();
+  // El backend retorna { objetivos_aprendizaje: [...] } cuando hay filtros
+  // o { curriculum: {...} } cuando no hay. Manejamos ambos casos o un array plano.
+  const oasList = Array.isArray(data) ? data : data.objetivos_aprendizaje || [];
+
+  const unitsMap = new Map<string, any>();
+
+  for (const oa of oasList) {
+    const eje = oa.eje_tematico || "General";
+    if (!unitsMap.has(eje)) {
+      unitsMap.set(eje, {
+        id: eje,
+        curso: oa.curso || filters?.curso || "",
+        asignatura: oa.asignatura || filters?.asignatura || "",
+        eje: eje,
+        nombre: eje,
+        objectives: [],
+      });
+    }
+
+    unitsMap.get(eje).objectives.push({
+      id: oa.id_oa,
+      unit_id: eje,
+      code: oa.id_oa,
+      title: oa.descripcion,
+      concepts: oa.conceptos_clave || [],
+      indicators: oa.indicadores_evaluacion || [],
+      curso: oa.curso || "",
+      asignatura: oa.asignatura || "",
+      eje: eje,
+      metadata: null,
+    });
+  }
+
+  return Array.from(unitsMap.values());
 }

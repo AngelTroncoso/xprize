@@ -55,6 +55,7 @@ class MasterOrchestrator:
         history: Optional[List[Dict[str, str]]] = None,
         student_interest: Optional[str] = None,
         current_topic: Optional[str] = None,
+        id_oa: Optional[str] = None,
     ) -> Dict[str, Any]:
         """Clasifica el mensaje y delega al agente adecuado.
 
@@ -86,7 +87,7 @@ class MasterOrchestrator:
         #  1. ValidatorAgent → detecta OA
         #  2. PedagogicAgent → genera lección
         return await self._route_pedagogic(
-            student_id, message, curso, asignatura, history
+            student_id, message, curso, asignatura, history, id_oa
         )
 
     # ──────────────────────────────────────────────
@@ -153,6 +154,7 @@ class MasterOrchestrator:
         curso: str,
         asignatura: str,
         history: Optional[List[Dict[str, str]]] = None,
+        id_oa: Optional[str] = None,
     ) -> Dict[str, Any]:
         """Flujo estándar: Validator → OA detection → PedagogicAgent → lección."""
         # 1. ValidatorAgent: detecta OA
@@ -161,6 +163,7 @@ class MasterOrchestrator:
             student_message=message,
             curso=curso,
             asignatura=asignatura,
+            id_oa=id_oa,
         )
 
         # 2. PedagogicAgent: genera lección

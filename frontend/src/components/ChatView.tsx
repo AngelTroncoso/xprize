@@ -82,10 +82,24 @@ export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null
     setPlayingId(null);
   };
 
-  const handleSend = async (text?: string) => {
+  useEffect(() => {
+    if (activeIdOa) {
+      setMessages([]);
+      handleSend(`[SISTEMA: Iniciar clase para OA]`, true);
+    } else {
+      setMessages(initial);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeIdOa]);
+
+  const handleSend = async (text?: string, isSystem = false) => {
     const content = (text ?? input).trim();
     if (!content || sending) return;
-    setMessages((m) => [...m, { id: crypto.randomUUID(), role: "user", text: content }]);
+    
+    if (!isSystem) {
+      setMessages((m) => [...m, { id: crypto.randomUUID(), role: "user", text: content }]);
+    }
+    
     setInput("");
     setSending(true);
     scroll();
@@ -95,6 +109,7 @@ export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null
         curso,
         asignatura,
         message: content,
+        id_oa: activeIdOa,
       });
       const audioUrl = res.audio_response_b64
         ? base64ToAudioUrl(res.audio_response_b64)

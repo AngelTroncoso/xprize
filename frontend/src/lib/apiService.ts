@@ -17,6 +17,10 @@ export interface ChatRequest {
   curso: string;
   asignatura: string;
   message: string;
+  session_id?: string;
+  student_interest?: string;
+  current_topic?: string;
+  id_oa?: string | null;
 }
 
 export interface ChatResponse {
@@ -79,7 +83,7 @@ export function stripDataUrl(dataUrl: string): string {
 }
 
 const BACKEND_URL =
-  (import.meta as any).env?.VITE_BACKEND_URL ?? "http://localhost:8000";
+  (import.meta as any).env?.VITE_BACKEND_URL ?? "https://superprofesor-backend-253925950091.us-central1.run.app";
 
 // -------------------- Llamadas (server functions) --------------------
 export async function sendChatMessage(payload: ChatRequest): Promise<ChatResponse> {

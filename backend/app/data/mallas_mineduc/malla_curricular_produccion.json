@@ -1746,5 +1746,173 @@
       "Reflexiona sobre el futuro del trabajo en relación con la automatización e IA y explora qué habilidades serán más valiosas.",
       "Formula una visión personal de su rol como creador de tecnología en la próxima década."
     ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje": "Ciencias de la Vida",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[1° Básico] Reconocer y observar que los seres vivos crecen y responden a estímulos."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[1° Básico] Contar números del 0 al 1000."
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[1° Básico] Leer independientemente y comprender textos no literarios."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje": "Ciencias de la Vida",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[2° Básico] Reconocer y observar que los seres vivos crecen y responden a estímulos."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[2° Básico] Contar números del 0 al 1000."
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[2° Básico] Leer independientemente y comprender textos no literarios."
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje": "Ciencias de la Vida",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[3° Básico] Reconocer y observar que los seres vivos crecen y responden a estímulos."
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[3° Básico] Contar números del 0 al 1000."
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[3° Básico] Leer independientemente y comprender textos no literarios."
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje": "Ciencias de la Vida",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[4° Básico] Reconocer y observar que los seres vivos crecen y responden a estímulos."
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[4° Básico] Contar números del 0 al 1000."
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[4° Básico] Leer independientemente y comprender textos no literarios."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje": "Ciencias de la Vida",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[5° Básico] Reconocer y observar que los seres vivos crecen y responden a estímulos."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[5° Básico] Contar números del 0 al 1000."
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[5° Básico] Leer independientemente y comprender textos no literarios."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje": "Ciencias de la Vida",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[6° Básico] Reconocer y observar que los seres vivos crecen y responden a estímulos."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[6° Básico] Contar números del 0 al 1000."
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[6° Básico] Leer independientemente y comprender textos no literarios."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje": "Ciencias de la Vida",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[7° Básico] Reconocer y observar que los seres vivos crecen y responden a estímulos."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[7° Básico] Contar números del 0 al 1000."
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[7° Básico] Leer independientemente y comprender textos no literarios."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje": "Ciencias de la Vida",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[8° Básico] Reconocer y observar que los seres vivos crecen y responden a estímulos."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Matemática",
+    "eje": "Números y Operaciones",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[8° Básico] Contar números del 0 al 1000."
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje": "Lectura",
+    "codigo_oa": "OA_01",
+    "descripcion_oa": "[8° Básico] Leer independientemente y comprender textos no literarios."
   }
 ]

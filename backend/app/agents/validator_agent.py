@@ -114,17 +114,21 @@ class ValidatorAgent:
         student_message: str,
         curso: str,
         asignatura: str,
+        id_oa: Optional[str] = None,
     ) -> ValidatorToPedagoguePayload:
-        candidate_ids = self._extract_candidate_oa_ids(student_message, curso, asignatura)
         selected_oa = None
 
-        for oa_id in candidate_ids:
-            if self.curriculum_manager.get_oa_by_id(oa_id):
-                selected_oa = oa_id
-                break
+        if id_oa and self.curriculum_manager.get_oa_by_id(id_oa):
+            selected_oa = id_oa
+        else:
+            candidate_ids = self._extract_candidate_oa_ids(student_message, curso, asignatura)
+            for oa in candidate_ids:
+                if self.curriculum_manager.get_oa_by_id(oa):
+                    selected_oa = oa
+                    break
 
-        if not selected_oa and self.use_llm:
-            selected_oa = await self._infer_oa_with_gemini(student_message, curso, asignatura)
+            if not selected_oa and self.use_llm:
+                selected_oa = await self._infer_oa_with_gemini(student_message, curso, asignatura)
 
         if not selected_oa:
             raise ValueError(
@@ -160,7 +164,7 @@ class ValidatorAgent:
         progress_record = OAProgressRecord(
             student_id=student_id,
             id_oa=oa_id,
-            mastery_level="not_started",
+            mastery_level="in_progress",
             last_evaluation_date=None,
             evaluation_history=[],
             aligned_resources=[],

@@ -192,6 +192,7 @@ async def chat_interaction(chat_request: ChatInput):
             asignatura=chat_request.asignatura,
             student_interest=chat_request.student_interest,
             current_topic=chat_request.current_topic,
+            id_oa=chat_request.id_oa,
         )
 
         response_text = result["response_text"]

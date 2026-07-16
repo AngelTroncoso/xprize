@@ -14,9 +14,10 @@ type UnitWithOAs = CurriculumUnit & { objectives: CurriculumObjective[] };
 interface Props {
   curso: string;
   asignatura: string;
+  onSelectOA?: (id: string) => void;
 }
 
-export function CurriculumCatalog({ curso, asignatura }: Props) {
+export function CurriculumCatalog({ curso, asignatura, onSelectOA }: Props) {
   const theme = useMemo(() => getSubjectTheme(asignatura), [asignatura]);
   const Icon = theme.icon;
   const [units, setUnits] = useState<UnitWithOAs[]>([]);
@@ -66,7 +67,7 @@ export function CurriculumCatalog({ curso, asignatura }: Props) {
               {theme.label} · {curso}
             </h2>
             <p className="text-sm text-white/85">
-              Unidades y Objetivos de Aprendizaje (MINEDUC) desde Supabase.
+              Haz click en un Objetivo de Aprendizaje (OA) para iniciar tu clase interactiva.
             </p>
           </div>
           <Button
@@ -123,15 +124,21 @@ export function CurriculumCatalog({ curso, asignatura }: Props) {
                 {u.objectives.map((oa) => (
                   <li
                     key={String(oa.id)}
-                    className={`rounded-xl border ${theme.border} ${theme.softBg} p-3`}
+                    onClick={() => onSelectOA && onSelectOA(oa.code)}
+                    className={`rounded-xl border ${theme.border} ${theme.softBg} p-3 cursor-pointer transition-transform hover:-translate-y-1 hover:shadow-md`}
                   >
-                    <div className="flex items-center gap-2">
-                      <span
-                        className={`rounded-md ${theme.chip} px-2 py-0.5 text-[11px] font-extrabold`}
-                      >
-                        {oa.code}
-                      </span>
-                      <p className={`text-sm font-semibold ${theme.text}`}>{oa.title}</p>
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex items-center gap-2">
+                        <span
+                          className={`rounded-md ${theme.chip} px-2 py-0.5 text-[11px] font-extrabold`}
+                        >
+                          {oa.code}
+                        </span>
+                        <p className={`text-sm font-semibold ${theme.text}`}>{oa.title}</p>
+                      </div>
+                      <div className={`shrink-0 rounded-full bg-gradient-to-r ${theme.gradient} px-2 py-1 text-[10px] font-bold text-white shadow-sm opacity-0 group-hover:opacity-100 transition-opacity hover:opacity-100`}>
+                        Comenzar Clase
+                      </div>
                     </div>
                     {oa.concepts && oa.concepts.length > 0 && (
                       <div className="mt-2 flex flex-wrap gap-1">

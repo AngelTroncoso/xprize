@@ -43,10 +43,16 @@ function Home() {
   const [tab, setTab] = useState("chat");
   const [curso, setCurso] = useState("3° Básico");
   const [asignatura, setAsignatura] = useState<string>(ASIGNATURAS[0]);
+  const [activeIdOa, setActiveIdOa] = useState<string | null>(null);
 
   const theme = useMemo(() => getSubjectTheme(asignatura), [asignatura]);
   const cursoMeta = CURSO_META[curso];
   const SubjectIcon = theme.icon;
+
+  const handleSelectOA = (idOa: string) => {
+    setActiveIdOa(idOa);
+    setTab("chat");
+  };
 
   return (
     <div className={`relative min-h-screen transition-colors duration-500 ${theme.appBg}`}>
@@ -77,7 +83,7 @@ function Home() {
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <Select value={curso} onValueChange={setCurso}>
+            <Select value={curso} onValueChange={(val) => { setCurso(val); setActiveIdOa(null); }}>
               <SelectTrigger
                 className={`h-10 w-[150px] rounded-full border-2 ${theme.border} bg-white text-sm font-bold ${theme.text}`}
               >
@@ -92,7 +98,7 @@ function Home() {
                 ))}
               </SelectContent>
             </Select>
-            <Select value={asignatura} onValueChange={setAsignatura}>
+            <Select value={asignatura} onValueChange={(val) => { setAsignatura(val); setActiveIdOa(null); }}>
               <SelectTrigger
                 className={`h-10 w-[220px] rounded-full border-2 ${theme.border} bg-white text-sm font-bold ${theme.text}`}
               >
@@ -125,7 +131,7 @@ function Home() {
           >
             <span className="text-xl">{theme.emoji}</span>
             <p className="truncate text-sm font-semibold">
-              {theme.label} · {curso}
+              {theme.label} · {curso} {activeIdOa && `· ${activeIdOa}`}
             </p>
             <span className="ml-auto hidden items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold backdrop-blur sm:inline-flex">
               <span>{cursoMeta?.emoji}</span> Nivel {curso}
@@ -161,10 +167,10 @@ function Home() {
           </TabsList>
 
           <TabsContent value="chat" className="mt-0">
-            <ChatView curso={curso} asignatura={asignatura} studentId="1" />
+            <ChatView curso={curso} asignatura={asignatura} studentId="1" activeIdOa={activeIdOa} />
           </TabsContent>
           <TabsContent value="catalog" className="mt-0">
-            <CurriculumCatalog curso={curso} asignatura={asignatura} />
+            <CurriculumCatalog curso={curso} asignatura={asignatura} onSelectOA={handleSelectOA} />
           </TabsContent>
           <TabsContent value="progress" className="mt-0">
             <ProgressMap studentId="1" curso={curso} asignatura={asignatura} />

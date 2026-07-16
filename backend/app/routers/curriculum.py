@@ -345,3 +345,38 @@ def _mock_student_progress(student_id: str) -> Dict[str, Any]:
             "overall_mastery_percentage": 18
         }
     }
+
+@router.post("/generate_oa")
+async def generate_oa(curso: str, asignatura: str):
+    import json
+    from google import genai
+    from google.genai import types
+    import google.auth
+    
+    credentials, project_id = google.auth.default()
+    client = genai.Client(vertexai=True, project=project_id, location="us-central1")
+    
+    prompt = f"""
+    Actúa como el experto curricular del MINEDUC de Chile.
+    Provee los Objetivos de Aprendizaje (OA) OFICIALES Y REALES (Bases Curriculares / Priorización) para:
+    Curso: {curso}
+    Asignatura: {asignatura}
+    
+    Agrupa los OA por su 'eje_tematico' real (ej. 'Números y Operaciones', 'Lectura', 'Ciencias de la Vida', etc.).
+    Para cada OA incluye su código (ej. 'OA_01'), su descripcion completa, una lista de indicadores_evaluacion y conceptos_clave.
+    Incluye al menos los 3 a 5 OA más importantes por eje temático para que la malla sea representativa y rigurosa.
+    Retorna un JSON estructurado con la clave "unidades" que contenga una lista de objetos, donde cada objeto tenga "curso", "asignatura", "eje_tematico" y "objetivos_aprendizaje". Cada objetivo debe tener "codigo_oa", "descripcion", "indicadores_evaluacion" y "conceptos_clave".
+    """
+    try:
+        response = client.models.generate_content(
+            model='gemini-1.5-flash',
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json",
+                temperature=0.1
+            )
+        )
+        return json.loads(response.text)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+

@@ -70,6 +70,17 @@ El resultado debe ser una mini-lección para el estudiante, con:
 """.strip()
 
     def _build_user_message(self, payload: ValidatorToPedagoguePayload, student_message: str) -> str:
+        if "[SISTEMA: Iniciar clase para OA]" in student_message:
+            return f"""
+El estudiante acaba de seleccionar este Objetivo de Aprendizaje en el catálogo para iniciar una nueva lección interactiva.
+Actúa proactivamente: dale una bienvenida muy cálida y entusiasta, y hazle una pregunta inicial exploratoria o lúdica relacionada con los conceptos clave del OA para despertar su curiosidad y comenzar la clase.
+
+Contexto adicional:
+- Curso: {payload.curriculum_unit.curso}
+- Asignatura: {payload.curriculum_unit.asignatura}
+- OA objetivo: {payload.target_oa.id_oa}
+""".strip()
+
         return f"""
 La consulta del alumno: {student_message}
 

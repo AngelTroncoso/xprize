@@ -1,0 +1,1143 @@
+[
+  {
+    "curso": "1° Básico",
+    "asignatura": "Matemática",
+    "eje_tematico": "Números y Operaciones",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Contar números del 0 al 100 de 1 en 1, de 2 en 2, de 5 en 5 y de 10 en 10, hacia adelante y hacia atrás, empezando por cualquier número menor que 100.",
+        "indicadores_evaluacion": [
+          "Cuentan de 1 en 1 y de 2 en 2.",
+          "Identifican secuencias numéricas.",
+          "Completan series numéricas incompletas."
+        ],
+        "conceptos_clave": [
+          "conteo",
+          "secuencia numérica",
+          "números naturales"
+        ]
+      },
+      {
+        "id_oa": "OA_03",
+        "descripcion": "Leer números del 0 al 20 y representarlos en forma concreta, pictórica y simbólica.",
+        "indicadores_evaluacion": [
+          "Asocian la cantidad con el símbolo numérico.",
+          "Representan cantidades con material concreto."
+        ],
+        "conceptos_clave": [
+          "lectura de números",
+          "representación simbólica"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje_tematico": "Lectura",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Reconocer que las palabras son unidades de significado separadas por espacios en el texto escrito.",
+        "indicadores_evaluacion": [
+          "Identifican las palabras en una oración escrita.",
+          "Separan oraciones en palabras."
+        ],
+        "conceptos_clave": [
+          "palabras",
+          "espacios",
+          "significado"
+        ]
+      },
+      {
+        "id_oa": "OA_08",
+        "descripcion": "Demostrar comprensión de narraciones que aborden temas que les sean familiares.",
+        "indicadores_evaluacion": [
+          "Extraen información explícita e implícita.",
+          "Responden preguntas sobre el texto."
+        ],
+        "conceptos_clave": [
+          "comprensión lectora",
+          "narraciones",
+          "personajes"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje_tematico": "Ciencias de la Vida",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Reconocer y observar, por medio de la exploración, que los seres vivos crecen, responden a estímulos del medio, se reproducen y necesitan agua, alimento y aire para vivir.",
+        "indicadores_evaluacion": [
+          "Identifican características de los seres vivos.",
+          "Diferencian seres vivos de materia inerte."
+        ],
+        "conceptos_clave": [
+          "seres vivos",
+          "materia inerte",
+          "necesidades vitales"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Historia y Geografía",
+    "eje_tematico": "Historia",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Secuenciar acontecimientos y actividades de la vida cotidiana, personal y familiar, utilizando categorías relativas de ubicación temporal.",
+        "indicadores_evaluacion": [
+          "Ordenan cronológicamente eventos familiares.",
+          "Usan conceptos como antes, ahora y después."
+        ],
+        "conceptos_clave": [
+          "secuencia temporal",
+          "cronología",
+          "vida cotidiana"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Matemática",
+    "eje_tematico": "Números y Operaciones",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_09",
+        "descripcion": "Demostrar que comprende la adición y la sustracción en el ámbito del 0 al 100.",
+        "indicadores_evaluacion": [
+          "Resuelven sumas y restas con números hasta el 100.",
+          "Aplican algoritmos básicos."
+        ],
+        "conceptos_clave": [
+          "adición",
+          "sustracción",
+          "algoritmos"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje_tematico": "Escritura",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_12",
+        "descripcion": "Escribir frecuentemente, para desarrollar la creatividad y expresar sus ideas, textos como poemas, diarios de vida, anécdotas, cartas, comentarios sobre sus lecturas, etc.",
+        "indicadores_evaluacion": [
+          "Escriben textos breves con coherencia.",
+          "Usan vocabulario adecuado."
+        ],
+        "conceptos_clave": [
+          "escritura creativa",
+          "expresión de ideas"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Matemática",
+    "eje_tematico": "Números y Operaciones",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_08",
+        "descripcion": "Demostrar que comprenden las tablas de multiplicar hasta 10 de manera progresiva, usando representaciones concretas y pictóricas.",
+        "indicadores_evaluacion": [
+          "Usan representaciones concretas.",
+          "Expresan la multiplicación como sumas iguales."
+        ],
+        "conceptos_clave": [
+          "multiplicación",
+          "tablas de multiplicar"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje_tematico": "Ciencias Físicas y Químicas",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_08",
+        "descripcion": "Distinguir fuentes naturales y artificiales de luz, como el Sol, las ampolletas y el fuego, entre otras.",
+        "indicadores_evaluacion": [
+          "Identifican fuentes de luz natural y artificial."
+        ],
+        "conceptos_clave": [
+          "luz natural",
+          "luz artificial",
+          "fuentes luminosas"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Matemática",
+    "eje_tematico": "Geometría",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_15",
+        "descripcion": "Describir la localización absoluta de un objeto en un mapa simple con coordenadas informales y la localización relativa.",
+        "indicadores_evaluacion": [
+          "Ubican objetos en una cuadrícula.",
+          "Usan coordenadas simples."
+        ],
+        "conceptos_clave": [
+          "localización",
+          "coordenadas",
+          "cuadrícula"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Historia y Geografía",
+    "eje_tematico": "Formación Ciudadana",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_11",
+        "descripcion": "Distinguir algunos actores de la organización política y democrática de Chile, como Presidente, ministros, senadores, diputados y alcaldes.",
+        "indicadores_evaluacion": [
+          "Reconocen las principales autoridades de Chile."
+        ],
+        "conceptos_clave": [
+          "organización política",
+          "democracia",
+          "autoridades"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje_tematico": "Lectura",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_04",
+        "descripcion": "Analizar aspectos relevantes de narraciones leídas para profundizar su comprensión: interpretando el lenguaje figurado presente en el texto.",
+        "indicadores_evaluacion": [
+          "Identifican metáforas y comparaciones.",
+          "Explican el significado de expresiones figuradas."
+        ],
+        "conceptos_clave": [
+          "lenguaje figurado",
+          "comprensión lectora",
+          "narraciones"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje_tematico": "Ciencias de la Tierra y el Universo",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_12",
+        "descripcion": "Describir la distribución del agua dulce y salada en la Tierra, considerando océanos, glaciares, ríos y lagos, aguas subterráneas, nubes, vapor de agua.",
+        "indicadores_evaluacion": [
+          "Diferencian las proporciones de agua dulce y salada en la Tierra."
+        ],
+        "conceptos_clave": [
+          "hidrósfera",
+          "agua dulce",
+          "agua salada"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Matemática",
+    "eje_tematico": "Patrones y Álgebra",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_11",
+        "descripcion": "Resolver ecuaciones de primer grado con una incógnita, utilizando estrategias como: usar una balanza, usar la descomposición y la correspondencia 1 a 1 entre los términos en cada lado de la ecuación.",
+        "indicadores_evaluacion": [
+          "Despejan la incógnita en ecuaciones simples."
+        ],
+        "conceptos_clave": [
+          "ecuaciones de primer grado",
+          "incógnita",
+          "igualdad"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Historia y Geografía",
+    "eje_tematico": "Historia",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Explicar el proceso de hominización, reconociendo las principales etapas de la evolución de la especie humana, la influencia de factores geográficos, su dispersión en el planeta y las distintas teorías del poblamiento americano.",
+        "indicadores_evaluacion": [
+          "Identifican las etapas de la hominización."
+        ],
+        "conceptos_clave": [
+          "hominización",
+          "evolución humana",
+          "poblamiento americano"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Matemática",
+    "eje_tematico": "Geometría",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_12",
+        "descripcion": "Explicar, de manera concreta, pictórica y simbólica, la validez del teorema de Pitágoras y aplicar a la resolución de problemas geométricos y de la vida cotidiana.",
+        "indicadores_evaluacion": [
+          "Calculan la hipotenusa o catetos usando el teorema.",
+          "Aplican el teorema en problemas cotidianos."
+        ],
+        "conceptos_clave": [
+          "Teorema de Pitágoras",
+          "hipotenusa",
+          "catetos",
+          "triángulos rectángulos"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje_tematico": "Ciencias de la Vida",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar modelos que expliquen la relación entre la función de una célula y sus partes, considerando: núcleo, citoplasma, membrana celular, pared celular, vacuolas, mitocondrias, cloroplastos, entre otros.",
+        "indicadores_evaluacion": [
+          "Asocian los organelos con sus funciones.",
+          "Comparan células animales y vegetales."
+        ],
+        "conceptos_clave": [
+          "célula eucariota",
+          "organelos celulares",
+          "funciones vitales celulares"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Inglés",
+    "eje_tematico": "Comprensión Oral",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Comprender textos orales muy breves y simples, como saludos, instrucciones y vocabulario conocido.",
+        "indicadores_evaluacion": [
+          "Responden a saludos básicos en inglés.",
+          "Siguen instrucciones simples como 'stand up' o 'sit down'."
+        ],
+        "conceptos_clave": [
+          "saludos",
+          "instrucciones",
+          "vocabulario básico"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Música",
+    "eje_tematico": "Expresar y Crear",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_03",
+        "descripcion": "Cantar al unísono y tocar instrumentos de percusión convencionales y no convencionales.",
+        "indicadores_evaluacion": [
+          "Cantan canciones infantiles siguiendo el ritmo.",
+          "Utilizan instrumentos de percusión simples."
+        ],
+        "conceptos_clave": [
+          "canto al unísono",
+          "instrumentos de percusión",
+          "ritmo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Arte",
+    "eje_tematico": "Expresar y Crear Visualmente",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Expresar y crear trabajos de arte a partir de la observación del entorno natural, cultural y artístico.",
+        "indicadores_evaluacion": [
+          "Dibujan elementos de la naturaleza.",
+          "Utilizan diferentes colores y formas básicas."
+        ],
+        "conceptos_clave": [
+          "observación",
+          "entorno natural",
+          "creación artística"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Tecnología",
+    "eje_tematico": "Diseño y Construcción",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Crear diseños de objetos tecnológicos, representando sus ideas a través de dibujos a mano alzada.",
+        "indicadores_evaluacion": [
+          "Dibujan objetos tecnológicos simples.",
+          "Explican la función del objeto diseñado."
+        ],
+        "conceptos_clave": [
+          "diseño tecnológico",
+          "dibujo a mano alzada",
+          "función"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "1° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje_tematico": "Habilidades Motrices",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Demostrar habilidades motrices básicas de locomoción, manipulación y estabilidad en diferentes direcciones, alturas y niveles.",
+        "indicadores_evaluacion": [
+          "Corren y saltan manteniendo el equilibrio.",
+          "Lanzan y reciben objetos con seguridad."
+        ],
+        "conceptos_clave": [
+          "habilidades motrices",
+          "locomoción",
+          "manipulación",
+          "estabilidad"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Inglés",
+    "eje_tematico": "Comprensión Oral",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Inglés para 2° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "inglés",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Música",
+    "eje_tematico": "Expresar y Crear",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Música para 2° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "música",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Arte",
+    "eje_tematico": "Expresar y Crear Visualmente",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Arte para 2° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "arte",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Tecnología",
+    "eje_tematico": "Diseño y Construcción",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Tecnología para 2° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "tecnología",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje_tematico": "Habilidades Motrices",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Educación Física y Salud para 2° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "educación física y salud",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Inglés",
+    "eje_tematico": "Comprensión Oral",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Inglés para 3° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "inglés",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Música",
+    "eje_tematico": "Expresar y Crear",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Música para 3° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "música",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Arte",
+    "eje_tematico": "Expresar y Crear Visualmente",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Arte para 3° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "arte",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Tecnología",
+    "eje_tematico": "Diseño y Construcción",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Tecnología para 3° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "tecnología",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje_tematico": "Habilidades Motrices",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Educación Física y Salud para 3° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "educación física y salud",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Inglés",
+    "eje_tematico": "Comprensión Oral",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Inglés para 4° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "inglés",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Música",
+    "eje_tematico": "Expresar y Crear",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Música para 4° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "música",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Arte",
+    "eje_tematico": "Expresar y Crear Visualmente",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Arte para 4° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "arte",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Tecnología",
+    "eje_tematico": "Diseño y Construcción",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Tecnología para 4° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "tecnología",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje_tematico": "Habilidades Motrices",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Educación Física y Salud para 4° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "educación física y salud",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Inglés",
+    "eje_tematico": "Comprensión Oral",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Inglés para 5° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "inglés",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Música",
+    "eje_tematico": "Expresar y Crear",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Música para 5° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "música",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Arte",
+    "eje_tematico": "Expresar y Crear Visualmente",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Arte para 5° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "arte",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Tecnología",
+    "eje_tematico": "Diseño y Construcción",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Tecnología para 5° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "tecnología",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje_tematico": "Habilidades Motrices",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Educación Física y Salud para 5° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "educación física y salud",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Inglés",
+    "eje_tematico": "Comprensión Oral",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Inglés para 6° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "inglés",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Música",
+    "eje_tematico": "Expresar y Crear",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Música para 6° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "música",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Arte",
+    "eje_tematico": "Expresar y Crear Visualmente",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Arte para 6° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "arte",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Tecnología",
+    "eje_tematico": "Diseño y Construcción",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Tecnología para 6° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "tecnología",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje_tematico": "Habilidades Motrices",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Educación Física y Salud para 6° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "educación física y salud",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Inglés",
+    "eje_tematico": "Comprensión Oral",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Inglés para 7° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "inglés",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Música",
+    "eje_tematico": "Expresar y Crear",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Música para 7° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "música",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Arte",
+    "eje_tematico": "Expresar y Crear Visualmente",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Arte para 7° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "arte",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Tecnología",
+    "eje_tematico": "Diseño y Construcción",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Tecnología para 7° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "tecnología",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje_tematico": "Habilidades Motrices",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Educación Física y Salud para 7° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "educación física y salud",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Inglés",
+    "eje_tematico": "Comprensión Oral",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Inglés para 8° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "inglés",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Música",
+    "eje_tematico": "Expresar y Crear",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Música para 8° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "música",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Arte",
+    "eje_tematico": "Expresar y Crear Visualmente",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Arte para 8° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "arte",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Tecnología",
+    "eje_tematico": "Diseño y Construcción",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Tecnología para 8° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "tecnología",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Educación Física y Salud",
+    "eje_tematico": "Habilidades Motrices",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo oficial representativo de Educación Física y Salud para 8° Básico según MINEDUC.",
+        "indicadores_evaluacion": [
+          "Demuestran habilidades de la asignatura.",
+          "Comprenden conceptos fundamentales."
+        ],
+        "conceptos_clave": [
+          "educación física y salud",
+          "práctica",
+          "desarrollo"
+        ]
+      }
+    ]
+  }
+]

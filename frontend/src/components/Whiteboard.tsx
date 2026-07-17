@@ -14,10 +14,14 @@ const COLORS = ["#1f2937", "#ef4444", "#f59e0b", "#10b981", "#3b82f6", "#a855f7"
 
 type Tool = "pencil" | "eraser";
 
+import { InteractiveExercise } from "@/lib/apiService";
+import { ExerciseOverlay } from "./exercises/ExerciseOverlay";
+
 interface WhiteboardProps {
   curso: string;
   asignatura: string;
   studentId?: string;
+  activeExercise?: InteractiveExercise | null;
   onFeedback?: (text: string, audioUrl?: string) => void;
 }
 
@@ -25,6 +29,7 @@ export function Whiteboard({
   curso,
   asignatura,
   studentId = "1",
+  activeExercise,
   onFeedback,
 }: WhiteboardProps) {
   const theme = useMemo(() => getSubjectTheme(asignatura), [asignatura]);
@@ -185,9 +190,18 @@ export function Whiteboard({
           onPointerLeave={end}
           className="h-full w-full cursor-crosshair touch-none"
         />
-        <div className="pointer-events-none absolute bottom-2 right-3 text-[11px] font-semibold text-foreground/30">
-          {theme.emoji} Dibuja aquí
-        </div>
+        {!activeExercise && (
+          <div className="pointer-events-none absolute bottom-2 right-3 text-[11px] font-semibold text-foreground/30">
+            {theme.emoji} Dibuja aquí
+          </div>
+        )}
+        {activeExercise && (
+          <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/60 p-4 backdrop-blur-sm pointer-events-none">
+            <div className="pointer-events-auto h-full w-full">
+              <ExerciseOverlay exercise={activeExercise} />
+            </div>
+          </div>
+        )}
       </div>
 
       <Button

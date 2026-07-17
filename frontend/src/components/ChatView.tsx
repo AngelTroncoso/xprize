@@ -12,6 +12,7 @@ interface Message {
   role: "user" | "professor";
   text: string;
   audioUrl?: string;
+  interactive_exercise?: any;
 }
 
 interface ChatViewProps {
@@ -62,9 +63,9 @@ export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null
     });
   };
 
-  const pushProfessor = (text: string, audioUrl?: string) => {
+  const pushProfessor = (text: string, audioUrl?: string, interactive_exercise?: any) => {
     const id = crypto.randomUUID();
-    setMessages((m) => [...m, { id, role: "professor", text, audioUrl }]);
+    setMessages((m) => [...m, { id, role: "professor", text, audioUrl, interactive_exercise }]);
     scroll();
     if (audioUrl) playAudio(id, audioUrl);
   };
@@ -114,7 +115,7 @@ export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null
       const audioUrl = res.audio_response_b64
         ? base64ToAudioUrl(res.audio_response_b64)
         : undefined;
-      pushProfessor(res.response_text, audioUrl);
+      pushProfessor(res.response_text, audioUrl, res.interactive_exercise);
     } catch (err) {
       console.error(err);
       toast.error("Backend no disponible", { description: BACKEND_HINT });
@@ -272,6 +273,7 @@ export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null
         curso={curso}
         asignatura={asignatura}
         studentId={studentId}
+        activeExercise={[...messages].reverse().find(m => m.interactive_exercise)?.interactive_exercise}
         onFeedback={(text, audioUrl) => pushProfessor(text, audioUrl)}
       />
 

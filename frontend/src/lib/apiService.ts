@@ -23,8 +23,20 @@ export interface ChatRequest {
   id_oa?: string | null;
 }
 
+export interface InteractiveExercise {
+  type: "multiple_choice" | "fill_in_blanks" | "visual_image";
+  title: string;
+  options?: string[];
+  correct_option?: string;
+  text_with_blanks?: string;
+  blanks_answers?: string[];
+  image_prompt?: string;
+  image_url?: string;
+}
+
 export interface ChatResponse {
   response_text: string;
+  interactive_exercise?: InteractiveExercise | null;
   audio_response_b64?: string | null;
 }
 

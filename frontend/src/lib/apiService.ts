@@ -39,6 +39,7 @@ export interface ChatResponse {
   response_text: string;
   interactive_exercise?: InteractiveExercise | null;
   audio_response_b64?: string | null;
+  current_step?: number;
 }
 
 export interface CanvasAnalyzeRequest {

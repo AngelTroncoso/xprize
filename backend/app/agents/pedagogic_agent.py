@@ -123,7 +123,10 @@ Responde como un tutor de 3° básico. Sé creativo, entretenido y muy afectuoso
                 print(f"No se pudo conectar a la BD estática: {e}")
 
         if static_exercise:
-            user_message += f"\n\nIMPORTANTE: Hemos extraído el siguiente ejercicio estático validado por MINEDUC desde nuestra base de datos. DEBES incluir exactamente este JSON en el campo `interactive_exercise` de tu respuesta:\n{json.dumps(static_exercise)}"
+            user_message += f"\n\nIMPORTANTE: Estás en el PASO {current_step} de 10.\n"
+            user_message += f"1. Si el alumno acaba de dar una respuesta, evalúala e indica `is_correct: true` o `false`.\n"
+            user_message += f"2. Si es su primer mensaje o si se equivocó (`is_correct: false`), envíale el ejercicio de este nivel copiando el siguiente JSON exactamente en tu campo `interactive_exercise`:\n{json.dumps(static_exercise)}\n"
+            user_message += f"3. Si respondió BIEN (`is_correct: true`), felicítalo y DEJA EL CAMPO `interactive_exercise` NULO. El sistema inyectará el nivel {current_step + 1} por ti."
 
         from app.models.schemas import PedagogicResponseSchema
 
@@ -140,10 +143,12 @@ Responde como un tutor de 3° básico. Sé creativo, entretenido y muy afectuoso
             data = json.loads(response_str)
             return {
                 "response_text": data.get("response_text", "Hubo un error al generar la respuesta."),
-                "interactive_exercise": data.get("interactive_exercise")
+                "interactive_exercise": data.get("interactive_exercise"),
+                "is_correct": data.get("is_correct")
             }
         except Exception:
             return {
                 "response_text": response_str,
-                "interactive_exercise": None
+                "interactive_exercise": None,
+                "is_correct": None
             }

@@ -57,6 +57,7 @@ class MasterOrchestrator:
         current_topic: Optional[str] = None,
         id_oa: Optional[str] = None,
         gemini_file_id: Optional[str] = None,
+        current_step: int = 1,
     ) -> Dict[str, Any]:
         """Clasifica el mensaje y delega al agente adecuado.
 
@@ -157,6 +158,7 @@ class MasterOrchestrator:
         history: Optional[List[Dict[str, str]]] = None,
         id_oa: Optional[str] = None,
         gemini_file_id: Optional[str] = None,
+        current_step: int = 1,
     ) -> Dict[str, Any]:
         """Flujo estándar: Validator → OA detection → PedagogicAgent → lección."""
         # 1. ValidatorAgent: detecta OA
@@ -174,12 +176,14 @@ class MasterOrchestrator:
             student_message=message,
             history=history,
             gemini_file_id=gemini_file_id,
+            current_step=current_step,
         )
 
         return {
             "agent_used": "ValidatorAgent → PedagogicAgent",
             "response_text": pedagogic_result["response_text"],
             "interactive_exercise": pedagogic_result.get("interactive_exercise"),
+            "is_correct": pedagogic_result.get("is_correct"),
             "oa_metadata": {
                 "id_oa": payload.target_oa.id_oa,
                 "descripcion": payload.target_oa.descripcion,

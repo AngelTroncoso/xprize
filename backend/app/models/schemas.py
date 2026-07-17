@@ -125,6 +125,7 @@ class InteractiveExercise(BaseModel):
 class PedagogicResponseSchema(BaseModel):
     response_text: str = Field(..., description="La respuesta pedagógica principal dirigida al alumno")
     interactive_exercise: Optional[InteractiveExercise] = Field(None, description="Ejercicio interactivo estructurado si corresponde a la lección")
+    is_correct: Optional[bool] = Field(None, description="TRUE si el alumno resolvió correctamente el ejercicio anterior, FALSE si se equivocó, nulo si no aplica")
 
 class ChatResponse(BaseModel):
     agent: str = Field(..., alias="agent_used", description="Agente que generó la respuesta")

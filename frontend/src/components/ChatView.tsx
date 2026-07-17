@@ -41,6 +41,7 @@ export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null
   );
   const [messages, setMessages] = useState<Message[]>(initial);
   const [input, setInput] = useState("");
+  const [currentStep, setCurrentStep] = useState(1);
   const [listening, setListening] = useState(false);
   const [sending, setSending] = useState(false);
   const [playingId, setPlayingId] = useState<string | null>(null);
@@ -118,6 +119,7 @@ export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null
       const audioUrl = res.audio_response_b64
         ? base64ToAudioUrl(res.audio_response_b64)
         : undefined;
+      if (res.current_step) setCurrentStep(res.current_step);
       pushProfessor(res.response_text, audioUrl, res.interactive_exercise);
     } catch (err) {
       console.error(err);
@@ -204,6 +206,22 @@ export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null
             </button>
           </div>
         </div>
+
+        {/* Progress Bar (10 steps) */}
+        {activeIdOa && (
+          <div className={`bg-white/80 border-b ${theme.border} px-5 py-2 flex items-center justify-between`}>
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Progreso de la Etapa</span>
+            <div className="flex gap-1.5">
+              {Array.from({ length: 10 }).map((_, i) => (
+                <div 
+                  key={i} 
+                  className={`h-2 w-5 rounded-full transition-all duration-500 ${i < currentStep ? `bg-gradient-to-r ${theme.gradient} shadow-sm` : 'bg-gray-200'}`}
+                  title={`Nivel ${i + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        )}
 
         <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto p-5">
           {messages.map((m) => (

@@ -184,16 +184,32 @@ async def chat_interaction(chat_request: ChatInput):
         )
 
     try:
+        # Calcular step actual
+        current_step = 1
+        if supabase_client and chat_request.id_oa:
+            try:
+                def _get_prog():
+                    return supabase_client.table("student_oa_progress").select("*").eq("student_id", chat_request.student_id).eq("id_oa", chat_request.id_oa).execute()
+                prog_res = await asyncio.to_thread(_get_prog)
+                if prog_res.data:
+                    eval_hist = prog_res.data[0].get("evaluation_history", [])
+                    correct_answers = sum(1 for e in eval_hist if e.get("is_correct"))
+                    current_step = min(correct_answers + 1, 10)
+            except Exception as e:
+                logger.warning(f"Error getting progress for step calculation: {e}")
+
         # 1. Enrutar a través del orchestrator (flujo multi-agente)
         result = await orchestrator.route(
             student_id=chat_request.student_id,
             message=chat_request.message,
             curso=chat_request.curso,
             asignatura=chat_request.asignatura,
+            history=history,
             student_interest=chat_request.student_interest,
             current_topic=chat_request.current_topic,
             id_oa=chat_request.id_oa,
             gemini_file_id=chat_request.gemini_file_id,
+            current_step=current_step,
         )
 
         response_text = result["response_text"]
@@ -207,6 +223,38 @@ async def chat_interaction(chat_request: ChatInput):
         # 3. Persistir progreso en Supabase (si hay payload con OA y la tabla existe)
         saved_progress = None
         payload = result.get("payload")
+        if payload:
+            is_correct = result.get("is_correct")
+            if is_correct is True:
+                payload.student_progress.evaluation_history.append({
+                    "type": "exercise",
+                    "step": current_step,
+                    "is_correct": True,
+                    "timestamp": datetime.utcnow().isoformat()
+                })
+                # Check if mastered
+                if current_step >= 10:
+                    payload.student_progress.mastery_level = "mastered"
+                else:
+                    # Avanzar al siguiente nivel e inyectar el ejercicio N+1 para que el frontend lo muestre
+                    current_step += 1
+                    if supabase_client and chat_request.id_oa:
+                        try:
+                            def _get_next():
+                                return supabase_client.table("exercises").select("contenido").eq("id_oa", chat_request.id_oa).eq("dificultad", current_step).limit(1).execute()
+                            next_ex = await asyncio.to_thread(_get_next)
+                            if next_ex.data:
+                                result["interactive_exercise"] = next_ex.data[0]["contenido"]
+                        except Exception as e:
+                            logger.warning(f"Error fetching next exercise: {e}")
+            elif is_correct is False:
+                payload.student_progress.evaluation_history.append({
+                    "type": "exercise",
+                    "step": current_step,
+                    "is_correct": False,
+                    "timestamp": datetime.utcnow().isoformat()
+                })
+
         if supabase_client and payload:
             try:
                 saved_progress = _save_student_progress(supabase_client, payload)
@@ -225,9 +273,11 @@ async def chat_interaction(chat_request: ChatInput):
             "oa_metadata": result["oa_metadata"],
             "audio_response_b64": audio_b64,
             "audio_mime_type": audio_mime_type,
-            "progress_record": result["progress_record"],
+            "progress_record": result.get("progress_record"),
             "code_review": result.get("code_review"),
             "saved_progress": saved_progress,
+            "current_step": current_step,
+            "is_correct": result.get("is_correct"),
         }
     except ValueError as ve:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(ve))

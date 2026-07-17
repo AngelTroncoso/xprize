@@ -7,6 +7,7 @@ import {
   type CurriculumObjective,
   type CurriculumUnit,
 } from "@/integrations/supabase/external-client";
+import { supabase } from "@/integrations/supabase/client";
 import { getSubjectTheme } from "@/lib/subjectTheme";
 import { Textbook } from "@/lib/books";
 
@@ -28,6 +29,20 @@ export function CurriculumCatalog({ curso, asignatura, book, onSelectOA }: Props
 
   const load = async () => {
     // Si tenemos un libro con capítulos, no necesitamos cargar de Supabase
+    // PERO sí necesitamos cargar el progreso para bloquear/desbloquear
+    try {
+      // Mock student ID por ahora (igual que en ChatView)
+      const mockStudentId = "00000000-0000-0000-0000-000000000001";
+      const { data } = await supabase.from("student_oa_progress").select("id_oa, nivel_logro").eq("student_id", mockStudentId);
+      const progMap: Record<string, string> = {};
+      if (data) {
+        data.forEach((p) => { progMap[p.id_oa] = p.nivel_logro; });
+      }
+      setProgresses(progMap);
+    } catch (e) {
+      console.warn("No se pudo cargar progreso:", e);
+    }
+
     if (book?.chapters) {
       return;
     }
@@ -75,7 +90,7 @@ export function CurriculumCatalog({ curso, asignatura, book, onSelectOA }: Props
                 {book.titulo}
               </h2>
               <p className="text-sm text-white/85">
-                Selecciona un capítulo o unidad para comenzar tu clase interactiva.
+                Selecciona un capítulo o unidad para comenzar tu clase interactiva. Debes ir superando cada unidad para desbloquear la siguiente.
               </p>
             </div>
           </div>
@@ -91,26 +106,44 @@ export function CurriculumCatalog({ curso, asignatura, book, onSelectOA }: Props
             </div>
             <div className="space-y-3 p-4">
               <ul className="space-y-2">
-                {book.chapters.map((chapter) => (
-                  <li
-                    key={chapter.id}
-                    onClick={() => onSelectOA && onSelectOA(chapter.title)}
-                    className={`rounded-xl border ${theme.border} ${theme.softBg} p-4 cursor-pointer transition-transform hover:-translate-y-1 hover:shadow-md flex items-center justify-between`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <span className={`flex items-center justify-center h-10 w-10 rounded-full ${theme.chip} text-sm font-bold`}>
-                        {chapter.id.split('-u')[1]}
-                      </span>
-                      <p className={`text-base font-bold ${theme.text}`}>{chapter.title}</p>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <span className="text-xs text-foreground/50 font-medium">Pág. {chapter.page_start}</span>
-                      <div className={`shrink-0 rounded-full bg-gradient-to-r ${theme.gradient} px-4 py-2 text-xs font-bold text-white shadow-md hover:scale-105 transition-transform cursor-pointer`}>
-                        Comenzar Clase
+                {book.chapters.map((chapter, index) => {
+                  // Desbloqueado si es el primero (index 0) 
+                  // o si el capítulo ANTERIOR tiene nivel_logro === "mastered"
+                  let isUnlocked = false;
+                  if (index === 0) {
+                    isUnlocked = true;
+                  } else {
+                    const prevChapter = book.chapters![index - 1];
+                    isUnlocked = progresses[prevChapter.title] === "mastered";
+                  }
+
+                  return (
+                    <li
+                      key={chapter.id}
+                      onClick={() => {
+                        if (isUnlocked && onSelectOA) {
+                          onSelectOA(chapter.title);
+                        } else if (!isUnlocked) {
+                          toast.error("Unidad Bloqueada", { description: "Debes completar los 10 ejercicios de la unidad anterior para desbloquear esta etapa." });
+                        }
+                      }}
+                      className={`rounded-xl border ${theme.border} ${theme.softBg} p-4 transition-transform flex items-center justify-between ${isUnlocked ? 'cursor-pointer hover:-translate-y-1 hover:shadow-md' : 'opacity-60 grayscale cursor-not-allowed'}`}
+                    >
+                      <div className="flex items-center gap-4">
+                        <span className={`flex items-center justify-center h-10 w-10 rounded-full ${isUnlocked ? theme.chip : 'bg-gray-300'} text-sm font-bold`}>
+                          {isUnlocked ? chapter.id.split('-u')[1] : "🔒"}
+                        </span>
+                        <p className={`text-base font-bold ${theme.text}`}>{chapter.title}</p>
                       </div>
-                    </div>
-                  </li>
-                ))}
+                      <div className="flex items-center gap-4">
+                        <span className="text-xs text-foreground/50 font-medium">Pág. {chapter.page_start}</span>
+                        <div className={`shrink-0 rounded-full ${isUnlocked ? `bg-gradient-to-r ${theme.gradient} shadow-md hover:scale-105` : 'bg-gray-400'} px-4 py-2 text-xs font-bold text-white transition-transform cursor-pointer`}>
+                          {isUnlocked ? "Comenzar Clase" : "Bloqueado"}
+                        </div>
+                      </div>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>

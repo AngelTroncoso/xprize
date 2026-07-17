@@ -99,6 +99,7 @@ Responde como un tutor de 3° básico. Sé creativo, entretenido y muy afectuoso
         payload: ValidatorToPedagoguePayload,
         student_message: str,
         history: Optional[List[Dict[str, str]]] = None,
+        gemini_file_id: Optional[str] = None,
     ) -> Dict[str, Any]:
         external_resources = self._read_external_resources()
         system_prompt = self._build_system_prompt(payload, external_resources, student_message)
@@ -113,6 +114,7 @@ Responde como un tutor de 3° básico. Sé creativo, entretenido y muy afectuoso
             history=history,
             temperature=0.4,
             response_schema=PedagogicResponseSchema,
+            gemini_file_id=gemini_file_id,
         )
         
         try:

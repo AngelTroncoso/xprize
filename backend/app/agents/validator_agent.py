@@ -118,6 +118,9 @@ class ValidatorAgent:
     ) -> ValidatorToPedagoguePayload:
         selected_oa = None
 
+        if id_oa and not id_oa.startswith("OA_"):
+            return self._build_custom_chapter_payload(student_id, student_message, id_oa, curso, asignatura)
+
         if id_oa and self.curriculum_manager.get_oa_by_id(id_oa, curso=curso, asignatura=asignatura):
             selected_oa = id_oa
         else:
@@ -136,6 +139,45 @@ class ValidatorAgent:
             )
 
         return self._build_validation_payload(student_id, student_message, selected_oa, curso, asignatura)
+
+    def _build_custom_chapter_payload(
+        self,
+        student_id: str,
+        student_message: str,
+        chapter_title: str,
+        curso: str,
+        asignatura: str,
+    ) -> ValidatorToPedagoguePayload:
+        curriculum_unit = CurriculumUnit(
+            curso=curso,
+            asignatura=asignatura,
+            eje_tematico="Contenidos del Texto Escolar",
+            objetivos_aprendizaje=[
+                ObjetivoAprendizaje(
+                    id_oa="LIBRO",
+                    descripcion=f"Estudio del capítulo: {chapter_title}",
+                    indicadores_evaluacion=["Comprende los contenidos del texto escolar"],
+                    conceptos_clave=[chapter_title],
+                )
+            ],
+        )
+        progress_record = OAProgressRecord(
+            student_id=student_id,
+            id_oa="LIBRO",
+            mastery_level="in_progress",
+            last_evaluation_date=None,
+            evaluation_history=[],
+            aligned_resources=[],
+        )
+        return ValidatorToPedagoguePayload(
+            student_id=student_id,
+            timestamp=None,
+            curriculum_unit=curriculum_unit,
+            target_oa=curriculum_unit.objetivos_aprendizaje[0],
+            student_progress=progress_record,
+            evidence=[],
+            validation_notes=f"Consulta enfocada en el libro: {chapter_title}",
+        )
 
     def _build_validation_payload(
         self,

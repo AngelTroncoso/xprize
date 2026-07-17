@@ -21,6 +21,7 @@ export interface ChatRequest {
   student_interest?: string;
   current_topic?: string;
   id_oa?: string | null;
+  gemini_file_id?: string | null;
 }
 
 export interface InteractiveExercise {

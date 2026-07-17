@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { BookOpen, GraduationCap, MessagesSquare, Trophy } from "lucide-react";
+import { BookOpen, GraduationCap, MessagesSquare, Trophy, Library } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Select,
@@ -13,6 +13,8 @@ import { ChatView } from "@/components/ChatView";
 import { ProgressMap } from "@/components/ProgressMap";
 import { CurriculumCatalog } from "@/components/CurriculumCatalog";
 import { SubjectBackground } from "@/components/SubjectBackground";
+import { Bookshelf } from "@/components/Bookshelf";
+import { Textbook } from "@/lib/books";
 import {
   ASIGNATURAS,
   CURSOS,
@@ -40,10 +42,11 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const [tab, setTab] = useState("catalog");
+  const [tab, setTab] = useState("books");
   const [curso, setCurso] = useState("3° Básico");
   const [asignatura, setAsignatura] = useState<string>(ASIGNATURAS[0]);
   const [activeIdOa, setActiveIdOa] = useState<string | null>(null);
+  const [selectedBook, setSelectedBook] = useState<Textbook | null>(null);
 
   const theme = useMemo(() => getSubjectTheme(asignatura), [asignatura]);
   const cursoMeta = CURSO_META[curso];
@@ -52,6 +55,11 @@ function Home() {
   const handleSelectOA = (idOa: string) => {
     setActiveIdOa(idOa);
     setTab("chat");
+  };
+
+  const handleSelectBook = (book: Textbook) => {
+    setSelectedBook(book);
+    setTab("catalog");
   };
 
   return (
@@ -83,7 +91,7 @@ function Home() {
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <Select value={curso} onValueChange={(val) => { setCurso(val); setActiveIdOa(null); }}>
+            <Select value={curso} onValueChange={(val) => { setCurso(val); setActiveIdOa(null); setSelectedBook(null); setTab("books"); }}>
               <SelectTrigger
                 className={`h-10 w-[150px] rounded-full border-2 ${theme.border} bg-white text-sm font-bold ${theme.text}`}
               >
@@ -98,7 +106,7 @@ function Home() {
                 ))}
               </SelectContent>
             </Select>
-            <Select value={asignatura} onValueChange={(val) => { setAsignatura(val); setActiveIdOa(null); }}>
+            <Select value={asignatura} onValueChange={(val) => { setAsignatura(val); setActiveIdOa(null); setSelectedBook(null); setTab("books"); }}>
               <SelectTrigger
                 className={`h-10 w-[220px] rounded-full border-2 ${theme.border} bg-white text-sm font-bold ${theme.text}`}
               >
@@ -131,7 +139,7 @@ function Home() {
           >
             <span className="text-xl">{theme.emoji}</span>
             <p className="truncate text-sm font-semibold">
-              {theme.label} · {curso} {activeIdOa && `· ${activeIdOa}`}
+              {theme.label} · {curso} {activeIdOa && `· ${activeIdOa}`} {selectedBook && `· Libro Seleccionado`}
             </p>
             <span className="ml-auto hidden items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold backdrop-blur sm:inline-flex">
               <span>{cursoMeta?.emoji}</span> Nivel {curso}
@@ -142,13 +150,13 @@ function Home() {
 
       <main className="relative mx-auto max-w-7xl px-4 py-6">
         <Tabs value={tab} onValueChange={setTab} className="w-full">
-          <TabsList className="mx-auto mb-6 grid h-auto w-full max-w-2xl grid-cols-3 rounded-full bg-white/80 p-1.5 shadow-md ring-1 ring-white backdrop-blur">
+          <TabsList className="mx-auto mb-6 grid h-auto w-full max-w-3xl grid-cols-4 rounded-full bg-white/80 p-1.5 shadow-md ring-1 ring-white backdrop-blur">
             <TabsTrigger
-              value="chat"
-              className="gap-2 rounded-full py-2.5 text-sm font-bold transition data-[state=active]:bg-foreground data-[state=active]:text-background data-[state=active]:shadow-md"
+              value="books"
+              className="gap-2 rounded-full py-2.5 text-sm font-bold transition data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:text-white data-[state=active]:shadow-md"
             >
-              <MessagesSquare className="h-4 w-4" />
-              Clase Interactiva
+              <Library className="h-4 w-4" />
+              Biblioteca
             </TabsTrigger>
             <TabsTrigger
               value="catalog"
@@ -156,6 +164,13 @@ function Home() {
             >
               <BookOpen className="h-4 w-4" />
               Catálogo
+            </TabsTrigger>
+            <TabsTrigger
+              value="chat"
+              className="gap-2 rounded-full py-2.5 text-sm font-bold transition data-[state=active]:bg-foreground data-[state=active]:text-background data-[state=active]:shadow-md"
+            >
+              <MessagesSquare className="h-4 w-4" />
+              Clase Interactiva
             </TabsTrigger>
             <TabsTrigger
               value="progress"
@@ -166,20 +181,24 @@ function Home() {
             </TabsTrigger>
           </TabsList>
 
+          <TabsContent value="books" className="mt-0">
+            <Bookshelf curso={curso} asignatura={asignatura} onSelectBook={handleSelectBook} />
+          </TabsContent>
+          <TabsContent value="catalog" className="mt-0">
+            <CurriculumCatalog curso={curso} asignatura={asignatura} book={selectedBook || undefined} onSelectOA={handleSelectOA} />
+          </TabsContent>
           <TabsContent value="chat" className="mt-0">
             <ChatView 
               curso={curso} 
               asignatura={asignatura} 
               studentId="1" 
               activeIdOa={activeIdOa} 
+              book={selectedBook || undefined}
               onBackToCatalog={() => {
                 setActiveIdOa(null);
                 setTab("catalog");
               }} 
             />
-          </TabsContent>
-          <TabsContent value="catalog" className="mt-0">
-            <CurriculumCatalog curso={curso} asignatura={asignatura} onSelectOA={handleSelectOA} />
           </TabsContent>
           <TabsContent value="progress" className="mt-0">
             <ProgressMap studentId="1" curso={curso} asignatura={asignatura} />

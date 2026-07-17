@@ -8,16 +8,18 @@ import {
   type CurriculumUnit,
 } from "@/integrations/supabase/external-client";
 import { getSubjectTheme } from "@/lib/subjectTheme";
+import { Textbook } from "@/lib/books";
 
 type UnitWithOAs = CurriculumUnit & { objectives: CurriculumObjective[] };
 
 interface Props {
   curso: string;
   asignatura: string;
+  book?: Textbook;
   onSelectOA?: (id: string) => void;
 }
 
-export function CurriculumCatalog({ curso, asignatura, onSelectOA }: Props) {
+export function CurriculumCatalog({ curso, asignatura, book, onSelectOA }: Props) {
   const theme = useMemo(() => getSubjectTheme(asignatura), [asignatura]);
   const Icon = theme.icon;
   const [units, setUnits] = useState<UnitWithOAs[]>([]);
@@ -25,6 +27,10 @@ export function CurriculumCatalog({ curso, asignatura, onSelectOA }: Props) {
   const [error, setError] = useState<string | null>(null);
 
   const load = async () => {
+    // Si tenemos un libro con capítulos, no necesitamos cargar de Supabase
+    if (book?.chapters) {
+      return;
+    }
     setLoading(true);
     setError(null);
     try {
@@ -48,8 +54,72 @@ export function CurriculumCatalog({ curso, asignatura, onSelectOA }: Props) {
   useEffect(() => {
     load();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [curso, asignatura]);
+  }, [curso, asignatura, book]);
 
+  // Si tenemos un libro seleccionado con capítulos, renderizar el Índice del Libro
+  if (book && book.chapters) {
+    return (
+      <div className="space-y-6">
+        <div
+          className={`overflow-hidden rounded-3xl border-2 ${theme.border} bg-gradient-to-r ${theme.gradient} p-5 text-white shadow-lg ${theme.glow}`}
+        >
+          <div className="flex items-center gap-4">
+            <div className="grid h-14 w-14 place-items-center rounded-2xl bg-white/20 backdrop-blur">
+              <Icon className="h-7 w-7" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="text-xs font-bold uppercase tracking-wider text-white/80">
+                Índice del Libro {theme.emoji}
+              </p>
+              <h2 className="truncate text-2xl font-extrabold">
+                {book.titulo}
+              </h2>
+              <p className="text-sm text-white/85">
+                Selecciona un capítulo o unidad para comenzar tu clase interactiva.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className={`overflow-hidden rounded-3xl border-2 ${theme.border} bg-white/80 backdrop-blur ${theme.glow} md:col-span-2`}>
+            <div className={`flex items-center gap-2 bg-gradient-to-r ${theme.gradient} px-4 py-3 text-white`}>
+              <BookOpen className="h-4 w-4" />
+              <p className="truncate text-sm font-bold uppercase tracking-wide">
+                Contenidos Oficiales MINEDUC
+              </p>
+            </div>
+            <div className="space-y-3 p-4">
+              <ul className="space-y-2">
+                {book.chapters.map((chapter) => (
+                  <li
+                    key={chapter.id}
+                    onClick={() => onSelectOA && onSelectOA(chapter.title)}
+                    className={`rounded-xl border ${theme.border} ${theme.softBg} p-4 cursor-pointer transition-transform hover:-translate-y-1 hover:shadow-md flex items-center justify-between`}
+                  >
+                    <div className="flex items-center gap-4">
+                      <span className={`flex items-center justify-center h-10 w-10 rounded-full ${theme.chip} text-sm font-bold`}>
+                        {chapter.id.split('-u')[1]}
+                      </span>
+                      <p className={`text-base font-bold ${theme.text}`}>{chapter.title}</p>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <span className="text-xs text-foreground/50 font-medium">Pág. {chapter.page_start}</span>
+                      <div className={`shrink-0 rounded-full bg-gradient-to-r ${theme.gradient} px-4 py-2 text-xs font-bold text-white shadow-md hover:scale-105 transition-transform cursor-pointer`}>
+                        Comenzar Clase
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Si no hay libro seleccionado, pedir al usuario que seleccione uno en la Biblioteca
   return (
     <div className="space-y-6">
       <div
@@ -57,110 +127,17 @@ export function CurriculumCatalog({ curso, asignatura, onSelectOA }: Props) {
       >
         <div className="flex items-center gap-4">
           <div className="grid h-14 w-14 place-items-center rounded-2xl bg-white/20 backdrop-blur">
-            <Icon className="h-7 w-7" />
+            <BookOpen className="h-7 w-7" />
           </div>
           <div className="min-w-0 flex-1">
-            <p className="text-xs font-bold uppercase tracking-wider text-white/80">
-              Catálogo curricular {theme.emoji}
-            </p>
             <h2 className="truncate text-2xl font-extrabold">
-              {theme.label} · {curso}
+              Por favor selecciona un Libro
             </h2>
             <p className="text-sm text-white/85">
-              Haz click en un Objetivo de Aprendizaje (OA) para iniciar tu clase interactiva.
-            </p>
-          </div>
-          <Button
-            size="icon"
-            variant="secondary"
-            onClick={load}
-            disabled={loading}
-            aria-label="Refrescar"
-            className="rounded-full bg-white/90 text-foreground hover:bg-white"
-          >
-            <RefreshCw className={`h-4 w-4 ${loading ? "animate-spin" : ""}`} />
-          </Button>
-        </div>
-      </div>
-
-      {error && (
-        <div className="flex items-start gap-3 rounded-2xl border-2 border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
-          <ServerCrash className="mt-0.5 h-5 w-5 shrink-0" />
-          <div>
-            <p className="font-bold">No pudimos leer Supabase.</p>
-            <p className="text-red-700/90">{error}</p>
-            <p className="mt-1 text-xs text-red-700/80">
-              Verifica que existan las tablas <code>curriculum_units</code> y{" "}
-              <code>curriculum_objectives</code> con políticas RLS de lectura.
+              Ve a la pestaña "Biblioteca" y selecciona un texto escolar para ver su índice.
             </p>
           </div>
         </div>
-      )}
-
-      {loading && units.length === 0 && (
-        <div className="flex items-center justify-center gap-2 rounded-2xl bg-white/70 py-10 text-foreground/60">
-          <Loader2 className="h-5 w-5 animate-spin" />
-          Cargando currículum…
-        </div>
-      )}
-
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {units.map((u) => (
-          <div
-            key={String(u.id)}
-            className={`overflow-hidden rounded-3xl border-2 ${theme.border} bg-white/80 backdrop-blur ${theme.glow}`}
-          >
-            <div
-              className={`flex items-center gap-2 bg-gradient-to-r ${theme.gradient} px-4 py-3 text-white`}
-            >
-              <BookOpen className="h-4 w-4" />
-              <p className="truncate text-sm font-bold uppercase tracking-wide">
-                {u.eje}
-              </p>
-            </div>
-            <div className="space-y-3 p-4">
-              <h3 className="text-base font-extrabold text-foreground">{u.nombre}</h3>
-              <ul className="space-y-2">
-                {u.objectives.map((oa) => (
-                  <li
-                    key={String(oa.id)}
-                    onClick={() => onSelectOA && onSelectOA(oa.code)}
-                    className={`rounded-xl border ${theme.border} ${theme.softBg} p-3 cursor-pointer transition-transform hover:-translate-y-1 hover:shadow-md`}
-                  >
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="flex items-center gap-2">
-                        <span
-                          className={`rounded-md ${theme.chip} px-2 py-0.5 text-[11px] font-extrabold`}
-                        >
-                          {oa.code}
-                        </span>
-                        <p className={`text-sm font-semibold ${theme.text}`}>{oa.title}</p>
-                      </div>
-                      <div className={`shrink-0 rounded-full bg-gradient-to-r ${theme.gradient} px-3 py-1.5 text-xs font-bold text-white shadow-md hover:scale-105 transition-transform cursor-pointer`}>
-                        Comenzar Clase
-                      </div>
-                    </div>
-                    {oa.concepts && oa.concepts.length > 0 && (
-                      <div className="mt-2 flex flex-wrap gap-1">
-                        {oa.concepts.map((c) => (
-                          <span
-                            key={c}
-                            className={`rounded-full bg-white/90 px-2 py-0.5 text-[11px] font-medium ${theme.text} ring-1 ${theme.ring}`}
-                          >
-                            {c}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </li>
-                ))}
-                {u.objectives.length === 0 && (
-                  <li className="text-xs text-foreground/50">Sin OAs registrados.</li>
-                )}
-              </ul>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );

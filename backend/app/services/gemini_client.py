@@ -58,21 +58,30 @@ class GeminiClient:
         temperature: float = DEFAULT_TEMPERATURE,
         model: Optional[str] = None,
         response_schema: Optional[Any] = None,
+        gemini_file_id: Optional[str] = None,
     ) -> str:
         if not self._ensure_client():
             return FALLBACK_MESSAGE
 
         chosen_model = model or self.model
-        contents: List[str] = [f"SYSTEM: {system_prompt}"]
+        contents_list: List[str] = [f"SYSTEM: {system_prompt}"]
 
         if history:
             for turn in history:
                 role = turn.get("role", "user").upper()
                 text = turn.get("text") or turn.get("content", "")
-                contents.append(f"{role}: {text}")
+                contents_list.append(f"{role}: {text}")
 
-        contents.append(f"USER: {user_message}")
-        prompt = "\n".join(contents)
+        contents_list.append(f"USER: {user_message}")
+        prompt = "\n".join(contents_list)
+
+        api_contents = [prompt]
+        if gemini_file_id:
+            try:
+                gemini_file = self.client.files.get(name=gemini_file_id)
+                api_contents.insert(0, gemini_file)
+            except Exception as e:
+                logger.warning(f"No se pudo cargar el archivo {gemini_file_id}: {e}")
 
         try:
             def call_api() -> Any:
@@ -87,7 +96,7 @@ class GeminiClient:
                     
                 return self.client.models.generate_content(
                     model=chosen_model,
-                    contents=prompt,
+                    contents=api_contents,
                     config=types.GenerateContentConfig(**config_args),
                 )
 

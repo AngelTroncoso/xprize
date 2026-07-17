@@ -193,6 +193,7 @@ async def chat_interaction(chat_request: ChatInput):
             student_interest=chat_request.student_interest,
             current_topic=chat_request.current_topic,
             id_oa=chat_request.id_oa,
+            gemini_file_id=chat_request.gemini_file_id,
         )
 
         response_text = result["response_text"]

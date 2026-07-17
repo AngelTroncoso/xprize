@@ -87,7 +87,7 @@ class MasterOrchestrator:
         #  1. ValidatorAgent → detecta OA
         #  2. PedagogicAgent → genera lección
         return await self._route_pedagogic(
-            student_id, message, curso, asignatura, history, id_oa
+            student_id, message, curso, asignatura, history, id_oa, gemini_file_id
         )
 
     # ──────────────────────────────────────────────
@@ -155,6 +155,7 @@ class MasterOrchestrator:
         asignatura: str,
         history: Optional[List[Dict[str, str]]] = None,
         id_oa: Optional[str] = None,
+        gemini_file_id: Optional[str] = None,
     ) -> Dict[str, Any]:
         """Flujo estándar: Validator → OA detection → PedagogicAgent → lección."""
         # 1. ValidatorAgent: detecta OA
@@ -171,6 +172,7 @@ class MasterOrchestrator:
             payload=payload,
             student_message=message,
             history=history,
+            gemini_file_id=gemini_file_id,
         )
 
         return {

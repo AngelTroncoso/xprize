@@ -6,6 +6,7 @@ import { Whiteboard } from "./Whiteboard";
 import { LiveAudioModal } from "./LiveAudioModal";
 import { BACKEND_HINT, base64ToAudioUrl, sendChatMessage } from "@/lib/apiService";
 import { getSubjectTheme } from "@/lib/subjectTheme";
+import { Textbook } from "@/lib/books";
 
 interface Message {
   id: string;
@@ -20,10 +21,11 @@ interface ChatViewProps {
   asignatura: string;
   studentId?: string;
   activeIdOa?: string | null;
+  book?: Textbook;
   onBackToCatalog?: () => void;
 }
 
-export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null, onBackToCatalog }: ChatViewProps) {
+export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null, book, onBackToCatalog }: ChatViewProps) {
   const [liveOpen, setLiveOpen] = useState(false);
   const theme = useMemo(() => getSubjectTheme(asignatura), [asignatura]);
   const SubjectIcon = theme.icon;
@@ -111,6 +113,7 @@ export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null
         asignatura,
         message: content,
         id_oa: activeIdOa,
+        gemini_file_id: book?.gemini_file_id,
       });
       const audioUrl = res.audio_response_b64
         ? base64ToAudioUrl(res.audio_response_b64)
@@ -170,13 +173,25 @@ export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null
             </p>
           </div>
           <div className="flex items-center gap-2">
+            {book?.pdf_url && (
+              <a
+                href={book.pdf_url}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-full bg-white/20 px-3 text-xs font-extrabold text-white ring-1 ring-white/40 backdrop-blur transition hover:scale-105 hover:bg-white/30"
+                aria-label="Abrir Libro"
+              >
+                <BookOpen className="h-3.5 w-3.5" />
+                Libro
+              </a>
+            )}
             {activeIdOa && onBackToCatalog && (
               <button
                 onClick={onBackToCatalog}
                 className="inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-full bg-white/20 px-3 text-xs font-extrabold text-white ring-1 ring-white/40 backdrop-blur transition hover:scale-105 hover:bg-white/30"
                 aria-label="Volver al Catálogo"
               >
-                Volver al Catálogo
+                Volver
               </button>
             )}
             <button

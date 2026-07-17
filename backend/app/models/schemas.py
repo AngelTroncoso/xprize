@@ -106,6 +106,7 @@ class ChatInput(StudentIdUUIDMixin):
     current_topic: Optional[str] = Field(None, description="Tema en estudio actualmente")
     enable_audio: bool = Field(default=True, description="Si es True, genera audio TTS de la respuesta")
     id_oa: Optional[str] = Field(None, description="ID del OA objetivo explícito (ej. OA_01)")
+    gemini_file_id: Optional[str] = Field(None, description="ID del archivo PDF del libro subido a Gemini")
 
 # --- Ejercicios Interactivos Dinámicos ---
 class InteractiveExercise(BaseModel):

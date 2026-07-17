@@ -167,7 +167,7 @@ class MasterOrchestrator:
         )
 
         # 2. PedagogicAgent: genera lección
-        response_text = await self.pedagogue.generate_lesson(
+        pedagogic_result = await self.pedagogue.generate_lesson(
             payload=payload,
             student_message=message,
             history=history,
@@ -175,7 +175,8 @@ class MasterOrchestrator:
 
         return {
             "agent_used": "ValidatorAgent → PedagogicAgent",
-            "response_text": response_text,
+            "response_text": pedagogic_result["response_text"],
+            "interactive_exercise": pedagogic_result.get("interactive_exercise"),
             "oa_metadata": {
                 "id_oa": payload.target_oa.id_oa,
                 "descripcion": payload.target_oa.descripcion,

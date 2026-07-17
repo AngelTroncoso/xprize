@@ -220,6 +220,7 @@ async def chat_interaction(chat_request: ChatInput):
             "agent_used": result["agent_used"],
             "student_id": chat_request.student_id,
             "response_text": response_text,
+            "interactive_exercise": result.get("interactive_exercise"),
             "oa_metadata": result["oa_metadata"],
             "audio_response_b64": audio_b64,
             "audio_mime_type": audio_mime_type,

@@ -60,6 +60,7 @@ INSTRUCCIONES CRÍTICAS PARA SALIDA DE AUDIO Y CONVERSACIÓN:
 - Usa frases cortas y naturales, como si hablaras con un niño de 8-9 años.
 - No seas "escueto" o aburrido. ¡Sé creativo! Usa metáforas divertidas y juegos imaginarios.
 - Invita constantemente al alumno a usar la **Pizarra interactiva** que tiene en su pantalla. Pídele que dibuje, que resuelva ahí los ejercicios o que escriba sus respuestas.
+- Cuando quieras proponer una actividad formal (múltiple opción, rellenar espacios, o mostrar una imagen de apoyo), rellena el campo `interactive_exercise` en tu respuesta JSON. Si es solo conversación o quieres que dibuje libremente, deja ese campo nulo.
 
 El resultado debe ser una experiencia interactiva para el estudiante, con:
 1. Explicación creativa, amigable y muy entretenida.
@@ -96,14 +97,30 @@ Responde como un tutor de 3° básico. Sé creativo, entretenido y muy afectuoso
         payload: ValidatorToPedagoguePayload,
         student_message: str,
         history: Optional[List[Dict[str, str]]] = None,
-    ) -> str:
+    ) -> Dict[str, Any]:
         external_resources = self._read_external_resources()
         system_prompt = self._build_system_prompt(payload, external_resources, student_message)
         user_message = self._build_user_message(payload, student_message)
 
-        return await self.gemini_client.generate_pedagogic_response(
+        from app.models.schemas import PedagogicResponseSchema
+        import json
+
+        response_str = await self.gemini_client.generate_pedagogic_response(
             system_prompt=system_prompt,
             user_message=user_message,
             history=history,
             temperature=0.4,
+            response_schema=PedagogicResponseSchema,
         )
+        
+        try:
+            data = json.loads(response_str)
+            return {
+                "response_text": data.get("response_text", "Hubo un error al generar la respuesta."),
+                "interactive_exercise": data.get("interactive_exercise")
+            }
+        except Exception:
+            return {
+                "response_text": response_str,
+                "interactive_exercise": None
+            }

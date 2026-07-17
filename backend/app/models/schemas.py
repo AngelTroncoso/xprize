@@ -107,11 +107,30 @@ class ChatInput(StudentIdUUIDMixin):
     enable_audio: bool = Field(default=True, description="Si es True, genera audio TTS de la respuesta")
     id_oa: Optional[str] = Field(None, description="ID del OA objetivo explícito (ej. OA_01)")
 
+# --- Ejercicios Interactivos Dinámicos ---
+class InteractiveExercise(BaseModel):
+    type: Literal["multiple_choice", "fill_in_blanks", "visual_image"] = Field(..., description="Tipo de ejercicio interactivo")
+    title: str = Field(..., description="Título o instrucción principal del ejercicio")
+    # Para multiple_choice
+    options: Optional[List[str]] = Field(None, description="Opciones disponibles si es selección múltiple")
+    correct_option: Optional[str] = Field(None, description="Opción correcta esperada")
+    # Para fill_in_blanks
+    text_with_blanks: Optional[str] = Field(None, description="Texto con huecos representados por ___ (tres guiones bajos)")
+    blanks_answers: Optional[List[str]] = Field(None, description="Respuestas esperadas en orden para los huecos")
+    # Para visual_image
+    image_prompt: Optional[str] = Field(None, description="Prompt descriptivo para buscar o generar una imagen")
+    image_url: Optional[str] = Field(None, description="URL de la imagen (puede ser autogenerado por el backend)")
+
+class PedagogicResponseSchema(BaseModel):
+    response_text: str = Field(..., description="La respuesta pedagógica principal dirigida al alumno")
+    interactive_exercise: Optional[InteractiveExercise] = Field(None, description="Ejercicio interactivo estructurado si corresponde a la lección")
+
 class ChatResponse(BaseModel):
     agent: str = Field(..., alias="agent_used", description="Agente que generó la respuesta")
     student_id: str = Field(..., description="ID del estudiante")
     session_id: Optional[str] = Field(None, description="ID de la sesión de chat")
     response_text: str = Field(..., alias="response_text", description="Respuesta textual del agente pedagógico")
+    interactive_exercise: Optional[Dict[str, Any]] = Field(None, description="Estructura del ejercicio interactivo dinámico generado por IA")
     oa_metadata: Dict[str, Any] = Field(..., description="Metadatos del Objetivo de Aprendizaje")
     audio_response_b64: Optional[str] = Field(None, description="Respuesta en audio codificada en Base64 (si enable_audio=True)")
     audio_mime_type: Optional[str] = Field(None, description="Tipo MIME del audio (ej. audio/mpeg)")

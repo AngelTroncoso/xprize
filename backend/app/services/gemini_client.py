@@ -57,6 +57,7 @@ class GeminiClient:
         history: Optional[List[Dict[str, str]]] = None,
         temperature: float = DEFAULT_TEMPERATURE,
         model: Optional[str] = None,
+        response_schema: Optional[Any] = None,
     ) -> str:
         if not self._ensure_client():
             return FALLBACK_MESSAGE
@@ -75,13 +76,19 @@ class GeminiClient:
 
         try:
             def call_api() -> Any:
+                config_args = {
+                    "temperature": temperature,
+                }
+                if response_schema:
+                    config_args["response_mime_type"] = "application/json"
+                    config_args["response_schema"] = response_schema
+                else:
+                    config_args["response_mime_type"] = "text/plain"
+                    
                 return self.client.models.generate_content(
                     model=chosen_model,
                     contents=prompt,
-                    config=types.GenerateContentConfig(
-                        temperature=temperature,
-                        response_mime_type="text/plain",
-                    ),
+                    config=types.GenerateContentConfig(**config_args),
                 )
 
             response = await asyncio.to_thread(call_api)

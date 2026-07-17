@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from typing import Dict, Optional, List
+from typing import Dict, Optional, List, Any
 
 from app.models.schemas import ValidatorToPedagoguePayload
 from app.services.gemini_client import GeminiClient, default_gemini_client

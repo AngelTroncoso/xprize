@@ -56,6 +56,7 @@ class MasterOrchestrator:
         student_interest: Optional[str] = None,
         current_topic: Optional[str] = None,
         id_oa: Optional[str] = None,
+        gemini_file_id: Optional[str] = None,
     ) -> Dict[str, Any]:
         """Clasifica el mensaje y delega al agente adecuado.
 

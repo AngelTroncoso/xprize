@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Mic, Play, Radio, Send, Square } from "lucide-react";
+import { BookOpen, Mic, Play, Radio, Send, Square } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Whiteboard } from "./Whiteboard";

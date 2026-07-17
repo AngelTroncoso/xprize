@@ -73,7 +73,9 @@ El resultado debe ser una experiencia interactiva para el estudiante, con:
             return f"""
 El estudiante acaba de seleccionar este Objetivo de Aprendizaje en el catálogo para iniciar una nueva lección interactiva.
 Actúa proactivamente: dale una bienvenida muy cálida y entusiasta, y hazle una pregunta inicial exploratoria o lúdica relacionada con los conceptos clave del OA para despertar su curiosidad y comenzar la clase.
-¡MUY IMPORTANTE!: Esta es sólo la frase inicial para saludar. Tu respuesta debe ser EXTREMADAMENTE CORTA (máximo 2 párrafos breves). NO le des una lección completa todavía, NO incluyas recomendaciones externas aún. Sólo preséntate, dile qué van a aprender hoy y hazle una pregunta corta para iniciar la conversación.
+¡MUY IMPORTANTE!: Esta es sólo la frase inicial para saludar. Tu respuesta debe ser EXTREMADAMENTE CORTA (máximo 2 párrafos breves). NO le des una lección completa todavía. Sólo preséntate, dile qué van a aprender hoy y hazle una pregunta corta para iniciar la conversación.
+
+Además, DEBES OBLIGATORIAMENTE incluir un ejercicio interactivo de diagnóstico (rellenando el campo `interactive_exercise` en tu JSON) para que aparezca inmediatamente en la pizarra del estudiante (ej: multiple_choice o fill_in_blanks). ¡No dejes la pizarra en blanco al empezar!
 
 Contexto adicional:
 - Curso: {payload.curriculum_unit.curso}

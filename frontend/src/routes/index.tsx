@@ -201,7 +201,7 @@ function Home() {
             />
           </TabsContent>
           <TabsContent value="progress" className="mt-0">
-            <ProgressMap studentId="1" curso={curso} asignatura={asignatura} />
+            <ProgressMap studentId="1" curso={curso} asignatura={asignatura} book={selectedBook || undefined} />
           </TabsContent>
         </Tabs>
       </main>

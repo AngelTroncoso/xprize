@@ -4,10 +4,10 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
   fetchCurriculumCatalog,
+  getExternalSupabase,
   type CurriculumObjective,
   type CurriculumUnit,
 } from "@/integrations/supabase/external-client";
-import { supabase } from "@/integrations/supabase/client";
 import { getSubjectTheme } from "@/lib/subjectTheme";
 import { Textbook } from "@/lib/books";
 
@@ -26,6 +26,7 @@ export function CurriculumCatalog({ curso, asignatura, book, onSelectOA }: Props
   const [units, setUnits] = useState<UnitWithOAs[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [progresses, setProgresses] = useState<Record<string, string>>({});
 
   const load = async () => {
     // Si tenemos un libro con capítulos, no necesitamos cargar de Supabase
@@ -33,6 +34,7 @@ export function CurriculumCatalog({ curso, asignatura, book, onSelectOA }: Props
     try {
       // Mock student ID por ahora (igual que en ChatView)
       const mockStudentId = "00000000-0000-0000-0000-000000000001";
+      const supabase = await getExternalSupabase();
       const { data } = await supabase.from("student_oa_progress").select("id_oa, nivel_logro").eq("student_id", mockStudentId);
       const progMap: Record<string, string> = {};
       if (data) {

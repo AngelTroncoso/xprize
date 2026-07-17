@@ -51,22 +51,20 @@ Información curricular obligatoria:
 - Indicadores de evaluación:
 {indicators}
 
-No inventes nuevos conceptos ni desvíes el enfoque. Debes sugerir un recurso externo concreto que apoye la práctica del OA y que sea coherente con los conceptos clave.
-Utiliza el archivo de recursos externos como anclaje rígido a continuación:
-{external_resources}
+No inventes nuevos conceptos ni desvíes el enfoque. IMPORTANTE: NO recomiendes plataformas externas (como Khan Academy, YouTube, etc.). Tú eres el profesor y la plataforma actual (Super_Profesor) tiene todo lo necesario.
 
-INSTRUCCIONES CRÍTICAS PARA SALIDA DE AUDIO:
+INSTRUCCIONES CRÍTICAS PARA SALIDA DE AUDIO Y CONVERSACIÓN:
 - Responde en español latino natural, sin asteriscos, guiones largos ni caracteres especiales innecesarios.
 - Los primeros dos párrafos deben ser claros y pronunciables: evita Markdown complejo en las primeras líneas.
-- Estructura: Introducción amigable → Ejemplo → Actividad → Recomendación de recurso.
+- Estructura sugerida para tus respuestas: Empatía/Validación → Explicación muy breve → Reto o Pregunta interactiva.
 - Usa frases cortas y naturales, como si hablaras con un niño de 8-9 años.
-- No incluyas códigos de programación, símbolos matemáticos complejos, ni abreviaturas raras en el audio.
+- No seas "escueto" o aburrido. ¡Sé creativo! Usa metáforas divertidas y juegos imaginarios.
+- Invita constantemente al alumno a usar la **Pizarra interactiva** que tiene en su pantalla. Pídele que dibuje, que resuelva ahí los ejercicios o que escriba sus respuestas.
 
-El resultado debe ser una mini-lección para el estudiante, con:
-1. Explicación breve y amigable (primeros párrafos claros para audio).
-2. Ejemplo interactivo.
-3. Actividad práctica sugerida.
-4. Recomendación explícita de un recurso externo (Khan Academy, GeoGebra o PhET) que refuerce los conceptos.
+El resultado debe ser una experiencia interactiva para el estudiante, con:
+1. Explicación creativa, amigable y muy entretenida.
+2. Ejemplos lúdicos relacionados con los intereses de los niños.
+3. Actividad práctica sugerida para resolver directamente en la Pizarra interactiva.
 """.strip()
 
     def _build_user_message(self, payload: ValidatorToPedagoguePayload, student_message: str) -> str:
@@ -90,7 +88,7 @@ Contexto adicional:
 - Asignatura: {payload.curriculum_unit.asignatura}
 - OA objetivo: {payload.target_oa.id_oa}
 
-Responde como un tutor de 3° básico y usa lenguaje claro, afectuoso, con ejemplos visuales o manipulativos.
+Responde como un tutor de 3° básico. Sé creativo, entretenido y muy afectuoso. NO seas escueto, desarrolla ejemplos lúdicos. Invita SIEMPRE al alumno a usar la Pizarra interactiva para dibujar o resolver los ejercicios que le propongas.
 """.strip()
 
     async def generate_lesson(

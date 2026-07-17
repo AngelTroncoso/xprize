@@ -22,7 +22,7 @@ export const MINEDUC_BOOKS: Textbook[] = [
     curso: "1° Básico",
     asignatura: "Matemática",
     titulo: "Matemática 1° Básico",
-    portada_url: "https://www.curriculumnacional.cl/portal/Secciones/Textos-Escolares/72014:Texto-del-Estudiante-Matematica-1-Basico.jpg",
+    portada_url: "/covers/cover_math.jpg",
     pdf_url: "https://www.curriculumnacional.cl/614/articles-145415_recurso_pdf.pdf",
     gemini_file_id: "",
     chapters: [
@@ -37,7 +37,7 @@ export const MINEDUC_BOOKS: Textbook[] = [
     curso: "2° Básico",
     asignatura: "Matemática",
     titulo: "Matemática 2° Básico",
-    portada_url: "https://www.curriculumnacional.cl/portal/Secciones/Textos-Escolares/72015:Texto-del-Estudiante-Matematica-2-Basico.jpg",
+    portada_url: "/covers/cover_math.jpg",
     pdf_url: "https://www.curriculumnacional.cl/614/articles-145416_recurso_pdf.pdf",
     gemini_file_id: "",
     chapters: [
@@ -52,7 +52,7 @@ export const MINEDUC_BOOKS: Textbook[] = [
     curso: "3° Básico",
     asignatura: "Matemática",
     titulo: "Matemática 3° Básico",
-    portada_url: "https://www.curriculumnacional.cl/portal/Secciones/Textos-Escolares/72016:Texto-del-Estudiante-Matematica-3-Basico.jpg",
+    portada_url: "/covers/cover_math.jpg",
     pdf_url: "https://www.curriculumnacional.cl/614/articles-145417_recurso_pdf.pdf",
     gemini_file_id: "files/z82015efqcnv",
     chapters: [
@@ -68,7 +68,7 @@ export const MINEDUC_BOOKS: Textbook[] = [
     curso: "4° Básico",
     asignatura: "Matemática",
     titulo: "Matemática 4° Básico",
-    portada_url: "https://www.curriculumnacional.cl/portal/Secciones/Textos-Escolares/72017:Texto-del-Estudiante-Matematica-4-Basico.jpg",
+    portada_url: "/covers/cover_math.jpg",
     pdf_url: "https://www.curriculumnacional.cl/614/articles-145418_recurso_pdf.pdf",
     gemini_file_id: "",
     chapters: [
@@ -83,7 +83,7 @@ export const MINEDUC_BOOKS: Textbook[] = [
     curso: "5° Básico",
     asignatura: "Matemática",
     titulo: "Matemática 5° Básico",
-    portada_url: "https://www.curriculumnacional.cl/portal/Secciones/Textos-Escolares/72018:Texto-del-Estudiante-Matematica-5-Basico.jpg",
+    portada_url: "/covers/cover_math.jpg",
     pdf_url: "https://www.curriculumnacional.cl/614/articles-145419_recurso_pdf.pdf",
     gemini_file_id: "",
     chapters: [
@@ -98,7 +98,7 @@ export const MINEDUC_BOOKS: Textbook[] = [
     curso: "6° Básico",
     asignatura: "Matemática",
     titulo: "Matemática 6° Básico",
-    portada_url: "https://www.curriculumnacional.cl/portal/Secciones/Textos-Escolares/72019:Texto-del-Estudiante-Matematica-6-Basico.jpg",
+    portada_url: "/covers/cover_math.jpg",
     pdf_url: "https://www.curriculumnacional.cl/614/articles-145420_recurso_pdf.pdf",
     gemini_file_id: "",
     chapters: [
@@ -113,7 +113,7 @@ export const MINEDUC_BOOKS: Textbook[] = [
     curso: "7° Básico",
     asignatura: "Matemática",
     titulo: "Matemática 7° Básico",
-    portada_url: "https://www.curriculumnacional.cl/portal/Secciones/Textos-Escolares/72020:Texto-del-Estudiante-Matematica-7-Basico.jpg",
+    portada_url: "/covers/cover_math.jpg",
     pdf_url: "https://www.curriculumnacional.cl/614/articles-145421_recurso_pdf.pdf",
     gemini_file_id: "",
     chapters: [
@@ -128,7 +128,7 @@ export const MINEDUC_BOOKS: Textbook[] = [
     curso: "8° Básico",
     asignatura: "Matemática",
     titulo: "Matemática 8° Básico",
-    portada_url: "https://www.curriculumnacional.cl/portal/Secciones/Textos-Escolares/72021:Texto-del-Estudiante-Matematica-8-Basico.jpg",
+    portada_url: "/covers/cover_math.jpg",
     pdf_url: "https://www.curriculumnacional.cl/614/articles-145422_recurso_pdf.pdf",
     gemini_file_id: "",
     chapters: [
@@ -145,7 +145,7 @@ export const MINEDUC_BOOKS: Textbook[] = [
     curso: "1° Básico",
     asignatura: "Lenguaje y Comunicación",
     titulo: "Lenguaje 1° Básico",
-    portada_url: "https://www.curriculumnacional.cl/portal/Secciones/Textos-Escolares/72006:Texto-del-Estudiante-Lenguaje-y-Comunicacion-1-Basico.jpg",
+    portada_url: "/covers/cover_language.jpg",
     pdf_url: "https://www.curriculumnacional.cl/614/articles-145407_recurso_pdf.pdf",
     gemini_file_id: "",
     chapters: [
@@ -160,7 +160,7 @@ export const MINEDUC_BOOKS: Textbook[] = [
     curso: "2° Básico",
     asignatura: "Lenguaje y Comunicación",
     titulo: "Lenguaje 2° Básico",
-    portada_url: "https://www.curriculumnacional.cl/portal/Secciones/Textos-Escolares/72007:Texto-del-Estudiante-Lenguaje-y-Comunicacion-2-Basico.jpg",
+    portada_url: "/covers/cover_language.jpg",
     pdf_url: "https://www.curriculumnacional.cl/614/articles-145408_recurso_pdf.pdf",
     gemini_file_id: "",
     chapters: [
@@ -175,7 +175,7 @@ export const MINEDUC_BOOKS: Textbook[] = [
     curso: "3° Básico",
     asignatura: "Lenguaje y Comunicación",
     titulo: "Lenguaje 3° Básico",
-    portada_url: "https://www.curriculumnacional.cl/portal/Secciones/Textos-Escolares/72008:Texto-del-Estudiante-Lenguaje-y-Comunicacion-3-Basico.jpg",
+    portada_url: "/covers/cover_language.jpg",
     pdf_url: "https://www.curriculumnacional.cl/614/articles-145409_recurso_pdf.pdf",
     gemini_file_id: "",
     chapters: [
@@ -190,7 +190,7 @@ export const MINEDUC_BOOKS: Textbook[] = [
     curso: "4° Básico",
     asignatura: "Lenguaje y Comunicación",
     titulo: "Lenguaje 4° Básico",
-    portada_url: "https://www.curriculumnacional.cl/portal/Secciones/Textos-Escolares/72009:Texto-del-Estudiante-Lenguaje-y-Comunicacion-4-Basico.jpg",
+    portada_url: "/covers/cover_language.jpg",
     pdf_url: "https://www.curriculumnacional.cl/614/articles-145410_recurso_pdf.pdf",
     gemini_file_id: "",
     chapters: [

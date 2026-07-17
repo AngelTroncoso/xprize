@@ -118,12 +118,12 @@ class ValidatorAgent:
     ) -> ValidatorToPedagoguePayload:
         selected_oa = None
 
-        if id_oa and self.curriculum_manager.get_oa_by_id(id_oa):
+        if id_oa and self.curriculum_manager.get_oa_by_id(id_oa, curso=curso, asignatura=asignatura):
             selected_oa = id_oa
         else:
             candidate_ids = self._extract_candidate_oa_ids(student_message, curso, asignatura)
             for oa in candidate_ids:
-                if self.curriculum_manager.get_oa_by_id(oa):
+                if self.curriculum_manager.get_oa_by_id(oa, curso=curso, asignatura=asignatura):
                     selected_oa = oa
                     break
 
@@ -135,17 +135,19 @@ class ValidatorAgent:
                 "No se pudo inferir un OA para la consulta del alumno dentro del curso y asignatura especificados."
             )
 
-        return self._build_validation_payload(student_id, student_message, selected_oa)
+        return self._build_validation_payload(student_id, student_message, selected_oa, curso, asignatura)
 
     def _build_validation_payload(
         self,
         student_id: str,
         student_message: str,
         oa_id: str,
+        curso: str,
+        asignatura: str,
     ) -> ValidatorToPedagoguePayload:
-        raw_oa = self.curriculum_manager._oa_index.get(oa_id)
+        raw_oa = self.curriculum_manager.get_oa_by_id(oa_id, curso=curso, asignatura=asignatura)
         if not raw_oa:
-            raise ValueError(f"OA no encontrada en el currículo: {oa_id}")
+            raise ValueError(f"OA no encontrada en el currículo: {oa_id} para {curso} - {asignatura}")
 
         curriculum_unit = CurriculumUnit(
             curso=raw_oa.get("curso", ""),

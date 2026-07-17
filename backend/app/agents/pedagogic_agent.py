@@ -105,8 +105,27 @@ Responde como un tutor de 3° básico. Sé creativo, entretenido y muy afectuoso
         system_prompt = self._build_system_prompt(payload, external_resources, student_message)
         user_message = self._build_user_message(payload, student_message)
 
-        from app.models.schemas import PedagogicResponseSchema
+        import os
         import json
+        from supabase import create_client
+        
+        url = os.environ.get("SUPABASE_URL")
+        key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_KEY")
+        static_exercise = None
+        if url and key:
+            try:
+                supa = create_client(url, key)
+                # Fetch an exercise matching the OA (could be filtered by difficulty in the future)
+                res = supa.table("exercises").select("*").eq("id_oa", payload.target_oa.id_oa).limit(1).execute()
+                if res.data and len(res.data) > 0:
+                    static_exercise = res.data[0]["contenido"]
+            except Exception as e:
+                print(f"No se pudo conectar a la BD estática: {e}")
+
+        if static_exercise:
+            user_message += f"\n\nIMPORTANTE: Hemos extraído el siguiente ejercicio estático validado por MINEDUC desde nuestra base de datos. DEBES incluir exactamente este JSON en el campo `interactive_exercise` de tu respuesta:\n{json.dumps(static_exercise)}"
+
+        from app.models.schemas import PedagogicResponseSchema
 
         response_str = await self.gemini_client.generate_pedagogic_response(
             system_prompt=system_prompt,

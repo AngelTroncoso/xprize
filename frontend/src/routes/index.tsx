@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const [tab, setTab] = useState("chat");
+  const [tab, setTab] = useState("catalog");
   const [curso, setCurso] = useState("3° Básico");
   const [asignatura, setAsignatura] = useState<string>(ASIGNATURAS[0]);
   const [activeIdOa, setActiveIdOa] = useState<string | null>(null);
@@ -167,7 +167,16 @@ function Home() {
           </TabsList>
 
           <TabsContent value="chat" className="mt-0">
-            <ChatView curso={curso} asignatura={asignatura} studentId="1" activeIdOa={activeIdOa} />
+            <ChatView 
+              curso={curso} 
+              asignatura={asignatura} 
+              studentId="1" 
+              activeIdOa={activeIdOa} 
+              onBackToCatalog={() => {
+                setActiveIdOa(null);
+                setTab("catalog");
+              }} 
+            />
           </TabsContent>
           <TabsContent value="catalog" className="mt-0">
             <CurriculumCatalog curso={curso} asignatura={asignatura} onSelectOA={handleSelectOA} />

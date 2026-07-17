@@ -136,7 +136,7 @@ export function CurriculumCatalog({ curso, asignatura, onSelectOA }: Props) {
                         </span>
                         <p className={`text-sm font-semibold ${theme.text}`}>{oa.title}</p>
                       </div>
-                      <div className={`shrink-0 rounded-full bg-gradient-to-r ${theme.gradient} px-2 py-1 text-[10px] font-bold text-white shadow-sm opacity-0 group-hover:opacity-100 transition-opacity hover:opacity-100`}>
+                      <div className={`shrink-0 rounded-full bg-gradient-to-r ${theme.gradient} px-3 py-1.5 text-xs font-bold text-white shadow-md hover:scale-105 transition-transform cursor-pointer`}>
                         Comenzar Clase
                       </div>
                     </div>

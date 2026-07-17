@@ -19,10 +19,10 @@ interface ChatViewProps {
   asignatura: string;
   studentId?: string;
   activeIdOa?: string | null;
+  onBackToCatalog?: () => void;
 }
 
-
-export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null }: ChatViewProps) {
+export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null, onBackToCatalog }: ChatViewProps) {
   const [liveOpen, setLiveOpen] = useState(false);
   const theme = useMemo(() => getSubjectTheme(asignatura), [asignatura]);
   const SubjectIcon = theme.icon;
@@ -156,11 +156,27 @@ export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null
             <SubjectIcon className="h-5 w-5" />
           </div>
           <div className="min-w-0 flex-1">
-            <h2 className="truncate text-base font-extrabold tracking-tight">Super_Profesor {theme.emoji}</h2>
+            <div className="flex items-center gap-2">
+              <h2 className="truncate text-base font-extrabold tracking-tight">Super_Profesor {theme.emoji}</h2>
+              {activeIdOa && (
+                <span className="rounded-full bg-white/20 px-2 py-0.5 text-[10px] font-bold backdrop-blur">
+                  Resolviendo {activeIdOa}
+                </span>
+              )}
+            </div>
             <p className="truncate text-xs text-white/85">
               {curso} • {asignatura}
             </p>
           </div>
+          {activeIdOa && onBackToCatalog && (
+            <button
+              onClick={onBackToCatalog}
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white/20 px-3 py-1.5 text-xs font-extrabold text-white ring-1 ring-white/40 backdrop-blur transition hover:scale-105 hover:bg-white/30 mr-2"
+              aria-label="Volver al Catálogo"
+            >
+              Volver al Catálogo
+            </button>
+          )}
           <button
             onClick={() => setLiveOpen(true)}
             className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white/20 px-3 py-1.5 text-xs font-extrabold text-white ring-1 ring-white/40 backdrop-blur transition hover:scale-105 hover:bg-white/30"

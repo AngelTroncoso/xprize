@@ -13,7 +13,7 @@ const CanvasInput = z.object({
 export const analyzeCanvasFn = createServerFn({ method: "POST" })
   .inputValidator((d) => CanvasInput.parse(d))
   .handler(async ({ data }) => {
-    const BACKEND_URL = process.env.VITE_BACKEND_URL || "http://localhost:8000";
+    const BACKEND_URL = process.env.VITE_BACKEND_URL || "https://superprofesor-backend-253925950091.us-central1.run.app";
     
     try {
       const res = await fetch(`${BACKEND_URL}/api/canvas/analyze`, {

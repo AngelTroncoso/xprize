@@ -168,23 +168,25 @@ export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null
               {curso} • {asignatura}
             </p>
           </div>
-          {activeIdOa && onBackToCatalog && (
+          <div className="flex items-center gap-2">
+            {activeIdOa && onBackToCatalog && (
+              <button
+                onClick={onBackToCatalog}
+                className="inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-full bg-white/20 px-3 text-xs font-extrabold text-white ring-1 ring-white/40 backdrop-blur transition hover:scale-105 hover:bg-white/30"
+                aria-label="Volver al Catálogo"
+              >
+                Volver al Catálogo
+              </button>
+            )}
             <button
-              onClick={onBackToCatalog}
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white/20 px-3 py-1.5 text-xs font-extrabold text-white ring-1 ring-white/40 backdrop-blur transition hover:scale-105 hover:bg-white/30 mr-2"
-              aria-label="Volver al Catálogo"
+              onClick={() => setLiveOpen(true)}
+              className="inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-full bg-white/20 px-3 text-xs font-extrabold text-white ring-1 ring-white/40 backdrop-blur transition hover:scale-105 hover:bg-white/30"
+              aria-label="Abrir Modo Audio en Vivo"
             >
-              Volver al Catálogo
+              <Radio className="h-3.5 w-3.5" />
+              En vivo
             </button>
-          )}
-          <button
-            onClick={() => setLiveOpen(true)}
-            className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white/20 px-3 py-1.5 text-xs font-extrabold text-white ring-1 ring-white/40 backdrop-blur transition hover:scale-105 hover:bg-white/30"
-            aria-label="Abrir Modo Audio en Vivo"
-          >
-            <Radio className="h-3.5 w-3.5" />
-            En vivo
-          </button>
+          </div>
         </div>
 
         <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto p-5">

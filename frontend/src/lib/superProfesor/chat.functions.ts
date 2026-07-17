@@ -15,7 +15,7 @@ const ChatInput = z.object({
 export const sendChatMessageFn = createServerFn({ method: "POST" })
   .inputValidator((d) => ChatInput.parse(d))
   .handler(async ({ data }) => {
-    const BACKEND_URL = process.env.VITE_BACKEND_URL || "http://localhost:8000";
+    const BACKEND_URL = process.env.VITE_BACKEND_URL || "https://superprofesor-backend-253925950091.us-central1.run.app";
     
     try {
       const res = await fetch(`${BACKEND_URL}/api/chat`, {

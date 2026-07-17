@@ -196,8 +196,8 @@ export function Whiteboard({
           </div>
         )}
         {activeExercise && (
-          <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/60 p-4 backdrop-blur-sm pointer-events-none">
-            <div className="pointer-events-auto h-full w-full">
+          <div className="absolute inset-0 z-10 flex items-start justify-center p-4 pointer-events-none">
+            <div className="pointer-events-auto w-full max-w-2xl mt-2 max-h-full">
               <ExerciseOverlay exercise={activeExercise} />
             </div>
           </div>

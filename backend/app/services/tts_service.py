@@ -46,8 +46,8 @@ class TTSService:
             if clean_text:
                 text = self._clean_text(text)
 
-            # Limitar a primeros párrafos para TTS (máximo ~500 caracteres)
-            text_for_audio = self._extract_first_paragraphs(text, max_chars=500)
+            # No limitar el texto para que lea la respuesta completa
+            text_for_audio = text
 
             # Generar audio con gTTS
             tts = gTTS(text=text_for_audio, lang=self.language, slow=False)

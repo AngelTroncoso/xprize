@@ -11,12 +11,12 @@ export function FillInBlanks({ exercise }: Props) {
   const parts = exercise.text_with_blanks.split("___");
   
   return (
-    <div className="text-center text-xl leading-relaxed text-slate-700">
+    <div className="text-left text-2xl leading-relaxed text-slate-800 mt-6 font-medium">
       {parts.map((part, i) => (
         <span key={i}>
           {part}
           {i < parts.length - 1 && (
-            <span className="inline-block mx-2 w-24 border-b-4 border-slate-300"></span>
+            <span className="inline-block mx-2 w-28 h-10 align-middle rounded border-2 border-slate-300 bg-slate-50 shadow-inner"></span>
           )}
         </span>
       ))}

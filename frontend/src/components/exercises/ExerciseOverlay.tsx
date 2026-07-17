@@ -9,9 +9,9 @@ interface Props {
 
 export function ExerciseOverlay({ exercise }: Props) {
   return (
-    <div className="h-full w-full rounded-xl bg-white/95 p-6 shadow-xl ring-1 ring-black/5 overflow-y-auto flex flex-col">
-      <div className="mb-4">
-        <h3 className="text-lg font-bold text-slate-800">{exercise.title}</h3>
+    <div className="h-full w-full rounded-2xl bg-white/95 p-8 shadow-2xl ring-1 ring-black/5 overflow-y-auto flex flex-col">
+      <div className="mb-6">
+        <h3 className="text-2xl font-extrabold text-slate-800">{exercise.title}</h3>
       </div>
       
       <div className="flex-1 flex flex-col justify-center">

@@ -8,11 +8,14 @@ export function MultipleChoice({ exercise }: Props) {
   if (!exercise.options) return null;
   
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-4 mt-6">
       {exercise.options.map((opt, i) => (
-        <div key={i} className="rounded-lg border-2 border-slate-200 bg-slate-50 p-4 text-center text-base font-medium text-slate-700 hover:border-blue-400 hover:bg-blue-50 transition cursor-pointer">
+        <button 
+          key={i} 
+          className="w-full rounded-xl border-2 border-slate-300 bg-white p-5 text-left text-lg font-medium text-slate-800 shadow-sm transition hover:border-blue-500 hover:bg-blue-50 focus:outline-none focus:ring-4 focus:ring-blue-100"
+        >
           {opt}
-        </div>
+        </button>
       ))}
     </div>
   );

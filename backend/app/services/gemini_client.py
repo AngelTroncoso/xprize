@@ -80,7 +80,7 @@ class GeminiClient:
                     contents=prompt,
                     config=types.GenerateContentConfig(
                         temperature=temperature,
-                        response_mime_type="text",
+                        response_mime_type="text/plain",
                     ),
                 )
 
@@ -150,7 +150,7 @@ class GeminiClient:
                     ],
                     config=types.GenerateContentConfig(
                         temperature=temperature,
-                        response_mime_type="text",
+                        response_mime_type="text/plain",
                     ),
                 )
 

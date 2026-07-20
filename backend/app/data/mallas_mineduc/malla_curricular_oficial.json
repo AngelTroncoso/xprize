@@ -1699,5 +1699,565 @@
         ]
       }
     ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Matemática",
+    "eje_tematico": "Números y Operaciones",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Matemática para 5° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "matemática",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Matemática correspondientes a 5° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Matemática",
+    "eje_tematico": "Álgebra y Funciones",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Matemática para 7° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "matemática",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Matemática correspondientes a 7° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje_tematico": "Lectura",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Lenguaje y Comunicación para 3° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "lenguaje y comunicación",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Lenguaje y Comunicación correspondientes a 3° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje_tematico": "Lectura",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Lenguaje y Comunicación para 4° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "lenguaje y comunicación",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Lenguaje y Comunicación correspondientes a 4° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje_tematico": "Lectura",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Lenguaje y Comunicación para 6° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "lenguaje y comunicación",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Lenguaje y Comunicación correspondientes a 6° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje_tematico": "Lectura",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Lenguaje y Comunicación para 7° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "lenguaje y comunicación",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Lenguaje y Comunicación correspondientes a 7° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Lenguaje y Comunicación",
+    "eje_tematico": "Lectura",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Lenguaje y Comunicación para 8° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "lenguaje y comunicación",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Lenguaje y Comunicación correspondientes a 8° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje_tematico": "Ciencias de la Vida",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Ciencias Naturales para 2° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "ciencias naturales",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Ciencias Naturales correspondientes a 2° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "4° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje_tematico": "Ciencias Físicas y Químicas",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Ciencias Naturales para 4° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "ciencias naturales",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Ciencias Naturales correspondientes a 4° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje_tematico": "Ciencias de la Tierra y el Universo",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Ciencias Naturales para 6° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "ciencias naturales",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Ciencias Naturales correspondientes a 6° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "7° Básico",
+    "asignatura": "Ciencias Naturales",
+    "eje_tematico": "Biología",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Ciencias Naturales para 7° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "ciencias naturales",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Ciencias Naturales correspondientes a 7° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "2° Básico",
+    "asignatura": "Historia y Geografía",
+    "eje_tematico": "Historia",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Historia y Geografía para 2° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "historia y geografía",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Historia y Geografía correspondientes a 2° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "3° Básico",
+    "asignatura": "Historia y Geografía",
+    "eje_tematico": "Historia",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Historia y Geografía para 3° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "historia y geografía",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Historia y Geografía correspondientes a 3° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "5° Básico",
+    "asignatura": "Historia y Geografía",
+    "eje_tematico": "Historia",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Historia y Geografía para 5° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "historia y geografía",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Historia y Geografía correspondientes a 5° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "6° Básico",
+    "asignatura": "Historia y Geografía",
+    "eje_tematico": "Historia",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Historia y Geografía para 6° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "historia y geografía",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Historia y Geografía correspondientes a 6° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
+  },
+  {
+    "curso": "8° Básico",
+    "asignatura": "Historia y Geografía",
+    "eje_tematico": "Historia",
+    "objetivos_aprendizaje": [
+      {
+        "id_oa": "OA_01",
+        "descripcion": "Objetivo de Aprendizaje oficial de Historia y Geografía para 8° Básico según la actualización curricular MINEDUC.",
+        "indicadores_evaluacion": [
+          "Identifican los elementos principales del tema de estudio.",
+          "Aplican los conceptos aprendidos a situaciones reales.",
+          "Demuestran comprensión mediante ejemplos prácticos."
+        ],
+        "conceptos_clave": [
+          "historia y geografía",
+          "conceptos fundamentales",
+          "análisis",
+          "aplicación práctica"
+        ]
+      },
+      {
+        "id_oa": "OA_02",
+        "descripcion": "Desarrollar habilidades específicas de Historia y Geografía correspondientes a 8° Básico, integrando el conocimiento teórico con actividades prácticas.",
+        "indicadores_evaluacion": [
+          "Diferencian las características clave del contenido.",
+          "Explican el razonamiento detrás de los procedimientos."
+        ],
+        "conceptos_clave": [
+          "habilidades específicas",
+          "teoría y práctica",
+          "desarrollo cognitivo"
+        ]
+      }
+    ]
   }
 ]

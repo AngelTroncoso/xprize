@@ -28,7 +28,7 @@ interface WhiteboardProps {
 export function Whiteboard({
   curso,
   asignatura,
-  studentId = "1",
+  studentId = "00000000-0000-0000-0000-000000000001",
   activeExercise,
   onFeedback,
 }: WhiteboardProps) {

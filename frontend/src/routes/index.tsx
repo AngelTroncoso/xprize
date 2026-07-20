@@ -191,7 +191,7 @@ function Home() {
             <ChatView 
               curso={curso} 
               asignatura={asignatura} 
-              studentId="1" 
+              studentId="00000000-0000-0000-0000-000000000001" 
               activeIdOa={activeIdOa} 
               book={selectedBook || undefined}
               onBackToCatalog={() => {
@@ -201,7 +201,7 @@ function Home() {
             />
           </TabsContent>
           <TabsContent value="progress" className="mt-0">
-            <ProgressMap studentId="1" curso={curso} asignatura={asignatura} book={selectedBook || undefined} />
+            <ProgressMap studentId="00000000-0000-0000-0000-000000000001" curso={curso} asignatura={asignatura} book={selectedBook || undefined} />
           </TabsContent>
         </Tabs>
       </main>

@@ -87,7 +87,7 @@ interface ProgressMapProps {
   book?: Textbook;
 }
 
-export function ProgressMap({ studentId = 1, curso, asignatura, book }: ProgressMapProps) {
+export function ProgressMap({ studentId = "00000000-0000-0000-0000-000000000001", curso, asignatura, book }: ProgressMapProps) {
   const headerTheme = useMemo(
     () => getSubjectTheme(book?.asignatura ?? asignatura ?? ""),
     [asignatura, book],

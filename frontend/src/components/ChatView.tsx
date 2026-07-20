@@ -25,7 +25,7 @@ interface ChatViewProps {
   onBackToCatalog?: () => void;
 }
 
-export function ChatView({ curso, asignatura, studentId = "1", activeIdOa = null, book, onBackToCatalog }: ChatViewProps) {
+export function ChatView({ curso, asignatura, studentId = "00000000-0000-0000-0000-000000000001", activeIdOa = null, book, onBackToCatalog }: ChatViewProps) {
   const [liveOpen, setLiveOpen] = useState(false);
   const theme = useMemo(() => getSubjectTheme(asignatura), [asignatura]);
   const SubjectIcon = theme.icon;

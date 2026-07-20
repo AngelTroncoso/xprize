@@ -141,7 +141,6 @@ async def chat_interaction(chat_request: ChatInput):
                 try:
                     session_res = supabase_client.table("chat_sessions").insert({
                         "student_id": chat_request.student_id,
-                        "started_at": datetime.utcnow().isoformat(),
                         "metadata": {"curso": chat_request.curso, "asignatura": chat_request.asignatura}
                     }).execute()
                     session_id = session_res.data[0]["id"]
